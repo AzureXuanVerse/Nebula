@@ -190,6 +190,34 @@ public class GameDisc implements GameDatabaseObject {
         return changes.setSuccess(true);
     }
     
+    public PlayerChangeInfo limitBreak(int count) {
+        // Sanity check
+        if (count <= 0) {
+            return null;
+        }
+        
+        // Create params with limit break items
+        var materials = new ItemParamMap();
+        materials.add(this.getData().getTransformItemId(), count);
+        
+        // Verify that the player has the items
+        if (!this.getPlayer().getInventory().verifyItems(materials)) {
+            return null;
+        }
+        
+        // Remove items
+        var changes = this.getPlayer().getInventory().removeItems(materials, null);
+        
+        // Add phase level
+        this.star = Math.max(this.star + count, 4);
+        
+        // Save to database
+        this.save();
+        
+        // Success
+        return changes.setSuccess(true);
+    }
+    
     // Proto
     
     public Disc toProto() {

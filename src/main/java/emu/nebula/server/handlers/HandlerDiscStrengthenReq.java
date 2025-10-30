@@ -23,7 +23,7 @@ public class HandlerDiscStrengthenReq extends NetHandler {
             return this.encodeMsg(NetMsgId.disc_strengthen_failed_ack);
         }
         
-        // Upgrade character
+        // Level up disc
         var params = ItemParamMap.fromItemInfos(req.getItems());
         var change = disc.upgrade(params);
         
@@ -33,9 +33,9 @@ public class HandlerDiscStrengthenReq extends NetHandler {
         
         // Create response
         var rsp = DiscStrengthenResp.newInstance()
-                .setChange(change.toProto())
                 .setLevel(disc.getLevel())
-                .setExp(disc.getExp());
+                .setExp(disc.getExp())
+                .setChange(change.toProto());
         
         return this.encodeMsg(NetMsgId.disc_strengthen_succeed_ack, rsp);
     }

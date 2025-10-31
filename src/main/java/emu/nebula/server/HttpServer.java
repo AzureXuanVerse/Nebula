@@ -84,7 +84,7 @@ public class HttpServer {
         }
         
         // Exception handler
-        getApp().exception(Exception.class, (e, _) -> {
+        getApp().exception(Exception.class, (e, c) -> {
             e.printStackTrace();
         });
 

@@ -312,6 +312,7 @@ public class QuestManager extends PlayerManager implements GameDatabaseObject {
             .getMutableWorldClassReward()
             .setFlag(this.getLevelRewards().toBigEndianByteArray());
         
-        proto.setTourGuideQuestGroup(1);
+        // Force claim tour guide
+        proto.setTourGuideQuestGroup(9);
     }
 }

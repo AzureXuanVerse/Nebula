@@ -24,4 +24,7 @@ public class GameConstants {
     public static final int MAX_SHOWCASE_IDS = 5;
     
     public static final int BATTLE_PASS_ID = 1;
+    
+    public static final int MAX_FRIENDSHIPS = 50;
+    public static final int MAX_PENDING_FRIENDSHIPS = 30;
 }

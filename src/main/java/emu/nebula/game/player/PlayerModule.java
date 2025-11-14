@@ -50,11 +50,29 @@ public class PlayerModule extends GameContextModule {
     }
     
     /**
+     * Returns a player object with the given uid. Returns null if the player doesnt exist.
+     * Warning: Does NOT cache or load the playerdata if the player was loaded from the database.
+     * @param uid User id of the player
+     * @return
+     */
+    public synchronized Player getPlayer(int uid) {
+        // Get player from cache
+        Player player = this.cachedPlayers.get(uid);
+
+        if (player == null) {
+            // Retrieve player object from database if its not there
+            player = Nebula.getGameDatabase().getObjectByUid(Player.class, uid);
+        }
+
+        return player;
+    }
+    
+    /**
      * Returns a player object with the given account. Returns null if the player doesnt exist.
      * @param uid User id of the player
      * @return
      */
-    public synchronized Player getPlayerByAccount(Account account) {
+    public synchronized Player loadPlayer(Account account) {
         // Get player from cache
         Player player = this.cachedPlayersByAccount.get(account.getUid());
 
@@ -108,12 +126,17 @@ public class PlayerModule extends GameContextModule {
     }
     
     /**
-     * Returns a list of recent players that have logged on (for followers)
+     * Returns a list of recent players that have logged on
      * @param player Player that requested this
      */
     public synchronized List<Player> getRandomPlayerList(Player player) {
-        List<Player> list = getCachedPlayers().values().stream().filter(p -> p != player).collect(Collectors.toList());
+        List<Player> list = getCachedPlayers().values().stream()
+                .filter(p -> p != player)
+                .limit(10)
+                .collect(Collectors.toList());
+        
         Collections.shuffle(list);
-        return list.stream().limit(15).toList();
+        
+        return list.stream().toList();
     }
 }

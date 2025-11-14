@@ -121,7 +121,7 @@ public class GameSession {
         
         // Note: We should cache players in case multiple sessions try to login to the same player at the time
         // Get player by account
-        var player = Nebula.getGameContext().getPlayerModule().getPlayerByAccount(account);
+        var player = Nebula.getGameContext().getPlayerModule().loadPlayer(account);
         
         // Skip intro
         if (player == null && Nebula.getConfig().getServerOptions().skipIntro) {

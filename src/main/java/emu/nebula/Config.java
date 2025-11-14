@@ -101,7 +101,7 @@ public class Config {
         public boolean skipIntro = false;
         public boolean unlockInstances = true;
         public int dailyResetHour = 0;
-        public int leaderboardRefreshTime = 60;
+        public int leaderboardRefreshTime = 60; // Leaderboard refresh time in seconds
         public WelcomeMail welcomeMail = new WelcomeMail();
     }
     

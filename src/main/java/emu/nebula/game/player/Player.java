@@ -15,6 +15,7 @@ import emu.nebula.game.agent.AgentManager;
 import emu.nebula.game.battlepass.BattlePassManager;
 import emu.nebula.game.character.CharacterStorage;
 import emu.nebula.game.formation.FormationManager;
+import emu.nebula.game.friends.FriendList;
 import emu.nebula.game.gacha.GachaManager;
 import emu.nebula.game.infinitytower.InfinityTowerManager;
 import emu.nebula.game.instance.InstanceManager;
@@ -34,6 +35,7 @@ import emu.nebula.proto.PlayerData.DictionaryTab;
 import emu.nebula.proto.PlayerData.PlayerInfo;
 import emu.nebula.proto.Public.CharShow;
 import emu.nebula.proto.Public.Energy;
+import emu.nebula.proto.Public.Friend;
 import emu.nebula.proto.Public.HonorInfo;
 import emu.nebula.proto.Public.NewbieInfo;
 import emu.nebula.proto.Public.QuestType;
@@ -73,10 +75,12 @@ public class Player implements GameDatabaseObject {
     private long energyLastUpdate;
    
     private long lastEpochDay;
+    private long lastLogin;
     private long createTime;
     
     // Managers
     private final transient CharacterStorage characters;
+    private final transient FriendList friendList;
     private final transient GachaManager gachaManager;
     private final transient BattlePassManager battlePassManager;
     private final transient StarTowerManager starTowerManager;
@@ -94,13 +98,15 @@ public class Player implements GameDatabaseObject {
     private transient QuestManager questManager;
     private transient AgentManager agentManager;
     
-    // Next packages
+    // Extra
     private transient Stack<NetMsgPacket> nextPackages;
+    private transient boolean loaded;
     
     @Deprecated // Morphia only
     public Player() {
         // Init player managers
         this.characters = new CharacterStorage(this);
+        this.friendList = new FriendList(this);
         this.gachaManager = new GachaManager(this);
         this.battlePassManager = new BattlePassManager(this);
         this.starTowerManager = new StarTowerManager(this);
@@ -126,6 +132,7 @@ public class Player implements GameDatabaseObject {
         // Set basic info
         this.accountUid = account.getUid();
         this.createTime = Nebula.getCurrentTime();
+        
         this.name = name;
         this.signature = "";
         this.gender = gender;
@@ -576,6 +583,7 @@ public class Player implements GameDatabaseObject {
     public void onLoad() {
         // Load from database
         this.getCharacters().loadFromDatabase();
+        this.getFriendList().loadFromDatabase();
         this.getStarTowerManager().loadFromDatabase();
         this.getBattlePassManager().loadFromDatabase();
         
@@ -598,6 +606,9 @@ public class Player implements GameDatabaseObject {
             this.showChars = new int[3];
             this.save();
         }
+        
+        // Load complete
+        this.loaded = true;
     }
     
     public void onLogin() {
@@ -606,6 +617,10 @@ public class Player implements GameDatabaseObject {
         
         // Trigger quest login
         this.triggerQuest(QuestCondType.LoginTotal, 1);
+        
+        // Update last login time
+        this.lastLogin = System.currentTimeMillis();
+        Nebula.getGameDatabase().update(this, this.getUid(), "lastLogin", this.getLastLogin());
     }
     
     // Next packages
@@ -696,7 +711,8 @@ public class Player implements GameDatabaseObject {
         
         // Set player states
         var state = proto.getMutableState()
-            .setStorySet(true);
+            .setStorySet(true)
+            .setFriend(this.getFriendList().hasPendingRequests());
         
         state.getMutableMail()
             .setNew(this.getMailbox().hasNewMail());
@@ -788,6 +804,36 @@ public class Player implements GameDatabaseObject {
         }
         
         // Complete
+        return proto;
+    }
+    
+    public Friend getFriendProto() {
+        var proto = Friend.newInstance()
+                .setId(this.getUid())
+                .setWorldClass(this.getLevel())
+                .setHeadIcon(this.getHeadIcon())
+                .setNickName(this.getName())
+                .setSignature(this.getSignature())
+                .setTitlePrefix(this.getTitlePrefix())
+                .setTitleSuffix(this.getTitleSuffix())
+                .setLastLoginTime(this.getLastLogin() * 1_000_000L);
+        
+        for (int charId : this.getShowChars()) {
+            var info = CharShow.newInstance()
+                    .setCharId(charId)
+                    .setLevel(1)                    // TODO
+                    .setSkin((charId * 100) + 1);   // TODO
+            
+            proto.addCharShows(info);
+        }
+        
+        for (int honorId : this.getHonor()) {
+            var info = HonorInfo.newInstance()
+                    .setId(honorId);
+            
+            proto.addHonors(info);
+        }
+        
         return proto;
     }
     

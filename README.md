@@ -54,4 +54,6 @@ Server commands need to be run in the server console.
 /give [item id] x[amount] = Gives the targetted player an item.
 /mail = Sends the targeted player a system mail.
 /reload = Reloads the server config.
+/giveall [characters | discs | materials] - gives the targeted player items.
+
 ```

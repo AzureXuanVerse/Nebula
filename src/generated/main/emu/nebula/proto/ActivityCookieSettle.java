@@ -55,6 +55,16 @@ public final class ActivityCookieSettle {
     private int excellentNum;
 
     /**
+     * <code>optional uint32 MissNum = 8;</code>
+     */
+    private int missNum;
+
+    /**
+     * <code>optional uint32 Good = 9;</code>
+     */
+    private int good;
+
+    /**
      * <code>optional bytes NextPackage = 2047;</code>
      */
     private final RepeatedByte nextPackage = RepeatedByte.newEmptyInstance();
@@ -329,11 +339,85 @@ public final class ActivityCookieSettle {
     }
 
     /**
+     * <code>optional uint32 MissNum = 8;</code>
+     * @return whether the missNum field is set
+     */
+    public boolean hasMissNum() {
+      return (bitField0_ & 0x00000080) != 0;
+    }
+
+    /**
+     * <code>optional uint32 MissNum = 8;</code>
+     * @return this
+     */
+    public ActivityCookieSettleReq clearMissNum() {
+      bitField0_ &= ~0x00000080;
+      missNum = 0;
+      return this;
+    }
+
+    /**
+     * <code>optional uint32 MissNum = 8;</code>
+     * @return the missNum
+     */
+    public int getMissNum() {
+      return missNum;
+    }
+
+    /**
+     * <code>optional uint32 MissNum = 8;</code>
+     * @param value the missNum to set
+     * @return this
+     */
+    public ActivityCookieSettleReq setMissNum(final int value) {
+      bitField0_ |= 0x00000080;
+      missNum = value;
+      return this;
+    }
+
+    /**
+     * <code>optional uint32 Good = 9;</code>
+     * @return whether the good field is set
+     */
+    public boolean hasGood() {
+      return (bitField0_ & 0x00000100) != 0;
+    }
+
+    /**
+     * <code>optional uint32 Good = 9;</code>
+     * @return this
+     */
+    public ActivityCookieSettleReq clearGood() {
+      bitField0_ &= ~0x00000100;
+      good = 0;
+      return this;
+    }
+
+    /**
+     * <code>optional uint32 Good = 9;</code>
+     * @return the good
+     */
+    public int getGood() {
+      return good;
+    }
+
+    /**
+     * <code>optional uint32 Good = 9;</code>
+     * @param value the good to set
+     * @return this
+     */
+    public ActivityCookieSettleReq setGood(final int value) {
+      bitField0_ |= 0x00000100;
+      good = value;
+      return this;
+    }
+
+    /**
      * <code>optional bytes NextPackage = 2047;</code>
      * @return whether the nextPackage field is set
      */
     public boolean hasNextPackage() {
-      return (bitField0_ & 0x00000080) != 0;
+      return (bitField0_ & 0x00000200) != 0;
     }
 
     /**
@@ -341,7 +425,7 @@ public final class ActivityCookieSettle {
      * @return this
      */
     public ActivityCookieSettleReq clearNextPackage() {
-      bitField0_ &= ~0x00000080;
+      bitField0_ &= ~0x00000200;
       nextPackage.clear();
       return this;
     }
@@ -370,7 +454,7 @@ public final class ActivityCookieSettle {
      * @return internal storage object for modifications
      */
     public RepeatedByte getMutableNextPackage() {
-      bitField0_ |= 0x00000080;
+      bitField0_ |= 0x00000200;
       return nextPackage;
     }
 
@@ -380,7 +464,7 @@ public final class ActivityCookieSettle {
      * @return this
      */
     public ActivityCookieSettleReq addNextPackage(final byte value) {
-      bitField0_ |= 0x00000080;
+      bitField0_ |= 0x00000200;
       nextPackage.add(value);
       return this;
     }
@@ -391,7 +475,7 @@ public final class ActivityCookieSettle {
      * @return this
      */
     public ActivityCookieSettleReq addAllNextPackage(final byte... values) {
-      bitField0_ |= 0x00000080;
+      bitField0_ |= 0x00000200;
       nextPackage.addAll(values);
       return this;
     }
@@ -402,7 +486,7 @@ public final class ActivityCookieSettle {
      * @return this
      */
     public ActivityCookieSettleReq setNextPackage(final byte... values) {
-      bitField0_ |= 0x00000080;
+      bitField0_ |= 0x00000200;
       nextPackage.copyFrom(values);
       return this;
     }
@@ -419,6 +503,8 @@ public final class ActivityCookieSettle {
         packageNum = other.packageNum;
         perfectNum = other.perfectNum;
         excellentNum = other.excellentNum;
+        missNum = other.missNum;
+        good = other.good;
         nextPackage.copyFrom(other.nextPackage);
       }
       return this;
@@ -451,6 +537,12 @@ public final class ActivityCookieSettle {
       if (other.hasExcellentNum()) {
         setExcellentNum(other.excellentNum);
       }
+      if (other.hasMissNum()) {
+        setMissNum(other.missNum);
+      }
+      if (other.hasGood()) {
+        setGood(other.good);
+      }
       if (other.hasNextPackage()) {
         getMutableNextPackage().copyFrom(other.nextPackage);
       }
@@ -471,6 +563,8 @@ public final class ActivityCookieSettle {
       packageNum = 0;
       perfectNum = 0;
       excellentNum = 0;
+      missNum = 0;
+      good = 0;
       nextPackage.clear();
       return this;
     }
@@ -503,6 +597,8 @@ public final class ActivityCookieSettle {
         && (!hasPackageNum() || packageNum == other.packageNum)
         && (!hasPerfectNum() || perfectNum == other.perfectNum)
         && (!hasExcellentNum() || excellentNum == other.excellentNum)
+        && (!hasMissNum() || missNum == other.missNum)
+        && (!hasGood() || good == other.good)
         && (!hasNextPackage() || nextPackage.equals(other.nextPackage));
     }
 
@@ -537,6 +633,14 @@ public final class ActivityCookieSettle {
         output.writeUInt32NoTag(excellentNum);
       }
       if ((bitField0_ & 0x00000080) != 0) {
+        output.writeRawByte((byte) 64);
+        output.writeUInt32NoTag(missNum);
+      }
+      if ((bitField0_ & 0x00000100) != 0) {
+        output.writeRawByte((byte) 72);
+        output.writeUInt32NoTag(good);
+      }
+      if ((bitField0_ & 0x00000200) != 0) {
         output.writeRawLittleEndian16((short) 32762);
         output.writeBytesNoTag(nextPackage);
       }
@@ -567,6 +671,12 @@ public final class ActivityCookieSettle {
         size += 1 + ProtoSink.computeUInt32SizeNoTag(excellentNum);
       }
       if ((bitField0_ & 0x00000080) != 0) {
+        size += 1 + ProtoSink.computeUInt32SizeNoTag(missNum);
+      }
+      if ((bitField0_ & 0x00000100) != 0) {
+        size += 1 + ProtoSink.computeUInt32SizeNoTag(good);
+      }
+      if ((bitField0_ & 0x00000200) != 0) {
         size += 2 + ProtoSink.computeBytesSizeNoTag(nextPackage);
       }
       return size;
@@ -638,6 +748,24 @@ public final class ActivityCookieSettle {
             excellentNum = input.readUInt32();
             bitField0_ |= 0x00000040;
             tag = input.readTag();
+            if (tag != 64) {
+              break;
+            }
+          }
+          case 64: {
+            // missNum
+            missNum = input.readUInt32();
+            bitField0_ |= 0x00000080;
+            tag = input.readTag();
+            if (tag != 72) {
+              break;
+            }
+          }
+          case 72: {
+            // good
+            good = input.readUInt32();
+            bitField0_ |= 0x00000100;
+            tag = input.readTag();
             if (tag != 16378) {
               break;
             }
@@ -645,7 +773,7 @@ public final class ActivityCookieSettle {
           case 16378: {
             // nextPackage
             input.readBytes(nextPackage);
-            bitField0_ |= 0x00000080;
+            bitField0_ |= 0x00000200;
             tag = input.readTag();
             if (tag != 0) {
               break;
@@ -690,6 +818,12 @@ public final class ActivityCookieSettle {
         output.writeUInt32(FieldNames.excellentNum, excellentNum);
       }
       if ((bitField0_ & 0x00000080) != 0) {
+        output.writeUInt32(FieldNames.missNum, missNum);
+      }
+      if ((bitField0_ & 0x00000100) != 0) {
+        output.writeUInt32(FieldNames.good, good);
+      }
+      if ((bitField0_ & 0x00000200) != 0) {
         output.writeBytes(FieldNames.nextPackage, nextPackage);
       }
       output.endObject();
@@ -779,11 +913,33 @@ public final class ActivityCookieSettle {
             }
             break;
           }
+          case -1560890166: {
+            if (input.isAtField(FieldNames.missNum)) {
+              if (!input.trySkipNullValue()) {
+                missNum = input.readUInt32();
+                bitField0_ |= 0x00000080;
+              }
+            } else {
+              input.skipUnknownField();
+            }
+            break;
+          }
+          case 2225373: {
+            if (input.isAtField(FieldNames.good)) {
+              if (!input.trySkipNullValue()) {
+                good = input.readUInt32();
+                bitField0_ |= 0x00000100;
+              }
+            } else {
+              input.skipUnknownField();
+            }
+            break;
+          }
           case -2082324045: {
             if (input.isAtField(FieldNames.nextPackage)) {
               if (!input.trySkipNullValue()) {
                 input.readBytes(nextPackage);
-                bitField0_ |= 0x00000080;
+                bitField0_ |= 0x00000200;
               }
             } else {
               input.skipUnknownField();
@@ -856,6 +1012,10 @@ public final class ActivityCookieSettle {
       static final FieldName perfectNum = FieldName.forField("PerfectNum");
 
       static final FieldName excellentNum = FieldName.forField("ExcellentNum");
+
+      static final FieldName missNum = FieldName.forField("MissNum");
+
+      static final FieldName good = FieldName.forField("Good");
 
       static final FieldName nextPackage = FieldName.forField("NextPackage");
     }

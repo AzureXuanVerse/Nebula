@@ -11,14 +11,19 @@ import us.hebi.quickbuf.ProtoMessage;
 import us.hebi.quickbuf.ProtoSink;
 import us.hebi.quickbuf.ProtoSource;
 import us.hebi.quickbuf.RepeatedByte;
-import us.hebi.quickbuf.Utf8String;
+import us.hebi.quickbuf.RepeatedMessage;
 
-public final class PlayerNameEdit {
+public final class DiscAllLimitBreak {
   /**
-   * Protobuf type {@code PlayerNameEditReq}
+   * Protobuf type {@code DiscAllLimitBreakResp}
    */
-  public static final class PlayerNameEditReq extends ProtoMessage<PlayerNameEditReq> implements Cloneable {
+  public static final class DiscAllLimitBreakResp extends ProtoMessage<DiscAllLimitBreakResp> implements Cloneable {
     private static final long serialVersionUID = 0L;
+
+    /**
+     * <code>optional .ChangeInfo Change = 2;</code>
+     */
+    private final Public.ChangeInfo change = Public.ChangeInfo.newInstance();
 
     /**
      * <code>optional bytes NextPackage = 2047;</code>
@@ -26,18 +31,75 @@ public final class PlayerNameEdit {
     private final RepeatedByte nextPackage = RepeatedByte.newEmptyInstance();
 
     /**
-     * <code>optional string Name = 1;</code>
+     * <code>repeated .DiscLimitBreakChange LimitBreaks = 1;</code>
      */
-    private final Utf8String name = Utf8String.newEmptyInstance();
+    private final RepeatedMessage<DiscLimitBreakChange> limitBreaks = RepeatedMessage.newEmptyInstance(DiscLimitBreakChange.getFactory());
 
-    private PlayerNameEditReq() {
+    private DiscAllLimitBreakResp() {
     }
 
     /**
-     * @return a new empty instance of {@code PlayerNameEditReq}
+     * @return a new empty instance of {@code DiscAllLimitBreakResp}
      */
-    public static PlayerNameEditReq newInstance() {
-      return new PlayerNameEditReq();
+    public static DiscAllLimitBreakResp newInstance() {
+      return new DiscAllLimitBreakResp();
+    }
+
+    /**
+     * <code>optional .ChangeInfo Change = 2;</code>
+     * @return whether the change field is set
+     */
+    public boolean hasChange() {
+      return (bitField0_ & 0x00000001) != 0;
+    }
+
+    /**
+     * <code>optional .ChangeInfo Change = 2;</code>
+     * @return this
+     */
+    public DiscAllLimitBreakResp clearChange() {
+      bitField0_ &= ~0x00000001;
+      change.clear();
+      return this;
+    }
+
+    /**
+     * <code>optional .ChangeInfo Change = 2;</code>
+     *
+     * This method returns the internal storage object without modifying any has state.
+     * The returned object should not be modified and be treated as read-only.
+     *
+     * Use {@link #getMutableChange()} if you want to modify it.
+     *
+     * @return internal storage object for reading
+     */
+    public Public.ChangeInfo getChange() {
+      return change;
+    }
+
+    /**
+     * <code>optional .ChangeInfo Change = 2;</code>
+     *
+     * This method returns the internal storage object and sets the corresponding
+     * has state. The returned object will become part of this message and its
+     * contents may be modified as long as the has state is not cleared.
+     *
+     * @return internal storage object for modifications
+     */
+    public Public.ChangeInfo getMutableChange() {
+      bitField0_ |= 0x00000001;
+      return change;
+    }
+
+    /**
+     * <code>optional .ChangeInfo Change = 2;</code>
+     * @param value the change to set
+     * @return this
+     */
+    public DiscAllLimitBreakResp setChange(final Public.ChangeInfo value) {
+      bitField0_ |= 0x00000001;
+      change.copyFrom(value);
+      return this;
     }
 
     /**
@@ -45,15 +107,15 @@ public final class PlayerNameEdit {
      * @return whether the nextPackage field is set
      */
     public boolean hasNextPackage() {
-      return (bitField0_ & 0x00000001) != 0;
+      return (bitField0_ & 0x00000002) != 0;
     }
 
     /**
      * <code>optional bytes NextPackage = 2047;</code>
      * @return this
      */
-    public PlayerNameEditReq clearNextPackage() {
-      bitField0_ &= ~0x00000001;
+    public DiscAllLimitBreakResp clearNextPackage() {
+      bitField0_ &= ~0x00000002;
       nextPackage.clear();
       return this;
     }
@@ -82,7 +144,7 @@ public final class PlayerNameEdit {
      * @return internal storage object for modifications
      */
     public RepeatedByte getMutableNextPackage() {
-      bitField0_ |= 0x00000001;
+      bitField0_ |= 0x00000002;
       return nextPackage;
     }
 
@@ -91,8 +153,8 @@ public final class PlayerNameEdit {
      * @param value the nextPackage to add
      * @return this
      */
-    public PlayerNameEditReq addNextPackage(final byte value) {
-      bitField0_ |= 0x00000001;
+    public DiscAllLimitBreakResp addNextPackage(final byte value) {
+      bitField0_ |= 0x00000002;
       nextPackage.add(value);
       return this;
     }
@@ -102,8 +164,8 @@ public final class PlayerNameEdit {
      * @param values the nextPackage to add
      * @return this
      */
-    public PlayerNameEditReq addAllNextPackage(final byte... values) {
-      bitField0_ |= 0x00000001;
+    public DiscAllLimitBreakResp addAllNextPackage(final byte... values) {
+      bitField0_ |= 0x00000002;
       nextPackage.addAll(values);
       return this;
     }
@@ -113,124 +175,133 @@ public final class PlayerNameEdit {
      * @param values the nextPackage to set
      * @return this
      */
-    public PlayerNameEditReq setNextPackage(final byte... values) {
-      bitField0_ |= 0x00000001;
+    public DiscAllLimitBreakResp setNextPackage(final byte... values) {
+      bitField0_ |= 0x00000002;
       nextPackage.copyFrom(values);
       return this;
     }
 
     /**
-     * <code>optional string Name = 1;</code>
-     * @return whether the name field is set
+     * <code>repeated .DiscLimitBreakChange LimitBreaks = 1;</code>
+     * @return whether the limitBreaks field is set
      */
-    public boolean hasName() {
-      return (bitField0_ & 0x00000002) != 0;
+    public boolean hasLimitBreaks() {
+      return (bitField0_ & 0x00000004) != 0;
     }
 
     /**
-     * <code>optional string Name = 1;</code>
+     * <code>repeated .DiscLimitBreakChange LimitBreaks = 1;</code>
      * @return this
      */
-    public PlayerNameEditReq clearName() {
-      bitField0_ &= ~0x00000002;
-      name.clear();
+    public DiscAllLimitBreakResp clearLimitBreaks() {
+      bitField0_ &= ~0x00000004;
+      limitBreaks.clear();
       return this;
     }
 
     /**
-     * <code>optional string Name = 1;</code>
-     * @return the name
+     * <code>repeated .DiscLimitBreakChange LimitBreaks = 1;</code>
+     *
+     * This method returns the internal storage object without modifying any has state.
+     * The returned object should not be modified and be treated as read-only.
+     *
+     * Use {@link #getMutableLimitBreaks()} if you want to modify it.
+     *
+     * @return internal storage object for reading
      */
-    public String getName() {
-      return name.getString();
+    public RepeatedMessage<DiscLimitBreakChange> getLimitBreaks() {
+      return limitBreaks;
     }
 
     /**
-     * <code>optional string Name = 1;</code>
-     * @return internal {@code Utf8String} representation of name for reading
+     * <code>repeated .DiscLimitBreakChange LimitBreaks = 1;</code>
+     *
+     * This method returns the internal storage object and sets the corresponding
+     * has state. The returned object will become part of this message and its
+     * contents may be modified as long as the has state is not cleared.
+     *
+     * @return internal storage object for modifications
      */
-    public Utf8String getNameBytes() {
-      return this.name;
+    public RepeatedMessage<DiscLimitBreakChange> getMutableLimitBreaks() {
+      bitField0_ |= 0x00000004;
+      return limitBreaks;
     }
 
     /**
-     * <code>optional string Name = 1;</code>
-     * @return internal {@code Utf8String} representation of name for modifications
-     */
-    public Utf8String getMutableNameBytes() {
-      bitField0_ |= 0x00000002;
-      return this.name;
-    }
-
-    /**
-     * <code>optional string Name = 1;</code>
-     * @param value the name to set
+     * <code>repeated .DiscLimitBreakChange LimitBreaks = 1;</code>
+     * @param value the limitBreaks to add
      * @return this
      */
-    public PlayerNameEditReq setName(final CharSequence value) {
-      bitField0_ |= 0x00000002;
-      name.copyFrom(value);
+    public DiscAllLimitBreakResp addLimitBreaks(final DiscLimitBreakChange value) {
+      bitField0_ |= 0x00000004;
+      limitBreaks.add(value);
       return this;
     }
 
     /**
-     * <code>optional string Name = 1;</code>
-     * @param value the name to set
+     * <code>repeated .DiscLimitBreakChange LimitBreaks = 1;</code>
+     * @param values the limitBreaks to add
      * @return this
      */
-    public PlayerNameEditReq setName(final Utf8String value) {
-      bitField0_ |= 0x00000002;
-      name.copyFrom(value);
+    public DiscAllLimitBreakResp addAllLimitBreaks(final DiscLimitBreakChange... values) {
+      bitField0_ |= 0x00000004;
+      limitBreaks.addAll(values);
       return this;
     }
 
     @Override
-    public PlayerNameEditReq copyFrom(final PlayerNameEditReq other) {
+    public DiscAllLimitBreakResp copyFrom(final DiscAllLimitBreakResp other) {
       cachedSize = other.cachedSize;
       if ((bitField0_ | other.bitField0_) != 0) {
         bitField0_ = other.bitField0_;
+        change.copyFrom(other.change);
         nextPackage.copyFrom(other.nextPackage);
-        name.copyFrom(other.name);
+        limitBreaks.copyFrom(other.limitBreaks);
       }
       return this;
     }
 
     @Override
-    public PlayerNameEditReq mergeFrom(final PlayerNameEditReq other) {
+    public DiscAllLimitBreakResp mergeFrom(final DiscAllLimitBreakResp other) {
       if (other.isEmpty()) {
         return this;
       }
       cachedSize = -1;
+      if (other.hasChange()) {
+        getMutableChange().mergeFrom(other.change);
+      }
       if (other.hasNextPackage()) {
         getMutableNextPackage().copyFrom(other.nextPackage);
       }
-      if (other.hasName()) {
-        getMutableNameBytes().copyFrom(other.name);
+      if (other.hasLimitBreaks()) {
+        getMutableLimitBreaks().addAll(other.limitBreaks);
       }
       return this;
     }
 
     @Override
-    public PlayerNameEditReq clear() {
+    public DiscAllLimitBreakResp clear() {
       if (isEmpty()) {
         return this;
       }
       cachedSize = -1;
       bitField0_ = 0;
+      change.clear();
       nextPackage.clear();
-      name.clear();
+      limitBreaks.clear();
       return this;
     }
 
     @Override
-    public PlayerNameEditReq clearQuick() {
+    public DiscAllLimitBreakResp clearQuick() {
       if (isEmpty()) {
         return this;
       }
       cachedSize = -1;
       bitField0_ = 0;
+      change.clearQuick();
       nextPackage.clear();
-      name.clear();
+      limitBreaks.clearQuick();
       return this;
     }
 
@@ -239,24 +310,31 @@ public final class PlayerNameEdit {
       if (o == this) {
         return true;
       }
-      if (!(o instanceof PlayerNameEditReq)) {
+      if (!(o instanceof DiscAllLimitBreakResp)) {
         return false;
       }
-      PlayerNameEditReq other = (PlayerNameEditReq) o;
+      DiscAllLimitBreakResp other = (DiscAllLimitBreakResp) o;
       return bitField0_ == other.bitField0_
+        && (!hasChange() || change.equals(other.change))
         && (!hasNextPackage() || nextPackage.equals(other.nextPackage))
-        && (!hasName() || name.equals(other.name));
+        && (!hasLimitBreaks() || limitBreaks.equals(other.limitBreaks));
     }
 
     @Override
     public void writeTo(final ProtoSink output) throws IOException {
       if ((bitField0_ & 0x00000001) != 0) {
+        output.writeRawByte((byte) 18);
+        output.writeMessageNoTag(change);
+      }
+      if ((bitField0_ & 0x00000002) != 0) {
         output.writeRawLittleEndian16((short) 32762);
         output.writeBytesNoTag(nextPackage);
       }
-      if ((bitField0_ & 0x00000002) != 0) {
-        output.writeRawByte((byte) 10);
-        output.writeStringNoTag(name);
+      if ((bitField0_ & 0x00000004) != 0) {
+        for (int i = 0; i < limitBreaks.length(); i++) {
+          output.writeRawByte((byte) 10);
+          output.writeMessageNoTag(limitBreaks.get(i));
+        }
       }
     }
 
@@ -264,35 +342,46 @@ public final class PlayerNameEdit {
     protected int computeSerializedSize() {
       int size = 0;
       if ((bitField0_ & 0x00000001) != 0) {
-        size += 2 + ProtoSink.computeBytesSizeNoTag(nextPackage);
+        size += 1 + ProtoSink.computeMessageSizeNoTag(change);
       }
       if ((bitField0_ & 0x00000002) != 0) {
-        size += 1 + ProtoSink.computeStringSizeNoTag(name);
+        size += 2 + ProtoSink.computeBytesSizeNoTag(nextPackage);
+      }
+      if ((bitField0_ & 0x00000004) != 0) {
+        size += (1 * limitBreaks.length()) + ProtoSink.computeRepeatedMessageSizeNoTag(limitBreaks);
       }
       return size;
     }
 
     @Override
     @SuppressWarnings("fallthrough")
-    public PlayerNameEditReq mergeFrom(final ProtoSource input) throws IOException {
+    public DiscAllLimitBreakResp mergeFrom(final ProtoSource input) throws IOException {
       // Enabled Fall-Through Optimization (QuickBuffers)
       int tag = input.readTag();
       while (true) {
         switch (tag) {
+          case 18: {
+            // change
+            input.readMessage(change);
+            bitField0_ |= 0x00000001;
+            tag = input.readTag();
+            if (tag != 16378) {
+              break;
+            }
+          }
           case 16378: {
             // nextPackage
             input.readBytes(nextPackage);
-            bitField0_ |= 0x00000001;
+            bitField0_ |= 0x00000002;
             tag = input.readTag();
             if (tag != 10) {
               break;
             }
           }
           case 10: {
-            // name
-            input.readString(name);
-            bitField0_ |= 0x00000002;
-            tag = input.readTag();
+            // limitBreaks
+            tag = input.readRepeatedMessage(limitBreaks, tag);
+            bitField0_ |= 0x00000004;
             if (tag != 0) {
               break;
             }
@@ -315,25 +404,28 @@ public final class PlayerNameEdit {
     public void writeTo(final JsonSink output) throws IOException {
       output.beginObject();
       if ((bitField0_ & 0x00000001) != 0) {
-        output.writeBytes(FieldNames.nextPackage, nextPackage);
+        output.writeMessage(FieldNames.change, change);
       }
       if ((bitField0_ & 0x00000002) != 0) {
-        output.writeString(FieldNames.name, name);
+        output.writeBytes(FieldNames.nextPackage, nextPackage);
+      }
+      if ((bitField0_ & 0x00000004) != 0) {
+        output.writeRepeatedMessage(FieldNames.limitBreaks, limitBreaks);
       }
       output.endObject();
     }
 
     @Override
-    public PlayerNameEditReq mergeFrom(final JsonSource input) throws IOException {
+    public DiscAllLimitBreakResp mergeFrom(final JsonSource input) throws IOException {
       if (!input.beginObject()) {
         return this;
       }
       while (!input.isAtEnd()) {
         switch (input.readFieldHash()) {
-          case -2082324045: {
-            if (input.isAtField(FieldNames.nextPackage)) {
+          case 2017198032: {
+            if (input.isAtField(FieldNames.change)) {
               if (!input.trySkipNullValue()) {
-                input.readBytes(nextPackage);
+                input.readMessage(change);
                 bitField0_ |= 0x00000001;
               }
             } else {
@@ -341,11 +433,22 @@ public final class PlayerNameEdit {
             }
             break;
           }
-          case 2420395: {
-            if (input.isAtField(FieldNames.name)) {
+          case -2082324045: {
+            if (input.isAtField(FieldNames.nextPackage)) {
               if (!input.trySkipNullValue()) {
-                input.readString(name);
+                input.readBytes(nextPackage);
                 bitField0_ |= 0x00000002;
+              }
+            } else {
+              input.skipUnknownField();
+            }
+            break;
+          }
+          case -1846825265: {
+            if (input.isAtField(FieldNames.limitBreaks)) {
+              if (!input.trySkipNullValue()) {
+                input.readRepeatedMessage(limitBreaks);
+                bitField0_ |= 0x00000004;
               }
             } else {
               input.skipUnknownField();
@@ -363,8 +466,8 @@ public final class PlayerNameEdit {
     }
 
     @Override
-    public PlayerNameEditReq clone() {
-      return new PlayerNameEditReq().copyFrom(this);
+    public DiscAllLimitBreakResp clone() {
+      return new DiscAllLimitBreakResp().copyFrom(this);
     }
 
     @Override
@@ -372,32 +475,32 @@ public final class PlayerNameEdit {
       return ((bitField0_) == 0);
     }
 
-    public static PlayerNameEditReq parseFrom(final byte[] data) throws
+    public static DiscAllLimitBreakResp parseFrom(final byte[] data) throws
         InvalidProtocolBufferException {
-      return ProtoMessage.mergeFrom(new PlayerNameEditReq(), data).checkInitialized();
+      return ProtoMessage.mergeFrom(new DiscAllLimitBreakResp(), data).checkInitialized();
     }
 
-    public static PlayerNameEditReq parseFrom(final ProtoSource input) throws IOException {
-      return ProtoMessage.mergeFrom(new PlayerNameEditReq(), input).checkInitialized();
+    public static DiscAllLimitBreakResp parseFrom(final ProtoSource input) throws IOException {
+      return ProtoMessage.mergeFrom(new DiscAllLimitBreakResp(), input).checkInitialized();
     }
 
-    public static PlayerNameEditReq parseFrom(final JsonSource input) throws IOException {
-      return ProtoMessage.mergeFrom(new PlayerNameEditReq(), input).checkInitialized();
+    public static DiscAllLimitBreakResp parseFrom(final JsonSource input) throws IOException {
+      return ProtoMessage.mergeFrom(new DiscAllLimitBreakResp(), input).checkInitialized();
     }
 
     /**
-     * @return factory for creating PlayerNameEditReq messages
+     * @return factory for creating DiscAllLimitBreakResp messages
      */
-    public static MessageFactory<PlayerNameEditReq> getFactory() {
-      return PlayerNameEditReqFactory.INSTANCE;
+    public static MessageFactory<DiscAllLimitBreakResp> getFactory() {
+      return DiscAllLimitBreakRespFactory.INSTANCE;
     }
 
-    private enum PlayerNameEditReqFactory implements MessageFactory<PlayerNameEditReq> {
+    private enum DiscAllLimitBreakRespFactory implements MessageFactory<DiscAllLimitBreakResp> {
       INSTANCE;
 
       @Override
-      public PlayerNameEditReq create() {
-        return PlayerNameEditReq.newInstance();
+      public DiscAllLimitBreakResp create() {
+        return DiscAllLimitBreakResp.newInstance();
       }
     }
 
@@ -405,114 +508,116 @@ public final class PlayerNameEdit {
      * Contains name constants used for serializing JSON
      */
     static class FieldNames {
+      static final FieldName change = FieldName.forField("Change");
+
       static final FieldName nextPackage = FieldName.forField("NextPackage");
 
-      static final FieldName name = FieldName.forField("Name");
+      static final FieldName limitBreaks = FieldName.forField("LimitBreaks");
     }
   }
 
   /**
-   * Protobuf type {@code PlayerNameEditResp}
+   * Protobuf type {@code DiscLimitBreakChange}
    */
-  public static final class PlayerNameEditResp extends ProtoMessage<PlayerNameEditResp> implements Cloneable {
+  public static final class DiscLimitBreakChange extends ProtoMessage<DiscLimitBreakChange> implements Cloneable {
     private static final long serialVersionUID = 0L;
 
     /**
-     * <code>optional int64 ResetTime = 15;</code>
+     * <code>optional uint32 Id = 1;</code>
      */
-    private long resetTime;
+    private int id;
 
     /**
-     * <code>optional uint32 Hashtag = 1;</code>
+     * <code>optional uint32 Star = 2;</code>
      */
-    private int hashtag;
+    private int star;
 
     /**
      * <code>optional bytes NextPackage = 2047;</code>
      */
     private final RepeatedByte nextPackage = RepeatedByte.newEmptyInstance();
 
-    private PlayerNameEditResp() {
+    private DiscLimitBreakChange() {
     }
 
     /**
-     * @return a new empty instance of {@code PlayerNameEditResp}
+     * @return a new empty instance of {@code DiscLimitBreakChange}
      */
-    public static PlayerNameEditResp newInstance() {
-      return new PlayerNameEditResp();
+    public static DiscLimitBreakChange newInstance() {
+      return new DiscLimitBreakChange();
     }
 
     /**
-     * <code>optional int64 ResetTime = 15;</code>
-     * @return whether the resetTime field is set
+     * <code>optional uint32 Id = 1;</code>
+     * @return whether the id field is set
      */
-    public boolean hasResetTime() {
+    public boolean hasId() {
       return (bitField0_ & 0x00000001) != 0;
     }
 
     /**
-     * <code>optional int64 ResetTime = 15;</code>
+     * <code>optional uint32 Id = 1;</code>
      * @return this
      */
-    public PlayerNameEditResp clearResetTime() {
+    public DiscLimitBreakChange clearId() {
       bitField0_ &= ~0x00000001;
-      resetTime = 0L;
+      id = 0;
       return this;
     }
 
     /**
-     * <code>optional int64 ResetTime = 15;</code>
-     * @return the resetTime
+     * <code>optional uint32 Id = 1;</code>
+     * @return the id
      */
-    public long getResetTime() {
-      return resetTime;
+    public int getId() {
+      return id;
     }
 
     /**
-     * <code>optional int64 ResetTime = 15;</code>
-     * @param value the resetTime to set
+     * <code>optional uint32 Id = 1;</code>
+     * @param value the id to set
      * @return this
      */
-    public PlayerNameEditResp setResetTime(final long value) {
+    public DiscLimitBreakChange setId(final int value) {
       bitField0_ |= 0x00000001;
-      resetTime = value;
+      id = value;
       return this;
     }
 
     /**
-     * <code>optional uint32 Hashtag = 1;</code>
-     * @return whether the hashtag field is set
+     * <code>optional uint32 Star = 2;</code>
+     * @return whether the star field is set
      */
-    public boolean hasHashtag() {
+    public boolean hasStar() {
       return (bitField0_ & 0x00000002) != 0;
     }
 
     /**
-     * <code>optional uint32 Hashtag = 1;</code>
+     * <code>optional uint32 Star = 2;</code>
      * @return this
      */
-    public PlayerNameEditResp clearHashtag() {
+    public DiscLimitBreakChange clearStar() {
       bitField0_ &= ~0x00000002;
-      hashtag = 0;
+      star = 0;
       return this;
     }
 
     /**
-     * <code>optional uint32 Hashtag = 1;</code>
-     * @return the hashtag
+     * <code>optional uint32 Star = 2;</code>
+     * @return the star
      */
-    public int getHashtag() {
-      return hashtag;
+    public int getStar() {
+      return star;
     }
 
     /**
-     * <code>optional uint32 Hashtag = 1;</code>
-     * @param value the hashtag to set
+     * <code>optional uint32 Star = 2;</code>
+     * @param value the star to set
      * @return this
      */
-    public PlayerNameEditResp setHashtag(final int value) {
+    public DiscLimitBreakChange setStar(final int value) {
       bitField0_ |= 0x00000002;
-      hashtag = value;
+      star = value;
       return this;
     }
 
@@ -528,7 +633,7 @@ public final class PlayerNameEdit {
      * <code>optional bytes NextPackage = 2047;</code>
      * @return this
      */
-    public PlayerNameEditResp clearNextPackage() {
+    public DiscLimitBreakChange clearNextPackage() {
       bitField0_ &= ~0x00000004;
       nextPackage.clear();
       return this;
@@ -567,7 +672,7 @@ public final class PlayerNameEdit {
      * @param value the nextPackage to add
      * @return this
      */
-    public PlayerNameEditResp addNextPackage(final byte value) {
+    public DiscLimitBreakChange addNextPackage(final byte value) {
       bitField0_ |= 0x00000004;
       nextPackage.add(value);
       return this;
@@ -578,7 +683,7 @@ public final class PlayerNameEdit {
      * @param values the nextPackage to add
      * @return this
      */
-    public PlayerNameEditResp addAllNextPackage(final byte... values) {
+    public DiscLimitBreakChange addAllNextPackage(final byte... values) {
       bitField0_ |= 0x00000004;
       nextPackage.addAll(values);
       return this;
@@ -589,35 +694,35 @@ public final class PlayerNameEdit {
      * @param values the nextPackage to set
      * @return this
      */
-    public PlayerNameEditResp setNextPackage(final byte... values) {
+    public DiscLimitBreakChange setNextPackage(final byte... values) {
       bitField0_ |= 0x00000004;
       nextPackage.copyFrom(values);
       return this;
     }
 
     @Override
-    public PlayerNameEditResp copyFrom(final PlayerNameEditResp other) {
+    public DiscLimitBreakChange copyFrom(final DiscLimitBreakChange other) {
       cachedSize = other.cachedSize;
       if ((bitField0_ | other.bitField0_) != 0) {
         bitField0_ = other.bitField0_;
-        resetTime = other.resetTime;
-        hashtag = other.hashtag;
+        id = other.id;
+        star = other.star;
         nextPackage.copyFrom(other.nextPackage);
       }
       return this;
     }
 
     @Override
-    public PlayerNameEditResp mergeFrom(final PlayerNameEditResp other) {
+    public DiscLimitBreakChange mergeFrom(final DiscLimitBreakChange other) {
       if (other.isEmpty()) {
         return this;
       }
       cachedSize = -1;
-      if (other.hasResetTime()) {
-        setResetTime(other.resetTime);
+      if (other.hasId()) {
+        setId(other.id);
       }
-      if (other.hasHashtag()) {
-        setHashtag(other.hashtag);
+      if (other.hasStar()) {
+        setStar(other.star);
       }
       if (other.hasNextPackage()) {
         getMutableNextPackage().copyFrom(other.nextPackage);
@@ -626,20 +731,20 @@ public final class PlayerNameEdit {
     }
 
     @Override
-    public PlayerNameEditResp clear() {
+    public DiscLimitBreakChange clear() {
       if (isEmpty()) {
         return this;
       }
       cachedSize = -1;
       bitField0_ = 0;
-      resetTime = 0L;
-      hashtag = 0;
+      id = 0;
+      star = 0;
       nextPackage.clear();
       return this;
     }
 
     @Override
-    public PlayerNameEditResp clearQuick() {
+    public DiscLimitBreakChange clearQuick() {
       if (isEmpty()) {
         return this;
       }
@@ -654,25 +759,25 @@ public final class PlayerNameEdit {
       if (o == this) {
         return true;
       }
-      if (!(o instanceof PlayerNameEditResp)) {
+      if (!(o instanceof DiscLimitBreakChange)) {
         return false;
       }
-      PlayerNameEditResp other = (PlayerNameEditResp) o;
+      DiscLimitBreakChange other = (DiscLimitBreakChange) o;
       return bitField0_ == other.bitField0_
-        && (!hasResetTime() || resetTime == other.resetTime)
-        && (!hasHashtag() || hashtag == other.hashtag)
+        && (!hasId() || id == other.id)
+        && (!hasStar() || star == other.star)
         && (!hasNextPackage() || nextPackage.equals(other.nextPackage));
     }
 
     @Override
     public void writeTo(final ProtoSink output) throws IOException {
       if ((bitField0_ & 0x00000001) != 0) {
-        output.writeRawByte((byte) 120);
-        output.writeInt64NoTag(resetTime);
+        output.writeRawByte((byte) 8);
+        output.writeUInt32NoTag(id);
       }
       if ((bitField0_ & 0x00000002) != 0) {
-        output.writeRawByte((byte) 8);
-        output.writeUInt32NoTag(hashtag);
+        output.writeRawByte((byte) 16);
+        output.writeUInt32NoTag(star);
       }
       if ((bitField0_ & 0x00000004) != 0) {
         output.writeRawLittleEndian16((short) 32762);
@@ -684,10 +789,10 @@ public final class PlayerNameEdit {
     protected int computeSerializedSize() {
       int size = 0;
       if ((bitField0_ & 0x00000001) != 0) {
-        size += 1 + ProtoSink.computeInt64SizeNoTag(resetTime);
+        size += 1 + ProtoSink.computeUInt32SizeNoTag(id);
       }
       if ((bitField0_ & 0x00000002) != 0) {
-        size += 1 + ProtoSink.computeUInt32SizeNoTag(hashtag);
+        size += 1 + ProtoSink.computeUInt32SizeNoTag(star);
       }
       if ((bitField0_ & 0x00000004) != 0) {
         size += 2 + ProtoSink.computeBytesSizeNoTag(nextPackage);
@@ -697,23 +802,23 @@ public final class PlayerNameEdit {
 
     @Override
     @SuppressWarnings("fallthrough")
-    public PlayerNameEditResp mergeFrom(final ProtoSource input) throws IOException {
+    public DiscLimitBreakChange mergeFrom(final ProtoSource input) throws IOException {
       // Enabled Fall-Through Optimization (QuickBuffers)
       int tag = input.readTag();
       while (true) {
         switch (tag) {
-          case 120: {
-            // resetTime
-            resetTime = input.readInt64();
+          case 8: {
+            // id
+            id = input.readUInt32();
             bitField0_ |= 0x00000001;
             tag = input.readTag();
-            if (tag != 8) {
+            if (tag != 16) {
               break;
             }
           }
-          case 8: {
-            // hashtag
-            hashtag = input.readUInt32();
+          case 16: {
+            // star
+            star = input.readUInt32();
             bitField0_ |= 0x00000002;
             tag = input.readTag();
             if (tag != 16378) {
@@ -747,10 +852,10 @@ public final class PlayerNameEdit {
     public void writeTo(final JsonSink output) throws IOException {
       output.beginObject();
       if ((bitField0_ & 0x00000001) != 0) {
-        output.writeInt64(FieldNames.resetTime, resetTime);
+        output.writeUInt32(FieldNames.id, id);
       }
       if ((bitField0_ & 0x00000002) != 0) {
-        output.writeUInt32(FieldNames.hashtag, hashtag);
+        output.writeUInt32(FieldNames.star, star);
       }
       if ((bitField0_ & 0x00000004) != 0) {
         output.writeBytes(FieldNames.nextPackage, nextPackage);
@@ -759,16 +864,16 @@ public final class PlayerNameEdit {
     }
 
     @Override
-    public PlayerNameEditResp mergeFrom(final JsonSource input) throws IOException {
+    public DiscLimitBreakChange mergeFrom(final JsonSource input) throws IOException {
       if (!input.beginObject()) {
         return this;
       }
       while (!input.isAtEnd()) {
         switch (input.readFieldHash()) {
-          case -267205476: {
-            if (input.isAtField(FieldNames.resetTime)) {
+          case 2363: {
+            if (input.isAtField(FieldNames.id)) {
               if (!input.trySkipNullValue()) {
-                resetTime = input.readInt64();
+                id = input.readUInt32();
                 bitField0_ |= 0x00000001;
               }
             } else {
@@ -776,10 +881,10 @@ public final class PlayerNameEdit {
             }
             break;
           }
-          case -1932766292: {
-            if (input.isAtField(FieldNames.hashtag)) {
+          case 2587250: {
+            if (input.isAtField(FieldNames.star)) {
               if (!input.trySkipNullValue()) {
-                hashtag = input.readUInt32();
+                star = input.readUInt32();
                 bitField0_ |= 0x00000002;
               }
             } else {
@@ -809,8 +914,8 @@ public final class PlayerNameEdit {
     }
 
     @Override
-    public PlayerNameEditResp clone() {
-      return new PlayerNameEditResp().copyFrom(this);
+    public DiscLimitBreakChange clone() {
+      return new DiscLimitBreakChange().copyFrom(this);
     }
 
     @Override
@@ -818,32 +923,32 @@ public final class PlayerNameEdit {
       return ((bitField0_) == 0);
     }
 
-    public static PlayerNameEditResp parseFrom(final byte[] data) throws
+    public static DiscLimitBreakChange parseFrom(final byte[] data) throws
         InvalidProtocolBufferException {
-      return ProtoMessage.mergeFrom(new PlayerNameEditResp(), data).checkInitialized();
+      return ProtoMessage.mergeFrom(new DiscLimitBreakChange(), data).checkInitialized();
     }
 
-    public static PlayerNameEditResp parseFrom(final ProtoSource input) throws IOException {
-      return ProtoMessage.mergeFrom(new PlayerNameEditResp(), input).checkInitialized();
+    public static DiscLimitBreakChange parseFrom(final ProtoSource input) throws IOException {
+      return ProtoMessage.mergeFrom(new DiscLimitBreakChange(), input).checkInitialized();
     }
 
-    public static PlayerNameEditResp parseFrom(final JsonSource input) throws IOException {
-      return ProtoMessage.mergeFrom(new PlayerNameEditResp(), input).checkInitialized();
+    public static DiscLimitBreakChange parseFrom(final JsonSource input) throws IOException {
+      return ProtoMessage.mergeFrom(new DiscLimitBreakChange(), input).checkInitialized();
     }
 
     /**
-     * @return factory for creating PlayerNameEditResp messages
+     * @return factory for creating DiscLimitBreakChange messages
      */
-    public static MessageFactory<PlayerNameEditResp> getFactory() {
-      return PlayerNameEditRespFactory.INSTANCE;
+    public static MessageFactory<DiscLimitBreakChange> getFactory() {
+      return DiscLimitBreakChangeFactory.INSTANCE;
     }
 
-    private enum PlayerNameEditRespFactory implements MessageFactory<PlayerNameEditResp> {
+    private enum DiscLimitBreakChangeFactory implements MessageFactory<DiscLimitBreakChange> {
       INSTANCE;
 
       @Override
-      public PlayerNameEditResp create() {
-        return PlayerNameEditResp.newInstance();
+      public DiscLimitBreakChange create() {
+        return DiscLimitBreakChange.newInstance();
       }
     }
 
@@ -851,9 +956,9 @@ public final class PlayerNameEdit {
      * Contains name constants used for serializing JSON
      */
     static class FieldNames {
-      static final FieldName resetTime = FieldName.forField("ResetTime");
+      static final FieldName id = FieldName.forField("Id");
 
-      static final FieldName hashtag = FieldName.forField("Hashtag");
+      static final FieldName star = FieldName.forField("Star");
 
       static final FieldName nextPackage = FieldName.forField("NextPackage");
     }

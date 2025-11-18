@@ -19828,6 +19828,11 @@ public final class Public {
     private int infinityTower;
 
     /**
+     * <code>optional uint32 VampireSurvivorId = 11;</code>
+     */
+    private int vampireSurvivorId;
+
+    /**
      * <code>optional bool Friend = 3;</code>
      */
     private boolean friend;
@@ -19965,11 +19970,48 @@ public final class Public {
     }
 
     /**
+     * <code>optional uint32 VampireSurvivorId = 11;</code>
+     * @return whether the vampireSurvivorId field is set
+     */
+    public boolean hasVampireSurvivorId() {
+      return (bitField0_ & 0x00000002) != 0;
+    }
+
+    /**
+     * <code>optional uint32 VampireSurvivorId = 11;</code>
+     * @return this
+     */
+    public StateInfo clearVampireSurvivorId() {
+      bitField0_ &= ~0x00000002;
+      vampireSurvivorId = 0;
+      return this;
+    }
+
+    /**
+     * <code>optional uint32 VampireSurvivorId = 11;</code>
+     * @return the vampireSurvivorId
+     */
+    public int getVampireSurvivorId() {
+      return vampireSurvivorId;
+    }
+
+    /**
+     * <code>optional uint32 VampireSurvivorId = 11;</code>
+     * @param value the vampireSurvivorId to set
+     * @return this
+     */
+    public StateInfo setVampireSurvivorId(final int value) {
+      bitField0_ |= 0x00000002;
+      vampireSurvivorId = value;
+      return this;
+    }
+
+    /**
      * <code>optional bool Friend = 3;</code>
      * @return whether the friend field is set
      */
     public boolean hasFriend() {
-      return (bitField0_ & 0x00000002) != 0;
+      return (bitField0_ & 0x00000004) != 0;
     }
 
     /**
@@ -19977,7 +20019,7 @@ public final class Public {
      * @return this
      */
     public StateInfo clearFriend() {
-      bitField0_ &= ~0x00000002;
+      bitField0_ &= ~0x00000004;
       friend = false;
       return this;
     }
@@ -19996,7 +20038,7 @@ public final class Public {
      * @return this
      */
     public StateInfo setFriend(final boolean value) {
-      bitField0_ |= 0x00000002;
+      bitField0_ |= 0x00000004;
       friend = value;
       return this;
     }
@@ -20006,7 +20048,7 @@ public final class Public {
      * @return whether the npcAffinityReward field is set
      */
     public boolean hasNpcAffinityReward() {
-      return (bitField0_ & 0x00000004) != 0;
+      return (bitField0_ & 0x00000008) != 0;
     }
 
     /**
@@ -20014,7 +20056,7 @@ public final class Public {
      * @return this
      */
     public StateInfo clearNpcAffinityReward() {
-      bitField0_ &= ~0x00000004;
+      bitField0_ &= ~0x00000008;
       npcAffinityReward = false;
       return this;
     }
@@ -20033,7 +20075,7 @@ public final class Public {
      * @return this
      */
     public StateInfo setNpcAffinityReward(final boolean value) {
-      bitField0_ |= 0x00000004;
+      bitField0_ |= 0x00000008;
       npcAffinityReward = value;
       return this;
     }
@@ -20043,7 +20085,7 @@ public final class Public {
      * @return whether the storySet field is set
      */
     public boolean hasStorySet() {
-      return (bitField0_ & 0x00000008) != 0;
+      return (bitField0_ & 0x00000010) != 0;
     }
 
     /**
@@ -20051,7 +20093,7 @@ public final class Public {
      * @return this
      */
     public StateInfo clearStorySet() {
-      bitField0_ &= ~0x00000008;
+      bitField0_ &= ~0x00000010;
       storySet = false;
       return this;
     }
@@ -20070,7 +20112,7 @@ public final class Public {
      * @return this
      */
     public StateInfo setStorySet(final boolean value) {
-      bitField0_ |= 0x00000008;
+      bitField0_ |= 0x00000010;
       storySet = value;
       return this;
     }
@@ -20080,7 +20122,7 @@ public final class Public {
      * @return whether the mail field is set
      */
     public boolean hasMail() {
-      return (bitField0_ & 0x00000010) != 0;
+      return (bitField0_ & 0x00000020) != 0;
     }
 
     /**
@@ -20088,7 +20130,7 @@ public final class Public {
      * @return this
      */
     public StateInfo clearMail() {
-      bitField0_ &= ~0x00000010;
+      bitField0_ &= ~0x00000020;
       mail.clear();
       return this;
     }
@@ -20117,7 +20159,7 @@ public final class Public {
      * @return internal storage object for modifications
      */
     public MailState getMutableMail() {
-      bitField0_ |= 0x00000010;
+      bitField0_ |= 0x00000020;
       return mail;
     }
 
@@ -20127,7 +20169,7 @@ public final class Public {
      * @return this
      */
     public StateInfo setMail(final MailState value) {
-      bitField0_ |= 0x00000010;
+      bitField0_ |= 0x00000020;
       mail.copyFrom(value);
       return this;
     }
@@ -20137,7 +20179,7 @@ public final class Public {
      * @return whether the battlePass field is set
      */
     public boolean hasBattlePass() {
-      return (bitField0_ & 0x00000020) != 0;
+      return (bitField0_ & 0x00000040) != 0;
     }
 
     /**
@@ -20145,7 +20187,7 @@ public final class Public {
      * @return this
      */
     public StateInfo clearBattlePass() {
-      bitField0_ &= ~0x00000020;
+      bitField0_ &= ~0x00000040;
       battlePass.clear();
       return this;
     }
@@ -20174,7 +20216,7 @@ public final class Public {
      * @return internal storage object for modifications
      */
     public BattlePassState getMutableBattlePass() {
-      bitField0_ |= 0x00000020;
+      bitField0_ |= 0x00000040;
       return battlePass;
     }
 
@@ -20184,7 +20226,7 @@ public final class Public {
      * @return this
      */
     public StateInfo setBattlePass(final BattlePassState value) {
-      bitField0_ |= 0x00000020;
+      bitField0_ |= 0x00000040;
       battlePass.copyFrom(value);
       return this;
     }
@@ -20194,7 +20236,7 @@ public final class Public {
      * @return whether the worldClassReward field is set
      */
     public boolean hasWorldClassReward() {
-      return (bitField0_ & 0x00000040) != 0;
+      return (bitField0_ & 0x00000080) != 0;
     }
 
     /**
@@ -20202,7 +20244,7 @@ public final class Public {
      * @return this
      */
     public StateInfo clearWorldClassReward() {
-      bitField0_ &= ~0x00000040;
+      bitField0_ &= ~0x00000080;
       worldClassReward.clear();
       return this;
     }
@@ -20231,7 +20273,7 @@ public final class Public {
      * @return internal storage object for modifications
      */
     public WorldClassRewardState getMutableWorldClassReward() {
-      bitField0_ |= 0x00000040;
+      bitField0_ |= 0x00000080;
       return worldClassReward;
     }
 
@@ -20241,7 +20283,7 @@ public final class Public {
      * @return this
      */
     public StateInfo setWorldClassReward(final WorldClassRewardState value) {
-      bitField0_ |= 0x00000040;
+      bitField0_ |= 0x00000080;
       worldClassReward.copyFrom(value);
       return this;
     }
@@ -20251,7 +20293,7 @@ public final class Public {
      * @return whether the friendEnergy field is set
      */
     public boolean hasFriendEnergy() {
-      return (bitField0_ & 0x00000080) != 0;
+      return (bitField0_ & 0x00000100) != 0;
     }
 
     /**
@@ -20259,7 +20301,7 @@ public final class Public {
      * @return this
      */
     public StateInfo clearFriendEnergy() {
-      bitField0_ &= ~0x00000080;
+      bitField0_ &= ~0x00000100;
       friendEnergy.clear();
       return this;
     }
@@ -20288,7 +20330,7 @@ public final class Public {
      * @return internal storage object for modifications
      */
     public FriendEnergyState getMutableFriendEnergy() {
-      bitField0_ |= 0x00000080;
+      bitField0_ |= 0x00000100;
       return friendEnergy;
     }
 
@@ -20298,7 +20340,7 @@ public final class Public {
      * @return this
      */
     public StateInfo setFriendEnergy(final FriendEnergyState value) {
-      bitField0_ |= 0x00000080;
+      bitField0_ |= 0x00000100;
       friendEnergy.copyFrom(value);
       return this;
     }
@@ -20308,7 +20350,7 @@ public final class Public {
      * @return whether the mallPackage field is set
      */
     public boolean hasMallPackage() {
-      return (bitField0_ & 0x00000100) != 0;
+      return (bitField0_ & 0x00000200) != 0;
     }
 
     /**
@@ -20316,7 +20358,7 @@ public final class Public {
      * @return this
      */
     public StateInfo clearMallPackage() {
-      bitField0_ &= ~0x00000100;
+      bitField0_ &= ~0x00000200;
       mallPackage.clear();
       return this;
     }
@@ -20345,7 +20387,7 @@ public final class Public {
      * @return internal storage object for modifications
      */
     public MallPackageState getMutableMallPackage() {
-      bitField0_ |= 0x00000100;
+      bitField0_ |= 0x00000200;
       return mallPackage;
     }
 
@@ -20355,7 +20397,7 @@ public final class Public {
      * @return this
      */
     public StateInfo setMallPackage(final MallPackageState value) {
-      bitField0_ |= 0x00000100;
+      bitField0_ |= 0x00000200;
       mallPackage.copyFrom(value);
       return this;
     }
@@ -20365,7 +20407,7 @@ public final class Public {
      * @return whether the achievement field is set
      */
     public boolean hasAchievement() {
-      return (bitField0_ & 0x00000200) != 0;
+      return (bitField0_ & 0x00000400) != 0;
     }
 
     /**
@@ -20373,7 +20415,7 @@ public final class Public {
      * @return this
      */
     public StateInfo clearAchievement() {
-      bitField0_ &= ~0x00000200;
+      bitField0_ &= ~0x00000400;
       achievement.clear();
       return this;
     }
@@ -20402,7 +20444,7 @@ public final class Public {
      * @return internal storage object for modifications
      */
     public AchievementState getMutableAchievement() {
-      bitField0_ |= 0x00000200;
+      bitField0_ |= 0x00000400;
       return achievement;
     }
 
@@ -20412,7 +20454,7 @@ public final class Public {
      * @return this
      */
     public StateInfo setAchievement(final AchievementState value) {
-      bitField0_ |= 0x00000200;
+      bitField0_ |= 0x00000400;
       achievement.copyFrom(value);
       return this;
     }
@@ -20422,7 +20464,7 @@ public final class Public {
      * @return whether the travelerDuelQuest field is set
      */
     public boolean hasTravelerDuelQuest() {
-      return (bitField0_ & 0x00000400) != 0;
+      return (bitField0_ & 0x00000800) != 0;
     }
 
     /**
@@ -20430,7 +20472,7 @@ public final class Public {
      * @return this
      */
     public StateInfo clearTravelerDuelQuest() {
-      bitField0_ &= ~0x00000400;
+      bitField0_ &= ~0x00000800;
       travelerDuelQuest.clear();
       return this;
     }
@@ -20459,7 +20501,7 @@ public final class Public {
      * @return internal storage object for modifications
      */
     public QuestState getMutableTravelerDuelQuest() {
-      bitField0_ |= 0x00000400;
+      bitField0_ |= 0x00000800;
       return travelerDuelQuest;
     }
 
@@ -20469,7 +20511,7 @@ public final class Public {
      * @return this
      */
     public StateInfo setTravelerDuelQuest(final QuestState value) {
-      bitField0_ |= 0x00000400;
+      bitField0_ |= 0x00000800;
       travelerDuelQuest.copyFrom(value);
       return this;
     }
@@ -20479,7 +20521,7 @@ public final class Public {
      * @return whether the travelerDuelChallengeQuest field is set
      */
     public boolean hasTravelerDuelChallengeQuest() {
-      return (bitField0_ & 0x00000800) != 0;
+      return (bitField0_ & 0x00001000) != 0;
     }
 
     /**
@@ -20487,7 +20529,7 @@ public final class Public {
      * @return this
      */
     public StateInfo clearTravelerDuelChallengeQuest() {
-      bitField0_ &= ~0x00000800;
+      bitField0_ &= ~0x00001000;
       travelerDuelChallengeQuest.clear();
       return this;
     }
@@ -20516,7 +20558,7 @@ public final class Public {
      * @return internal storage object for modifications
      */
     public QuestState getMutableTravelerDuelChallengeQuest() {
-      bitField0_ |= 0x00000800;
+      bitField0_ |= 0x00001000;
       return travelerDuelChallengeQuest;
     }
 
@@ -20526,7 +20568,7 @@ public final class Public {
      * @return this
      */
     public StateInfo setTravelerDuelChallengeQuest(final QuestState value) {
-      bitField0_ |= 0x00000800;
+      bitField0_ |= 0x00001000;
       travelerDuelChallengeQuest.copyFrom(value);
       return this;
     }
@@ -20536,7 +20578,7 @@ public final class Public {
      * @return whether the starTower field is set
      */
     public boolean hasStarTower() {
-      return (bitField0_ & 0x00001000) != 0;
+      return (bitField0_ & 0x00002000) != 0;
     }
 
     /**
@@ -20544,7 +20586,7 @@ public final class Public {
      * @return this
      */
     public StateInfo clearStarTower() {
-      bitField0_ &= ~0x00001000;
+      bitField0_ &= ~0x00002000;
       starTower.clear();
       return this;
     }
@@ -20573,7 +20615,7 @@ public final class Public {
      * @return internal storage object for modifications
      */
     public StarTowerState getMutableStarTower() {
-      bitField0_ |= 0x00001000;
+      bitField0_ |= 0x00002000;
       return starTower;
     }
 
@@ -20583,7 +20625,7 @@ public final class Public {
      * @return this
      */
     public StateInfo setStarTower(final StarTowerState value) {
-      bitField0_ |= 0x00001000;
+      bitField0_ |= 0x00002000;
       starTower.copyFrom(value);
       return this;
     }
@@ -20593,7 +20635,7 @@ public final class Public {
      * @return whether the starTowerBook field is set
      */
     public boolean hasStarTowerBook() {
-      return (bitField0_ & 0x00002000) != 0;
+      return (bitField0_ & 0x00004000) != 0;
     }
 
     /**
@@ -20601,7 +20643,7 @@ public final class Public {
      * @return this
      */
     public StateInfo clearStarTowerBook() {
-      bitField0_ &= ~0x00002000;
+      bitField0_ &= ~0x00004000;
       starTowerBook.clear();
       return this;
     }
@@ -20630,7 +20672,7 @@ public final class Public {
      * @return internal storage object for modifications
      */
     public StarTowerBookState getMutableStarTowerBook() {
-      bitField0_ |= 0x00002000;
+      bitField0_ |= 0x00004000;
       return starTowerBook;
     }
 
@@ -20640,7 +20682,7 @@ public final class Public {
      * @return this
      */
     public StateInfo setStarTowerBook(final StarTowerBookState value) {
-      bitField0_ |= 0x00002000;
+      bitField0_ |= 0x00004000;
       starTowerBook.copyFrom(value);
       return this;
     }
@@ -20650,7 +20692,7 @@ public final class Public {
      * @return whether the scoreBoss field is set
      */
     public boolean hasScoreBoss() {
-      return (bitField0_ & 0x00004000) != 0;
+      return (bitField0_ & 0x00008000) != 0;
     }
 
     /**
@@ -20658,7 +20700,7 @@ public final class Public {
      * @return this
      */
     public StateInfo clearScoreBoss() {
-      bitField0_ &= ~0x00004000;
+      bitField0_ &= ~0x00008000;
       scoreBoss.clear();
       return this;
     }
@@ -20687,7 +20729,7 @@ public final class Public {
      * @return internal storage object for modifications
      */
     public ScoreBossState getMutableScoreBoss() {
-      bitField0_ |= 0x00004000;
+      bitField0_ |= 0x00008000;
       return scoreBoss;
     }
 
@@ -20697,7 +20739,7 @@ public final class Public {
      * @return this
      */
     public StateInfo setScoreBoss(final ScoreBossState value) {
-      bitField0_ |= 0x00004000;
+      bitField0_ |= 0x00008000;
       scoreBoss.copyFrom(value);
       return this;
     }
@@ -20707,7 +20749,7 @@ public final class Public {
      * @return whether the nextPackage field is set
      */
     public boolean hasNextPackage() {
-      return (bitField0_ & 0x00008000) != 0;
+      return (bitField0_ & 0x00010000) != 0;
     }
 
     /**
@@ -20715,7 +20757,7 @@ public final class Public {
      * @return this
      */
     public StateInfo clearNextPackage() {
-      bitField0_ &= ~0x00008000;
+      bitField0_ &= ~0x00010000;
       nextPackage.clear();
       return this;
     }
@@ -20744,7 +20786,7 @@ public final class Public {
      * @return internal storage object for modifications
      */
     public RepeatedByte getMutableNextPackage() {
-      bitField0_ |= 0x00008000;
+      bitField0_ |= 0x00010000;
       return nextPackage;
     }
 
@@ -20754,7 +20796,7 @@ public final class Public {
      * @return this
      */
     public StateInfo addNextPackage(final byte value) {
-      bitField0_ |= 0x00008000;
+      bitField0_ |= 0x00010000;
       nextPackage.add(value);
       return this;
     }
@@ -20765,7 +20807,7 @@ public final class Public {
      * @return this
      */
     public StateInfo addAllNextPackage(final byte... values) {
-      bitField0_ |= 0x00008000;
+      bitField0_ |= 0x00010000;
       nextPackage.addAll(values);
       return this;
     }
@@ -20776,7 +20818,7 @@ public final class Public {
      * @return this
      */
     public StateInfo setNextPackage(final byte... values) {
-      bitField0_ |= 0x00008000;
+      bitField0_ |= 0x00010000;
       nextPackage.copyFrom(values);
       return this;
     }
@@ -20786,7 +20828,7 @@ public final class Public {
      * @return whether the charAdvanceRewards field is set
      */
     public boolean hasCharAdvanceRewards() {
-      return (bitField0_ & 0x00010000) != 0;
+      return (bitField0_ & 0x00020000) != 0;
     }
 
     /**
@@ -20794,7 +20836,7 @@ public final class Public {
      * @return this
      */
     public StateInfo clearCharAdvanceRewards() {
-      bitField0_ &= ~0x00010000;
+      bitField0_ &= ~0x00020000;
       charAdvanceRewards.clear();
       return this;
     }
@@ -20823,7 +20865,7 @@ public final class Public {
      * @return internal storage object for modifications
      */
     public RepeatedMessage<CharAdvanceRewardState> getMutableCharAdvanceRewards() {
-      bitField0_ |= 0x00010000;
+      bitField0_ |= 0x00020000;
       return charAdvanceRewards;
     }
 
@@ -20833,7 +20875,7 @@ public final class Public {
      * @return this
      */
     public StateInfo addCharAdvanceRewards(final CharAdvanceRewardState value) {
-      bitField0_ |= 0x00010000;
+      bitField0_ |= 0x00020000;
       charAdvanceRewards.add(value);
       return this;
     }
@@ -20844,7 +20886,7 @@ public final class Public {
      * @return this
      */
     public StateInfo addAllCharAdvanceRewards(final CharAdvanceRewardState... values) {
-      bitField0_ |= 0x00010000;
+      bitField0_ |= 0x00020000;
       charAdvanceRewards.addAll(values);
       return this;
     }
@@ -20854,7 +20896,7 @@ public final class Public {
      * @return whether the charAffinityRewards field is set
      */
     public boolean hasCharAffinityRewards() {
-      return (bitField0_ & 0x00020000) != 0;
+      return (bitField0_ & 0x00040000) != 0;
     }
 
     /**
@@ -20862,7 +20904,7 @@ public final class Public {
      * @return this
      */
     public StateInfo clearCharAffinityRewards() {
-      bitField0_ &= ~0x00020000;
+      bitField0_ &= ~0x00040000;
       charAffinityRewards.clear();
       return this;
     }
@@ -20891,7 +20933,7 @@ public final class Public {
      * @return internal storage object for modifications
      */
     public RepeatedMessage<CharAffinityRewardState> getMutableCharAffinityRewards() {
-      bitField0_ |= 0x00020000;
+      bitField0_ |= 0x00040000;
       return charAffinityRewards;
     }
 
@@ -20901,7 +20943,7 @@ public final class Public {
      * @return this
      */
     public StateInfo addCharAffinityRewards(final CharAffinityRewardState value) {
-      bitField0_ |= 0x00020000;
+      bitField0_ |= 0x00040000;
       charAffinityRewards.add(value);
       return this;
     }
@@ -20912,7 +20954,7 @@ public final class Public {
      * @return this
      */
     public StateInfo addAllCharAffinityRewards(final CharAffinityRewardState... values) {
-      bitField0_ |= 0x00020000;
+      bitField0_ |= 0x00040000;
       charAffinityRewards.addAll(values);
       return this;
     }
@@ -20922,7 +20964,7 @@ public final class Public {
      * @return whether the activities field is set
      */
     public boolean hasActivities() {
-      return (bitField0_ & 0x00040000) != 0;
+      return (bitField0_ & 0x00080000) != 0;
     }
 
     /**
@@ -20930,7 +20972,7 @@ public final class Public {
      * @return this
      */
     public StateInfo clearActivities() {
-      bitField0_ &= ~0x00040000;
+      bitField0_ &= ~0x00080000;
       activities.clear();
       return this;
     }
@@ -20959,7 +21001,7 @@ public final class Public {
      * @return internal storage object for modifications
      */
     public RepeatedMessage<ActivityState> getMutableActivities() {
-      bitField0_ |= 0x00040000;
+      bitField0_ |= 0x00080000;
       return activities;
     }
 
@@ -20969,7 +21011,7 @@ public final class Public {
      * @return this
      */
     public StateInfo addActivities(final ActivityState value) {
-      bitField0_ |= 0x00040000;
+      bitField0_ |= 0x00080000;
       activities.add(value);
       return this;
     }
@@ -20980,7 +21022,7 @@ public final class Public {
      * @return this
      */
     public StateInfo addAllActivities(final ActivityState... values) {
-      bitField0_ |= 0x00040000;
+      bitField0_ |= 0x00080000;
       activities.addAll(values);
       return this;
     }
@@ -20991,6 +21033,7 @@ public final class Public {
       if ((bitField0_ | other.bitField0_) != 0) {
         bitField0_ = other.bitField0_;
         infinityTower = other.infinityTower;
+        vampireSurvivorId = other.vampireSurvivorId;
         friend = other.friend;
         npcAffinityReward = other.npcAffinityReward;
         storySet = other.storySet;
@@ -21021,6 +21064,9 @@ public final class Public {
       cachedSize = -1;
       if (other.hasInfinityTower()) {
         setInfinityTower(other.infinityTower);
+      }
+      if (other.hasVampireSurvivorId()) {
+        setVampireSurvivorId(other.vampireSurvivorId);
       }
       if (other.hasFriend()) {
         setFriend(other.friend);
@@ -21087,6 +21133,7 @@ public final class Public {
       cachedSize = -1;
       bitField0_ = 0;
       infinityTower = 0;
+      vampireSurvivorId = 0;
       friend = false;
       npcAffinityReward = false;
       storySet = false;
@@ -21144,6 +21191,7 @@ public final class Public {
       StateInfo other = (StateInfo) o;
       return bitField0_ == other.bitField0_
         && (!hasInfinityTower() || infinityTower == other.infinityTower)
+        && (!hasVampireSurvivorId() || vampireSurvivorId == other.vampireSurvivorId)
         && (!hasFriend() || friend == other.friend)
         && (!hasNpcAffinityReward() || npcAffinityReward == other.npcAffinityReward)
         && (!hasStorySet() || storySet == other.storySet)
@@ -21171,78 +21219,82 @@ public final class Public {
         output.writeUInt32NoTag(infinityTower);
       }
       if ((bitField0_ & 0x00000002) != 0) {
+        output.writeRawByte((byte) 88);
+        output.writeUInt32NoTag(vampireSurvivorId);
+      }
+      if ((bitField0_ & 0x00000004) != 0) {
         output.writeRawByte((byte) 24);
         output.writeBoolNoTag(friend);
       }
-      if ((bitField0_ & 0x00000004) != 0) {
+      if ((bitField0_ & 0x00000008) != 0) {
         output.writeRawByte((byte) 72);
         output.writeBoolNoTag(npcAffinityReward);
       }
-      if ((bitField0_ & 0x00000008) != 0) {
+      if ((bitField0_ & 0x00000010) != 0) {
         output.writeRawLittleEndian16((short) 432);
         output.writeBoolNoTag(storySet);
       }
-      if ((bitField0_ & 0x00000010) != 0) {
+      if ((bitField0_ & 0x00000020) != 0) {
         output.writeRawByte((byte) 10);
         output.writeMessageNoTag(mail);
       }
-      if ((bitField0_ & 0x00000020) != 0) {
+      if ((bitField0_ & 0x00000040) != 0) {
         output.writeRawByte((byte) 34);
         output.writeMessageNoTag(battlePass);
       }
-      if ((bitField0_ & 0x00000040) != 0) {
+      if ((bitField0_ & 0x00000080) != 0) {
         output.writeRawByte((byte) 42);
         output.writeMessageNoTag(worldClassReward);
       }
-      if ((bitField0_ & 0x00000080) != 0) {
+      if ((bitField0_ & 0x00000100) != 0) {
         output.writeRawByte((byte) 58);
         output.writeMessageNoTag(friendEnergy);
       }
-      if ((bitField0_ & 0x00000100) != 0) {
+      if ((bitField0_ & 0x00000200) != 0) {
         output.writeRawByte((byte) 82);
         output.writeMessageNoTag(mallPackage);
       }
-      if ((bitField0_ & 0x00000200) != 0) {
+      if ((bitField0_ & 0x00000400) != 0) {
         output.writeRawByte((byte) 122);
         output.writeMessageNoTag(achievement);
       }
-      if ((bitField0_ & 0x00000400) != 0) {
+      if ((bitField0_ & 0x00000800) != 0) {
         output.writeRawLittleEndian16((short) 386);
         output.writeMessageNoTag(travelerDuelQuest);
       }
-      if ((bitField0_ & 0x00000800) != 0) {
+      if ((bitField0_ & 0x00001000) != 0) {
         output.writeRawLittleEndian16((short) 394);
         output.writeMessageNoTag(travelerDuelChallengeQuest);
       }
-      if ((bitField0_ & 0x00001000) != 0) {
+      if ((bitField0_ & 0x00002000) != 0) {
         output.writeRawLittleEndian16((short) 402);
         output.writeMessageNoTag(starTower);
       }
-      if ((bitField0_ & 0x00002000) != 0) {
+      if ((bitField0_ & 0x00004000) != 0) {
         output.writeRawLittleEndian16((short) 410);
         output.writeMessageNoTag(starTowerBook);
       }
-      if ((bitField0_ & 0x00004000) != 0) {
+      if ((bitField0_ & 0x00008000) != 0) {
         output.writeRawLittleEndian16((short) 418);
         output.writeMessageNoTag(scoreBoss);
       }
-      if ((bitField0_ & 0x00008000) != 0) {
+      if ((bitField0_ & 0x00010000) != 0) {
         output.writeRawLittleEndian16((short) 32762);
         output.writeBytesNoTag(nextPackage);
       }
-      if ((bitField0_ & 0x00010000) != 0) {
+      if ((bitField0_ & 0x00020000) != 0) {
         for (int i = 0; i < charAdvanceRewards.length(); i++) {
           output.writeRawByte((byte) 50);
           output.writeMessageNoTag(charAdvanceRewards.get(i));
         }
       }
-      if ((bitField0_ & 0x00020000) != 0) {
+      if ((bitField0_ & 0x00040000) != 0) {
         for (int i = 0; i < charAffinityRewards.length(); i++) {
           output.writeRawByte((byte) 66);
           output.writeMessageNoTag(charAffinityRewards.get(i));
         }
       }
-      if ((bitField0_ & 0x00040000) != 0) {
+      if ((bitField0_ & 0x00080000) != 0) {
         for (int i = 0; i < activities.length(); i++) {
           output.writeRawLittleEndian16((short) 426);
           output.writeMessageNoTag(activities.get(i));
@@ -21257,57 +21309,60 @@ public final class Public {
         size += 1 + ProtoSink.computeUInt32SizeNoTag(infinityTower);
       }
       if ((bitField0_ & 0x00000002) != 0) {
-        size += 2;
+        size += 1 + ProtoSink.computeUInt32SizeNoTag(vampireSurvivorId);
       }
       if ((bitField0_ & 0x00000004) != 0) {
         size += 2;
       }
       if ((bitField0_ & 0x00000008) != 0) {
-        size += 3;
+        size += 2;
       }
       if ((bitField0_ & 0x00000010) != 0) {
-        size += 1 + ProtoSink.computeMessageSizeNoTag(mail);
+        size += 3;
       }
       if ((bitField0_ & 0x00000020) != 0) {
-        size += 1 + ProtoSink.computeMessageSizeNoTag(battlePass);
+        size += 1 + ProtoSink.computeMessageSizeNoTag(mail);
       }
       if ((bitField0_ & 0x00000040) != 0) {
-        size += 1 + ProtoSink.computeMessageSizeNoTag(worldClassReward);
+        size += 1 + ProtoSink.computeMessageSizeNoTag(battlePass);
       }
       if ((bitField0_ & 0x00000080) != 0) {
-        size += 1 + ProtoSink.computeMessageSizeNoTag(friendEnergy);
+        size += 1 + ProtoSink.computeMessageSizeNoTag(worldClassReward);
       }
       if ((bitField0_ & 0x00000100) != 0) {
-        size += 1 + ProtoSink.computeMessageSizeNoTag(mallPackage);
+        size += 1 + ProtoSink.computeMessageSizeNoTag(friendEnergy);
       }
       if ((bitField0_ & 0x00000200) != 0) {
-        size += 1 + ProtoSink.computeMessageSizeNoTag(achievement);
+        size += 1 + ProtoSink.computeMessageSizeNoTag(mallPackage);
       }
       if ((bitField0_ & 0x00000400) != 0) {
-        size += 2 + ProtoSink.computeMessageSizeNoTag(travelerDuelQuest);
+        size += 1 + ProtoSink.computeMessageSizeNoTag(achievement);
       }
       if ((bitField0_ & 0x00000800) != 0) {
-        size += 2 + ProtoSink.computeMessageSizeNoTag(travelerDuelChallengeQuest);
+        size += 2 + ProtoSink.computeMessageSizeNoTag(travelerDuelQuest);
       }
       if ((bitField0_ & 0x00001000) != 0) {
-        size += 2 + ProtoSink.computeMessageSizeNoTag(starTower);
+        size += 2 + ProtoSink.computeMessageSizeNoTag(travelerDuelChallengeQuest);
       }
       if ((bitField0_ & 0x00002000) != 0) {
-        size += 2 + ProtoSink.computeMessageSizeNoTag(starTowerBook);
+        size += 2 + ProtoSink.computeMessageSizeNoTag(starTower);
       }
       if ((bitField0_ & 0x00004000) != 0) {
-        size += 2 + ProtoSink.computeMessageSizeNoTag(scoreBoss);
+        size += 2 + ProtoSink.computeMessageSizeNoTag(starTowerBook);
       }
       if ((bitField0_ & 0x00008000) != 0) {
-        size += 2 + ProtoSink.computeBytesSizeNoTag(nextPackage);
+        size += 2 + ProtoSink.computeMessageSizeNoTag(scoreBoss);
       }
       if ((bitField0_ & 0x00010000) != 0) {
-        size += (1 * charAdvanceRewards.length()) + ProtoSink.computeRepeatedMessageSizeNoTag(charAdvanceRewards);
+        size += 2 + ProtoSink.computeBytesSizeNoTag(nextPackage);
       }
       if ((bitField0_ & 0x00020000) != 0) {
-        size += (1 * charAffinityRewards.length()) + ProtoSink.computeRepeatedMessageSizeNoTag(charAffinityRewards);
+        size += (1 * charAdvanceRewards.length()) + ProtoSink.computeRepeatedMessageSizeNoTag(charAdvanceRewards);
       }
       if ((bitField0_ & 0x00040000) != 0) {
+        size += (1 * charAffinityRewards.length()) + ProtoSink.computeRepeatedMessageSizeNoTag(charAffinityRewards);
+      }
+      if ((bitField0_ & 0x00080000) != 0) {
         size += (2 * activities.length()) + ProtoSink.computeRepeatedMessageSizeNoTag(activities);
       }
       return size;
@@ -21325,6 +21380,15 @@ public final class Public {
             infinityTower = input.readUInt32();
             bitField0_ |= 0x00000001;
             tag = input.readTag();
+            if (tag != 88) {
+              break;
+            }
+          }
+          case 88: {
+            // vampireSurvivorId
+            vampireSurvivorId = input.readUInt32();
+            bitField0_ |= 0x00000002;
+            tag = input.readTag();
             if (tag != 24) {
               break;
             }
@@ -21332,7 +21396,7 @@ public final class Public {
           case 24: {
             // friend
             friend = input.readBool();
-            bitField0_ |= 0x00000002;
+            bitField0_ |= 0x00000004;
             tag = input.readTag();
             if (tag != 72) {
               break;
@@ -21341,7 +21405,7 @@ public final class Public {
           case 72: {
             // npcAffinityReward
             npcAffinityReward = input.readBool();
-            bitField0_ |= 0x00000004;
+            bitField0_ |= 0x00000008;
             tag = input.readTag();
             if (tag != 176) {
               break;
@@ -21350,7 +21414,7 @@ public final class Public {
           case 176: {
             // storySet
             storySet = input.readBool();
-            bitField0_ |= 0x00000008;
+            bitField0_ |= 0x00000010;
             tag = input.readTag();
             if (tag != 10) {
               break;
@@ -21359,7 +21423,7 @@ public final class Public {
           case 10: {
             // mail
             input.readMessage(mail);
-            bitField0_ |= 0x00000010;
+            bitField0_ |= 0x00000020;
             tag = input.readTag();
             if (tag != 34) {
               break;
@@ -21368,7 +21432,7 @@ public final class Public {
           case 34: {
             // battlePass
             input.readMessage(battlePass);
-            bitField0_ |= 0x00000020;
+            bitField0_ |= 0x00000040;
             tag = input.readTag();
             if (tag != 42) {
               break;
@@ -21377,7 +21441,7 @@ public final class Public {
           case 42: {
             // worldClassReward
             input.readMessage(worldClassReward);
-            bitField0_ |= 0x00000040;
+            bitField0_ |= 0x00000080;
             tag = input.readTag();
             if (tag != 58) {
               break;
@@ -21386,7 +21450,7 @@ public final class Public {
           case 58: {
             // friendEnergy
             input.readMessage(friendEnergy);
-            bitField0_ |= 0x00000080;
+            bitField0_ |= 0x00000100;
             tag = input.readTag();
             if (tag != 82) {
               break;
@@ -21395,7 +21459,7 @@ public final class Public {
           case 82: {
             // mallPackage
             input.readMessage(mallPackage);
-            bitField0_ |= 0x00000100;
+            bitField0_ |= 0x00000200;
             tag = input.readTag();
             if (tag != 122) {
               break;
@@ -21404,7 +21468,7 @@ public final class Public {
           case 122: {
             // achievement
             input.readMessage(achievement);
-            bitField0_ |= 0x00000200;
+            bitField0_ |= 0x00000400;
             tag = input.readTag();
             if (tag != 130) {
               break;
@@ -21413,7 +21477,7 @@ public final class Public {
           case 130: {
             // travelerDuelQuest
             input.readMessage(travelerDuelQuest);
-            bitField0_ |= 0x00000400;
+            bitField0_ |= 0x00000800;
             tag = input.readTag();
             if (tag != 138) {
               break;
@@ -21422,7 +21486,7 @@ public final class Public {
           case 138: {
             // travelerDuelChallengeQuest
             input.readMessage(travelerDuelChallengeQuest);
-            bitField0_ |= 0x00000800;
+            bitField0_ |= 0x00001000;
             tag = input.readTag();
             if (tag != 146) {
               break;
@@ -21431,7 +21495,7 @@ public final class Public {
           case 146: {
             // starTower
             input.readMessage(starTower);
-            bitField0_ |= 0x00001000;
+            bitField0_ |= 0x00002000;
             tag = input.readTag();
             if (tag != 154) {
               break;
@@ -21440,7 +21504,7 @@ public final class Public {
           case 154: {
             // starTowerBook
             input.readMessage(starTowerBook);
-            bitField0_ |= 0x00002000;
+            bitField0_ |= 0x00004000;
             tag = input.readTag();
             if (tag != 162) {
               break;
@@ -21449,7 +21513,7 @@ public final class Public {
           case 162: {
             // scoreBoss
             input.readMessage(scoreBoss);
-            bitField0_ |= 0x00004000;
+            bitField0_ |= 0x00008000;
             tag = input.readTag();
             if (tag != 16378) {
               break;
@@ -21458,7 +21522,7 @@ public final class Public {
           case 16378: {
             // nextPackage
             input.readBytes(nextPackage);
-            bitField0_ |= 0x00008000;
+            bitField0_ |= 0x00010000;
             tag = input.readTag();
             if (tag != 50) {
               break;
@@ -21467,7 +21531,7 @@ public final class Public {
           case 50: {
             // charAdvanceRewards
             tag = input.readRepeatedMessage(charAdvanceRewards, tag);
-            bitField0_ |= 0x00010000;
+            bitField0_ |= 0x00020000;
             if (tag != 66) {
               break;
             }
@@ -21475,7 +21539,7 @@ public final class Public {
           case 66: {
             // charAffinityRewards
             tag = input.readRepeatedMessage(charAffinityRewards, tag);
-            bitField0_ |= 0x00020000;
+            bitField0_ |= 0x00040000;
             if (tag != 170) {
               break;
             }
@@ -21483,7 +21547,7 @@ public final class Public {
           case 170: {
             // activities
             tag = input.readRepeatedMessage(activities, tag);
-            bitField0_ |= 0x00040000;
+            bitField0_ |= 0x00080000;
             if (tag != 0) {
               break;
             }
@@ -21509,57 +21573,60 @@ public final class Public {
         output.writeUInt32(FieldNames.infinityTower, infinityTower);
       }
       if ((bitField0_ & 0x00000002) != 0) {
-        output.writeBool(FieldNames.friend, friend);
+        output.writeUInt32(FieldNames.vampireSurvivorId, vampireSurvivorId);
       }
       if ((bitField0_ & 0x00000004) != 0) {
-        output.writeBool(FieldNames.npcAffinityReward, npcAffinityReward);
+        output.writeBool(FieldNames.friend, friend);
       }
       if ((bitField0_ & 0x00000008) != 0) {
-        output.writeBool(FieldNames.storySet, storySet);
+        output.writeBool(FieldNames.npcAffinityReward, npcAffinityReward);
       }
       if ((bitField0_ & 0x00000010) != 0) {
-        output.writeMessage(FieldNames.mail, mail);
+        output.writeBool(FieldNames.storySet, storySet);
       }
       if ((bitField0_ & 0x00000020) != 0) {
-        output.writeMessage(FieldNames.battlePass, battlePass);
+        output.writeMessage(FieldNames.mail, mail);
       }
       if ((bitField0_ & 0x00000040) != 0) {
-        output.writeMessage(FieldNames.worldClassReward, worldClassReward);
+        output.writeMessage(FieldNames.battlePass, battlePass);
       }
       if ((bitField0_ & 0x00000080) != 0) {
-        output.writeMessage(FieldNames.friendEnergy, friendEnergy);
+        output.writeMessage(FieldNames.worldClassReward, worldClassReward);
       }
       if ((bitField0_ & 0x00000100) != 0) {
-        output.writeMessage(FieldNames.mallPackage, mallPackage);
+        output.writeMessage(FieldNames.friendEnergy, friendEnergy);
       }
       if ((bitField0_ & 0x00000200) != 0) {
-        output.writeMessage(FieldNames.achievement, achievement);
+        output.writeMessage(FieldNames.mallPackage, mallPackage);
       }
       if ((bitField0_ & 0x00000400) != 0) {
-        output.writeMessage(FieldNames.travelerDuelQuest, travelerDuelQuest);
+        output.writeMessage(FieldNames.achievement, achievement);
       }
       if ((bitField0_ & 0x00000800) != 0) {
-        output.writeMessage(FieldNames.travelerDuelChallengeQuest, travelerDuelChallengeQuest);
+        output.writeMessage(FieldNames.travelerDuelQuest, travelerDuelQuest);
       }
       if ((bitField0_ & 0x00001000) != 0) {
-        output.writeMessage(FieldNames.starTower, starTower);
+        output.writeMessage(FieldNames.travelerDuelChallengeQuest, travelerDuelChallengeQuest);
       }
       if ((bitField0_ & 0x00002000) != 0) {
-        output.writeMessage(FieldNames.starTowerBook, starTowerBook);
+        output.writeMessage(FieldNames.starTower, starTower);
       }
       if ((bitField0_ & 0x00004000) != 0) {
-        output.writeMessage(FieldNames.scoreBoss, scoreBoss);
+        output.writeMessage(FieldNames.starTowerBook, starTowerBook);
       }
       if ((bitField0_ & 0x00008000) != 0) {
-        output.writeBytes(FieldNames.nextPackage, nextPackage);
+        output.writeMessage(FieldNames.scoreBoss, scoreBoss);
       }
       if ((bitField0_ & 0x00010000) != 0) {
-        output.writeRepeatedMessage(FieldNames.charAdvanceRewards, charAdvanceRewards);
+        output.writeBytes(FieldNames.nextPackage, nextPackage);
       }
       if ((bitField0_ & 0x00020000) != 0) {
-        output.writeRepeatedMessage(FieldNames.charAffinityRewards, charAffinityRewards);
+        output.writeRepeatedMessage(FieldNames.charAdvanceRewards, charAdvanceRewards);
       }
       if ((bitField0_ & 0x00040000) != 0) {
+        output.writeRepeatedMessage(FieldNames.charAffinityRewards, charAffinityRewards);
+      }
+      if ((bitField0_ & 0x00080000) != 0) {
         output.writeRepeatedMessage(FieldNames.activities, activities);
       }
       output.endObject();
@@ -21583,11 +21650,22 @@ public final class Public {
             }
             break;
           }
+          case -113673409: {
+            if (input.isAtField(FieldNames.vampireSurvivorId)) {
+              if (!input.trySkipNullValue()) {
+                vampireSurvivorId = input.readUInt32();
+                bitField0_ |= 0x00000002;
+              }
+            } else {
+              input.skipUnknownField();
+            }
+            break;
+          }
           case 2112550590: {
             if (input.isAtField(FieldNames.friend)) {
               if (!input.trySkipNullValue()) {
                 friend = input.readBool();
-                bitField0_ |= 0x00000002;
+                bitField0_ |= 0x00000004;
               }
             } else {
               input.skipUnknownField();
@@ -21598,7 +21676,7 @@ public final class Public {
             if (input.isAtField(FieldNames.npcAffinityReward)) {
               if (!input.trySkipNullValue()) {
                 npcAffinityReward = input.readBool();
-                bitField0_ |= 0x00000004;
+                bitField0_ |= 0x00000008;
               }
             } else {
               input.skipUnknownField();
@@ -21609,7 +21687,7 @@ public final class Public {
             if (input.isAtField(FieldNames.storySet)) {
               if (!input.trySkipNullValue()) {
                 storySet = input.readBool();
-                bitField0_ |= 0x00000008;
+                bitField0_ |= 0x00000010;
               }
             } else {
               input.skipUnknownField();
@@ -21620,7 +21698,7 @@ public final class Public {
             if (input.isAtField(FieldNames.mail)) {
               if (!input.trySkipNullValue()) {
                 input.readMessage(mail);
-                bitField0_ |= 0x00000010;
+                bitField0_ |= 0x00000020;
               }
             } else {
               input.skipUnknownField();
@@ -21631,7 +21709,7 @@ public final class Public {
             if (input.isAtField(FieldNames.battlePass)) {
               if (!input.trySkipNullValue()) {
                 input.readMessage(battlePass);
-                bitField0_ |= 0x00000020;
+                bitField0_ |= 0x00000040;
               }
             } else {
               input.skipUnknownField();
@@ -21642,7 +21720,7 @@ public final class Public {
             if (input.isAtField(FieldNames.worldClassReward)) {
               if (!input.trySkipNullValue()) {
                 input.readMessage(worldClassReward);
-                bitField0_ |= 0x00000040;
+                bitField0_ |= 0x00000080;
               }
             } else {
               input.skipUnknownField();
@@ -21653,7 +21731,7 @@ public final class Public {
             if (input.isAtField(FieldNames.friendEnergy)) {
               if (!input.trySkipNullValue()) {
                 input.readMessage(friendEnergy);
-                bitField0_ |= 0x00000080;
+                bitField0_ |= 0x00000100;
               }
             } else {
               input.skipUnknownField();
@@ -21664,7 +21742,7 @@ public final class Public {
             if (input.isAtField(FieldNames.mallPackage)) {
               if (!input.trySkipNullValue()) {
                 input.readMessage(mallPackage);
-                bitField0_ |= 0x00000100;
+                bitField0_ |= 0x00000200;
               }
             } else {
               input.skipUnknownField();
@@ -21675,7 +21753,7 @@ public final class Public {
             if (input.isAtField(FieldNames.achievement)) {
               if (!input.trySkipNullValue()) {
                 input.readMessage(achievement);
-                bitField0_ |= 0x00000200;
+                bitField0_ |= 0x00000400;
               }
             } else {
               input.skipUnknownField();
@@ -21686,7 +21764,7 @@ public final class Public {
             if (input.isAtField(FieldNames.travelerDuelQuest)) {
               if (!input.trySkipNullValue()) {
                 input.readMessage(travelerDuelQuest);
-                bitField0_ |= 0x00000400;
+                bitField0_ |= 0x00000800;
               }
             } else {
               input.skipUnknownField();
@@ -21697,7 +21775,7 @@ public final class Public {
             if (input.isAtField(FieldNames.travelerDuelChallengeQuest)) {
               if (!input.trySkipNullValue()) {
                 input.readMessage(travelerDuelChallengeQuest);
-                bitField0_ |= 0x00000800;
+                bitField0_ |= 0x00001000;
               }
             } else {
               input.skipUnknownField();
@@ -21708,7 +21786,7 @@ public final class Public {
             if (input.isAtField(FieldNames.starTower)) {
               if (!input.trySkipNullValue()) {
                 input.readMessage(starTower);
-                bitField0_ |= 0x00001000;
+                bitField0_ |= 0x00002000;
               }
             } else {
               input.skipUnknownField();
@@ -21719,7 +21797,7 @@ public final class Public {
             if (input.isAtField(FieldNames.starTowerBook)) {
               if (!input.trySkipNullValue()) {
                 input.readMessage(starTowerBook);
-                bitField0_ |= 0x00002000;
+                bitField0_ |= 0x00004000;
               }
             } else {
               input.skipUnknownField();
@@ -21730,7 +21808,7 @@ public final class Public {
             if (input.isAtField(FieldNames.scoreBoss)) {
               if (!input.trySkipNullValue()) {
                 input.readMessage(scoreBoss);
-                bitField0_ |= 0x00004000;
+                bitField0_ |= 0x00008000;
               }
             } else {
               input.skipUnknownField();
@@ -21741,7 +21819,7 @@ public final class Public {
             if (input.isAtField(FieldNames.nextPackage)) {
               if (!input.trySkipNullValue()) {
                 input.readBytes(nextPackage);
-                bitField0_ |= 0x00008000;
+                bitField0_ |= 0x00010000;
               }
             } else {
               input.skipUnknownField();
@@ -21752,7 +21830,7 @@ public final class Public {
             if (input.isAtField(FieldNames.charAdvanceRewards)) {
               if (!input.trySkipNullValue()) {
                 input.readRepeatedMessage(charAdvanceRewards);
-                bitField0_ |= 0x00010000;
+                bitField0_ |= 0x00020000;
               }
             } else {
               input.skipUnknownField();
@@ -21763,7 +21841,7 @@ public final class Public {
             if (input.isAtField(FieldNames.charAffinityRewards)) {
               if (!input.trySkipNullValue()) {
                 input.readRepeatedMessage(charAffinityRewards);
-                bitField0_ |= 0x00020000;
+                bitField0_ |= 0x00040000;
               }
             } else {
               input.skipUnknownField();
@@ -21774,7 +21852,7 @@ public final class Public {
             if (input.isAtField(FieldNames.activities)) {
               if (!input.trySkipNullValue()) {
                 input.readRepeatedMessage(activities);
-                bitField0_ |= 0x00040000;
+                bitField0_ |= 0x00080000;
               }
             } else {
               input.skipUnknownField();
@@ -21834,6 +21912,8 @@ public final class Public {
      */
     static class FieldNames {
       static final FieldName infinityTower = FieldName.forField("InfinityTower");
+
+      static final FieldName vampireSurvivorId = FieldName.forField("VampireSurvivorId");
 
       static final FieldName friend = FieldName.forField("Friend");
 
@@ -61007,6 +61087,11 @@ public final class Public {
      */
     private final RepeatedByte nextPackage = RepeatedByte.newEmptyInstance();
 
+    /**
+     * <code>repeated uint32 CharIds = 6;</code>
+     */
+    private final RepeatedInt charIds = RepeatedInt.newEmptyInstance();
+
     private ScoreBossLevel() {
     }
 
@@ -61281,6 +61366,74 @@ public final class Public {
       return this;
     }
 
+    /**
+     * <code>repeated uint32 CharIds = 6;</code>
+     * @return whether the charIds field is set
+     */
+    public boolean hasCharIds() {
+      return (bitField0_ & 0x00000040) != 0;
+    }
+
+    /**
+     * <code>repeated uint32 CharIds = 6;</code>
+     * @return this
+     */
+    public ScoreBossLevel clearCharIds() {
+      bitField0_ &= ~0x00000040;
+      charIds.clear();
+      return this;
+    }
+
+    /**
+     * <code>repeated uint32 CharIds = 6;</code>
+     *
+     * This method returns the internal storage object without modifying any has state.
+     * The returned object should not be modified and be treated as read-only.
+     *
+     * Use {@link #getMutableCharIds()} if you want to modify it.
+     *
+     * @return internal storage object for reading
+     */
+    public RepeatedInt getCharIds() {
+      return charIds;
+    }
+
+    /**
+     * <code>repeated uint32 CharIds = 6;</code>
+     *
+     * This method returns the internal storage object and sets the corresponding
+     * has state. The returned object will become part of this message and its
+     * contents may be modified as long as the has state is not cleared.
+     *
+     * @return internal storage object for modifications
+     */
+    public RepeatedInt getMutableCharIds() {
+      bitField0_ |= 0x00000040;
+      return charIds;
+    }
+
+    /**
+     * <code>repeated uint32 CharIds = 6;</code>
+     * @param value the charIds to add
+     * @return this
+     */
+    public ScoreBossLevel addCharIds(final int value) {
+      bitField0_ |= 0x00000040;
+      charIds.add(value);
+      return this;
+    }
+
+    /**
+     * <code>repeated uint32 CharIds = 6;</code>
+     * @param values the charIds to add
+     * @return this
+     */
+    public ScoreBossLevel addAllCharIds(final int... values) {
+      bitField0_ |= 0x00000040;
+      charIds.addAll(values);
+      return this;
+    }
+
     @Override
     public ScoreBossLevel copyFrom(final ScoreBossLevel other) {
       cachedSize = other.cachedSize;
@@ -61292,6 +61445,7 @@ public final class Public {
         star = other.star;
         skillScore = other.skillScore;
         nextPackage.copyFrom(other.nextPackage);
+        charIds.copyFrom(other.charIds);
       }
       return this;
     }
@@ -61320,6 +61474,9 @@ public final class Public {
       if (other.hasNextPackage()) {
         getMutableNextPackage().copyFrom(other.nextPackage);
       }
+      if (other.hasCharIds()) {
+        getMutableCharIds().addAll(other.charIds);
+      }
       return this;
     }
 
@@ -61336,6 +61493,7 @@ public final class Public {
       star = 0;
       skillScore = 0;
       nextPackage.clear();
+      charIds.clear();
       return this;
     }
 
@@ -61347,6 +61505,7 @@ public final class Public {
       cachedSize = -1;
       bitField0_ = 0;
       nextPackage.clear();
+      charIds.clear();
       return this;
     }
 
@@ -61365,7 +61524,8 @@ public final class Public {
         && (!hasScore() || score == other.score)
         && (!hasStar() || star == other.star)
         && (!hasSkillScore() || skillScore == other.skillScore)
-        && (!hasNextPackage() || nextPackage.equals(other.nextPackage));
+        && (!hasNextPackage() || nextPackage.equals(other.nextPackage))
+        && (!hasCharIds() || charIds.equals(other.charIds));
     }
 
     @Override
@@ -61394,6 +61554,12 @@ public final class Public {
         output.writeRawLittleEndian16((short) 32762);
         output.writeBytesNoTag(nextPackage);
       }
+      if ((bitField0_ & 0x00000040) != 0) {
+        for (int i = 0; i < charIds.length(); i++) {
+          output.writeRawByte((byte) 48);
+          output.writeUInt32NoTag(charIds.array()[i]);
+        }
+      }
     }
 
     @Override
@@ -61416,6 +61582,9 @@ public final class Public {
       }
       if ((bitField0_ & 0x00000020) != 0) {
         size += 2 + ProtoSink.computeBytesSizeNoTag(nextPackage);
+      }
+      if ((bitField0_ & 0x00000040) != 0) {
+        size += (1 * charIds.length()) + ProtoSink.computeRepeatedUInt32SizeNoTag(charIds);
       }
       return size;
     }
@@ -61477,6 +61646,15 @@ public final class Public {
             input.readBytes(nextPackage);
             bitField0_ |= 0x00000020;
             tag = input.readTag();
+            if (tag != 50) {
+              break;
+            }
+          }
+          case 50: {
+            // charIds [packed=true]
+            input.readPackedUInt32(charIds, tag);
+            bitField0_ |= 0x00000040;
+            tag = input.readTag();
             if (tag != 0) {
               break;
             }
@@ -61489,6 +61667,12 @@ public final class Public {
               return this;
             }
             tag = input.readTag();
+            break;
+          }
+          case 48: {
+            // charIds [packed=false]
+            tag = input.readRepeatedUInt32(charIds, tag);
+            bitField0_ |= 0x00000040;
             break;
           }
         }
@@ -61515,6 +61699,9 @@ public final class Public {
       }
       if ((bitField0_ & 0x00000020) != 0) {
         output.writeBytes(FieldNames.nextPackage, nextPackage);
+      }
+      if ((bitField0_ & 0x00000040) != 0) {
+        output.writeRepeatedUInt32(FieldNames.charIds, charIds);
       }
       output.endObject();
     }
@@ -61592,6 +61779,17 @@ public final class Public {
             }
             break;
           }
+          case -1891280030: {
+            if (input.isAtField(FieldNames.charIds)) {
+              if (!input.trySkipNullValue()) {
+                input.readRepeatedUInt32(charIds);
+                bitField0_ |= 0x00000040;
+              }
+            } else {
+              input.skipUnknownField();
+            }
+            break;
+          }
           default: {
             input.skipUnknownField();
             break;
@@ -61656,6 +61854,8 @@ public final class Public {
       static final FieldName skillScore = FieldName.forField("SkillScore");
 
       static final FieldName nextPackage = FieldName.forField("NextPackage");
+
+      static final FieldName charIds = FieldName.forField("CharIds");
     }
   }
 
@@ -69320,6 +69520,2698 @@ public final class Public {
       static final FieldName passed = FieldName.forField("Passed");
 
       static final FieldName rewardReceived = FieldName.forField("RewardReceived");
+
+      static final FieldName nextPackage = FieldName.forField("NextPackage");
+    }
+  }
+
+  /**
+   * Protobuf type {@code BuildConvertContent}
+   */
+  public static final class BuildConvertContent extends ProtoMessage<BuildConvertContent> implements Cloneable {
+    private static final long serialVersionUID = 0L;
+
+    /**
+     * <code>optional uint32 Id = 1;</code>
+     */
+    private int id;
+
+    /**
+     * <code>optional uint32 Num = 2;</code>
+     */
+    private int num;
+
+    /**
+     * <code>optional bytes NextPackage = 2047;</code>
+     */
+    private final RepeatedByte nextPackage = RepeatedByte.newEmptyInstance();
+
+    private BuildConvertContent() {
+    }
+
+    /**
+     * @return a new empty instance of {@code BuildConvertContent}
+     */
+    public static BuildConvertContent newInstance() {
+      return new BuildConvertContent();
+    }
+
+    /**
+     * <code>optional uint32 Id = 1;</code>
+     * @return whether the id field is set
+     */
+    public boolean hasId() {
+      return (bitField0_ & 0x00000001) != 0;
+    }
+
+    /**
+     * <code>optional uint32 Id = 1;</code>
+     * @return this
+     */
+    public BuildConvertContent clearId() {
+      bitField0_ &= ~0x00000001;
+      id = 0;
+      return this;
+    }
+
+    /**
+     * <code>optional uint32 Id = 1;</code>
+     * @return the id
+     */
+    public int getId() {
+      return id;
+    }
+
+    /**
+     * <code>optional uint32 Id = 1;</code>
+     * @param value the id to set
+     * @return this
+     */
+    public BuildConvertContent setId(final int value) {
+      bitField0_ |= 0x00000001;
+      id = value;
+      return this;
+    }
+
+    /**
+     * <code>optional uint32 Num = 2;</code>
+     * @return whether the num field is set
+     */
+    public boolean hasNum() {
+      return (bitField0_ & 0x00000002) != 0;
+    }
+
+    /**
+     * <code>optional uint32 Num = 2;</code>
+     * @return this
+     */
+    public BuildConvertContent clearNum() {
+      bitField0_ &= ~0x00000002;
+      num = 0;
+      return this;
+    }
+
+    /**
+     * <code>optional uint32 Num = 2;</code>
+     * @return the num
+     */
+    public int getNum() {
+      return num;
+    }
+
+    /**
+     * <code>optional uint32 Num = 2;</code>
+     * @param value the num to set
+     * @return this
+     */
+    public BuildConvertContent setNum(final int value) {
+      bitField0_ |= 0x00000002;
+      num = value;
+      return this;
+    }
+
+    /**
+     * <code>optional bytes NextPackage = 2047;</code>
+     * @return whether the nextPackage field is set
+     */
+    public boolean hasNextPackage() {
+      return (bitField0_ & 0x00000004) != 0;
+    }
+
+    /**
+     * <code>optional bytes NextPackage = 2047;</code>
+     * @return this
+     */
+    public BuildConvertContent clearNextPackage() {
+      bitField0_ &= ~0x00000004;
+      nextPackage.clear();
+      return this;
+    }
+
+    /**
+     * <code>optional bytes NextPackage = 2047;</code>
+     *
+     * This method returns the internal storage object without modifying any has state.
+     * The returned object should not be modified and be treated as read-only.
+     *
+     * Use {@link #getMutableNextPackage()} if you want to modify it.
+     *
+     * @return internal storage object for reading
+     */
+    public RepeatedByte getNextPackage() {
+      return nextPackage;
+    }
+
+    /**
+     * <code>optional bytes NextPackage = 2047;</code>
+     *
+     * This method returns the internal storage object and sets the corresponding
+     * has state. The returned object will become part of this message and its
+     * contents may be modified as long as the has state is not cleared.
+     *
+     * @return internal storage object for modifications
+     */
+    public RepeatedByte getMutableNextPackage() {
+      bitField0_ |= 0x00000004;
+      return nextPackage;
+    }
+
+    /**
+     * <code>optional bytes NextPackage = 2047;</code>
+     * @param value the nextPackage to add
+     * @return this
+     */
+    public BuildConvertContent addNextPackage(final byte value) {
+      bitField0_ |= 0x00000004;
+      nextPackage.add(value);
+      return this;
+    }
+
+    /**
+     * <code>optional bytes NextPackage = 2047;</code>
+     * @param values the nextPackage to add
+     * @return this
+     */
+    public BuildConvertContent addAllNextPackage(final byte... values) {
+      bitField0_ |= 0x00000004;
+      nextPackage.addAll(values);
+      return this;
+    }
+
+    /**
+     * <code>optional bytes NextPackage = 2047;</code>
+     * @param values the nextPackage to set
+     * @return this
+     */
+    public BuildConvertContent setNextPackage(final byte... values) {
+      bitField0_ |= 0x00000004;
+      nextPackage.copyFrom(values);
+      return this;
+    }
+
+    @Override
+    public BuildConvertContent copyFrom(final BuildConvertContent other) {
+      cachedSize = other.cachedSize;
+      if ((bitField0_ | other.bitField0_) != 0) {
+        bitField0_ = other.bitField0_;
+        id = other.id;
+        num = other.num;
+        nextPackage.copyFrom(other.nextPackage);
+      }
+      return this;
+    }
+
+    @Override
+    public BuildConvertContent mergeFrom(final BuildConvertContent other) {
+      if (other.isEmpty()) {
+        return this;
+      }
+      cachedSize = -1;
+      if (other.hasId()) {
+        setId(other.id);
+      }
+      if (other.hasNum()) {
+        setNum(other.num);
+      }
+      if (other.hasNextPackage()) {
+        getMutableNextPackage().copyFrom(other.nextPackage);
+      }
+      return this;
+    }
+
+    @Override
+    public BuildConvertContent clear() {
+      if (isEmpty()) {
+        return this;
+      }
+      cachedSize = -1;
+      bitField0_ = 0;
+      id = 0;
+      num = 0;
+      nextPackage.clear();
+      return this;
+    }
+
+    @Override
+    public BuildConvertContent clearQuick() {
+      if (isEmpty()) {
+        return this;
+      }
+      cachedSize = -1;
+      bitField0_ = 0;
+      nextPackage.clear();
+      return this;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+      if (o == this) {
+        return true;
+      }
+      if (!(o instanceof BuildConvertContent)) {
+        return false;
+      }
+      BuildConvertContent other = (BuildConvertContent) o;
+      return bitField0_ == other.bitField0_
+        && (!hasId() || id == other.id)
+        && (!hasNum() || num == other.num)
+        && (!hasNextPackage() || nextPackage.equals(other.nextPackage));
+    }
+
+    @Override
+    public void writeTo(final ProtoSink output) throws IOException {
+      if ((bitField0_ & 0x00000001) != 0) {
+        output.writeRawByte((byte) 8);
+        output.writeUInt32NoTag(id);
+      }
+      if ((bitField0_ & 0x00000002) != 0) {
+        output.writeRawByte((byte) 16);
+        output.writeUInt32NoTag(num);
+      }
+      if ((bitField0_ & 0x00000004) != 0) {
+        output.writeRawLittleEndian16((short) 32762);
+        output.writeBytesNoTag(nextPackage);
+      }
+    }
+
+    @Override
+    protected int computeSerializedSize() {
+      int size = 0;
+      if ((bitField0_ & 0x00000001) != 0) {
+        size += 1 + ProtoSink.computeUInt32SizeNoTag(id);
+      }
+      if ((bitField0_ & 0x00000002) != 0) {
+        size += 1 + ProtoSink.computeUInt32SizeNoTag(num);
+      }
+      if ((bitField0_ & 0x00000004) != 0) {
+        size += 2 + ProtoSink.computeBytesSizeNoTag(nextPackage);
+      }
+      return size;
+    }
+
+    @Override
+    @SuppressWarnings("fallthrough")
+    public BuildConvertContent mergeFrom(final ProtoSource input) throws IOException {
+      // Enabled Fall-Through Optimization (QuickBuffers)
+      int tag = input.readTag();
+      while (true) {
+        switch (tag) {
+          case 8: {
+            // id
+            id = input.readUInt32();
+            bitField0_ |= 0x00000001;
+            tag = input.readTag();
+            if (tag != 16) {
+              break;
+            }
+          }
+          case 16: {
+            // num
+            num = input.readUInt32();
+            bitField0_ |= 0x00000002;
+            tag = input.readTag();
+            if (tag != 16378) {
+              break;
+            }
+          }
+          case 16378: {
+            // nextPackage
+            input.readBytes(nextPackage);
+            bitField0_ |= 0x00000004;
+            tag = input.readTag();
+            if (tag != 0) {
+              break;
+            }
+          }
+          case 0: {
+            return this;
+          }
+          default: {
+            if (!input.skipField(tag)) {
+              return this;
+            }
+            tag = input.readTag();
+            break;
+          }
+        }
+      }
+    }
+
+    @Override
+    public void writeTo(final JsonSink output) throws IOException {
+      output.beginObject();
+      if ((bitField0_ & 0x00000001) != 0) {
+        output.writeUInt32(FieldNames.id, id);
+      }
+      if ((bitField0_ & 0x00000002) != 0) {
+        output.writeUInt32(FieldNames.num, num);
+      }
+      if ((bitField0_ & 0x00000004) != 0) {
+        output.writeBytes(FieldNames.nextPackage, nextPackage);
+      }
+      output.endObject();
+    }
+
+    @Override
+    public BuildConvertContent mergeFrom(final JsonSource input) throws IOException {
+      if (!input.beginObject()) {
+        return this;
+      }
+      while (!input.isAtEnd()) {
+        switch (input.readFieldHash()) {
+          case 2363: {
+            if (input.isAtField(FieldNames.id)) {
+              if (!input.trySkipNullValue()) {
+                id = input.readUInt32();
+                bitField0_ |= 0x00000001;
+              }
+            } else {
+              input.skipUnknownField();
+            }
+            break;
+          }
+          case 78694: {
+            if (input.isAtField(FieldNames.num)) {
+              if (!input.trySkipNullValue()) {
+                num = input.readUInt32();
+                bitField0_ |= 0x00000002;
+              }
+            } else {
+              input.skipUnknownField();
+            }
+            break;
+          }
+          case -2082324045: {
+            if (input.isAtField(FieldNames.nextPackage)) {
+              if (!input.trySkipNullValue()) {
+                input.readBytes(nextPackage);
+                bitField0_ |= 0x00000004;
+              }
+            } else {
+              input.skipUnknownField();
+            }
+            break;
+          }
+          default: {
+            input.skipUnknownField();
+            break;
+          }
+        }
+      }
+      input.endObject();
+      return this;
+    }
+
+    @Override
+    public BuildConvertContent clone() {
+      return new BuildConvertContent().copyFrom(this);
+    }
+
+    @Override
+    public boolean isEmpty() {
+      return ((bitField0_) == 0);
+    }
+
+    public static BuildConvertContent parseFrom(final byte[] data) throws
+        InvalidProtocolBufferException {
+      return ProtoMessage.mergeFrom(new BuildConvertContent(), data).checkInitialized();
+    }
+
+    public static BuildConvertContent parseFrom(final ProtoSource input) throws IOException {
+      return ProtoMessage.mergeFrom(new BuildConvertContent(), input).checkInitialized();
+    }
+
+    public static BuildConvertContent parseFrom(final JsonSource input) throws IOException {
+      return ProtoMessage.mergeFrom(new BuildConvertContent(), input).checkInitialized();
+    }
+
+    /**
+     * @return factory for creating BuildConvertContent messages
+     */
+    public static MessageFactory<BuildConvertContent> getFactory() {
+      return BuildConvertContentFactory.INSTANCE;
+    }
+
+    private enum BuildConvertContentFactory implements MessageFactory<BuildConvertContent> {
+      INSTANCE;
+
+      @Override
+      public BuildConvertContent create() {
+        return BuildConvertContent.newInstance();
+      }
+    }
+
+    /**
+     * Contains name constants used for serializing JSON
+     */
+    static class FieldNames {
+      static final FieldName id = FieldName.forField("Id");
+
+      static final FieldName num = FieldName.forField("Num");
+
+      static final FieldName nextPackage = FieldName.forField("NextPackage");
+    }
+  }
+
+  /**
+   * Protobuf type {@code ActivityBuildConvert}
+   */
+  public static final class ActivityBuildConvert extends ProtoMessage<ActivityBuildConvert> implements Cloneable {
+    private static final long serialVersionUID = 0L;
+
+    /**
+     * <code>optional bytes NextPackage = 2047;</code>
+     */
+    private final RepeatedByte nextPackage = RepeatedByte.newEmptyInstance();
+
+    /**
+     * <code>repeated .BuildConvertContent Contents = 1;</code>
+     */
+    private final RepeatedMessage<BuildConvertContent> contents = RepeatedMessage.newEmptyInstance(BuildConvertContent.getFactory());
+
+    /**
+     * <code>repeated .ActivityQuest Quests = 2;</code>
+     */
+    private final RepeatedMessage<ActivityQuest> quests = RepeatedMessage.newEmptyInstance(ActivityQuest.getFactory());
+
+    private ActivityBuildConvert() {
+    }
+
+    /**
+     * @return a new empty instance of {@code ActivityBuildConvert}
+     */
+    public static ActivityBuildConvert newInstance() {
+      return new ActivityBuildConvert();
+    }
+
+    /**
+     * <code>optional bytes NextPackage = 2047;</code>
+     * @return whether the nextPackage field is set
+     */
+    public boolean hasNextPackage() {
+      return (bitField0_ & 0x00000001) != 0;
+    }
+
+    /**
+     * <code>optional bytes NextPackage = 2047;</code>
+     * @return this
+     */
+    public ActivityBuildConvert clearNextPackage() {
+      bitField0_ &= ~0x00000001;
+      nextPackage.clear();
+      return this;
+    }
+
+    /**
+     * <code>optional bytes NextPackage = 2047;</code>
+     *
+     * This method returns the internal storage object without modifying any has state.
+     * The returned object should not be modified and be treated as read-only.
+     *
+     * Use {@link #getMutableNextPackage()} if you want to modify it.
+     *
+     * @return internal storage object for reading
+     */
+    public RepeatedByte getNextPackage() {
+      return nextPackage;
+    }
+
+    /**
+     * <code>optional bytes NextPackage = 2047;</code>
+     *
+     * This method returns the internal storage object and sets the corresponding
+     * has state. The returned object will become part of this message and its
+     * contents may be modified as long as the has state is not cleared.
+     *
+     * @return internal storage object for modifications
+     */
+    public RepeatedByte getMutableNextPackage() {
+      bitField0_ |= 0x00000001;
+      return nextPackage;
+    }
+
+    /**
+     * <code>optional bytes NextPackage = 2047;</code>
+     * @param value the nextPackage to add
+     * @return this
+     */
+    public ActivityBuildConvert addNextPackage(final byte value) {
+      bitField0_ |= 0x00000001;
+      nextPackage.add(value);
+      return this;
+    }
+
+    /**
+     * <code>optional bytes NextPackage = 2047;</code>
+     * @param values the nextPackage to add
+     * @return this
+     */
+    public ActivityBuildConvert addAllNextPackage(final byte... values) {
+      bitField0_ |= 0x00000001;
+      nextPackage.addAll(values);
+      return this;
+    }
+
+    /**
+     * <code>optional bytes NextPackage = 2047;</code>
+     * @param values the nextPackage to set
+     * @return this
+     */
+    public ActivityBuildConvert setNextPackage(final byte... values) {
+      bitField0_ |= 0x00000001;
+      nextPackage.copyFrom(values);
+      return this;
+    }
+
+    /**
+     * <code>repeated .BuildConvertContent Contents = 1;</code>
+     * @return whether the contents field is set
+     */
+    public boolean hasContents() {
+      return (bitField0_ & 0x00000002) != 0;
+    }
+
+    /**
+     * <code>repeated .BuildConvertContent Contents = 1;</code>
+     * @return this
+     */
+    public ActivityBuildConvert clearContents() {
+      bitField0_ &= ~0x00000002;
+      contents.clear();
+      return this;
+    }
+
+    /**
+     * <code>repeated .BuildConvertContent Contents = 1;</code>
+     *
+     * This method returns the internal storage object without modifying any has state.
+     * The returned object should not be modified and be treated as read-only.
+     *
+     * Use {@link #getMutableContents()} if you want to modify it.
+     *
+     * @return internal storage object for reading
+     */
+    public RepeatedMessage<BuildConvertContent> getContents() {
+      return contents;
+    }
+
+    /**
+     * <code>repeated .BuildConvertContent Contents = 1;</code>
+     *
+     * This method returns the internal storage object and sets the corresponding
+     * has state. The returned object will become part of this message and its
+     * contents may be modified as long as the has state is not cleared.
+     *
+     * @return internal storage object for modifications
+     */
+    public RepeatedMessage<BuildConvertContent> getMutableContents() {
+      bitField0_ |= 0x00000002;
+      return contents;
+    }
+
+    /**
+     * <code>repeated .BuildConvertContent Contents = 1;</code>
+     * @param value the contents to add
+     * @return this
+     */
+    public ActivityBuildConvert addContents(final BuildConvertContent value) {
+      bitField0_ |= 0x00000002;
+      contents.add(value);
+      return this;
+    }
+
+    /**
+     * <code>repeated .BuildConvertContent Contents = 1;</code>
+     * @param values the contents to add
+     * @return this
+     */
+    public ActivityBuildConvert addAllContents(final BuildConvertContent... values) {
+      bitField0_ |= 0x00000002;
+      contents.addAll(values);
+      return this;
+    }
+
+    /**
+     * <code>repeated .ActivityQuest Quests = 2;</code>
+     * @return whether the quests field is set
+     */
+    public boolean hasQuests() {
+      return (bitField0_ & 0x00000004) != 0;
+    }
+
+    /**
+     * <code>repeated .ActivityQuest Quests = 2;</code>
+     * @return this
+     */
+    public ActivityBuildConvert clearQuests() {
+      bitField0_ &= ~0x00000004;
+      quests.clear();
+      return this;
+    }
+
+    /**
+     * <code>repeated .ActivityQuest Quests = 2;</code>
+     *
+     * This method returns the internal storage object without modifying any has state.
+     * The returned object should not be modified and be treated as read-only.
+     *
+     * Use {@link #getMutableQuests()} if you want to modify it.
+     *
+     * @return internal storage object for reading
+     */
+    public RepeatedMessage<ActivityQuest> getQuests() {
+      return quests;
+    }
+
+    /**
+     * <code>repeated .ActivityQuest Quests = 2;</code>
+     *
+     * This method returns the internal storage object and sets the corresponding
+     * has state. The returned object will become part of this message and its
+     * contents may be modified as long as the has state is not cleared.
+     *
+     * @return internal storage object for modifications
+     */
+    public RepeatedMessage<ActivityQuest> getMutableQuests() {
+      bitField0_ |= 0x00000004;
+      return quests;
+    }
+
+    /**
+     * <code>repeated .ActivityQuest Quests = 2;</code>
+     * @param value the quests to add
+     * @return this
+     */
+    public ActivityBuildConvert addQuests(final ActivityQuest value) {
+      bitField0_ |= 0x00000004;
+      quests.add(value);
+      return this;
+    }
+
+    /**
+     * <code>repeated .ActivityQuest Quests = 2;</code>
+     * @param values the quests to add
+     * @return this
+     */
+    public ActivityBuildConvert addAllQuests(final ActivityQuest... values) {
+      bitField0_ |= 0x00000004;
+      quests.addAll(values);
+      return this;
+    }
+
+    @Override
+    public ActivityBuildConvert copyFrom(final ActivityBuildConvert other) {
+      cachedSize = other.cachedSize;
+      if ((bitField0_ | other.bitField0_) != 0) {
+        bitField0_ = other.bitField0_;
+        nextPackage.copyFrom(other.nextPackage);
+        contents.copyFrom(other.contents);
+        quests.copyFrom(other.quests);
+      }
+      return this;
+    }
+
+    @Override
+    public ActivityBuildConvert mergeFrom(final ActivityBuildConvert other) {
+      if (other.isEmpty()) {
+        return this;
+      }
+      cachedSize = -1;
+      if (other.hasNextPackage()) {
+        getMutableNextPackage().copyFrom(other.nextPackage);
+      }
+      if (other.hasContents()) {
+        getMutableContents().addAll(other.contents);
+      }
+      if (other.hasQuests()) {
+        getMutableQuests().addAll(other.quests);
+      }
+      return this;
+    }
+
+    @Override
+    public ActivityBuildConvert clear() {
+      if (isEmpty()) {
+        return this;
+      }
+      cachedSize = -1;
+      bitField0_ = 0;
+      nextPackage.clear();
+      contents.clear();
+      quests.clear();
+      return this;
+    }
+
+    @Override
+    public ActivityBuildConvert clearQuick() {
+      if (isEmpty()) {
+        return this;
+      }
+      cachedSize = -1;
+      bitField0_ = 0;
+      nextPackage.clear();
+      contents.clearQuick();
+      quests.clearQuick();
+      return this;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+      if (o == this) {
+        return true;
+      }
+      if (!(o instanceof ActivityBuildConvert)) {
+        return false;
+      }
+      ActivityBuildConvert other = (ActivityBuildConvert) o;
+      return bitField0_ == other.bitField0_
+        && (!hasNextPackage() || nextPackage.equals(other.nextPackage))
+        && (!hasContents() || contents.equals(other.contents))
+        && (!hasQuests() || quests.equals(other.quests));
+    }
+
+    @Override
+    public void writeTo(final ProtoSink output) throws IOException {
+      if ((bitField0_ & 0x00000001) != 0) {
+        output.writeRawLittleEndian16((short) 32762);
+        output.writeBytesNoTag(nextPackage);
+      }
+      if ((bitField0_ & 0x00000002) != 0) {
+        for (int i = 0; i < contents.length(); i++) {
+          output.writeRawByte((byte) 10);
+          output.writeMessageNoTag(contents.get(i));
+        }
+      }
+      if ((bitField0_ & 0x00000004) != 0) {
+        for (int i = 0; i < quests.length(); i++) {
+          output.writeRawByte((byte) 18);
+          output.writeMessageNoTag(quests.get(i));
+        }
+      }
+    }
+
+    @Override
+    protected int computeSerializedSize() {
+      int size = 0;
+      if ((bitField0_ & 0x00000001) != 0) {
+        size += 2 + ProtoSink.computeBytesSizeNoTag(nextPackage);
+      }
+      if ((bitField0_ & 0x00000002) != 0) {
+        size += (1 * contents.length()) + ProtoSink.computeRepeatedMessageSizeNoTag(contents);
+      }
+      if ((bitField0_ & 0x00000004) != 0) {
+        size += (1 * quests.length()) + ProtoSink.computeRepeatedMessageSizeNoTag(quests);
+      }
+      return size;
+    }
+
+    @Override
+    @SuppressWarnings("fallthrough")
+    public ActivityBuildConvert mergeFrom(final ProtoSource input) throws IOException {
+      // Enabled Fall-Through Optimization (QuickBuffers)
+      int tag = input.readTag();
+      while (true) {
+        switch (tag) {
+          case 16378: {
+            // nextPackage
+            input.readBytes(nextPackage);
+            bitField0_ |= 0x00000001;
+            tag = input.readTag();
+            if (tag != 10) {
+              break;
+            }
+          }
+          case 10: {
+            // contents
+            tag = input.readRepeatedMessage(contents, tag);
+            bitField0_ |= 0x00000002;
+            if (tag != 18) {
+              break;
+            }
+          }
+          case 18: {
+            // quests
+            tag = input.readRepeatedMessage(quests, tag);
+            bitField0_ |= 0x00000004;
+            if (tag != 0) {
+              break;
+            }
+          }
+          case 0: {
+            return this;
+          }
+          default: {
+            if (!input.skipField(tag)) {
+              return this;
+            }
+            tag = input.readTag();
+            break;
+          }
+        }
+      }
+    }
+
+    @Override
+    public void writeTo(final JsonSink output) throws IOException {
+      output.beginObject();
+      if ((bitField0_ & 0x00000001) != 0) {
+        output.writeBytes(FieldNames.nextPackage, nextPackage);
+      }
+      if ((bitField0_ & 0x00000002) != 0) {
+        output.writeRepeatedMessage(FieldNames.contents, contents);
+      }
+      if ((bitField0_ & 0x00000004) != 0) {
+        output.writeRepeatedMessage(FieldNames.quests, quests);
+      }
+      output.endObject();
+    }
+
+    @Override
+    public ActivityBuildConvert mergeFrom(final JsonSource input) throws IOException {
+      if (!input.beginObject()) {
+        return this;
+      }
+      while (!input.isAtEnd()) {
+        switch (input.readFieldHash()) {
+          case -2082324045: {
+            if (input.isAtField(FieldNames.nextPackage)) {
+              if (!input.trySkipNullValue()) {
+                input.readBytes(nextPackage);
+                bitField0_ |= 0x00000001;
+              }
+            } else {
+              input.skipUnknownField();
+            }
+            break;
+          }
+          case -502677702: {
+            if (input.isAtField(FieldNames.contents)) {
+              if (!input.trySkipNullValue()) {
+                input.readRepeatedMessage(contents);
+                bitField0_ |= 0x00000002;
+              }
+            } else {
+              input.skipUnknownField();
+            }
+            break;
+          }
+          case -1864830991: {
+            if (input.isAtField(FieldNames.quests)) {
+              if (!input.trySkipNullValue()) {
+                input.readRepeatedMessage(quests);
+                bitField0_ |= 0x00000004;
+              }
+            } else {
+              input.skipUnknownField();
+            }
+            break;
+          }
+          default: {
+            input.skipUnknownField();
+            break;
+          }
+        }
+      }
+      input.endObject();
+      return this;
+    }
+
+    @Override
+    public ActivityBuildConvert clone() {
+      return new ActivityBuildConvert().copyFrom(this);
+    }
+
+    @Override
+    public boolean isEmpty() {
+      return ((bitField0_) == 0);
+    }
+
+    public static ActivityBuildConvert parseFrom(final byte[] data) throws
+        InvalidProtocolBufferException {
+      return ProtoMessage.mergeFrom(new ActivityBuildConvert(), data).checkInitialized();
+    }
+
+    public static ActivityBuildConvert parseFrom(final ProtoSource input) throws IOException {
+      return ProtoMessage.mergeFrom(new ActivityBuildConvert(), input).checkInitialized();
+    }
+
+    public static ActivityBuildConvert parseFrom(final JsonSource input) throws IOException {
+      return ProtoMessage.mergeFrom(new ActivityBuildConvert(), input).checkInitialized();
+    }
+
+    /**
+     * @return factory for creating ActivityBuildConvert messages
+     */
+    public static MessageFactory<ActivityBuildConvert> getFactory() {
+      return ActivityBuildConvertFactory.INSTANCE;
+    }
+
+    private enum ActivityBuildConvertFactory implements MessageFactory<ActivityBuildConvert> {
+      INSTANCE;
+
+      @Override
+      public ActivityBuildConvert create() {
+        return ActivityBuildConvert.newInstance();
+      }
+    }
+
+    /**
+     * Contains name constants used for serializing JSON
+     */
+    static class FieldNames {
+      static final FieldName nextPackage = FieldName.forField("NextPackage");
+
+      static final FieldName contents = FieldName.forField("Contents");
+
+      static final FieldName quests = FieldName.forField("Quests");
+    }
+  }
+
+  /**
+   * Protobuf type {@code VampireClientData}
+   */
+  public static final class VampireClientData extends ProtoMessage<VampireClientData> implements Cloneable {
+    private static final long serialVersionUID = 0L;
+
+    /**
+     * <code>optional uint32 FateCardTimer = 3;</code>
+     */
+    private int fateCardTimer;
+
+    /**
+     * <code>optional uint32 Level = 4;</code>
+     */
+    private int level;
+
+    /**
+     * <code>optional uint32 Exp = 5;</code>
+     */
+    private int exp;
+
+    /**
+     * <code>optional bytes NextPackage = 2047;</code>
+     */
+    private final RepeatedByte nextPackage = RepeatedByte.newEmptyInstance();
+
+    /**
+     * <code>repeated .FateCardEftCnt Efts = 1;</code>
+     */
+    private final RepeatedMessage<FateCardEftCnt> efts = RepeatedMessage.newEmptyInstance(FateCardEftCnt.getFactory());
+
+    /**
+     * <code>repeated .FateCardTimeLimit Limits = 2;</code>
+     */
+    private final RepeatedMessage<FateCardTimeLimit> limits = RepeatedMessage.newEmptyInstance(FateCardTimeLimit.getFactory());
+
+    private VampireClientData() {
+    }
+
+    /**
+     * @return a new empty instance of {@code VampireClientData}
+     */
+    public static VampireClientData newInstance() {
+      return new VampireClientData();
+    }
+
+    /**
+     * <code>optional uint32 FateCardTimer = 3;</code>
+     * @return whether the fateCardTimer field is set
+     */
+    public boolean hasFateCardTimer() {
+      return (bitField0_ & 0x00000001) != 0;
+    }
+
+    /**
+     * <code>optional uint32 FateCardTimer = 3;</code>
+     * @return this
+     */
+    public VampireClientData clearFateCardTimer() {
+      bitField0_ &= ~0x00000001;
+      fateCardTimer = 0;
+      return this;
+    }
+
+    /**
+     * <code>optional uint32 FateCardTimer = 3;</code>
+     * @return the fateCardTimer
+     */
+    public int getFateCardTimer() {
+      return fateCardTimer;
+    }
+
+    /**
+     * <code>optional uint32 FateCardTimer = 3;</code>
+     * @param value the fateCardTimer to set
+     * @return this
+     */
+    public VampireClientData setFateCardTimer(final int value) {
+      bitField0_ |= 0x00000001;
+      fateCardTimer = value;
+      return this;
+    }
+
+    /**
+     * <code>optional uint32 Level = 4;</code>
+     * @return whether the level field is set
+     */
+    public boolean hasLevel() {
+      return (bitField0_ & 0x00000002) != 0;
+    }
+
+    /**
+     * <code>optional uint32 Level = 4;</code>
+     * @return this
+     */
+    public VampireClientData clearLevel() {
+      bitField0_ &= ~0x00000002;
+      level = 0;
+      return this;
+    }
+
+    /**
+     * <code>optional uint32 Level = 4;</code>
+     * @return the level
+     */
+    public int getLevel() {
+      return level;
+    }
+
+    /**
+     * <code>optional uint32 Level = 4;</code>
+     * @param value the level to set
+     * @return this
+     */
+    public VampireClientData setLevel(final int value) {
+      bitField0_ |= 0x00000002;
+      level = value;
+      return this;
+    }
+
+    /**
+     * <code>optional uint32 Exp = 5;</code>
+     * @return whether the exp field is set
+     */
+    public boolean hasExp() {
+      return (bitField0_ & 0x00000004) != 0;
+    }
+
+    /**
+     * <code>optional uint32 Exp = 5;</code>
+     * @return this
+     */
+    public VampireClientData clearExp() {
+      bitField0_ &= ~0x00000004;
+      exp = 0;
+      return this;
+    }
+
+    /**
+     * <code>optional uint32 Exp = 5;</code>
+     * @return the exp
+     */
+    public int getExp() {
+      return exp;
+    }
+
+    /**
+     * <code>optional uint32 Exp = 5;</code>
+     * @param value the exp to set
+     * @return this
+     */
+    public VampireClientData setExp(final int value) {
+      bitField0_ |= 0x00000004;
+      exp = value;
+      return this;
+    }
+
+    /**
+     * <code>optional bytes NextPackage = 2047;</code>
+     * @return whether the nextPackage field is set
+     */
+    public boolean hasNextPackage() {
+      return (bitField0_ & 0x00000008) != 0;
+    }
+
+    /**
+     * <code>optional bytes NextPackage = 2047;</code>
+     * @return this
+     */
+    public VampireClientData clearNextPackage() {
+      bitField0_ &= ~0x00000008;
+      nextPackage.clear();
+      return this;
+    }
+
+    /**
+     * <code>optional bytes NextPackage = 2047;</code>
+     *
+     * This method returns the internal storage object without modifying any has state.
+     * The returned object should not be modified and be treated as read-only.
+     *
+     * Use {@link #getMutableNextPackage()} if you want to modify it.
+     *
+     * @return internal storage object for reading
+     */
+    public RepeatedByte getNextPackage() {
+      return nextPackage;
+    }
+
+    /**
+     * <code>optional bytes NextPackage = 2047;</code>
+     *
+     * This method returns the internal storage object and sets the corresponding
+     * has state. The returned object will become part of this message and its
+     * contents may be modified as long as the has state is not cleared.
+     *
+     * @return internal storage object for modifications
+     */
+    public RepeatedByte getMutableNextPackage() {
+      bitField0_ |= 0x00000008;
+      return nextPackage;
+    }
+
+    /**
+     * <code>optional bytes NextPackage = 2047;</code>
+     * @param value the nextPackage to add
+     * @return this
+     */
+    public VampireClientData addNextPackage(final byte value) {
+      bitField0_ |= 0x00000008;
+      nextPackage.add(value);
+      return this;
+    }
+
+    /**
+     * <code>optional bytes NextPackage = 2047;</code>
+     * @param values the nextPackage to add
+     * @return this
+     */
+    public VampireClientData addAllNextPackage(final byte... values) {
+      bitField0_ |= 0x00000008;
+      nextPackage.addAll(values);
+      return this;
+    }
+
+    /**
+     * <code>optional bytes NextPackage = 2047;</code>
+     * @param values the nextPackage to set
+     * @return this
+     */
+    public VampireClientData setNextPackage(final byte... values) {
+      bitField0_ |= 0x00000008;
+      nextPackage.copyFrom(values);
+      return this;
+    }
+
+    /**
+     * <code>repeated .FateCardEftCnt Efts = 1;</code>
+     * @return whether the efts field is set
+     */
+    public boolean hasEfts() {
+      return (bitField0_ & 0x00000010) != 0;
+    }
+
+    /**
+     * <code>repeated .FateCardEftCnt Efts = 1;</code>
+     * @return this
+     */
+    public VampireClientData clearEfts() {
+      bitField0_ &= ~0x00000010;
+      efts.clear();
+      return this;
+    }
+
+    /**
+     * <code>repeated .FateCardEftCnt Efts = 1;</code>
+     *
+     * This method returns the internal storage object without modifying any has state.
+     * The returned object should not be modified and be treated as read-only.
+     *
+     * Use {@link #getMutableEfts()} if you want to modify it.
+     *
+     * @return internal storage object for reading
+     */
+    public RepeatedMessage<FateCardEftCnt> getEfts() {
+      return efts;
+    }
+
+    /**
+     * <code>repeated .FateCardEftCnt Efts = 1;</code>
+     *
+     * This method returns the internal storage object and sets the corresponding
+     * has state. The returned object will become part of this message and its
+     * contents may be modified as long as the has state is not cleared.
+     *
+     * @return internal storage object for modifications
+     */
+    public RepeatedMessage<FateCardEftCnt> getMutableEfts() {
+      bitField0_ |= 0x00000010;
+      return efts;
+    }
+
+    /**
+     * <code>repeated .FateCardEftCnt Efts = 1;</code>
+     * @param value the efts to add
+     * @return this
+     */
+    public VampireClientData addEfts(final FateCardEftCnt value) {
+      bitField0_ |= 0x00000010;
+      efts.add(value);
+      return this;
+    }
+
+    /**
+     * <code>repeated .FateCardEftCnt Efts = 1;</code>
+     * @param values the efts to add
+     * @return this
+     */
+    public VampireClientData addAllEfts(final FateCardEftCnt... values) {
+      bitField0_ |= 0x00000010;
+      efts.addAll(values);
+      return this;
+    }
+
+    /**
+     * <code>repeated .FateCardTimeLimit Limits = 2;</code>
+     * @return whether the limits field is set
+     */
+    public boolean hasLimits() {
+      return (bitField0_ & 0x00000020) != 0;
+    }
+
+    /**
+     * <code>repeated .FateCardTimeLimit Limits = 2;</code>
+     * @return this
+     */
+    public VampireClientData clearLimits() {
+      bitField0_ &= ~0x00000020;
+      limits.clear();
+      return this;
+    }
+
+    /**
+     * <code>repeated .FateCardTimeLimit Limits = 2;</code>
+     *
+     * This method returns the internal storage object without modifying any has state.
+     * The returned object should not be modified and be treated as read-only.
+     *
+     * Use {@link #getMutableLimits()} if you want to modify it.
+     *
+     * @return internal storage object for reading
+     */
+    public RepeatedMessage<FateCardTimeLimit> getLimits() {
+      return limits;
+    }
+
+    /**
+     * <code>repeated .FateCardTimeLimit Limits = 2;</code>
+     *
+     * This method returns the internal storage object and sets the corresponding
+     * has state. The returned object will become part of this message and its
+     * contents may be modified as long as the has state is not cleared.
+     *
+     * @return internal storage object for modifications
+     */
+    public RepeatedMessage<FateCardTimeLimit> getMutableLimits() {
+      bitField0_ |= 0x00000020;
+      return limits;
+    }
+
+    /**
+     * <code>repeated .FateCardTimeLimit Limits = 2;</code>
+     * @param value the limits to add
+     * @return this
+     */
+    public VampireClientData addLimits(final FateCardTimeLimit value) {
+      bitField0_ |= 0x00000020;
+      limits.add(value);
+      return this;
+    }
+
+    /**
+     * <code>repeated .FateCardTimeLimit Limits = 2;</code>
+     * @param values the limits to add
+     * @return this
+     */
+    public VampireClientData addAllLimits(final FateCardTimeLimit... values) {
+      bitField0_ |= 0x00000020;
+      limits.addAll(values);
+      return this;
+    }
+
+    @Override
+    public VampireClientData copyFrom(final VampireClientData other) {
+      cachedSize = other.cachedSize;
+      if ((bitField0_ | other.bitField0_) != 0) {
+        bitField0_ = other.bitField0_;
+        fateCardTimer = other.fateCardTimer;
+        level = other.level;
+        exp = other.exp;
+        nextPackage.copyFrom(other.nextPackage);
+        efts.copyFrom(other.efts);
+        limits.copyFrom(other.limits);
+      }
+      return this;
+    }
+
+    @Override
+    public VampireClientData mergeFrom(final VampireClientData other) {
+      if (other.isEmpty()) {
+        return this;
+      }
+      cachedSize = -1;
+      if (other.hasFateCardTimer()) {
+        setFateCardTimer(other.fateCardTimer);
+      }
+      if (other.hasLevel()) {
+        setLevel(other.level);
+      }
+      if (other.hasExp()) {
+        setExp(other.exp);
+      }
+      if (other.hasNextPackage()) {
+        getMutableNextPackage().copyFrom(other.nextPackage);
+      }
+      if (other.hasEfts()) {
+        getMutableEfts().addAll(other.efts);
+      }
+      if (other.hasLimits()) {
+        getMutableLimits().addAll(other.limits);
+      }
+      return this;
+    }
+
+    @Override
+    public VampireClientData clear() {
+      if (isEmpty()) {
+        return this;
+      }
+      cachedSize = -1;
+      bitField0_ = 0;
+      fateCardTimer = 0;
+      level = 0;
+      exp = 0;
+      nextPackage.clear();
+      efts.clear();
+      limits.clear();
+      return this;
+    }
+
+    @Override
+    public VampireClientData clearQuick() {
+      if (isEmpty()) {
+        return this;
+      }
+      cachedSize = -1;
+      bitField0_ = 0;
+      nextPackage.clear();
+      efts.clearQuick();
+      limits.clearQuick();
+      return this;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+      if (o == this) {
+        return true;
+      }
+      if (!(o instanceof VampireClientData)) {
+        return false;
+      }
+      VampireClientData other = (VampireClientData) o;
+      return bitField0_ == other.bitField0_
+        && (!hasFateCardTimer() || fateCardTimer == other.fateCardTimer)
+        && (!hasLevel() || level == other.level)
+        && (!hasExp() || exp == other.exp)
+        && (!hasNextPackage() || nextPackage.equals(other.nextPackage))
+        && (!hasEfts() || efts.equals(other.efts))
+        && (!hasLimits() || limits.equals(other.limits));
+    }
+
+    @Override
+    public void writeTo(final ProtoSink output) throws IOException {
+      if ((bitField0_ & 0x00000001) != 0) {
+        output.writeRawByte((byte) 24);
+        output.writeUInt32NoTag(fateCardTimer);
+      }
+      if ((bitField0_ & 0x00000002) != 0) {
+        output.writeRawByte((byte) 32);
+        output.writeUInt32NoTag(level);
+      }
+      if ((bitField0_ & 0x00000004) != 0) {
+        output.writeRawByte((byte) 40);
+        output.writeUInt32NoTag(exp);
+      }
+      if ((bitField0_ & 0x00000008) != 0) {
+        output.writeRawLittleEndian16((short) 32762);
+        output.writeBytesNoTag(nextPackage);
+      }
+      if ((bitField0_ & 0x00000010) != 0) {
+        for (int i = 0; i < efts.length(); i++) {
+          output.writeRawByte((byte) 10);
+          output.writeMessageNoTag(efts.get(i));
+        }
+      }
+      if ((bitField0_ & 0x00000020) != 0) {
+        for (int i = 0; i < limits.length(); i++) {
+          output.writeRawByte((byte) 18);
+          output.writeMessageNoTag(limits.get(i));
+        }
+      }
+    }
+
+    @Override
+    protected int computeSerializedSize() {
+      int size = 0;
+      if ((bitField0_ & 0x00000001) != 0) {
+        size += 1 + ProtoSink.computeUInt32SizeNoTag(fateCardTimer);
+      }
+      if ((bitField0_ & 0x00000002) != 0) {
+        size += 1 + ProtoSink.computeUInt32SizeNoTag(level);
+      }
+      if ((bitField0_ & 0x00000004) != 0) {
+        size += 1 + ProtoSink.computeUInt32SizeNoTag(exp);
+      }
+      if ((bitField0_ & 0x00000008) != 0) {
+        size += 2 + ProtoSink.computeBytesSizeNoTag(nextPackage);
+      }
+      if ((bitField0_ & 0x00000010) != 0) {
+        size += (1 * efts.length()) + ProtoSink.computeRepeatedMessageSizeNoTag(efts);
+      }
+      if ((bitField0_ & 0x00000020) != 0) {
+        size += (1 * limits.length()) + ProtoSink.computeRepeatedMessageSizeNoTag(limits);
+      }
+      return size;
+    }
+
+    @Override
+    @SuppressWarnings("fallthrough")
+    public VampireClientData mergeFrom(final ProtoSource input) throws IOException {
+      // Enabled Fall-Through Optimization (QuickBuffers)
+      int tag = input.readTag();
+      while (true) {
+        switch (tag) {
+          case 24: {
+            // fateCardTimer
+            fateCardTimer = input.readUInt32();
+            bitField0_ |= 0x00000001;
+            tag = input.readTag();
+            if (tag != 32) {
+              break;
+            }
+          }
+          case 32: {
+            // level
+            level = input.readUInt32();
+            bitField0_ |= 0x00000002;
+            tag = input.readTag();
+            if (tag != 40) {
+              break;
+            }
+          }
+          case 40: {
+            // exp
+            exp = input.readUInt32();
+            bitField0_ |= 0x00000004;
+            tag = input.readTag();
+            if (tag != 16378) {
+              break;
+            }
+          }
+          case 16378: {
+            // nextPackage
+            input.readBytes(nextPackage);
+            bitField0_ |= 0x00000008;
+            tag = input.readTag();
+            if (tag != 10) {
+              break;
+            }
+          }
+          case 10: {
+            // efts
+            tag = input.readRepeatedMessage(efts, tag);
+            bitField0_ |= 0x00000010;
+            if (tag != 18) {
+              break;
+            }
+          }
+          case 18: {
+            // limits
+            tag = input.readRepeatedMessage(limits, tag);
+            bitField0_ |= 0x00000020;
+            if (tag != 0) {
+              break;
+            }
+          }
+          case 0: {
+            return this;
+          }
+          default: {
+            if (!input.skipField(tag)) {
+              return this;
+            }
+            tag = input.readTag();
+            break;
+          }
+        }
+      }
+    }
+
+    @Override
+    public void writeTo(final JsonSink output) throws IOException {
+      output.beginObject();
+      if ((bitField0_ & 0x00000001) != 0) {
+        output.writeUInt32(FieldNames.fateCardTimer, fateCardTimer);
+      }
+      if ((bitField0_ & 0x00000002) != 0) {
+        output.writeUInt32(FieldNames.level, level);
+      }
+      if ((bitField0_ & 0x00000004) != 0) {
+        output.writeUInt32(FieldNames.exp, exp);
+      }
+      if ((bitField0_ & 0x00000008) != 0) {
+        output.writeBytes(FieldNames.nextPackage, nextPackage);
+      }
+      if ((bitField0_ & 0x00000010) != 0) {
+        output.writeRepeatedMessage(FieldNames.efts, efts);
+      }
+      if ((bitField0_ & 0x00000020) != 0) {
+        output.writeRepeatedMessage(FieldNames.limits, limits);
+      }
+      output.endObject();
+    }
+
+    @Override
+    public VampireClientData mergeFrom(final JsonSource input) throws IOException {
+      if (!input.beginObject()) {
+        return this;
+      }
+      while (!input.isAtEnd()) {
+        switch (input.readFieldHash()) {
+          case 1660237545: {
+            if (input.isAtField(FieldNames.fateCardTimer)) {
+              if (!input.trySkipNullValue()) {
+                fateCardTimer = input.readUInt32();
+                bitField0_ |= 0x00000001;
+              }
+            } else {
+              input.skipUnknownField();
+            }
+            break;
+          }
+          case 73313124: {
+            if (input.isAtField(FieldNames.level)) {
+              if (!input.trySkipNullValue()) {
+                level = input.readUInt32();
+                bitField0_ |= 0x00000002;
+              }
+            } else {
+              input.skipUnknownField();
+            }
+            break;
+          }
+          case 70141: {
+            if (input.isAtField(FieldNames.exp)) {
+              if (!input.trySkipNullValue()) {
+                exp = input.readUInt32();
+                bitField0_ |= 0x00000004;
+              }
+            } else {
+              input.skipUnknownField();
+            }
+            break;
+          }
+          case -2082324045: {
+            if (input.isAtField(FieldNames.nextPackage)) {
+              if (!input.trySkipNullValue()) {
+                input.readBytes(nextPackage);
+                bitField0_ |= 0x00000008;
+              }
+            } else {
+              input.skipUnknownField();
+            }
+            break;
+          }
+          case 2157312: {
+            if (input.isAtField(FieldNames.efts)) {
+              if (!input.trySkipNullValue()) {
+                input.readRepeatedMessage(efts);
+                bitField0_ |= 0x00000010;
+              }
+            } else {
+              input.skipUnknownField();
+            }
+            break;
+          }
+          case -2018830280: {
+            if (input.isAtField(FieldNames.limits)) {
+              if (!input.trySkipNullValue()) {
+                input.readRepeatedMessage(limits);
+                bitField0_ |= 0x00000020;
+              }
+            } else {
+              input.skipUnknownField();
+            }
+            break;
+          }
+          default: {
+            input.skipUnknownField();
+            break;
+          }
+        }
+      }
+      input.endObject();
+      return this;
+    }
+
+    @Override
+    public VampireClientData clone() {
+      return new VampireClientData().copyFrom(this);
+    }
+
+    @Override
+    public boolean isEmpty() {
+      return ((bitField0_) == 0);
+    }
+
+    public static VampireClientData parseFrom(final byte[] data) throws
+        InvalidProtocolBufferException {
+      return ProtoMessage.mergeFrom(new VampireClientData(), data).checkInitialized();
+    }
+
+    public static VampireClientData parseFrom(final ProtoSource input) throws IOException {
+      return ProtoMessage.mergeFrom(new VampireClientData(), input).checkInitialized();
+    }
+
+    public static VampireClientData parseFrom(final JsonSource input) throws IOException {
+      return ProtoMessage.mergeFrom(new VampireClientData(), input).checkInitialized();
+    }
+
+    /**
+     * @return factory for creating VampireClientData messages
+     */
+    public static MessageFactory<VampireClientData> getFactory() {
+      return VampireClientDataFactory.INSTANCE;
+    }
+
+    private enum VampireClientDataFactory implements MessageFactory<VampireClientData> {
+      INSTANCE;
+
+      @Override
+      public VampireClientData create() {
+        return VampireClientData.newInstance();
+      }
+    }
+
+    /**
+     * Contains name constants used for serializing JSON
+     */
+    static class FieldNames {
+      static final FieldName fateCardTimer = FieldName.forField("FateCardTimer");
+
+      static final FieldName level = FieldName.forField("Level");
+
+      static final FieldName exp = FieldName.forField("Exp");
+
+      static final FieldName nextPackage = FieldName.forField("NextPackage");
+
+      static final FieldName efts = FieldName.forField("Efts");
+
+      static final FieldName limits = FieldName.forField("Limits");
+    }
+  }
+
+  /**
+   * Protobuf type {@code FateCardEftCnt}
+   */
+  public static final class FateCardEftCnt extends ProtoMessage<FateCardEftCnt> implements Cloneable {
+    private static final long serialVersionUID = 0L;
+
+    /**
+     * <code>optional uint32 Id = 1;</code>
+     */
+    private int id;
+
+    /**
+     * <code>optional uint32 EftId = 2;</code>
+     */
+    private int eftId;
+
+    /**
+     * <code>optional uint32 Count = 3;</code>
+     */
+    private int count;
+
+    /**
+     * <code>optional bytes NextPackage = 2047;</code>
+     */
+    private final RepeatedByte nextPackage = RepeatedByte.newEmptyInstance();
+
+    private FateCardEftCnt() {
+    }
+
+    /**
+     * @return a new empty instance of {@code FateCardEftCnt}
+     */
+    public static FateCardEftCnt newInstance() {
+      return new FateCardEftCnt();
+    }
+
+    /**
+     * <code>optional uint32 Id = 1;</code>
+     * @return whether the id field is set
+     */
+    public boolean hasId() {
+      return (bitField0_ & 0x00000001) != 0;
+    }
+
+    /**
+     * <code>optional uint32 Id = 1;</code>
+     * @return this
+     */
+    public FateCardEftCnt clearId() {
+      bitField0_ &= ~0x00000001;
+      id = 0;
+      return this;
+    }
+
+    /**
+     * <code>optional uint32 Id = 1;</code>
+     * @return the id
+     */
+    public int getId() {
+      return id;
+    }
+
+    /**
+     * <code>optional uint32 Id = 1;</code>
+     * @param value the id to set
+     * @return this
+     */
+    public FateCardEftCnt setId(final int value) {
+      bitField0_ |= 0x00000001;
+      id = value;
+      return this;
+    }
+
+    /**
+     * <code>optional uint32 EftId = 2;</code>
+     * @return whether the eftId field is set
+     */
+    public boolean hasEftId() {
+      return (bitField0_ & 0x00000002) != 0;
+    }
+
+    /**
+     * <code>optional uint32 EftId = 2;</code>
+     * @return this
+     */
+    public FateCardEftCnt clearEftId() {
+      bitField0_ &= ~0x00000002;
+      eftId = 0;
+      return this;
+    }
+
+    /**
+     * <code>optional uint32 EftId = 2;</code>
+     * @return the eftId
+     */
+    public int getEftId() {
+      return eftId;
+    }
+
+    /**
+     * <code>optional uint32 EftId = 2;</code>
+     * @param value the eftId to set
+     * @return this
+     */
+    public FateCardEftCnt setEftId(final int value) {
+      bitField0_ |= 0x00000002;
+      eftId = value;
+      return this;
+    }
+
+    /**
+     * <code>optional uint32 Count = 3;</code>
+     * @return whether the count field is set
+     */
+    public boolean hasCount() {
+      return (bitField0_ & 0x00000004) != 0;
+    }
+
+    /**
+     * <code>optional uint32 Count = 3;</code>
+     * @return this
+     */
+    public FateCardEftCnt clearCount() {
+      bitField0_ &= ~0x00000004;
+      count = 0;
+      return this;
+    }
+
+    /**
+     * <code>optional uint32 Count = 3;</code>
+     * @return the count
+     */
+    public int getCount() {
+      return count;
+    }
+
+    /**
+     * <code>optional uint32 Count = 3;</code>
+     * @param value the count to set
+     * @return this
+     */
+    public FateCardEftCnt setCount(final int value) {
+      bitField0_ |= 0x00000004;
+      count = value;
+      return this;
+    }
+
+    /**
+     * <code>optional bytes NextPackage = 2047;</code>
+     * @return whether the nextPackage field is set
+     */
+    public boolean hasNextPackage() {
+      return (bitField0_ & 0x00000008) != 0;
+    }
+
+    /**
+     * <code>optional bytes NextPackage = 2047;</code>
+     * @return this
+     */
+    public FateCardEftCnt clearNextPackage() {
+      bitField0_ &= ~0x00000008;
+      nextPackage.clear();
+      return this;
+    }
+
+    /**
+     * <code>optional bytes NextPackage = 2047;</code>
+     *
+     * This method returns the internal storage object without modifying any has state.
+     * The returned object should not be modified and be treated as read-only.
+     *
+     * Use {@link #getMutableNextPackage()} if you want to modify it.
+     *
+     * @return internal storage object for reading
+     */
+    public RepeatedByte getNextPackage() {
+      return nextPackage;
+    }
+
+    /**
+     * <code>optional bytes NextPackage = 2047;</code>
+     *
+     * This method returns the internal storage object and sets the corresponding
+     * has state. The returned object will become part of this message and its
+     * contents may be modified as long as the has state is not cleared.
+     *
+     * @return internal storage object for modifications
+     */
+    public RepeatedByte getMutableNextPackage() {
+      bitField0_ |= 0x00000008;
+      return nextPackage;
+    }
+
+    /**
+     * <code>optional bytes NextPackage = 2047;</code>
+     * @param value the nextPackage to add
+     * @return this
+     */
+    public FateCardEftCnt addNextPackage(final byte value) {
+      bitField0_ |= 0x00000008;
+      nextPackage.add(value);
+      return this;
+    }
+
+    /**
+     * <code>optional bytes NextPackage = 2047;</code>
+     * @param values the nextPackage to add
+     * @return this
+     */
+    public FateCardEftCnt addAllNextPackage(final byte... values) {
+      bitField0_ |= 0x00000008;
+      nextPackage.addAll(values);
+      return this;
+    }
+
+    /**
+     * <code>optional bytes NextPackage = 2047;</code>
+     * @param values the nextPackage to set
+     * @return this
+     */
+    public FateCardEftCnt setNextPackage(final byte... values) {
+      bitField0_ |= 0x00000008;
+      nextPackage.copyFrom(values);
+      return this;
+    }
+
+    @Override
+    public FateCardEftCnt copyFrom(final FateCardEftCnt other) {
+      cachedSize = other.cachedSize;
+      if ((bitField0_ | other.bitField0_) != 0) {
+        bitField0_ = other.bitField0_;
+        id = other.id;
+        eftId = other.eftId;
+        count = other.count;
+        nextPackage.copyFrom(other.nextPackage);
+      }
+      return this;
+    }
+
+    @Override
+    public FateCardEftCnt mergeFrom(final FateCardEftCnt other) {
+      if (other.isEmpty()) {
+        return this;
+      }
+      cachedSize = -1;
+      if (other.hasId()) {
+        setId(other.id);
+      }
+      if (other.hasEftId()) {
+        setEftId(other.eftId);
+      }
+      if (other.hasCount()) {
+        setCount(other.count);
+      }
+      if (other.hasNextPackage()) {
+        getMutableNextPackage().copyFrom(other.nextPackage);
+      }
+      return this;
+    }
+
+    @Override
+    public FateCardEftCnt clear() {
+      if (isEmpty()) {
+        return this;
+      }
+      cachedSize = -1;
+      bitField0_ = 0;
+      id = 0;
+      eftId = 0;
+      count = 0;
+      nextPackage.clear();
+      return this;
+    }
+
+    @Override
+    public FateCardEftCnt clearQuick() {
+      if (isEmpty()) {
+        return this;
+      }
+      cachedSize = -1;
+      bitField0_ = 0;
+      nextPackage.clear();
+      return this;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+      if (o == this) {
+        return true;
+      }
+      if (!(o instanceof FateCardEftCnt)) {
+        return false;
+      }
+      FateCardEftCnt other = (FateCardEftCnt) o;
+      return bitField0_ == other.bitField0_
+        && (!hasId() || id == other.id)
+        && (!hasEftId() || eftId == other.eftId)
+        && (!hasCount() || count == other.count)
+        && (!hasNextPackage() || nextPackage.equals(other.nextPackage));
+    }
+
+    @Override
+    public void writeTo(final ProtoSink output) throws IOException {
+      if ((bitField0_ & 0x00000001) != 0) {
+        output.writeRawByte((byte) 8);
+        output.writeUInt32NoTag(id);
+      }
+      if ((bitField0_ & 0x00000002) != 0) {
+        output.writeRawByte((byte) 16);
+        output.writeUInt32NoTag(eftId);
+      }
+      if ((bitField0_ & 0x00000004) != 0) {
+        output.writeRawByte((byte) 24);
+        output.writeUInt32NoTag(count);
+      }
+      if ((bitField0_ & 0x00000008) != 0) {
+        output.writeRawLittleEndian16((short) 32762);
+        output.writeBytesNoTag(nextPackage);
+      }
+    }
+
+    @Override
+    protected int computeSerializedSize() {
+      int size = 0;
+      if ((bitField0_ & 0x00000001) != 0) {
+        size += 1 + ProtoSink.computeUInt32SizeNoTag(id);
+      }
+      if ((bitField0_ & 0x00000002) != 0) {
+        size += 1 + ProtoSink.computeUInt32SizeNoTag(eftId);
+      }
+      if ((bitField0_ & 0x00000004) != 0) {
+        size += 1 + ProtoSink.computeUInt32SizeNoTag(count);
+      }
+      if ((bitField0_ & 0x00000008) != 0) {
+        size += 2 + ProtoSink.computeBytesSizeNoTag(nextPackage);
+      }
+      return size;
+    }
+
+    @Override
+    @SuppressWarnings("fallthrough")
+    public FateCardEftCnt mergeFrom(final ProtoSource input) throws IOException {
+      // Enabled Fall-Through Optimization (QuickBuffers)
+      int tag = input.readTag();
+      while (true) {
+        switch (tag) {
+          case 8: {
+            // id
+            id = input.readUInt32();
+            bitField0_ |= 0x00000001;
+            tag = input.readTag();
+            if (tag != 16) {
+              break;
+            }
+          }
+          case 16: {
+            // eftId
+            eftId = input.readUInt32();
+            bitField0_ |= 0x00000002;
+            tag = input.readTag();
+            if (tag != 24) {
+              break;
+            }
+          }
+          case 24: {
+            // count
+            count = input.readUInt32();
+            bitField0_ |= 0x00000004;
+            tag = input.readTag();
+            if (tag != 16378) {
+              break;
+            }
+          }
+          case 16378: {
+            // nextPackage
+            input.readBytes(nextPackage);
+            bitField0_ |= 0x00000008;
+            tag = input.readTag();
+            if (tag != 0) {
+              break;
+            }
+          }
+          case 0: {
+            return this;
+          }
+          default: {
+            if (!input.skipField(tag)) {
+              return this;
+            }
+            tag = input.readTag();
+            break;
+          }
+        }
+      }
+    }
+
+    @Override
+    public void writeTo(final JsonSink output) throws IOException {
+      output.beginObject();
+      if ((bitField0_ & 0x00000001) != 0) {
+        output.writeUInt32(FieldNames.id, id);
+      }
+      if ((bitField0_ & 0x00000002) != 0) {
+        output.writeUInt32(FieldNames.eftId, eftId);
+      }
+      if ((bitField0_ & 0x00000004) != 0) {
+        output.writeUInt32(FieldNames.count, count);
+      }
+      if ((bitField0_ & 0x00000008) != 0) {
+        output.writeBytes(FieldNames.nextPackage, nextPackage);
+      }
+      output.endObject();
+    }
+
+    @Override
+    public FateCardEftCnt mergeFrom(final JsonSource input) throws IOException {
+      if (!input.beginObject()) {
+        return this;
+      }
+      while (!input.isAtEnd()) {
+        switch (input.readFieldHash()) {
+          case 2363: {
+            if (input.isAtField(FieldNames.id)) {
+              if (!input.trySkipNullValue()) {
+                id = input.readUInt32();
+                bitField0_ |= 0x00000001;
+              }
+            } else {
+              input.skipUnknownField();
+            }
+            break;
+          }
+          case 66875470: {
+            if (input.isAtField(FieldNames.eftId)) {
+              if (!input.trySkipNullValue()) {
+                eftId = input.readUInt32();
+                bitField0_ |= 0x00000002;
+              }
+            } else {
+              input.skipUnknownField();
+            }
+            break;
+          }
+          case 65298671: {
+            if (input.isAtField(FieldNames.count)) {
+              if (!input.trySkipNullValue()) {
+                count = input.readUInt32();
+                bitField0_ |= 0x00000004;
+              }
+            } else {
+              input.skipUnknownField();
+            }
+            break;
+          }
+          case -2082324045: {
+            if (input.isAtField(FieldNames.nextPackage)) {
+              if (!input.trySkipNullValue()) {
+                input.readBytes(nextPackage);
+                bitField0_ |= 0x00000008;
+              }
+            } else {
+              input.skipUnknownField();
+            }
+            break;
+          }
+          default: {
+            input.skipUnknownField();
+            break;
+          }
+        }
+      }
+      input.endObject();
+      return this;
+    }
+
+    @Override
+    public FateCardEftCnt clone() {
+      return new FateCardEftCnt().copyFrom(this);
+    }
+
+    @Override
+    public boolean isEmpty() {
+      return ((bitField0_) == 0);
+    }
+
+    public static FateCardEftCnt parseFrom(final byte[] data) throws
+        InvalidProtocolBufferException {
+      return ProtoMessage.mergeFrom(new FateCardEftCnt(), data).checkInitialized();
+    }
+
+    public static FateCardEftCnt parseFrom(final ProtoSource input) throws IOException {
+      return ProtoMessage.mergeFrom(new FateCardEftCnt(), input).checkInitialized();
+    }
+
+    public static FateCardEftCnt parseFrom(final JsonSource input) throws IOException {
+      return ProtoMessage.mergeFrom(new FateCardEftCnt(), input).checkInitialized();
+    }
+
+    /**
+     * @return factory for creating FateCardEftCnt messages
+     */
+    public static MessageFactory<FateCardEftCnt> getFactory() {
+      return FateCardEftCntFactory.INSTANCE;
+    }
+
+    private enum FateCardEftCntFactory implements MessageFactory<FateCardEftCnt> {
+      INSTANCE;
+
+      @Override
+      public FateCardEftCnt create() {
+        return FateCardEftCnt.newInstance();
+      }
+    }
+
+    /**
+     * Contains name constants used for serializing JSON
+     */
+    static class FieldNames {
+      static final FieldName id = FieldName.forField("Id");
+
+      static final FieldName eftId = FieldName.forField("EftId");
+
+      static final FieldName count = FieldName.forField("Count");
+
+      static final FieldName nextPackage = FieldName.forField("NextPackage");
+    }
+  }
+
+  /**
+   * Protobuf type {@code FateCardTimeLimit}
+   */
+  public static final class FateCardTimeLimit extends ProtoMessage<FateCardTimeLimit> implements Cloneable {
+    private static final long serialVersionUID = 0L;
+
+    /**
+     * <code>optional uint32 Id = 1;</code>
+     */
+    private int id;
+
+    /**
+     * <code>optional uint32 TimeLimit = 2;</code>
+     */
+    private int timeLimit;
+
+    /**
+     * <code>optional bytes NextPackage = 2047;</code>
+     */
+    private final RepeatedByte nextPackage = RepeatedByte.newEmptyInstance();
+
+    private FateCardTimeLimit() {
+    }
+
+    /**
+     * @return a new empty instance of {@code FateCardTimeLimit}
+     */
+    public static FateCardTimeLimit newInstance() {
+      return new FateCardTimeLimit();
+    }
+
+    /**
+     * <code>optional uint32 Id = 1;</code>
+     * @return whether the id field is set
+     */
+    public boolean hasId() {
+      return (bitField0_ & 0x00000001) != 0;
+    }
+
+    /**
+     * <code>optional uint32 Id = 1;</code>
+     * @return this
+     */
+    public FateCardTimeLimit clearId() {
+      bitField0_ &= ~0x00000001;
+      id = 0;
+      return this;
+    }
+
+    /**
+     * <code>optional uint32 Id = 1;</code>
+     * @return the id
+     */
+    public int getId() {
+      return id;
+    }
+
+    /**
+     * <code>optional uint32 Id = 1;</code>
+     * @param value the id to set
+     * @return this
+     */
+    public FateCardTimeLimit setId(final int value) {
+      bitField0_ |= 0x00000001;
+      id = value;
+      return this;
+    }
+
+    /**
+     * <code>optional uint32 TimeLimit = 2;</code>
+     * @return whether the timeLimit field is set
+     */
+    public boolean hasTimeLimit() {
+      return (bitField0_ & 0x00000002) != 0;
+    }
+
+    /**
+     * <code>optional uint32 TimeLimit = 2;</code>
+     * @return this
+     */
+    public FateCardTimeLimit clearTimeLimit() {
+      bitField0_ &= ~0x00000002;
+      timeLimit = 0;
+      return this;
+    }
+
+    /**
+     * <code>optional uint32 TimeLimit = 2;</code>
+     * @return the timeLimit
+     */
+    public int getTimeLimit() {
+      return timeLimit;
+    }
+
+    /**
+     * <code>optional uint32 TimeLimit = 2;</code>
+     * @param value the timeLimit to set
+     * @return this
+     */
+    public FateCardTimeLimit setTimeLimit(final int value) {
+      bitField0_ |= 0x00000002;
+      timeLimit = value;
+      return this;
+    }
+
+    /**
+     * <code>optional bytes NextPackage = 2047;</code>
+     * @return whether the nextPackage field is set
+     */
+    public boolean hasNextPackage() {
+      return (bitField0_ & 0x00000004) != 0;
+    }
+
+    /**
+     * <code>optional bytes NextPackage = 2047;</code>
+     * @return this
+     */
+    public FateCardTimeLimit clearNextPackage() {
+      bitField0_ &= ~0x00000004;
+      nextPackage.clear();
+      return this;
+    }
+
+    /**
+     * <code>optional bytes NextPackage = 2047;</code>
+     *
+     * This method returns the internal storage object without modifying any has state.
+     * The returned object should not be modified and be treated as read-only.
+     *
+     * Use {@link #getMutableNextPackage()} if you want to modify it.
+     *
+     * @return internal storage object for reading
+     */
+    public RepeatedByte getNextPackage() {
+      return nextPackage;
+    }
+
+    /**
+     * <code>optional bytes NextPackage = 2047;</code>
+     *
+     * This method returns the internal storage object and sets the corresponding
+     * has state. The returned object will become part of this message and its
+     * contents may be modified as long as the has state is not cleared.
+     *
+     * @return internal storage object for modifications
+     */
+    public RepeatedByte getMutableNextPackage() {
+      bitField0_ |= 0x00000004;
+      return nextPackage;
+    }
+
+    /**
+     * <code>optional bytes NextPackage = 2047;</code>
+     * @param value the nextPackage to add
+     * @return this
+     */
+    public FateCardTimeLimit addNextPackage(final byte value) {
+      bitField0_ |= 0x00000004;
+      nextPackage.add(value);
+      return this;
+    }
+
+    /**
+     * <code>optional bytes NextPackage = 2047;</code>
+     * @param values the nextPackage to add
+     * @return this
+     */
+    public FateCardTimeLimit addAllNextPackage(final byte... values) {
+      bitField0_ |= 0x00000004;
+      nextPackage.addAll(values);
+      return this;
+    }
+
+    /**
+     * <code>optional bytes NextPackage = 2047;</code>
+     * @param values the nextPackage to set
+     * @return this
+     */
+    public FateCardTimeLimit setNextPackage(final byte... values) {
+      bitField0_ |= 0x00000004;
+      nextPackage.copyFrom(values);
+      return this;
+    }
+
+    @Override
+    public FateCardTimeLimit copyFrom(final FateCardTimeLimit other) {
+      cachedSize = other.cachedSize;
+      if ((bitField0_ | other.bitField0_) != 0) {
+        bitField0_ = other.bitField0_;
+        id = other.id;
+        timeLimit = other.timeLimit;
+        nextPackage.copyFrom(other.nextPackage);
+      }
+      return this;
+    }
+
+    @Override
+    public FateCardTimeLimit mergeFrom(final FateCardTimeLimit other) {
+      if (other.isEmpty()) {
+        return this;
+      }
+      cachedSize = -1;
+      if (other.hasId()) {
+        setId(other.id);
+      }
+      if (other.hasTimeLimit()) {
+        setTimeLimit(other.timeLimit);
+      }
+      if (other.hasNextPackage()) {
+        getMutableNextPackage().copyFrom(other.nextPackage);
+      }
+      return this;
+    }
+
+    @Override
+    public FateCardTimeLimit clear() {
+      if (isEmpty()) {
+        return this;
+      }
+      cachedSize = -1;
+      bitField0_ = 0;
+      id = 0;
+      timeLimit = 0;
+      nextPackage.clear();
+      return this;
+    }
+
+    @Override
+    public FateCardTimeLimit clearQuick() {
+      if (isEmpty()) {
+        return this;
+      }
+      cachedSize = -1;
+      bitField0_ = 0;
+      nextPackage.clear();
+      return this;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+      if (o == this) {
+        return true;
+      }
+      if (!(o instanceof FateCardTimeLimit)) {
+        return false;
+      }
+      FateCardTimeLimit other = (FateCardTimeLimit) o;
+      return bitField0_ == other.bitField0_
+        && (!hasId() || id == other.id)
+        && (!hasTimeLimit() || timeLimit == other.timeLimit)
+        && (!hasNextPackage() || nextPackage.equals(other.nextPackage));
+    }
+
+    @Override
+    public void writeTo(final ProtoSink output) throws IOException {
+      if ((bitField0_ & 0x00000001) != 0) {
+        output.writeRawByte((byte) 8);
+        output.writeUInt32NoTag(id);
+      }
+      if ((bitField0_ & 0x00000002) != 0) {
+        output.writeRawByte((byte) 16);
+        output.writeUInt32NoTag(timeLimit);
+      }
+      if ((bitField0_ & 0x00000004) != 0) {
+        output.writeRawLittleEndian16((short) 32762);
+        output.writeBytesNoTag(nextPackage);
+      }
+    }
+
+    @Override
+    protected int computeSerializedSize() {
+      int size = 0;
+      if ((bitField0_ & 0x00000001) != 0) {
+        size += 1 + ProtoSink.computeUInt32SizeNoTag(id);
+      }
+      if ((bitField0_ & 0x00000002) != 0) {
+        size += 1 + ProtoSink.computeUInt32SizeNoTag(timeLimit);
+      }
+      if ((bitField0_ & 0x00000004) != 0) {
+        size += 2 + ProtoSink.computeBytesSizeNoTag(nextPackage);
+      }
+      return size;
+    }
+
+    @Override
+    @SuppressWarnings("fallthrough")
+    public FateCardTimeLimit mergeFrom(final ProtoSource input) throws IOException {
+      // Enabled Fall-Through Optimization (QuickBuffers)
+      int tag = input.readTag();
+      while (true) {
+        switch (tag) {
+          case 8: {
+            // id
+            id = input.readUInt32();
+            bitField0_ |= 0x00000001;
+            tag = input.readTag();
+            if (tag != 16) {
+              break;
+            }
+          }
+          case 16: {
+            // timeLimit
+            timeLimit = input.readUInt32();
+            bitField0_ |= 0x00000002;
+            tag = input.readTag();
+            if (tag != 16378) {
+              break;
+            }
+          }
+          case 16378: {
+            // nextPackage
+            input.readBytes(nextPackage);
+            bitField0_ |= 0x00000004;
+            tag = input.readTag();
+            if (tag != 0) {
+              break;
+            }
+          }
+          case 0: {
+            return this;
+          }
+          default: {
+            if (!input.skipField(tag)) {
+              return this;
+            }
+            tag = input.readTag();
+            break;
+          }
+        }
+      }
+    }
+
+    @Override
+    public void writeTo(final JsonSink output) throws IOException {
+      output.beginObject();
+      if ((bitField0_ & 0x00000001) != 0) {
+        output.writeUInt32(FieldNames.id, id);
+      }
+      if ((bitField0_ & 0x00000002) != 0) {
+        output.writeUInt32(FieldNames.timeLimit, timeLimit);
+      }
+      if ((bitField0_ & 0x00000004) != 0) {
+        output.writeBytes(FieldNames.nextPackage, nextPackage);
+      }
+      output.endObject();
+    }
+
+    @Override
+    public FateCardTimeLimit mergeFrom(final JsonSource input) throws IOException {
+      if (!input.beginObject()) {
+        return this;
+      }
+      while (!input.isAtEnd()) {
+        switch (input.readFieldHash()) {
+          case 2363: {
+            if (input.isAtField(FieldNames.id)) {
+              if (!input.trySkipNullValue()) {
+                id = input.readUInt32();
+                bitField0_ |= 0x00000001;
+              }
+            } else {
+              input.skipUnknownField();
+            }
+            break;
+          }
+          case 2022760654: {
+            if (input.isAtField(FieldNames.timeLimit)) {
+              if (!input.trySkipNullValue()) {
+                timeLimit = input.readUInt32();
+                bitField0_ |= 0x00000002;
+              }
+            } else {
+              input.skipUnknownField();
+            }
+            break;
+          }
+          case -2082324045: {
+            if (input.isAtField(FieldNames.nextPackage)) {
+              if (!input.trySkipNullValue()) {
+                input.readBytes(nextPackage);
+                bitField0_ |= 0x00000004;
+              }
+            } else {
+              input.skipUnknownField();
+            }
+            break;
+          }
+          default: {
+            input.skipUnknownField();
+            break;
+          }
+        }
+      }
+      input.endObject();
+      return this;
+    }
+
+    @Override
+    public FateCardTimeLimit clone() {
+      return new FateCardTimeLimit().copyFrom(this);
+    }
+
+    @Override
+    public boolean isEmpty() {
+      return ((bitField0_) == 0);
+    }
+
+    public static FateCardTimeLimit parseFrom(final byte[] data) throws
+        InvalidProtocolBufferException {
+      return ProtoMessage.mergeFrom(new FateCardTimeLimit(), data).checkInitialized();
+    }
+
+    public static FateCardTimeLimit parseFrom(final ProtoSource input) throws IOException {
+      return ProtoMessage.mergeFrom(new FateCardTimeLimit(), input).checkInitialized();
+    }
+
+    public static FateCardTimeLimit parseFrom(final JsonSource input) throws IOException {
+      return ProtoMessage.mergeFrom(new FateCardTimeLimit(), input).checkInitialized();
+    }
+
+    /**
+     * @return factory for creating FateCardTimeLimit messages
+     */
+    public static MessageFactory<FateCardTimeLimit> getFactory() {
+      return FateCardTimeLimitFactory.INSTANCE;
+    }
+
+    private enum FateCardTimeLimitFactory implements MessageFactory<FateCardTimeLimit> {
+      INSTANCE;
+
+      @Override
+      public FateCardTimeLimit create() {
+        return FateCardTimeLimit.newInstance();
+      }
+    }
+
+    /**
+     * Contains name constants used for serializing JSON
+     */
+    static class FieldNames {
+      static final FieldName id = FieldName.forField("Id");
+
+      static final FieldName timeLimit = FieldName.forField("TimeLimit");
 
       static final FieldName nextPackage = FieldName.forField("NextPackage");
     }

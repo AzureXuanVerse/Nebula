@@ -256,6 +256,9 @@ public class NetMsgId {
     public static final int disc_read_reward_receive_req = 3128;
     public static final int disc_read_reward_receive_succeed_ack = 3129;
     public static final int disc_read_reward_receive_failed_ack = 3130;
+    public static final int disc_all_limit_break_req = 3131;
+    public static final int disc_all_limit_break_succeed_ack = 3132;
+    public static final int disc_all_limit_break_failed_ack = 3133;
     public static final int agent_apply_req = 3301;
     public static final int agent_apply_succeed_ack = 3302;
     public static final int agent_apply_failed_ack = 3303;
@@ -343,6 +346,15 @@ public class NetMsgId {
     public static final int star_tower_build_preference_set_req = 4719;
     public static final int star_tower_build_preference_set_succeed_ack = 4720;
     public static final int star_tower_build_preference_set_failed_ack = 4721;
+    public static final int build_convert_detail_list_get_req = 4801;
+    public static final int build_convert_detail_list_get_succeed_ack = 4802;
+    public static final int build_convert_detail_list_get_failed_ack = 4803;
+    public static final int build_convert_submit_req = 4804;
+    public static final int build_convert_submit_succeed_ack = 4805;
+    public static final int build_convert_submit_failed_ack = 4806;
+    public static final int build_convert_group_reward_receive_req = 4807;
+    public static final int build_convert_group_reward_receive_succeed_ack = 4808;
+    public static final int build_convert_group_reward_receive_failed_ack = 4809;
     public static final int star_tower_book_potential_brief_list_get_req = 4901;
     public static final int star_tower_book_potential_brief_list_get_succeed_ack = 4902;
     public static final int star_tower_book_potential_brief_list_get_failed_ack = 4903;
@@ -583,6 +595,9 @@ public class NetMsgId {
     public static final int vampire_talent_show_req = 8310;
     public static final int vampire_talent_show_succeed_ack = 8311;
     public static final int vampire_talent_show_failed_ack = 8312;
+    public static final int vampire_survivor_info_req = 8313;
+    public static final int vampire_survivor_info_succeed_ack = 8314;
+    public static final int vampire_survivor_info_failed_ack = 8315;
     public static final int mail_list_req = 9001;
     public static final int mail_list_succeed_ack = 9002;
     public static final int mail_list_failed_ack = 9003;
@@ -741,6 +756,9 @@ public class NetMsgId {
     public static final int story_set_state_notify = 10050;
     public static final int vampire_survivor_new_season_notify = 10051;
     public static final int order_collected_notify = 10052;
+    public static final int activity_end_item_change_notify = 10053;
+    public static final int item_expired_change_notify = 10054;
+    public static final int activity_mining_grids_error_notify = 10055;
     public static final int activity_mining_apply_req = 11001;
     public static final int activity_mining_apply_succeed_ack = 11002;
     public static final int activity_mining_apply_failed_ack = 11003;

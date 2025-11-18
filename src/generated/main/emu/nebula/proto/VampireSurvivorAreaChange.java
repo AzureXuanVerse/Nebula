@@ -26,6 +26,11 @@ public final class VampireSurvivorAreaChange {
     private int time;
 
     /**
+     * <code>optional .VampireClientData ClientData = 6;</code>
+     */
+    private final Public.VampireClientData clientData = Public.VampireClientData.newInstance();
+
+    /**
      * <code>optional .Events Events = 7;</code>
      */
     private final Public.Events events = Public.Events.newInstance();
@@ -88,11 +93,68 @@ public final class VampireSurvivorAreaChange {
     }
 
     /**
+     * <code>optional .VampireClientData ClientData = 6;</code>
+     * @return whether the clientData field is set
+     */
+    public boolean hasClientData() {
+      return (bitField0_ & 0x00000002) != 0;
+    }
+
+    /**
+     * <code>optional .VampireClientData ClientData = 6;</code>
+     * @return this
+     */
+    public VampireSurvivorAreaChangeReq clearClientData() {
+      bitField0_ &= ~0x00000002;
+      clientData.clear();
+      return this;
+    }
+
+    /**
+     * <code>optional .VampireClientData ClientData = 6;</code>
+     *
+     * This method returns the internal storage object without modifying any has state.
+     * The returned object should not be modified and be treated as read-only.
+     *
+     * Use {@link #getMutableClientData()} if you want to modify it.
+     *
+     * @return internal storage object for reading
+     */
+    public Public.VampireClientData getClientData() {
+      return clientData;
+    }
+
+    /**
+     * <code>optional .VampireClientData ClientData = 6;</code>
+     *
+     * This method returns the internal storage object and sets the corresponding
+     * has state. The returned object will become part of this message and its
+     * contents may be modified as long as the has state is not cleared.
+     *
+     * @return internal storage object for modifications
+     */
+    public Public.VampireClientData getMutableClientData() {
+      bitField0_ |= 0x00000002;
+      return clientData;
+    }
+
+    /**
+     * <code>optional .VampireClientData ClientData = 6;</code>
+     * @param value the clientData to set
+     * @return this
+     */
+    public VampireSurvivorAreaChangeReq setClientData(final Public.VampireClientData value) {
+      bitField0_ |= 0x00000002;
+      clientData.copyFrom(value);
+      return this;
+    }
+
+    /**
      * <code>optional .Events Events = 7;</code>
      * @return whether the events field is set
      */
     public boolean hasEvents() {
-      return (bitField0_ & 0x00000002) != 0;
+      return (bitField0_ & 0x00000004) != 0;
     }
 
     /**
@@ -100,7 +162,7 @@ public final class VampireSurvivorAreaChange {
      * @return this
      */
     public VampireSurvivorAreaChangeReq clearEvents() {
-      bitField0_ &= ~0x00000002;
+      bitField0_ &= ~0x00000004;
       events.clear();
       return this;
     }
@@ -129,7 +191,7 @@ public final class VampireSurvivorAreaChange {
      * @return internal storage object for modifications
      */
     public Public.Events getMutableEvents() {
-      bitField0_ |= 0x00000002;
+      bitField0_ |= 0x00000004;
       return events;
     }
 
@@ -139,7 +201,7 @@ public final class VampireSurvivorAreaChange {
      * @return this
      */
     public VampireSurvivorAreaChangeReq setEvents(final Public.Events value) {
-      bitField0_ |= 0x00000002;
+      bitField0_ |= 0x00000004;
       events.copyFrom(value);
       return this;
     }
@@ -149,7 +211,7 @@ public final class VampireSurvivorAreaChange {
      * @return whether the nextPackage field is set
      */
     public boolean hasNextPackage() {
-      return (bitField0_ & 0x00000004) != 0;
+      return (bitField0_ & 0x00000008) != 0;
     }
 
     /**
@@ -157,7 +219,7 @@ public final class VampireSurvivorAreaChange {
      * @return this
      */
     public VampireSurvivorAreaChangeReq clearNextPackage() {
-      bitField0_ &= ~0x00000004;
+      bitField0_ &= ~0x00000008;
       nextPackage.clear();
       return this;
     }
@@ -186,7 +248,7 @@ public final class VampireSurvivorAreaChange {
      * @return internal storage object for modifications
      */
     public RepeatedByte getMutableNextPackage() {
-      bitField0_ |= 0x00000004;
+      bitField0_ |= 0x00000008;
       return nextPackage;
     }
 
@@ -196,7 +258,7 @@ public final class VampireSurvivorAreaChange {
      * @return this
      */
     public VampireSurvivorAreaChangeReq addNextPackage(final byte value) {
-      bitField0_ |= 0x00000004;
+      bitField0_ |= 0x00000008;
       nextPackage.add(value);
       return this;
     }
@@ -207,7 +269,7 @@ public final class VampireSurvivorAreaChange {
      * @return this
      */
     public VampireSurvivorAreaChangeReq addAllNextPackage(final byte... values) {
-      bitField0_ |= 0x00000004;
+      bitField0_ |= 0x00000008;
       nextPackage.addAll(values);
       return this;
     }
@@ -218,7 +280,7 @@ public final class VampireSurvivorAreaChange {
      * @return this
      */
     public VampireSurvivorAreaChangeReq setNextPackage(final byte... values) {
-      bitField0_ |= 0x00000004;
+      bitField0_ |= 0x00000008;
       nextPackage.copyFrom(values);
       return this;
     }
@@ -228,7 +290,7 @@ public final class VampireSurvivorAreaChange {
      * @return whether the killCount field is set
      */
     public boolean hasKillCount() {
-      return (bitField0_ & 0x00000008) != 0;
+      return (bitField0_ & 0x00000010) != 0;
     }
 
     /**
@@ -236,7 +298,7 @@ public final class VampireSurvivorAreaChange {
      * @return this
      */
     public VampireSurvivorAreaChangeReq clearKillCount() {
-      bitField0_ &= ~0x00000008;
+      bitField0_ &= ~0x00000010;
       killCount.clear();
       return this;
     }
@@ -265,7 +327,7 @@ public final class VampireSurvivorAreaChange {
      * @return internal storage object for modifications
      */
     public RepeatedInt getMutableKillCount() {
-      bitField0_ |= 0x00000008;
+      bitField0_ |= 0x00000010;
       return killCount;
     }
 
@@ -275,7 +337,7 @@ public final class VampireSurvivorAreaChange {
      * @return this
      */
     public VampireSurvivorAreaChangeReq addKillCount(final int value) {
-      bitField0_ |= 0x00000008;
+      bitField0_ |= 0x00000010;
       killCount.add(value);
       return this;
     }
@@ -286,7 +348,7 @@ public final class VampireSurvivorAreaChange {
      * @return this
      */
     public VampireSurvivorAreaChangeReq addAllKillCount(final int... values) {
-      bitField0_ |= 0x00000008;
+      bitField0_ |= 0x00000010;
       killCount.addAll(values);
       return this;
     }
@@ -297,6 +359,7 @@ public final class VampireSurvivorAreaChange {
       if ((bitField0_ | other.bitField0_) != 0) {
         bitField0_ = other.bitField0_;
         time = other.time;
+        clientData.copyFrom(other.clientData);
         events.copyFrom(other.events);
         nextPackage.copyFrom(other.nextPackage);
         killCount.copyFrom(other.killCount);
@@ -312,6 +375,9 @@ public final class VampireSurvivorAreaChange {
       cachedSize = -1;
       if (other.hasTime()) {
         setTime(other.time);
+      }
+      if (other.hasClientData()) {
+        getMutableClientData().mergeFrom(other.clientData);
       }
       if (other.hasEvents()) {
         getMutableEvents().mergeFrom(other.events);
@@ -333,6 +399,7 @@ public final class VampireSurvivorAreaChange {
       cachedSize = -1;
       bitField0_ = 0;
       time = 0;
+      clientData.clear();
       events.clear();
       nextPackage.clear();
       killCount.clear();
@@ -346,6 +413,7 @@ public final class VampireSurvivorAreaChange {
       }
       cachedSize = -1;
       bitField0_ = 0;
+      clientData.clearQuick();
       events.clearQuick();
       nextPackage.clear();
       killCount.clear();
@@ -363,6 +431,7 @@ public final class VampireSurvivorAreaChange {
       VampireSurvivorAreaChangeReq other = (VampireSurvivorAreaChangeReq) o;
       return bitField0_ == other.bitField0_
         && (!hasTime() || time == other.time)
+        && (!hasClientData() || clientData.equals(other.clientData))
         && (!hasEvents() || events.equals(other.events))
         && (!hasNextPackage() || nextPackage.equals(other.nextPackage))
         && (!hasKillCount() || killCount.equals(other.killCount));
@@ -375,14 +444,18 @@ public final class VampireSurvivorAreaChange {
         output.writeUInt32NoTag(time);
       }
       if ((bitField0_ & 0x00000002) != 0) {
+        output.writeRawByte((byte) 50);
+        output.writeMessageNoTag(clientData);
+      }
+      if ((bitField0_ & 0x00000004) != 0) {
         output.writeRawByte((byte) 58);
         output.writeMessageNoTag(events);
       }
-      if ((bitField0_ & 0x00000004) != 0) {
+      if ((bitField0_ & 0x00000008) != 0) {
         output.writeRawLittleEndian16((short) 32762);
         output.writeBytesNoTag(nextPackage);
       }
-      if ((bitField0_ & 0x00000008) != 0) {
+      if ((bitField0_ & 0x00000010) != 0) {
         for (int i = 0; i < killCount.length(); i++) {
           output.writeRawByte((byte) 8);
           output.writeUInt32NoTag(killCount.array()[i]);
@@ -397,12 +470,15 @@ public final class VampireSurvivorAreaChange {
         size += 1 + ProtoSink.computeUInt32SizeNoTag(time);
       }
       if ((bitField0_ & 0x00000002) != 0) {
-        size += 1 + ProtoSink.computeMessageSizeNoTag(events);
+        size += 1 + ProtoSink.computeMessageSizeNoTag(clientData);
       }
       if ((bitField0_ & 0x00000004) != 0) {
-        size += 2 + ProtoSink.computeBytesSizeNoTag(nextPackage);
+        size += 1 + ProtoSink.computeMessageSizeNoTag(events);
       }
       if ((bitField0_ & 0x00000008) != 0) {
+        size += 2 + ProtoSink.computeBytesSizeNoTag(nextPackage);
+      }
+      if ((bitField0_ & 0x00000010) != 0) {
         size += (1 * killCount.length()) + ProtoSink.computeRepeatedUInt32SizeNoTag(killCount);
       }
       return size;
@@ -420,6 +496,15 @@ public final class VampireSurvivorAreaChange {
             time = input.readUInt32();
             bitField0_ |= 0x00000001;
             tag = input.readTag();
+            if (tag != 50) {
+              break;
+            }
+          }
+          case 50: {
+            // clientData
+            input.readMessage(clientData);
+            bitField0_ |= 0x00000002;
+            tag = input.readTag();
             if (tag != 58) {
               break;
             }
@@ -427,7 +512,7 @@ public final class VampireSurvivorAreaChange {
           case 58: {
             // events
             input.readMessage(events);
-            bitField0_ |= 0x00000002;
+            bitField0_ |= 0x00000004;
             tag = input.readTag();
             if (tag != 16378) {
               break;
@@ -436,7 +521,7 @@ public final class VampireSurvivorAreaChange {
           case 16378: {
             // nextPackage
             input.readBytes(nextPackage);
-            bitField0_ |= 0x00000004;
+            bitField0_ |= 0x00000008;
             tag = input.readTag();
             if (tag != 10) {
               break;
@@ -445,7 +530,7 @@ public final class VampireSurvivorAreaChange {
           case 10: {
             // killCount [packed=true]
             input.readPackedUInt32(killCount, tag);
-            bitField0_ |= 0x00000008;
+            bitField0_ |= 0x00000010;
             tag = input.readTag();
             if (tag != 0) {
               break;
@@ -464,7 +549,7 @@ public final class VampireSurvivorAreaChange {
           case 8: {
             // killCount [packed=false]
             tag = input.readRepeatedUInt32(killCount, tag);
-            bitField0_ |= 0x00000008;
+            bitField0_ |= 0x00000010;
             break;
           }
         }
@@ -478,12 +563,15 @@ public final class VampireSurvivorAreaChange {
         output.writeUInt32(FieldNames.time, time);
       }
       if ((bitField0_ & 0x00000002) != 0) {
-        output.writeMessage(FieldNames.events, events);
+        output.writeMessage(FieldNames.clientData, clientData);
       }
       if ((bitField0_ & 0x00000004) != 0) {
-        output.writeBytes(FieldNames.nextPackage, nextPackage);
+        output.writeMessage(FieldNames.events, events);
       }
       if ((bitField0_ & 0x00000008) != 0) {
+        output.writeBytes(FieldNames.nextPackage, nextPackage);
+      }
+      if ((bitField0_ & 0x00000010) != 0) {
         output.writeRepeatedUInt32(FieldNames.killCount, killCount);
       }
       output.endObject();
@@ -507,11 +595,22 @@ public final class VampireSurvivorAreaChange {
             }
             break;
           }
+          case -1199548875: {
+            if (input.isAtField(FieldNames.clientData)) {
+              if (!input.trySkipNullValue()) {
+                input.readMessage(clientData);
+                bitField0_ |= 0x00000002;
+              }
+            } else {
+              input.skipUnknownField();
+            }
+            break;
+          }
           case 2087505209: {
             if (input.isAtField(FieldNames.events)) {
               if (!input.trySkipNullValue()) {
                 input.readMessage(events);
-                bitField0_ |= 0x00000002;
+                bitField0_ |= 0x00000004;
               }
             } else {
               input.skipUnknownField();
@@ -522,7 +621,7 @@ public final class VampireSurvivorAreaChange {
             if (input.isAtField(FieldNames.nextPackage)) {
               if (!input.trySkipNullValue()) {
                 input.readBytes(nextPackage);
-                bitField0_ |= 0x00000004;
+                bitField0_ |= 0x00000008;
               }
             } else {
               input.skipUnknownField();
@@ -533,7 +632,7 @@ public final class VampireSurvivorAreaChange {
             if (input.isAtField(FieldNames.killCount)) {
               if (!input.trySkipNullValue()) {
                 input.readRepeatedUInt32(killCount);
-                bitField0_ |= 0x00000008;
+                bitField0_ |= 0x00000010;
               }
             } else {
               input.skipUnknownField();
@@ -596,6 +695,8 @@ public final class VampireSurvivorAreaChange {
      */
     static class FieldNames {
       static final FieldName time = FieldName.forField("Time");
+
+      static final FieldName clientData = FieldName.forField("ClientData");
 
       static final FieldName events = FieldName.forField("Events");
 

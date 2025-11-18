@@ -86,6 +86,11 @@ public final class ActivityDetail {
     private final Public.ActivityShop shop = Public.ActivityShop.newInstance();
 
     /**
+     * <code>optional .ActivityBuildConvert BdConvert = 14;</code>
+     */
+    private final Public.ActivityBuildConvert bdConvert = Public.ActivityBuildConvert.newInstance();
+
+    /**
      * <code>optional bytes NextPackage = 2047;</code>
      */
     private final RepeatedByte nextPackage = RepeatedByte.newEmptyInstance();
@@ -822,11 +827,68 @@ public final class ActivityDetail {
     }
 
     /**
+     * <code>optional .ActivityBuildConvert BdConvert = 14;</code>
+     * @return whether the bdConvert field is set
+     */
+    public boolean hasBdConvert() {
+      return (bitField0_ & 0x00002000) != 0;
+    }
+
+    /**
+     * <code>optional .ActivityBuildConvert BdConvert = 14;</code>
+     * @return this
+     */
+    public ActivityMsg clearBdConvert() {
+      bitField0_ &= ~0x00002000;
+      bdConvert.clear();
+      return this;
+    }
+
+    /**
+     * <code>optional .ActivityBuildConvert BdConvert = 14;</code>
+     *
+     * This method returns the internal storage object without modifying any has state.
+     * The returned object should not be modified and be treated as read-only.
+     *
+     * Use {@link #getMutableBdConvert()} if you want to modify it.
+     *
+     * @return internal storage object for reading
+     */
+    public Public.ActivityBuildConvert getBdConvert() {
+      return bdConvert;
+    }
+
+    /**
+     * <code>optional .ActivityBuildConvert BdConvert = 14;</code>
+     *
+     * This method returns the internal storage object and sets the corresponding
+     * has state. The returned object will become part of this message and its
+     * contents may be modified as long as the has state is not cleared.
+     *
+     * @return internal storage object for modifications
+     */
+    public Public.ActivityBuildConvert getMutableBdConvert() {
+      bitField0_ |= 0x00002000;
+      return bdConvert;
+    }
+
+    /**
+     * <code>optional .ActivityBuildConvert BdConvert = 14;</code>
+     * @param value the bdConvert to set
+     * @return this
+     */
+    public ActivityMsg setBdConvert(final Public.ActivityBuildConvert value) {
+      bitField0_ |= 0x00002000;
+      bdConvert.copyFrom(value);
+      return this;
+    }
+
+    /**
      * <code>optional bytes NextPackage = 2047;</code>
      * @return whether the nextPackage field is set
      */
     public boolean hasNextPackage() {
-      return (bitField0_ & 0x00002000) != 0;
+      return (bitField0_ & 0x00004000) != 0;
     }
 
     /**
@@ -834,7 +896,7 @@ public final class ActivityDetail {
      * @return this
      */
     public ActivityMsg clearNextPackage() {
-      bitField0_ &= ~0x00002000;
+      bitField0_ &= ~0x00004000;
       nextPackage.clear();
       return this;
     }
@@ -863,7 +925,7 @@ public final class ActivityDetail {
      * @return internal storage object for modifications
      */
     public RepeatedByte getMutableNextPackage() {
-      bitField0_ |= 0x00002000;
+      bitField0_ |= 0x00004000;
       return nextPackage;
     }
 
@@ -873,7 +935,7 @@ public final class ActivityDetail {
      * @return this
      */
     public ActivityMsg addNextPackage(final byte value) {
-      bitField0_ |= 0x00002000;
+      bitField0_ |= 0x00004000;
       nextPackage.add(value);
       return this;
     }
@@ -884,7 +946,7 @@ public final class ActivityDetail {
      * @return this
      */
     public ActivityMsg addAllNextPackage(final byte... values) {
-      bitField0_ |= 0x00002000;
+      bitField0_ |= 0x00004000;
       nextPackage.addAll(values);
       return this;
     }
@@ -895,7 +957,7 @@ public final class ActivityDetail {
      * @return this
      */
     public ActivityMsg setNextPackage(final byte... values) {
-      bitField0_ |= 0x00002000;
+      bitField0_ |= 0x00004000;
       nextPackage.copyFrom(values);
       return this;
     }
@@ -918,6 +980,7 @@ public final class ActivityDetail {
         avg.copyFrom(other.avg);
         task.copyFrom(other.task);
         shop.copyFrom(other.shop);
+        bdConvert.copyFrom(other.bdConvert);
         nextPackage.copyFrom(other.nextPackage);
       }
       return this;
@@ -968,6 +1031,9 @@ public final class ActivityDetail {
       if (other.hasShop()) {
         getMutableShop().mergeFrom(other.shop);
       }
+      if (other.hasBdConvert()) {
+        getMutableBdConvert().mergeFrom(other.bdConvert);
+      }
       if (other.hasNextPackage()) {
         getMutableNextPackage().copyFrom(other.nextPackage);
       }
@@ -994,6 +1060,7 @@ public final class ActivityDetail {
       avg.clear();
       task.clear();
       shop.clear();
+      bdConvert.clear();
       nextPackage.clear();
       return this;
     }
@@ -1017,6 +1084,7 @@ public final class ActivityDetail {
       avg.clearQuick();
       task.clearQuick();
       shop.clearQuick();
+      bdConvert.clearQuick();
       nextPackage.clear();
       return this;
     }
@@ -1044,6 +1112,7 @@ public final class ActivityDetail {
         && (!hasAvg() || avg.equals(other.avg))
         && (!hasTask() || task.equals(other.task))
         && (!hasShop() || shop.equals(other.shop))
+        && (!hasBdConvert() || bdConvert.equals(other.bdConvert))
         && (!hasNextPackage() || nextPackage.equals(other.nextPackage));
     }
 
@@ -1102,6 +1171,10 @@ public final class ActivityDetail {
         output.writeMessageNoTag(shop);
       }
       if ((bitField0_ & 0x00002000) != 0) {
+        output.writeRawByte((byte) 114);
+        output.writeMessageNoTag(bdConvert);
+      }
+      if ((bitField0_ & 0x00004000) != 0) {
         output.writeRawLittleEndian16((short) 32762);
         output.writeBytesNoTag(nextPackage);
       }
@@ -1150,6 +1223,9 @@ public final class ActivityDetail {
         size += 1 + ProtoSink.computeMessageSizeNoTag(shop);
       }
       if ((bitField0_ & 0x00002000) != 0) {
+        size += 1 + ProtoSink.computeMessageSizeNoTag(bdConvert);
+      }
+      if ((bitField0_ & 0x00004000) != 0) {
         size += 2 + ProtoSink.computeBytesSizeNoTag(nextPackage);
       }
       return size;
@@ -1275,6 +1351,15 @@ public final class ActivityDetail {
             input.readMessage(shop);
             bitField0_ |= 0x00001000;
             tag = input.readTag();
+            if (tag != 114) {
+              break;
+            }
+          }
+          case 114: {
+            // bdConvert
+            input.readMessage(bdConvert);
+            bitField0_ |= 0x00002000;
+            tag = input.readTag();
             if (tag != 16378) {
               break;
             }
@@ -1282,7 +1367,7 @@ public final class ActivityDetail {
           case 16378: {
             // nextPackage
             input.readBytes(nextPackage);
-            bitField0_ |= 0x00002000;
+            bitField0_ |= 0x00004000;
             tag = input.readTag();
             if (tag != 0) {
               break;
@@ -1345,6 +1430,9 @@ public final class ActivityDetail {
         output.writeMessage(FieldNames.shop, shop);
       }
       if ((bitField0_ & 0x00002000) != 0) {
+        output.writeMessage(FieldNames.bdConvert, bdConvert);
+      }
+      if ((bitField0_ & 0x00004000) != 0) {
         output.writeBytes(FieldNames.nextPackage, nextPackage);
       }
       output.endObject();
@@ -1500,11 +1588,22 @@ public final class ActivityDetail {
             }
             break;
           }
+          case 1770707697: {
+            if (input.isAtField(FieldNames.bdConvert)) {
+              if (!input.trySkipNullValue()) {
+                input.readMessage(bdConvert);
+                bitField0_ |= 0x00002000;
+              }
+            } else {
+              input.skipUnknownField();
+            }
+            break;
+          }
           case -2082324045: {
             if (input.isAtField(FieldNames.nextPackage)) {
               if (!input.trySkipNullValue()) {
                 input.readBytes(nextPackage);
-                bitField0_ |= 0x00002000;
+                bitField0_ |= 0x00004000;
               }
             } else {
               input.skipUnknownField();
@@ -1588,6 +1687,8 @@ public final class ActivityDetail {
       static final FieldName task = FieldName.forField("Task");
 
       static final FieldName shop = FieldName.forField("Shop");
+
+      static final FieldName bdConvert = FieldName.forField("BdConvert");
 
       static final FieldName nextPackage = FieldName.forField("NextPackage");
     }

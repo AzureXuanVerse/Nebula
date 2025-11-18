@@ -2,6 +2,9 @@ package emu.nebula;
 
 import java.time.ZoneId;
 
+import emu.nebula.game.inventory.ItemParam;
+import emu.nebula.util.WeightedList;
+
 public class GameConstants {
     private static final int DATA_VERSION = 48;
     private static final String VERSION = "1.2.0";
@@ -33,6 +36,16 @@ public class GameConstants {
     
     public static final int MAX_FRIENDSHIPS = 50;
     public static final int MAX_PENDING_FRIENDSHIPS = 30;
+    
+    // Daily gifts (Custom)
+    
+    public static final WeightedList<ItemParam> DAILY_GIFTS = new WeightedList<>();
+    
+    static {
+        DAILY_GIFTS.add(1000, new ItemParam(GOLD_ITEM_ID, 8888));
+        DAILY_GIFTS.add(250, new ItemParam(GOLD_ITEM_ID, 18888));
+        DAILY_GIFTS.add(10, new ItemParam(GEM_ITEM_ID, 50));
+    }
     
     // Helper functions
     

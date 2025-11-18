@@ -6,7 +6,7 @@ import java.util.Map;
 
 import dev.morphia.annotations.Entity;
 import dev.morphia.annotations.Id;
-
+import emu.nebula.GameConstants;
 import emu.nebula.Nebula;
 import emu.nebula.data.GameData;
 import emu.nebula.data.resources.WorldClassDef;
@@ -297,8 +297,8 @@ public class QuestManager extends PlayerManager implements GameDatabaseObject {
         }
         
         // Daily shop reward
-        // TODO randomize
-        var change = this.getPlayer().getInventory().addItem(1, 8888);
+        var reward = GameConstants.DAILY_GIFTS.next();
+        var change = this.getPlayer().getInventory().addItem(reward.getId(), reward.getCount());
         
         // Set and update in database
         this.hasDailyReward = false;

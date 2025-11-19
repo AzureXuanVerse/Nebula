@@ -136,8 +136,7 @@ public class PlayerModule extends GameContextModule {
         // Put in player cache
         this.addToCache(player);
         
-        // Set player for session
-        session.setPlayer(player);
+        System.out.println("created player");
 
         return player;
     }

@@ -172,9 +172,16 @@ public class Player implements GameDatabaseObject {
     
     public void setSession(GameSession session) {
         if (this.session != null) {
+            // Sanity check
+            if (this.session == session) {
+                return;
+            }
+            
+            // Clear player from session
             this.session.clearPlayer();
         }
         
+        // Set session
         this.session = session;
     }
     

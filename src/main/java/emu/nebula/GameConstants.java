@@ -29,7 +29,7 @@ public class GameConstants {
     public static final int CHARACTER_MAX_GEM_PRESETS = 3;
     public static final int CHARACTER_MAX_GEM_SLOTS = 3;
     
-    public static final int MAX_FORMATIONS = 5;
+    public static final int MAX_FORMATIONS = 6;
     public static final int MAX_SHOWCASE_IDS = 5;
     
     public static final int BATTLE_PASS_ID = 1;

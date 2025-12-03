@@ -1,6 +1,5 @@
 package emu.nebula.game.tower.cases;
 
-import emu.nebula.game.tower.room.StarTowerBattleRoom;
 import emu.nebula.proto.PublicStarTower.PotentialInfo;
 import emu.nebula.proto.PublicStarTower.StarTowerRoomCase;
 import emu.nebula.proto.StarTowerInteract.StarTowerInteractReq;
@@ -51,17 +50,10 @@ public class StarTowerPotentialCase extends StarTowerBaseCase {
         rsp.setChange(change.toProto());
         
         // Handle pending potential selectors
-        var potentialCase = this.getGame().handlePendingPotentialSelectors();
-        if (potentialCase != null) {
-            // Create potential selector
-            this.getGame().addCase(rsp.getMutableCases(), potentialCase);
-        } else if (!this.getRoom().hasDoor()) {
-            // Add door case here if door hasn't opened yet
-            this.getGame().createExit(rsp.getMutableCases());
-            // Create recovery npc
-            if (this.getRoom() instanceof StarTowerBattleRoom) {
-                this.getRoom().addCase(rsp.getMutableCases(), new StarTowerNpcRecoveryHPCase());
-            }
+        var nextCases = this.getGame().handlePendingPotentialSelectors();
+        
+        for (var towerCase : nextCases) {
+            this.getGame().addCase(rsp.getMutableCases(), towerCase);
         }
         
         return rsp;

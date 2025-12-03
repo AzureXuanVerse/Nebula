@@ -16,6 +16,8 @@ import emu.nebula.game.player.Player;
 import emu.nebula.game.player.PlayerChangeInfo;
 import emu.nebula.game.tower.cases.StarTowerBaseCase;
 import emu.nebula.game.tower.cases.StarTowerDoorCase;
+import emu.nebula.game.tower.cases.StarTowerHawkerCase;
+import emu.nebula.game.tower.cases.StarTowerNpcRecoveryHPCase;
 import emu.nebula.game.tower.cases.StarTowerPotentialCase;
 import emu.nebula.game.tower.room.RoomType;
 import emu.nebula.game.tower.room.StarTowerBaseRoom;
@@ -403,16 +405,39 @@ public class StarTowerGame {
     }
     
     /**
-     * Creates a potential selector for the client if there are any potential selectors avaliable.
-     * If there are none, then return null.
+     * Creates a potential selectors for the client if there are any potential selectors avaliable.
+     * If there are none, then create the door case so the player can exit
      */
-    public StarTowerBaseCase handlePendingPotentialSelectors() {
+    public List<StarTowerBaseCase> handlePendingPotentialSelectors() {
+        // Create potential selectors if any are avaliable
         if (this.pendingPotentialCases > 0) {
             this.pendingPotentialCases--;
-            return this.createPotentialSelector();
-        } else {
-            return null;
+            
+            return List.of(this.createPotentialSelector());
         }
+        
+        // Return empty list if room already has an exit
+        if (this.getRoom().hasDoor()) {
+            return List.of();
+        }
+        
+        // Init List of next cases
+        List<StarTowerBaseCase> cases = new ArrayList<>();
+        
+        // Add door case here
+        cases.add(this.createExit());
+        
+        // Create shop npc if this is the last room
+        if (this.isOnFinalFloor()) {
+            // Create hawker case (shop)
+            cases.add(new StarTowerHawkerCase(this));
+        } else if (this.getRoom() instanceof StarTowerBattleRoom) {
+            // Create recovery npc
+            cases.add(new StarTowerNpcRecoveryHPCase());
+        }
+        
+        // Complete
+        return cases;
     }
     
     /**

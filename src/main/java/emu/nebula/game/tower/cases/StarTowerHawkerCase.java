@@ -4,6 +4,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 import emu.nebula.GameConstants;
+import emu.nebula.game.tower.StarTowerGame;
 import emu.nebula.game.tower.StarTowerShopGoods;
 import emu.nebula.proto.PublicStarTower.HawkerGoods;
 import emu.nebula.proto.PublicStarTower.StarTowerRoomCase;
@@ -17,6 +18,17 @@ public class StarTowerHawkerCase extends StarTowerBaseCase {
     
     public StarTowerHawkerCase() {
         this.goods = new HashMap<>();
+    }
+    
+    public StarTowerHawkerCase(StarTowerGame game) {
+        this();
+        
+        // Create shop goods
+        for (int i = 0; i < 6; i++) {
+            this.addGoods(new StarTowerShopGoods(1, 1, 200));
+        }
+        
+        // TODO apply discounts based on star tower talents
     }
 
     @Override

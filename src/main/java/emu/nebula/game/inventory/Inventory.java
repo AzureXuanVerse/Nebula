@@ -7,6 +7,7 @@ import dev.morphia.annotations.Id;
 import emu.nebula.GameConstants;
 import emu.nebula.Nebula;
 import emu.nebula.data.GameData;
+import emu.nebula.data.resources.DropPkgDef;
 import emu.nebula.data.resources.MallShopDef;
 import emu.nebula.data.resources.ResidentGoodsDef;
 import emu.nebula.database.GameDatabaseObject;
@@ -284,8 +285,8 @@ public class Inventory extends PlayerManager implements GameDatabaseObject {
             change = new PlayerChangeInfo();
         }
         
-        // Sanity
-        if (count == 0) {
+        // Sanity check
+        if (id <= 0 || count == 0) {
             return change;
         }
         
@@ -339,11 +340,32 @@ public class Inventory extends PlayerManager implements GameDatabaseObject {
                 }
             }
             case Item -> {
+                // Check if item is a random package
+                if (data.getItemSubType() == ItemSubType.RandomPackage && data.getUseParams() != null) {
+                    // Cannot remove packages
+                    if (count <= 0) break;
+                    
+                    // Add random packages
+                    for (var entry : data.getUseParams()) {
+                        int pkgId = entry.getIntKey();
+                        int pkgCount = entry.getIntValue() * count;
+                        
+                        for (int i = 0; i < pkgCount; i++) {
+                            int pkgDropId = DropPkgDef.getRandomDrop(pkgId);
+                            this.addItem(pkgDropId, 1, change);
+                        }
+                    }
+                    
+                    // End early
+                    break;
+                }
+                
+                // Get item
                 var item = this.items.get(id);
                 int diff = 0;
                 
                 if (amount > 0) {
-                    // Add resource
+                    // Add item
                     if (item == null) {
                         item = new GameItem(this.getPlayer(), id, amount);
                         this.items.put(item.getItemId(), item);

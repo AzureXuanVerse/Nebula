@@ -105,7 +105,7 @@ public class Config {
         public Set<String> defaultPermissions = Set.of("*");
         // Automatically creates an account when a player logs in for the first time on a new email.
         public boolean autoCreateAccount = true;
-        // Skips the intro cinematics when starting a new account.
+        // Skips the intro cinematics/stage when starting a new account.
         public boolean skipIntro = false;
         // Unlocks all instances (Monolith, Bounty Trials, etc) for players to enter without needing to do the previous levels.
         public boolean unlockInstances = true;

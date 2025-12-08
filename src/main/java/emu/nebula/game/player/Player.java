@@ -691,6 +691,11 @@ public class Player implements GameDatabaseObject {
         // Reset daily quests
         this.getQuestManager().resetDailyQuests();
         this.getBattlePassManager().getBattlePass().resetDailyQuests(resetWeekly);
+        
+        // Reset monthly shop purchases
+        if (resetMonthly) {
+            this.getInventory().resetShopPurchases();
+        }
     }
     
     // Trigger quests + achievements

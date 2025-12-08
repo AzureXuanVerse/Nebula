@@ -829,6 +829,20 @@ public class Inventory extends PlayerManager implements GameDatabaseObject {
         return change.setSuccess(true);
     }
     
+    public void resetShopPurchases() {
+        // Clear shop purchases if it's not empty
+        if (!this.getShopBuyCount().isEmpty()) {
+            this.getShopBuyCount().clear();
+            Nebula.getGameDatabase().update(this, this.getUid(), "shopBuyCount", this.getShopBuyCount());
+        }
+        
+        // Clear mall purchases if it's not empty
+        if (!this.getMallBuyCount().isEmpty()) {
+            this.getMallBuyCount().clear();
+            Nebula.getGameDatabase().update(this, this.getUid(), "mallBuyCount", this.getMallBuyCount());
+        }
+    }
+    
     // Database
     
     public void loadFromDatabase() {

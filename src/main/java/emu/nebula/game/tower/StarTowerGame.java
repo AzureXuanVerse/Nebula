@@ -199,7 +199,7 @@ public class StarTowerGame {
     }
     
     public int getTotalPotentialCount() {
-        return this.getItems().values().intStream().reduce(0, Integer::sum);
+        return this.getPotentials().values().intStream().reduce(0, Integer::sum);
     }
     
     /**

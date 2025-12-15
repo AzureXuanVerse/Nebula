@@ -95,6 +95,8 @@ public class GameData {
     @Getter private static DataTable<StorySetSectionDef> StorySetSectionDataTable = new DataTable<>();
     @Getter private static DataTable<StoryEvidenceDef> StoryEvidenceDataTable = new DataTable<>();
     
+    @Getter private static DataTable<MainScreenCGDef> MainScreenCGDataTable = new DataTable<>();
+    
     // ===== Daily Quests =====
     @Getter private static DataTable<DailyQuestDef> DailyQuestDataTable = new DataTable<>();
     @Getter private static DataTable<DailyQuestActiveDef> DailyQuestActiveDataTable = new DataTable<>();

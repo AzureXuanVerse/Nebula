@@ -4,7 +4,6 @@ import emu.nebula.data.BaseDef;
 import emu.nebula.data.GameData;
 import emu.nebula.data.ResourceType;
 import emu.nebula.util.WeightedList;
-
 import lombok.Getter;
 
 @Getter

@@ -7,16 +7,16 @@ import it.unimi.dsi.fastutil.ints.IntList;
 import emu.nebula.net.HandlerId;
 import emu.nebula.net.GameSession;
 
-@HandlerId(NetMsgId.quest_daily_active_reward_receive_req)
-public class HandlerQuestDailyActiveRewardReceiveReq extends NetHandler {
+@HandlerId(NetMsgId.quest_weekly_active_reward_receive_req)
+public class HandlerQuestWeeklyActiveRewardReceiveReq extends NetHandler {
 
     @Override
     public byte[] handle(GameSession session, byte[] message) throws Exception {
         // Receive rewards
-        var change = session.getPlayer().getQuestManager().claimDailyActiveRewards();
+        var change = session.getPlayer().getQuestManager().claimWeeklyActiveRewards();
         
         if (change == null) {
-            return session.encodeMsg(NetMsgId.quest_daily_active_reward_receive_failed_ack);
+            return session.encodeMsg(NetMsgId.quest_weekly_active_reward_receive_failed_ack);
         }
         
         // Build response
@@ -28,7 +28,7 @@ public class HandlerQuestDailyActiveRewardReceiveReq extends NetHandler {
         }
         
         // Encode and send
-        return session.encodeMsg(NetMsgId.quest_daily_active_reward_receive_succeed_ack, rsp);
+        return session.encodeMsg(NetMsgId.quest_weekly_active_reward_receive_succeed_ack, rsp);
     }
 
 }

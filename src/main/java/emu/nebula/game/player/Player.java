@@ -687,7 +687,7 @@ public class Player implements GameDatabaseObject {
 
     public void resetDailies(boolean resetWeekly, boolean resetMonthly) {
         // Reset daily quests
-        this.getQuestManager().resetDailyQuests();
+        this.getQuestManager().resetDailyQuests(resetWeekly);
         this.getBattlePassManager().getBattlePass().resetDailyQuests(resetWeekly);
         
         // Check to reset weeklies
@@ -740,6 +740,7 @@ public class Player implements GameDatabaseObject {
         
         if (manager != null) {
             manager.setPlayer(this);
+            manager.onLoad();
         } else {
             try {
                 manager = cls.getDeclaredConstructor(Player.class).newInstance(this);

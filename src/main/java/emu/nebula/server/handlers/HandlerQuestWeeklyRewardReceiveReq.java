@@ -6,8 +6,8 @@ import emu.nebula.proto.Public.UI32;
 import emu.nebula.net.HandlerId;
 import emu.nebula.net.GameSession;
 
-@HandlerId(NetMsgId.quest_daily_reward_receive_req)
-public class HandlerQuestDailyRewardReceiveReq extends NetHandler {
+@HandlerId(NetMsgId.quest_weekly_reward_receive_req)
+public class HandlerQuestWeeklyRewardReceiveReq extends NetHandler {
 
     @Override
     public byte[] handle(GameSession session, byte[] message) throws Exception {
@@ -15,14 +15,14 @@ public class HandlerQuestDailyRewardReceiveReq extends NetHandler {
         var req = UI32.parseFrom(message);
         
         // Receive rewards
-        var change = session.getPlayer().getQuestManager().receiveDailyQuestReward(req.getValue());
+        var change = session.getPlayer().getQuestManager().receiveWeeklyQuestReward(req.getValue());
         
         if (change == null) {
-            return session.encodeMsg(NetMsgId.quest_daily_reward_receive_failed_ack);
+            return session.encodeMsg(NetMsgId.quest_weekly_reward_receive_failed_ack);
         }
         
         // Encode and send
-        return session.encodeMsg(NetMsgId.quest_daily_reward_receive_succeed_ack, change.toProto());
+        return session.encodeMsg(NetMsgId.quest_weekly_reward_receive_succeed_ack, change.toProto());
     }
 
 }

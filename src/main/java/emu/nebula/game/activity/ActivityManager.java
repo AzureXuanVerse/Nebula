@@ -132,6 +132,7 @@ public class ActivityManager extends PlayerManager implements GameDatabaseObject
             case LoginReward -> new LoginRewardActivity(this, data);
             case TowerDefense -> new TowerDefenseActivity(this, data);
             case Trial -> new TrialActivity(this, data);
+            case JointDrill -> new JointDrillActivity(this, data);
             case Levels -> new LevelsActivity(this, data);
             case Task -> new TaskActivity(this, data);
             case Shop -> new ShopActivity(this, data);

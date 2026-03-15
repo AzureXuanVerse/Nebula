@@ -44,6 +44,9 @@ public class ActivityModule extends GameContextModule {
         this.activities.add(1010503);
         this.activities.add(1010504);
         
+        // ===== Joint Drills (Finale Echoing) =====
+        this.activities.add(510003);
+        
         // ===== Etc Events =====
         
         // Trial activities

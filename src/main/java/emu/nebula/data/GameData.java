@@ -166,6 +166,9 @@ public class GameData {
     @Getter private static DataTable<TrialControlDef> TrialControlDataTable = new DataTable<>();
     @Getter private static DataTable<TrialGroupDef> TrialGroupDataTable = new DataTable<>();
     
+    // Activity: Joint Drill
+    @Getter private static DataTable<JointDrill2LevelDef> JointDrill2LevelDataTable = new DataTable<>();
+    
     // Activity: Levels
     @Getter private static DataTable<ActivityLevelsLevelDef> ActivityLevelsLevelDataTable = new DataTable<>();
     

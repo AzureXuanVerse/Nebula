@@ -707,6 +707,12 @@ public class Player implements GameDatabaseObject {
         this.getQuestManager().resetDailyQuests(resetWeekly);
         this.getBattlePassManager().getBattlePass().resetDailyQuests(resetWeekly);
         
+        // Add daily joint drill tickets
+        int tickets = this.getInventory().getResourceCount(GameConstants.JOINT_DRILL_TICKET_ID);
+        if (tickets < 3) {
+            this.getInventory().addItem(GameConstants.JOINT_DRILL_TICKET_ID, 3 - tickets);
+        }
+        
         // Check to reset weeklies
         if (resetWeekly) {
             // Add weekly boss entry item

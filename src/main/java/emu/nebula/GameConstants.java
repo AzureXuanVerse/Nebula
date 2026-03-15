@@ -22,6 +22,7 @@ public class GameConstants {
     public static final int ENERGY_BUY_ITEM_ID = GEM_ITEM_ID;
     public static final int EXP_ITEM_ID = 21;
     public static final int WEEKLY_ENTRY_ITEM_ID = 28;
+    public static final int JOINT_DRILL_TICKET_ID = 36;
     
     public static final int MAX_ENERGY = 240;
     public static final int ENERGY_REGEN_TIME = 360; // Seconds

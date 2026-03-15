@@ -31,6 +31,16 @@ public abstract class GameActivity {
     public Player getPlayer() {
         return this.getManager().getPlayer();
     }
+
+    public long getStartTime() {
+        return 1;
+    }
+    
+    public long getEndTime() {
+        return Integer.MAX_VALUE;
+    }
+    
+    // Database
     
     public void save() {
         Nebula.getGameDatabase().update(
@@ -52,8 +62,8 @@ public abstract class GameActivity {
     public Activity toProto() {
         var proto = Activity.newInstance()
                 .setId(this.getId())
-                .setStartTime(1)
-                .setEndTime(Integer.MAX_VALUE);
+                .setStartTime(this.getStartTime())
+                .setEndTime(this.getEndTime());
         
         return proto;
     }

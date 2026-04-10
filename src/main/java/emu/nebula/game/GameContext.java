@@ -44,6 +44,7 @@ public class GameContext implements Runnable {
     private int epochMonths;
     
     public GameContext() {
+        // Create session map
         this.sessions = new Object2ObjectOpenHashMap<>();
         
         // Setup game modules
@@ -85,7 +86,6 @@ public class GameContext implements Runnable {
         this.sessions.put(session.getToken(), session);
     }
     
-    // TODO add timeout to config
     public synchronized void cleanupInactiveSessions() {
         var it = this.getSessions().entrySet().iterator();
         

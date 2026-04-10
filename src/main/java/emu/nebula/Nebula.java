@@ -196,11 +196,11 @@ public class Nebula {
         var file = new File("./versions.json");
         
         if (file.exists()) {
-            // Load data versions from an external file first, in case the internal versions.json is out of date
+            // Try and load data versions from an external file first, in case the internal versions.json is out of date
             try (FileReader reader = new FileReader(file)) {
                 versions = JsonUtils.loadToMap(reader, String.class, Integer.class);
             } catch (Exception e) {
-                // Ignored
+                // Ignored - Try using internal versions.json next
             }
         }
         
@@ -209,7 +209,7 @@ public class Nebula {
             try (var stream = Nebula.class.getResourceAsStream("/versions.json"); var reader = new InputStreamReader(stream)) {
                 versions = JsonUtils.loadToMap(reader, String.class, Integer.class);
             } catch (Exception e) {
-                // Ignored
+                // Internal versions.json not loaded for reason
             }
         }
         

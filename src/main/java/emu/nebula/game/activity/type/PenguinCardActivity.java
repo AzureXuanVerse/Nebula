@@ -1,20 +1,20 @@
 package emu.nebula.game.activity.type;
 
-import java.util.HashMap;
 import java.util.Map;
 
 import dev.morphia.annotations.Entity;
 
-import emu.nebula.data.GameData;
 import emu.nebula.data.resources.ActivityDef;
 import emu.nebula.game.activity.ActivityManager;
 import emu.nebula.game.activity.GameActivity;
 import emu.nebula.proto.ActivityDetail.ActivityMsg;
 import emu.nebula.proto.Public.ActivityPenguinCardLevel;
 import emu.nebula.proto.Public.ActivityQuest;
+
 import it.unimi.dsi.fastutil.ints.Int2IntMap;
 import it.unimi.dsi.fastutil.ints.Int2IntOpenHashMap;
 import it.unimi.dsi.fastutil.ints.Int2ObjectOpenHashMap;
+
 import lombok.Getter;
 import lombok.Setter;
 
@@ -79,11 +79,6 @@ public class PenguinCardActivity extends GameActivity {
     public static class LevelStats {
         private int stars;
         private int score;
-
-        @Deprecated
-        public LevelStats() {
-
-        }
     }
 
 }

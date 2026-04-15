@@ -5,8 +5,6 @@ import emu.nebula.command.CommandArgs;
 import emu.nebula.command.CommandHandler;
 import emu.nebula.data.GameData;
 import emu.nebula.data.resources.ItemDef;
-import emu.nebula.game.inventory.GameItem;
-import emu.nebula.game.inventory.GameResource;
 import emu.nebula.game.inventory.ItemParamMap;
 import emu.nebula.game.inventory.ItemType;
 import emu.nebula.game.player.PlayerChangeInfo;
@@ -64,14 +62,14 @@ public class CleanCommand implements CommandHandler {
 
         if (all) {
             if (doItems) {
-                for (GameItem item : inv.getItems().values()) {
-                    removeMap.add(item.getItemId(), item.getCount());
+                for (var entry : inv.getItems().int2IntEntrySet()) {
+                    removeMap.add(entry.getIntKey(), entry.getIntValue());
                 }
             }
 
             if (doResources) {
-                for (GameResource res : inv.getResources().values()) {
-                    removeMap.add(res.getResourceId(), res.getCount());
+                for (var entry : inv.getResources().int2IntEntrySet()) {
+                    removeMap.add(entry.getIntKey(), entry.getIntValue());
                 }
             }
         } else {

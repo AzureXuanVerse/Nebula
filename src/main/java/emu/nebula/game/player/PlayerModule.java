@@ -147,6 +147,7 @@ public class PlayerModule extends GameContextModule {
      * @param uid
      * @return
      */
+    @SuppressWarnings("deprecation")
     public synchronized boolean deletePlayer(int uid) {
         // Make sure player is not online when we are deleting the player
         Player player = this.getCachedPlayerByUid(uid);

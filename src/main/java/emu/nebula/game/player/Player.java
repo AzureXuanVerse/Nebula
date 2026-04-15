@@ -43,8 +43,10 @@ import emu.nebula.proto.Public.CharShow;
 import emu.nebula.proto.Public.Energy;
 import emu.nebula.proto.Public.Friend;
 import emu.nebula.proto.Public.HonorInfo;
+import emu.nebula.proto.Public.Item;
 import emu.nebula.proto.Public.NewbieInfo;
 import emu.nebula.proto.Public.QuestType;
+import emu.nebula.proto.Public.Res;
 import emu.nebula.proto.Public.WorldClass;
 import emu.nebula.proto.Public.WorldClassRewardState;
 import emu.nebula.util.Utils;
@@ -789,7 +791,7 @@ public class Player implements GameDatabaseObject {
         if (this.inventory == null) {
             this.inventory = this.loadManagerFromDatabase(Inventory.class);
         }
-        this.getInventory().loadFromDatabase();
+        this.getInventory().migrateFromDatabase();
         
         // Load referenced classes from the database
         this.formations = this.loadManagerFromDatabase(FormationManager.class);
@@ -952,12 +954,20 @@ public class Player implements GameDatabaseObject {
             proto.addDiscs(disc.toProto());
         }
         
-        for (var item : getInventory().getItems().values()) {
-            proto.addItems(item.toProto());
+        for (var item : getInventory().getItems().int2IntEntrySet()) {
+            var info = Item.newInstance()
+                    .setTid(item.getIntKey())
+                    .setQty(item.getIntValue());
+            
+            proto.addItems(info);
         }
         
-        for (var res : getInventory().getResources().values()) {
-            proto.addRes(res.toProto());
+        for (var res : getInventory().getResources().int2IntEntrySet()) {
+            var info = Res.newInstance()
+                    .setTid(res.getIntKey())
+                    .setQty(res.getIntValue());
+            
+            proto.addRes(info);
         }
         
         // Formations

@@ -212,6 +212,14 @@ public final class DatabaseManager {
         update(obj, uid, field2, value2);
     }
     
+    public void updateUnset(Object obj, int uid, String field) {
+        var opt = new UpdateOptions().upsert(false);
+        
+        getDatastore().find(obj.getClass())
+            .filter(Filters.eq("_id", uid))
+            .update(opt, UpdateOperators.unset(field));
+    }
+    
     public void updateNested(Object obj, int uid, String filter, int filterId, String field, Object item) {
         var opt = new UpdateOptions().upsert(false);
         

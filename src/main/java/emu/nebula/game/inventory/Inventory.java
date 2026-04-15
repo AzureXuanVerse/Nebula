@@ -2,6 +2,8 @@ package emu.nebula.game.inventory;
 
 import java.util.List;
 
+import com.mongodb.client.model.Filters;
+
 import dev.morphia.annotations.Entity;
 import dev.morphia.annotations.Id;
 import emu.nebula.GameConstants;
@@ -20,12 +22,11 @@ import emu.nebula.proto.Public.Item;
 import emu.nebula.proto.Public.Res;
 import emu.nebula.proto.Public.Title;
 import emu.nebula.proto.Public.UI32;
+import emu.nebula.util.Utils;
 import emu.nebula.util.ints.String2IntMap;
 import emu.nebula.game.achievement.AchievementCondition;
 import emu.nebula.game.player.Player;
 import emu.nebula.game.player.PlayerChangeInfo;
-import it.unimi.dsi.fastutil.ints.Int2ObjectMap;
-import it.unimi.dsi.fastutil.ints.Int2ObjectOpenHashMap;
 import it.unimi.dsi.fastutil.ints.IntCollection;
 import it.unimi.dsi.fastutil.ints.IntOpenHashSet;
 import it.unimi.dsi.fastutil.ints.IntSet;
@@ -37,6 +38,10 @@ public class Inventory extends PlayerManager implements GameDatabaseObject {
     @Id
     private int uid;
     
+    // Items/resources
+    private ItemParamMap items;
+    private ItemParamMap resources;
+    
     // Database persistent data
     private IntSet extraSkins;
     private IntSet headIcons;
@@ -47,13 +52,9 @@ public class Inventory extends PlayerManager implements GameDatabaseObject {
     private ItemParamMap shopBuyCount;
     private String2IntMap mallBuyCount;
     
-    // Items/resources
-    private transient Int2ObjectMap<GameResource> resources;
-    private transient Int2ObjectMap<GameItem> items;
-    
+    @Deprecated
     public Inventory() {
-        this.resources = new Int2ObjectOpenHashMap<>();
-        this.items = new Int2ObjectOpenHashMap<>();
+        // Morphia only
     }
     
     public Inventory(Player player) {
@@ -62,6 +63,9 @@ public class Inventory extends PlayerManager implements GameDatabaseObject {
         this.uid = player.getUid();
         
         // Setup
+        this.resources = new ItemParamMap();
+        this.items = new ItemParamMap();
+        
         this.extraSkins = new IntOpenHashSet();
         this.headIcons = new IntOpenHashSet();
         this.titles = new IntOpenHashSet();
@@ -266,15 +270,13 @@ public class Inventory extends PlayerManager implements GameDatabaseObject {
     // Resources
     
     public synchronized int getResourceCount(int id) {
-        var res = this.resources.get(id);
-        return res != null ? res.getCount() : 0;
+        return this.resources.get(id);
     }
     
     // Items
     
     public synchronized int getItemCount(int id) {
-        var item = this.getItems().get(id);
-        return item != null ? item.getCount() : 0;
+        return this.getItems().get(id);
     }
     
     // Add/Remove items
@@ -306,33 +308,35 @@ public class Inventory extends PlayerManager implements GameDatabaseObject {
         // Add item
         switch (data.getItemType()) {
             case Res -> {
-                var res = this.resources.get(id);
+                int oldAmount = this.resources.get(id);
+                int newAmount = oldAmount;
                 int diff = 0;
                 
                 if (amount > 0) {
                     // Add resource
-                    if (res == null) {
-                        res = new GameResource(this.getPlayer(), id, amount);
-                        this.resources.put(res.getResourceId(), res);
-                        
-                        diff = amount;
-                    } else {
-                        diff = res.add(amount);
-                    }
+                    newAmount = Utils.safeAdd(oldAmount, amount);
+                    diff = newAmount - oldAmount;
                     
-                    res.save();
+                    // Set
+                    this.resources.put(id, newAmount);
                 } else {
                     // Remove resource
-                    if (res == null) {
-                        break;
-                    }
+                    newAmount = Utils.safeSubtract(oldAmount, Math.abs(amount));
+                    diff = newAmount - oldAmount;
                     
-                    diff = res.add(amount);
-                    res.save();
-                    
-                    if (res.getCount() < 0) {
+                    // Set
+                    if (newAmount > 0) {
+                        this.resources.put(id, newAmount);
+                    } else {
                         this.resources.remove(id);
                     }
+                }
+                
+                // Update in database
+                if (newAmount > 0) {
+                    Nebula.getGameDatabase().update(this, this.getPlayerUid(), "resources." + id, newAmount);
+                } else {
+                    Nebula.getGameDatabase().updateUnset(this, this.getPlayerUid(), "resources." + id);
                 }
                 
                 if (diff != 0) {
@@ -365,33 +369,35 @@ public class Inventory extends PlayerManager implements GameDatabaseObject {
                 }
                 
                 // Get item
-                var item = this.items.get(id);
+                int oldAmount = this.items.get(id);
+                int newAmount = oldAmount;
                 int diff = 0;
                 
                 if (amount > 0) {
-                    // Add item
-                    if (item == null) {
-                        item = new GameItem(this.getPlayer(), id, amount);
-                        this.items.put(item.getItemId(), item);
-                        
-                        diff = amount;
-                    } else {
-                        diff = item.add(amount);
-                    }
+                    // Add resource
+                    newAmount = Utils.safeAdd(oldAmount, amount);
+                    diff = newAmount - oldAmount;
                     
-                    item.save();
+                    // Set
+                    this.items.put(id, newAmount);
                 } else {
                     // Remove resource
-                    if (item == null) {
-                        break;
-                    }
+                    newAmount = Utils.safeSubtract(oldAmount, Math.abs(amount));
+                    diff = newAmount - oldAmount;
                     
-                    diff = item.add(amount);
-                    item.save();
-                    
-                    if (item.getCount() < 0) {
-                        this.resources.remove(id);
+                    // Set
+                    if (newAmount > 0) {
+                        this.items.put(id, newAmount);
+                    } else {
+                        this.items.remove(id);
                     }
+                }
+                
+                // Update in database
+                if (newAmount > 0) {
+                    Nebula.getGameDatabase().update(this, this.getPlayerUid(), "items." + id, newAmount);
+                } else {
+                    Nebula.getGameDatabase().updateUnset(this, this.getPlayerUid(), "items." + id);
                 }
                 
                 if (diff != 0) {
@@ -893,25 +899,55 @@ public class Inventory extends PlayerManager implements GameDatabaseObject {
     
     // Database
     
-    public void loadFromDatabase() {
+    @SuppressWarnings("deprecation")
+    public void migrateFromDatabase() {
         var db = Nebula.getGameDatabase();
+        boolean save = false;
         
-        db.getObjects(GameItem.class, "playerUid", getPlayerUid()).forEach(item -> {
-            // Get data
-            var data = GameData.getItemDataTable().get(item.getItemId());
-            if (data == null) return;
+        // Check if we need to handle inventory migration
+        if (this.items == null) {
+            this.items = new ItemParamMap();
             
-            // Add
-            this.items.put(item.getItemId(), item);
-        });
+            // Get inventory items from database
+            db.getObjects(GameItem.class, "playerUid", getPlayerUid()).forEach(item -> {
+                // Get data
+                var data = GameData.getItemDataTable().get(item.getItemId());
+                if (data == null) return;
+                
+                // Add
+                this.items.put(item.getItemId(), item.getCount());
+            });
+            
+            // Delete all inventory items
+            db.getDatastore().getCollection(GameItem.class).deleteMany(Filters.eq("playerUid", uid));
+            
+            // Set to save inventory to database
+            save = true;
+        }
         
-        db.getObjects(GameResource.class, "playerUid", getPlayerUid()).forEach(res -> {
-            // Get data
-            var data = GameData.getItemDataTable().get(res.getResourceId());
-            if (data == null) return;
+        if (this.resources == null) {
+            this.resources = new ItemParamMap();
             
-            // Add
-            this.resources.put(res.getResourceId(), res);
-        });
+            // Get inventory resources from database
+            db.getObjects(GameResource.class, "playerUid", getPlayerUid()).forEach(res -> {
+                // Get data
+                var data = GameData.getItemDataTable().get(res.getResourceId());
+                if (data == null) return;
+                
+                // Add
+                this.resources.put(res.getResourceId(), res.getCount());
+            });
+            
+            // Delete all inventory resources
+            db.getDatastore().getCollection(GameResource.class).deleteMany(Filters.eq("playerUid", uid));
+            
+            // Set to save inventory to database
+            save = true;
+        }
+        
+        // Update in database
+        if (save) {
+            this.save();
+        }
     }
 }

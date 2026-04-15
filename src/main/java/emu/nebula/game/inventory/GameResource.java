@@ -12,6 +12,7 @@ import emu.nebula.proto.Public.Res;
 import emu.nebula.util.Utils;
 import lombok.Getter;
 
+@Deprecated
 @Getter
 @Entity(value = "resources", useDiscriminator = false)
 public class GameResource implements GameDatabaseObject {

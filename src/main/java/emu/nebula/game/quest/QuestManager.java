@@ -467,7 +467,7 @@ public class QuestManager extends PlayerManager implements GameDatabaseObject {
         return change.setSuccess(true);
     }
     
-    // Daily shop reward
+    // Daily rewards
     
     public PlayerChangeInfo claimDailyShopGift() {
         // Sanity check
@@ -476,7 +476,7 @@ public class QuestManager extends PlayerManager implements GameDatabaseObject {
         }
         
         // Daily shop reward
-        var reward = GameConstants.DAILY_GIFTS.next();
+        var reward = GameConstants.DAILY_SHOP_GIFTS.next();
         var change = this.getPlayer().getInventory().addItem(reward.getId(), reward.getCount());
         
         // Set and update in database
@@ -497,8 +497,8 @@ public class QuestManager extends PlayerManager implements GameDatabaseObject {
         }
         
         // Daily mall reward
-        var reward = GameConstants.DAILY_GIFTS.next();
-        var change = this.getPlayer().getInventory().addItem(reward.getId(), reward.getCount());
+        var rewards = GameConstants.DAILY_MALL_GIFTS.next();
+        var change = this.getPlayer().getInventory().addItems(rewards);
         
         // Set and update in database
         this.dailyMallReward = true;

@@ -144,4 +144,31 @@ public class ItemParamMap extends Int2IntLinkedOpenHashMap implements ObjectBidi
         
         return map;
     }
+    
+    //
+    
+    public static ItemParamMap of(int... entries) {
+        // Create
+        var params = new ItemParamMap();
+        
+        // Add items
+        for (int i = 0; i < entries.length; i++) {
+            // Get intial item id
+            int itemId = entries[i];
+            int count = 0;
+            
+            // Increment
+            i++;
+            
+            // Get count
+            if (i < entries.length) {
+                count = entries[i];
+                
+                // Add to item param map
+                params.add(itemId, count);
+            }
+        }
+        
+        return params;
+    }
 }

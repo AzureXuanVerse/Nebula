@@ -995,8 +995,6 @@ public class Player implements GameDatabaseObject {
         state.getMutableMallPackage();
         state.getMutableTravelerDuelQuest()
             .setType(QuestType.TravelerDuel);
-        state.getMutableTravelerDuelChallengeQuest()
-            .setType(QuestType.TravelerDuelChallenge);
         state.getMutableStarTower();
         state.getMutableStarTowerBook();
         state.getMutableScoreBoss();

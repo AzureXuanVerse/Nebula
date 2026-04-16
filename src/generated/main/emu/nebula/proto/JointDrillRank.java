@@ -11,6 +11,7 @@ import us.hebi.quickbuf.ProtoMessage;
 import us.hebi.quickbuf.ProtoSink;
 import us.hebi.quickbuf.ProtoSource;
 import us.hebi.quickbuf.RepeatedByte;
+import us.hebi.quickbuf.RepeatedInt;
 import us.hebi.quickbuf.RepeatedMessage;
 import us.hebi.quickbuf.Utf8String;
 
@@ -1152,9 +1153,29 @@ public final class JointDrillRank {
     private final RepeatedByte nextPackage = RepeatedByte.newEmptyInstance();
 
     /**
+     * <code>repeated uint32 Discs = 5;</code>
+     */
+    private final RepeatedInt discs = RepeatedInt.newEmptyInstance();
+
+    /**
+     * <code>repeated uint32 ActiveSecondaryIds = 8;</code>
+     */
+    private final RepeatedInt activeSecondaryIds = RepeatedInt.newEmptyInstance();
+
+    /**
      * <code>repeated .JointDrillRankChar Chars = 1;</code>
      */
     private final RepeatedMessage<JointDrillRankChar> chars = RepeatedMessage.newEmptyInstance(JointDrillRankChar.getFactory());
+
+    /**
+     * <code>repeated .BuildPotential Potentials = 6;</code>
+     */
+    private final RepeatedMessage<PublicStarTower.BuildPotential> potentials = RepeatedMessage.newEmptyInstance(PublicStarTower.BuildPotential.getFactory());
+
+    /**
+     * <code>repeated .ItemTpl Notes = 7;</code>
+     */
+    private final RepeatedMessage<Public.ItemTpl> notes = RepeatedMessage.newEmptyInstance(Public.ItemTpl.getFactory());
 
     private JointDrillRankTeam() {
     }
@@ -1357,11 +1378,147 @@ public final class JointDrillRank {
     }
 
     /**
+     * <code>repeated uint32 Discs = 5;</code>
+     * @return whether the discs field is set
+     */
+    public boolean hasDiscs() {
+      return (bitField0_ & 0x00000010) != 0;
+    }
+
+    /**
+     * <code>repeated uint32 Discs = 5;</code>
+     * @return this
+     */
+    public JointDrillRankTeam clearDiscs() {
+      bitField0_ &= ~0x00000010;
+      discs.clear();
+      return this;
+    }
+
+    /**
+     * <code>repeated uint32 Discs = 5;</code>
+     *
+     * This method returns the internal storage object without modifying any has state.
+     * The returned object should not be modified and be treated as read-only.
+     *
+     * Use {@link #getMutableDiscs()} if you want to modify it.
+     *
+     * @return internal storage object for reading
+     */
+    public RepeatedInt getDiscs() {
+      return discs;
+    }
+
+    /**
+     * <code>repeated uint32 Discs = 5;</code>
+     *
+     * This method returns the internal storage object and sets the corresponding
+     * has state. The returned object will become part of this message and its
+     * contents may be modified as long as the has state is not cleared.
+     *
+     * @return internal storage object for modifications
+     */
+    public RepeatedInt getMutableDiscs() {
+      bitField0_ |= 0x00000010;
+      return discs;
+    }
+
+    /**
+     * <code>repeated uint32 Discs = 5;</code>
+     * @param value the discs to add
+     * @return this
+     */
+    public JointDrillRankTeam addDiscs(final int value) {
+      bitField0_ |= 0x00000010;
+      discs.add(value);
+      return this;
+    }
+
+    /**
+     * <code>repeated uint32 Discs = 5;</code>
+     * @param values the discs to add
+     * @return this
+     */
+    public JointDrillRankTeam addAllDiscs(final int... values) {
+      bitField0_ |= 0x00000010;
+      discs.addAll(values);
+      return this;
+    }
+
+    /**
+     * <code>repeated uint32 ActiveSecondaryIds = 8;</code>
+     * @return whether the activeSecondaryIds field is set
+     */
+    public boolean hasActiveSecondaryIds() {
+      return (bitField0_ & 0x00000020) != 0;
+    }
+
+    /**
+     * <code>repeated uint32 ActiveSecondaryIds = 8;</code>
+     * @return this
+     */
+    public JointDrillRankTeam clearActiveSecondaryIds() {
+      bitField0_ &= ~0x00000020;
+      activeSecondaryIds.clear();
+      return this;
+    }
+
+    /**
+     * <code>repeated uint32 ActiveSecondaryIds = 8;</code>
+     *
+     * This method returns the internal storage object without modifying any has state.
+     * The returned object should not be modified and be treated as read-only.
+     *
+     * Use {@link #getMutableActiveSecondaryIds()} if you want to modify it.
+     *
+     * @return internal storage object for reading
+     */
+    public RepeatedInt getActiveSecondaryIds() {
+      return activeSecondaryIds;
+    }
+
+    /**
+     * <code>repeated uint32 ActiveSecondaryIds = 8;</code>
+     *
+     * This method returns the internal storage object and sets the corresponding
+     * has state. The returned object will become part of this message and its
+     * contents may be modified as long as the has state is not cleared.
+     *
+     * @return internal storage object for modifications
+     */
+    public RepeatedInt getMutableActiveSecondaryIds() {
+      bitField0_ |= 0x00000020;
+      return activeSecondaryIds;
+    }
+
+    /**
+     * <code>repeated uint32 ActiveSecondaryIds = 8;</code>
+     * @param value the activeSecondaryIds to add
+     * @return this
+     */
+    public JointDrillRankTeam addActiveSecondaryIds(final int value) {
+      bitField0_ |= 0x00000020;
+      activeSecondaryIds.add(value);
+      return this;
+    }
+
+    /**
+     * <code>repeated uint32 ActiveSecondaryIds = 8;</code>
+     * @param values the activeSecondaryIds to add
+     * @return this
+     */
+    public JointDrillRankTeam addAllActiveSecondaryIds(final int... values) {
+      bitField0_ |= 0x00000020;
+      activeSecondaryIds.addAll(values);
+      return this;
+    }
+
+    /**
      * <code>repeated .JointDrillRankChar Chars = 1;</code>
      * @return whether the chars field is set
      */
     public boolean hasChars() {
-      return (bitField0_ & 0x00000010) != 0;
+      return (bitField0_ & 0x00000040) != 0;
     }
 
     /**
@@ -1369,7 +1526,7 @@ public final class JointDrillRank {
      * @return this
      */
     public JointDrillRankTeam clearChars() {
-      bitField0_ &= ~0x00000010;
+      bitField0_ &= ~0x00000040;
       chars.clear();
       return this;
     }
@@ -1398,7 +1555,7 @@ public final class JointDrillRank {
      * @return internal storage object for modifications
      */
     public RepeatedMessage<JointDrillRankChar> getMutableChars() {
-      bitField0_ |= 0x00000010;
+      bitField0_ |= 0x00000040;
       return chars;
     }
 
@@ -1408,7 +1565,7 @@ public final class JointDrillRank {
      * @return this
      */
     public JointDrillRankTeam addChars(final JointDrillRankChar value) {
-      bitField0_ |= 0x00000010;
+      bitField0_ |= 0x00000040;
       chars.add(value);
       return this;
     }
@@ -1419,8 +1576,144 @@ public final class JointDrillRank {
      * @return this
      */
     public JointDrillRankTeam addAllChars(final JointDrillRankChar... values) {
-      bitField0_ |= 0x00000010;
+      bitField0_ |= 0x00000040;
       chars.addAll(values);
+      return this;
+    }
+
+    /**
+     * <code>repeated .BuildPotential Potentials = 6;</code>
+     * @return whether the potentials field is set
+     */
+    public boolean hasPotentials() {
+      return (bitField0_ & 0x00000080) != 0;
+    }
+
+    /**
+     * <code>repeated .BuildPotential Potentials = 6;</code>
+     * @return this
+     */
+    public JointDrillRankTeam clearPotentials() {
+      bitField0_ &= ~0x00000080;
+      potentials.clear();
+      return this;
+    }
+
+    /**
+     * <code>repeated .BuildPotential Potentials = 6;</code>
+     *
+     * This method returns the internal storage object without modifying any has state.
+     * The returned object should not be modified and be treated as read-only.
+     *
+     * Use {@link #getMutablePotentials()} if you want to modify it.
+     *
+     * @return internal storage object for reading
+     */
+    public RepeatedMessage<PublicStarTower.BuildPotential> getPotentials() {
+      return potentials;
+    }
+
+    /**
+     * <code>repeated .BuildPotential Potentials = 6;</code>
+     *
+     * This method returns the internal storage object and sets the corresponding
+     * has state. The returned object will become part of this message and its
+     * contents may be modified as long as the has state is not cleared.
+     *
+     * @return internal storage object for modifications
+     */
+    public RepeatedMessage<PublicStarTower.BuildPotential> getMutablePotentials() {
+      bitField0_ |= 0x00000080;
+      return potentials;
+    }
+
+    /**
+     * <code>repeated .BuildPotential Potentials = 6;</code>
+     * @param value the potentials to add
+     * @return this
+     */
+    public JointDrillRankTeam addPotentials(final PublicStarTower.BuildPotential value) {
+      bitField0_ |= 0x00000080;
+      potentials.add(value);
+      return this;
+    }
+
+    /**
+     * <code>repeated .BuildPotential Potentials = 6;</code>
+     * @param values the potentials to add
+     * @return this
+     */
+    public JointDrillRankTeam addAllPotentials(final PublicStarTower.BuildPotential... values) {
+      bitField0_ |= 0x00000080;
+      potentials.addAll(values);
+      return this;
+    }
+
+    /**
+     * <code>repeated .ItemTpl Notes = 7;</code>
+     * @return whether the notes field is set
+     */
+    public boolean hasNotes() {
+      return (bitField0_ & 0x00000100) != 0;
+    }
+
+    /**
+     * <code>repeated .ItemTpl Notes = 7;</code>
+     * @return this
+     */
+    public JointDrillRankTeam clearNotes() {
+      bitField0_ &= ~0x00000100;
+      notes.clear();
+      return this;
+    }
+
+    /**
+     * <code>repeated .ItemTpl Notes = 7;</code>
+     *
+     * This method returns the internal storage object without modifying any has state.
+     * The returned object should not be modified and be treated as read-only.
+     *
+     * Use {@link #getMutableNotes()} if you want to modify it.
+     *
+     * @return internal storage object for reading
+     */
+    public RepeatedMessage<Public.ItemTpl> getNotes() {
+      return notes;
+    }
+
+    /**
+     * <code>repeated .ItemTpl Notes = 7;</code>
+     *
+     * This method returns the internal storage object and sets the corresponding
+     * has state. The returned object will become part of this message and its
+     * contents may be modified as long as the has state is not cleared.
+     *
+     * @return internal storage object for modifications
+     */
+    public RepeatedMessage<Public.ItemTpl> getMutableNotes() {
+      bitField0_ |= 0x00000100;
+      return notes;
+    }
+
+    /**
+     * <code>repeated .ItemTpl Notes = 7;</code>
+     * @param value the notes to add
+     * @return this
+     */
+    public JointDrillRankTeam addNotes(final Public.ItemTpl value) {
+      bitField0_ |= 0x00000100;
+      notes.add(value);
+      return this;
+    }
+
+    /**
+     * <code>repeated .ItemTpl Notes = 7;</code>
+     * @param values the notes to add
+     * @return this
+     */
+    public JointDrillRankTeam addAllNotes(final Public.ItemTpl... values) {
+      bitField0_ |= 0x00000100;
+      notes.addAll(values);
       return this;
     }
 
@@ -1433,7 +1726,11 @@ public final class JointDrillRank {
         damage = other.damage;
         time = other.time;
         nextPackage.copyFrom(other.nextPackage);
+        discs.copyFrom(other.discs);
+        activeSecondaryIds.copyFrom(other.activeSecondaryIds);
         chars.copyFrom(other.chars);
+        potentials.copyFrom(other.potentials);
+        notes.copyFrom(other.notes);
       }
       return this;
     }
@@ -1456,8 +1753,20 @@ public final class JointDrillRank {
       if (other.hasNextPackage()) {
         getMutableNextPackage().copyFrom(other.nextPackage);
       }
+      if (other.hasDiscs()) {
+        getMutableDiscs().addAll(other.discs);
+      }
+      if (other.hasActiveSecondaryIds()) {
+        getMutableActiveSecondaryIds().addAll(other.activeSecondaryIds);
+      }
       if (other.hasChars()) {
         getMutableChars().addAll(other.chars);
+      }
+      if (other.hasPotentials()) {
+        getMutablePotentials().addAll(other.potentials);
+      }
+      if (other.hasNotes()) {
+        getMutableNotes().addAll(other.notes);
       }
       return this;
     }
@@ -1473,7 +1782,11 @@ public final class JointDrillRank {
       damage = 0;
       time = 0;
       nextPackage.clear();
+      discs.clear();
+      activeSecondaryIds.clear();
       chars.clear();
+      potentials.clear();
+      notes.clear();
       return this;
     }
 
@@ -1485,7 +1798,11 @@ public final class JointDrillRank {
       cachedSize = -1;
       bitField0_ = 0;
       nextPackage.clear();
+      discs.clear();
+      activeSecondaryIds.clear();
       chars.clearQuick();
+      potentials.clearQuick();
+      notes.clearQuick();
       return this;
     }
 
@@ -1503,7 +1820,11 @@ public final class JointDrillRank {
         && (!hasDamage() || damage == other.damage)
         && (!hasTime() || time == other.time)
         && (!hasNextPackage() || nextPackage.equals(other.nextPackage))
-        && (!hasChars() || chars.equals(other.chars));
+        && (!hasDiscs() || discs.equals(other.discs))
+        && (!hasActiveSecondaryIds() || activeSecondaryIds.equals(other.activeSecondaryIds))
+        && (!hasChars() || chars.equals(other.chars))
+        && (!hasPotentials() || potentials.equals(other.potentials))
+        && (!hasNotes() || notes.equals(other.notes));
     }
 
     @Override
@@ -1525,9 +1846,33 @@ public final class JointDrillRank {
         output.writeBytesNoTag(nextPackage);
       }
       if ((bitField0_ & 0x00000010) != 0) {
+        for (int i = 0; i < discs.length(); i++) {
+          output.writeRawByte((byte) 40);
+          output.writeUInt32NoTag(discs.array()[i]);
+        }
+      }
+      if ((bitField0_ & 0x00000020) != 0) {
+        for (int i = 0; i < activeSecondaryIds.length(); i++) {
+          output.writeRawByte((byte) 64);
+          output.writeUInt32NoTag(activeSecondaryIds.array()[i]);
+        }
+      }
+      if ((bitField0_ & 0x00000040) != 0) {
         for (int i = 0; i < chars.length(); i++) {
           output.writeRawByte((byte) 10);
           output.writeMessageNoTag(chars.get(i));
+        }
+      }
+      if ((bitField0_ & 0x00000080) != 0) {
+        for (int i = 0; i < potentials.length(); i++) {
+          output.writeRawByte((byte) 50);
+          output.writeMessageNoTag(potentials.get(i));
+        }
+      }
+      if ((bitField0_ & 0x00000100) != 0) {
+        for (int i = 0; i < notes.length(); i++) {
+          output.writeRawByte((byte) 58);
+          output.writeMessageNoTag(notes.get(i));
         }
       }
     }
@@ -1548,7 +1893,19 @@ public final class JointDrillRank {
         size += 2 + ProtoSink.computeBytesSizeNoTag(nextPackage);
       }
       if ((bitField0_ & 0x00000010) != 0) {
+        size += (1 * discs.length()) + ProtoSink.computeRepeatedUInt32SizeNoTag(discs);
+      }
+      if ((bitField0_ & 0x00000020) != 0) {
+        size += (1 * activeSecondaryIds.length()) + ProtoSink.computeRepeatedUInt32SizeNoTag(activeSecondaryIds);
+      }
+      if ((bitField0_ & 0x00000040) != 0) {
         size += (1 * chars.length()) + ProtoSink.computeRepeatedMessageSizeNoTag(chars);
+      }
+      if ((bitField0_ & 0x00000080) != 0) {
+        size += (1 * potentials.length()) + ProtoSink.computeRepeatedMessageSizeNoTag(potentials);
+      }
+      if ((bitField0_ & 0x00000100) != 0) {
+        size += (1 * notes.length()) + ProtoSink.computeRepeatedMessageSizeNoTag(notes);
       }
       return size;
     }
@@ -1592,6 +1949,24 @@ public final class JointDrillRank {
             input.readBytes(nextPackage);
             bitField0_ |= 0x00000008;
             tag = input.readTag();
+            if (tag != 42) {
+              break;
+            }
+          }
+          case 42: {
+            // discs [packed=true]
+            input.readPackedUInt32(discs, tag);
+            bitField0_ |= 0x00000010;
+            tag = input.readTag();
+            if (tag != 66) {
+              break;
+            }
+          }
+          case 66: {
+            // activeSecondaryIds [packed=true]
+            input.readPackedUInt32(activeSecondaryIds, tag);
+            bitField0_ |= 0x00000020;
+            tag = input.readTag();
             if (tag != 10) {
               break;
             }
@@ -1599,7 +1974,23 @@ public final class JointDrillRank {
           case 10: {
             // chars
             tag = input.readRepeatedMessage(chars, tag);
-            bitField0_ |= 0x00000010;
+            bitField0_ |= 0x00000040;
+            if (tag != 50) {
+              break;
+            }
+          }
+          case 50: {
+            // potentials
+            tag = input.readRepeatedMessage(potentials, tag);
+            bitField0_ |= 0x00000080;
+            if (tag != 58) {
+              break;
+            }
+          }
+          case 58: {
+            // notes
+            tag = input.readRepeatedMessage(notes, tag);
+            bitField0_ |= 0x00000100;
             if (tag != 0) {
               break;
             }
@@ -1612,6 +2003,18 @@ public final class JointDrillRank {
               return this;
             }
             tag = input.readTag();
+            break;
+          }
+          case 40: {
+            // discs [packed=false]
+            tag = input.readRepeatedUInt32(discs, tag);
+            bitField0_ |= 0x00000010;
+            break;
+          }
+          case 64: {
+            // activeSecondaryIds [packed=false]
+            tag = input.readRepeatedUInt32(activeSecondaryIds, tag);
+            bitField0_ |= 0x00000020;
             break;
           }
         }
@@ -1634,7 +2037,19 @@ public final class JointDrillRank {
         output.writeBytes(FieldNames.nextPackage, nextPackage);
       }
       if ((bitField0_ & 0x00000010) != 0) {
+        output.writeRepeatedUInt32(FieldNames.discs, discs);
+      }
+      if ((bitField0_ & 0x00000020) != 0) {
+        output.writeRepeatedUInt32(FieldNames.activeSecondaryIds, activeSecondaryIds);
+      }
+      if ((bitField0_ & 0x00000040) != 0) {
         output.writeRepeatedMessage(FieldNames.chars, chars);
+      }
+      if ((bitField0_ & 0x00000080) != 0) {
+        output.writeRepeatedMessage(FieldNames.potentials, potentials);
+      }
+      if ((bitField0_ & 0x00000100) != 0) {
+        output.writeRepeatedMessage(FieldNames.notes, notes);
       }
       output.endObject();
     }
@@ -1690,11 +2105,55 @@ public final class JointDrillRank {
             }
             break;
           }
+          case 66041182: {
+            if (input.isAtField(FieldNames.discs)) {
+              if (!input.trySkipNullValue()) {
+                input.readRepeatedUInt32(discs);
+                bitField0_ |= 0x00000010;
+              }
+            } else {
+              input.skipUnknownField();
+            }
+            break;
+          }
+          case 1499070186: {
+            if (input.isAtField(FieldNames.activeSecondaryIds)) {
+              if (!input.trySkipNullValue()) {
+                input.readRepeatedUInt32(activeSecondaryIds);
+                bitField0_ |= 0x00000020;
+              }
+            } else {
+              input.skipUnknownField();
+            }
+            break;
+          }
           case 65071037: {
             if (input.isAtField(FieldNames.chars)) {
               if (!input.trySkipNullValue()) {
                 input.readRepeatedMessage(chars);
-                bitField0_ |= 0x00000010;
+                bitField0_ |= 0x00000040;
+              }
+            } else {
+              input.skipUnknownField();
+            }
+            break;
+          }
+          case 1405493301: {
+            if (input.isAtField(FieldNames.potentials)) {
+              if (!input.trySkipNullValue()) {
+                input.readRepeatedMessage(potentials);
+                bitField0_ |= 0x00000080;
+              }
+            } else {
+              input.skipUnknownField();
+            }
+            break;
+          }
+          case 75456161: {
+            if (input.isAtField(FieldNames.notes)) {
+              if (!input.trySkipNullValue()) {
+                input.readRepeatedMessage(notes);
+                bitField0_ |= 0x00000100;
               }
             } else {
               input.skipUnknownField();
@@ -1762,7 +2221,15 @@ public final class JointDrillRank {
 
       static final FieldName nextPackage = FieldName.forField("NextPackage");
 
+      static final FieldName discs = FieldName.forField("Discs");
+
+      static final FieldName activeSecondaryIds = FieldName.forField("ActiveSecondaryIds");
+
       static final FieldName chars = FieldName.forField("Chars");
+
+      static final FieldName potentials = FieldName.forField("Potentials");
+
+      static final FieldName notes = FieldName.forField("Notes");
     }
   }
 
@@ -2944,6 +3411,407 @@ public final class JointDrillRank {
       static final FieldName nickName = FieldName.forField("NickName");
 
       static final FieldName honors = FieldName.forField("Honors");
+
+      static final FieldName teams = FieldName.forField("Teams");
+    }
+  }
+
+  /**
+   * Protobuf type {@code JointDrillRankTeams}
+   */
+  public static final class JointDrillRankTeams extends ProtoMessage<JointDrillRankTeams> implements Cloneable {
+    private static final long serialVersionUID = 0L;
+
+    /**
+     * <code>optional bytes NextPackage = 2047;</code>
+     */
+    private final RepeatedByte nextPackage = RepeatedByte.newEmptyInstance();
+
+    /**
+     * <code>repeated .JointDrillRankTeam Teams = 1;</code>
+     */
+    private final RepeatedMessage<JointDrillRankTeam> teams = RepeatedMessage.newEmptyInstance(JointDrillRankTeam.getFactory());
+
+    private JointDrillRankTeams() {
+    }
+
+    /**
+     * @return a new empty instance of {@code JointDrillRankTeams}
+     */
+    public static JointDrillRankTeams newInstance() {
+      return new JointDrillRankTeams();
+    }
+
+    /**
+     * <code>optional bytes NextPackage = 2047;</code>
+     * @return whether the nextPackage field is set
+     */
+    public boolean hasNextPackage() {
+      return (bitField0_ & 0x00000001) != 0;
+    }
+
+    /**
+     * <code>optional bytes NextPackage = 2047;</code>
+     * @return this
+     */
+    public JointDrillRankTeams clearNextPackage() {
+      bitField0_ &= ~0x00000001;
+      nextPackage.clear();
+      return this;
+    }
+
+    /**
+     * <code>optional bytes NextPackage = 2047;</code>
+     *
+     * This method returns the internal storage object without modifying any has state.
+     * The returned object should not be modified and be treated as read-only.
+     *
+     * Use {@link #getMutableNextPackage()} if you want to modify it.
+     *
+     * @return internal storage object for reading
+     */
+    public RepeatedByte getNextPackage() {
+      return nextPackage;
+    }
+
+    /**
+     * <code>optional bytes NextPackage = 2047;</code>
+     *
+     * This method returns the internal storage object and sets the corresponding
+     * has state. The returned object will become part of this message and its
+     * contents may be modified as long as the has state is not cleared.
+     *
+     * @return internal storage object for modifications
+     */
+    public RepeatedByte getMutableNextPackage() {
+      bitField0_ |= 0x00000001;
+      return nextPackage;
+    }
+
+    /**
+     * <code>optional bytes NextPackage = 2047;</code>
+     * @param value the nextPackage to add
+     * @return this
+     */
+    public JointDrillRankTeams addNextPackage(final byte value) {
+      bitField0_ |= 0x00000001;
+      nextPackage.add(value);
+      return this;
+    }
+
+    /**
+     * <code>optional bytes NextPackage = 2047;</code>
+     * @param values the nextPackage to add
+     * @return this
+     */
+    public JointDrillRankTeams addAllNextPackage(final byte... values) {
+      bitField0_ |= 0x00000001;
+      nextPackage.addAll(values);
+      return this;
+    }
+
+    /**
+     * <code>optional bytes NextPackage = 2047;</code>
+     * @param values the nextPackage to set
+     * @return this
+     */
+    public JointDrillRankTeams setNextPackage(final byte... values) {
+      bitField0_ |= 0x00000001;
+      nextPackage.copyFrom(values);
+      return this;
+    }
+
+    /**
+     * <code>repeated .JointDrillRankTeam Teams = 1;</code>
+     * @return whether the teams field is set
+     */
+    public boolean hasTeams() {
+      return (bitField0_ & 0x00000002) != 0;
+    }
+
+    /**
+     * <code>repeated .JointDrillRankTeam Teams = 1;</code>
+     * @return this
+     */
+    public JointDrillRankTeams clearTeams() {
+      bitField0_ &= ~0x00000002;
+      teams.clear();
+      return this;
+    }
+
+    /**
+     * <code>repeated .JointDrillRankTeam Teams = 1;</code>
+     *
+     * This method returns the internal storage object without modifying any has state.
+     * The returned object should not be modified and be treated as read-only.
+     *
+     * Use {@link #getMutableTeams()} if you want to modify it.
+     *
+     * @return internal storage object for reading
+     */
+    public RepeatedMessage<JointDrillRankTeam> getTeams() {
+      return teams;
+    }
+
+    /**
+     * <code>repeated .JointDrillRankTeam Teams = 1;</code>
+     *
+     * This method returns the internal storage object and sets the corresponding
+     * has state. The returned object will become part of this message and its
+     * contents may be modified as long as the has state is not cleared.
+     *
+     * @return internal storage object for modifications
+     */
+    public RepeatedMessage<JointDrillRankTeam> getMutableTeams() {
+      bitField0_ |= 0x00000002;
+      return teams;
+    }
+
+    /**
+     * <code>repeated .JointDrillRankTeam Teams = 1;</code>
+     * @param value the teams to add
+     * @return this
+     */
+    public JointDrillRankTeams addTeams(final JointDrillRankTeam value) {
+      bitField0_ |= 0x00000002;
+      teams.add(value);
+      return this;
+    }
+
+    /**
+     * <code>repeated .JointDrillRankTeam Teams = 1;</code>
+     * @param values the teams to add
+     * @return this
+     */
+    public JointDrillRankTeams addAllTeams(final JointDrillRankTeam... values) {
+      bitField0_ |= 0x00000002;
+      teams.addAll(values);
+      return this;
+    }
+
+    @Override
+    public JointDrillRankTeams copyFrom(final JointDrillRankTeams other) {
+      cachedSize = other.cachedSize;
+      if ((bitField0_ | other.bitField0_) != 0) {
+        bitField0_ = other.bitField0_;
+        nextPackage.copyFrom(other.nextPackage);
+        teams.copyFrom(other.teams);
+      }
+      return this;
+    }
+
+    @Override
+    public JointDrillRankTeams mergeFrom(final JointDrillRankTeams other) {
+      if (other.isEmpty()) {
+        return this;
+      }
+      cachedSize = -1;
+      if (other.hasNextPackage()) {
+        getMutableNextPackage().copyFrom(other.nextPackage);
+      }
+      if (other.hasTeams()) {
+        getMutableTeams().addAll(other.teams);
+      }
+      return this;
+    }
+
+    @Override
+    public JointDrillRankTeams clear() {
+      if (isEmpty()) {
+        return this;
+      }
+      cachedSize = -1;
+      bitField0_ = 0;
+      nextPackage.clear();
+      teams.clear();
+      return this;
+    }
+
+    @Override
+    public JointDrillRankTeams clearQuick() {
+      if (isEmpty()) {
+        return this;
+      }
+      cachedSize = -1;
+      bitField0_ = 0;
+      nextPackage.clear();
+      teams.clearQuick();
+      return this;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+      if (o == this) {
+        return true;
+      }
+      if (!(o instanceof JointDrillRankTeams)) {
+        return false;
+      }
+      JointDrillRankTeams other = (JointDrillRankTeams) o;
+      return bitField0_ == other.bitField0_
+        && (!hasNextPackage() || nextPackage.equals(other.nextPackage))
+        && (!hasTeams() || teams.equals(other.teams));
+    }
+
+    @Override
+    public void writeTo(final ProtoSink output) throws IOException {
+      if ((bitField0_ & 0x00000001) != 0) {
+        output.writeRawLittleEndian16((short) 32762);
+        output.writeBytesNoTag(nextPackage);
+      }
+      if ((bitField0_ & 0x00000002) != 0) {
+        for (int i = 0; i < teams.length(); i++) {
+          output.writeRawByte((byte) 10);
+          output.writeMessageNoTag(teams.get(i));
+        }
+      }
+    }
+
+    @Override
+    protected int computeSerializedSize() {
+      int size = 0;
+      if ((bitField0_ & 0x00000001) != 0) {
+        size += 2 + ProtoSink.computeBytesSizeNoTag(nextPackage);
+      }
+      if ((bitField0_ & 0x00000002) != 0) {
+        size += (1 * teams.length()) + ProtoSink.computeRepeatedMessageSizeNoTag(teams);
+      }
+      return size;
+    }
+
+    @Override
+    @SuppressWarnings("fallthrough")
+    public JointDrillRankTeams mergeFrom(final ProtoSource input) throws IOException {
+      // Enabled Fall-Through Optimization (QuickBuffers)
+      int tag = input.readTag();
+      while (true) {
+        switch (tag) {
+          case 16378: {
+            // nextPackage
+            input.readBytes(nextPackage);
+            bitField0_ |= 0x00000001;
+            tag = input.readTag();
+            if (tag != 10) {
+              break;
+            }
+          }
+          case 10: {
+            // teams
+            tag = input.readRepeatedMessage(teams, tag);
+            bitField0_ |= 0x00000002;
+            if (tag != 0) {
+              break;
+            }
+          }
+          case 0: {
+            return this;
+          }
+          default: {
+            if (!input.skipField(tag)) {
+              return this;
+            }
+            tag = input.readTag();
+            break;
+          }
+        }
+      }
+    }
+
+    @Override
+    public void writeTo(final JsonSink output) throws IOException {
+      output.beginObject();
+      if ((bitField0_ & 0x00000001) != 0) {
+        output.writeBytes(FieldNames.nextPackage, nextPackage);
+      }
+      if ((bitField0_ & 0x00000002) != 0) {
+        output.writeRepeatedMessage(FieldNames.teams, teams);
+      }
+      output.endObject();
+    }
+
+    @Override
+    public JointDrillRankTeams mergeFrom(final JsonSource input) throws IOException {
+      if (!input.beginObject()) {
+        return this;
+      }
+      while (!input.isAtEnd()) {
+        switch (input.readFieldHash()) {
+          case -2082324045: {
+            if (input.isAtField(FieldNames.nextPackage)) {
+              if (!input.trySkipNullValue()) {
+                input.readBytes(nextPackage);
+                bitField0_ |= 0x00000001;
+              }
+            } else {
+              input.skipUnknownField();
+            }
+            break;
+          }
+          case 80681366: {
+            if (input.isAtField(FieldNames.teams)) {
+              if (!input.trySkipNullValue()) {
+                input.readRepeatedMessage(teams);
+                bitField0_ |= 0x00000002;
+              }
+            } else {
+              input.skipUnknownField();
+            }
+            break;
+          }
+          default: {
+            input.skipUnknownField();
+            break;
+          }
+        }
+      }
+      input.endObject();
+      return this;
+    }
+
+    @Override
+    public JointDrillRankTeams clone() {
+      return new JointDrillRankTeams().copyFrom(this);
+    }
+
+    @Override
+    public boolean isEmpty() {
+      return ((bitField0_) == 0);
+    }
+
+    public static JointDrillRankTeams parseFrom(final byte[] data) throws
+        InvalidProtocolBufferException {
+      return ProtoMessage.mergeFrom(new JointDrillRankTeams(), data).checkInitialized();
+    }
+
+    public static JointDrillRankTeams parseFrom(final ProtoSource input) throws IOException {
+      return ProtoMessage.mergeFrom(new JointDrillRankTeams(), input).checkInitialized();
+    }
+
+    public static JointDrillRankTeams parseFrom(final JsonSource input) throws IOException {
+      return ProtoMessage.mergeFrom(new JointDrillRankTeams(), input).checkInitialized();
+    }
+
+    /**
+     * @return factory for creating JointDrillRankTeams messages
+     */
+    public static MessageFactory<JointDrillRankTeams> getFactory() {
+      return JointDrillRankTeamsFactory.INSTANCE;
+    }
+
+    private enum JointDrillRankTeamsFactory implements MessageFactory<JointDrillRankTeams> {
+      INSTANCE;
+
+      @Override
+      public JointDrillRankTeams create() {
+        return JointDrillRankTeams.newInstance();
+      }
+    }
+
+    /**
+     * Contains name constants used for serializing JSON
+     */
+    static class FieldNames {
+      static final FieldName nextPackage = FieldName.forField("NextPackage");
 
       static final FieldName teams = FieldName.forField("Teams");
     }

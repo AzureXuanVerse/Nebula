@@ -17,7 +17,8 @@ public enum ItemType {
     MonthlyCard   (11),
     Title         (12),
     Honor         (13),
-    HeadItem      (14);
+    HeadItem      (14),
+    LevelHonor    (15);
 
     @Getter
     private final int value;

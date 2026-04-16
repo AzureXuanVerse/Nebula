@@ -45,28 +45,34 @@ public class ActivityModule extends GameContextModule {
         //this.activities.add(1010504);
         
         // To My Dearest You
-        this.activities.add(1010601);
-        this.activities.add(1010603);
-        this.activities.add(1010604);
+        //this.activities.add(1010601);
+        //this.activities.add(1010603);
+        //this.activities.add(1010604);
+        
+        // Solitary Waltz in Night's Embrace
+        this.activities.add(2010201);
+        this.activities.add(2010203);
+        this.activities.add(2010204);
         
         // ===== Joint Drills (Finale Echoing) =====
-        this.activities.add(510003);
+        //this.activities.add(510003); // Causes soft lock in event screen
         
         // ===== Etc Events =====
         
         // Trial activities
-        this.activities.add(700111);
-        this.activities.add(700112);
+        this.activities.add(700117);
+        this.activities.add(700118);
 
         // Tower defense activity
-        this.activities.add(102002);
+        this.activities.add(102002); // Broken
         
-        // Christmas 2025 login events
-        this.activities.add(301011);
-        this.activities.add(301012);
-
+        // Login events
+        //this.activities.add(301011);  // Christmas 2025
+        //this.activities.add(301012);  // Christmas 2025
+        this.activities.add(301031);    // Stellar Prelude
+        
         // Fatebound Stellar Deck
-        this.activities.add(800001);
+        //this.activities.add(800001); // Causes soft lock in event screen
         
         // Trekker versus (broken)
         //this.activities.add(600001);

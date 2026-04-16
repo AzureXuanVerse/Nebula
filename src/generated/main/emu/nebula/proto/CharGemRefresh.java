@@ -683,6 +683,11 @@ public final class CharGemRefresh {
      */
     private final RepeatedInt attributes = RepeatedInt.newEmptyInstance();
 
+    /**
+     * <code>repeated uint32 OverlockCount = 3;</code>
+     */
+    private final RepeatedInt overlockCount = RepeatedInt.newEmptyInstance();
+
     private CharGemRefreshResp() {
     }
 
@@ -897,6 +902,74 @@ public final class CharGemRefresh {
       return this;
     }
 
+    /**
+     * <code>repeated uint32 OverlockCount = 3;</code>
+     * @return whether the overlockCount field is set
+     */
+    public boolean hasOverlockCount() {
+      return (bitField0_ & 0x00000008) != 0;
+    }
+
+    /**
+     * <code>repeated uint32 OverlockCount = 3;</code>
+     * @return this
+     */
+    public CharGemRefreshResp clearOverlockCount() {
+      bitField0_ &= ~0x00000008;
+      overlockCount.clear();
+      return this;
+    }
+
+    /**
+     * <code>repeated uint32 OverlockCount = 3;</code>
+     *
+     * This method returns the internal storage object without modifying any has state.
+     * The returned object should not be modified and be treated as read-only.
+     *
+     * Use {@link #getMutableOverlockCount()} if you want to modify it.
+     *
+     * @return internal storage object for reading
+     */
+    public RepeatedInt getOverlockCount() {
+      return overlockCount;
+    }
+
+    /**
+     * <code>repeated uint32 OverlockCount = 3;</code>
+     *
+     * This method returns the internal storage object and sets the corresponding
+     * has state. The returned object will become part of this message and its
+     * contents may be modified as long as the has state is not cleared.
+     *
+     * @return internal storage object for modifications
+     */
+    public RepeatedInt getMutableOverlockCount() {
+      bitField0_ |= 0x00000008;
+      return overlockCount;
+    }
+
+    /**
+     * <code>repeated uint32 OverlockCount = 3;</code>
+     * @param value the overlockCount to add
+     * @return this
+     */
+    public CharGemRefreshResp addOverlockCount(final int value) {
+      bitField0_ |= 0x00000008;
+      overlockCount.add(value);
+      return this;
+    }
+
+    /**
+     * <code>repeated uint32 OverlockCount = 3;</code>
+     * @param values the overlockCount to add
+     * @return this
+     */
+    public CharGemRefreshResp addAllOverlockCount(final int... values) {
+      bitField0_ |= 0x00000008;
+      overlockCount.addAll(values);
+      return this;
+    }
+
     @Override
     public CharGemRefreshResp copyFrom(final CharGemRefreshResp other) {
       cachedSize = other.cachedSize;
@@ -905,6 +978,7 @@ public final class CharGemRefresh {
         changeInfo.copyFrom(other.changeInfo);
         nextPackage.copyFrom(other.nextPackage);
         attributes.copyFrom(other.attributes);
+        overlockCount.copyFrom(other.overlockCount);
       }
       return this;
     }
@@ -924,6 +998,9 @@ public final class CharGemRefresh {
       if (other.hasAttributes()) {
         getMutableAttributes().addAll(other.attributes);
       }
+      if (other.hasOverlockCount()) {
+        getMutableOverlockCount().addAll(other.overlockCount);
+      }
       return this;
     }
 
@@ -937,6 +1014,7 @@ public final class CharGemRefresh {
       changeInfo.clear();
       nextPackage.clear();
       attributes.clear();
+      overlockCount.clear();
       return this;
     }
 
@@ -950,6 +1028,7 @@ public final class CharGemRefresh {
       changeInfo.clearQuick();
       nextPackage.clear();
       attributes.clear();
+      overlockCount.clear();
       return this;
     }
 
@@ -965,7 +1044,8 @@ public final class CharGemRefresh {
       return bitField0_ == other.bitField0_
         && (!hasChangeInfo() || changeInfo.equals(other.changeInfo))
         && (!hasNextPackage() || nextPackage.equals(other.nextPackage))
-        && (!hasAttributes() || attributes.equals(other.attributes));
+        && (!hasAttributes() || attributes.equals(other.attributes))
+        && (!hasOverlockCount() || overlockCount.equals(other.overlockCount));
     }
 
     @Override
@@ -984,6 +1064,12 @@ public final class CharGemRefresh {
           output.writeUInt32NoTag(attributes.array()[i]);
         }
       }
+      if ((bitField0_ & 0x00000008) != 0) {
+        for (int i = 0; i < overlockCount.length(); i++) {
+          output.writeRawByte((byte) 24);
+          output.writeUInt32NoTag(overlockCount.array()[i]);
+        }
+      }
     }
 
     @Override
@@ -997,6 +1083,9 @@ public final class CharGemRefresh {
       }
       if ((bitField0_ & 0x00000004) != 0) {
         size += (1 * attributes.length()) + ProtoSink.computeRepeatedUInt32SizeNoTag(attributes);
+      }
+      if ((bitField0_ & 0x00000008) != 0) {
+        size += (1 * overlockCount.length()) + ProtoSink.computeRepeatedUInt32SizeNoTag(overlockCount);
       }
       return size;
     }
@@ -1031,6 +1120,15 @@ public final class CharGemRefresh {
             input.readPackedUInt32(attributes, tag);
             bitField0_ |= 0x00000004;
             tag = input.readTag();
+            if (tag != 26) {
+              break;
+            }
+          }
+          case 26: {
+            // overlockCount [packed=true]
+            input.readPackedUInt32(overlockCount, tag);
+            bitField0_ |= 0x00000008;
+            tag = input.readTag();
             if (tag != 0) {
               break;
             }
@@ -1051,6 +1149,12 @@ public final class CharGemRefresh {
             bitField0_ |= 0x00000004;
             break;
           }
+          case 24: {
+            // overlockCount [packed=false]
+            tag = input.readRepeatedUInt32(overlockCount, tag);
+            bitField0_ |= 0x00000008;
+            break;
+          }
         }
       }
     }
@@ -1066,6 +1170,9 @@ public final class CharGemRefresh {
       }
       if ((bitField0_ & 0x00000004) != 0) {
         output.writeRepeatedUInt32(FieldNames.attributes, attributes);
+      }
+      if ((bitField0_ & 0x00000008) != 0) {
+        output.writeRepeatedUInt32(FieldNames.overlockCount, overlockCount);
       }
       output.endObject();
     }
@@ -1104,6 +1211,17 @@ public final class CharGemRefresh {
               if (!input.trySkipNullValue()) {
                 input.readRepeatedUInt32(attributes);
                 bitField0_ |= 0x00000004;
+              }
+            } else {
+              input.skipUnknownField();
+            }
+            break;
+          }
+          case 1950695472: {
+            if (input.isAtField(FieldNames.overlockCount)) {
+              if (!input.trySkipNullValue()) {
+                input.readRepeatedUInt32(overlockCount);
+                bitField0_ |= 0x00000008;
               }
             } else {
               input.skipUnknownField();
@@ -1168,6 +1286,8 @@ public final class CharGemRefresh {
       static final FieldName nextPackage = FieldName.forField("NextPackage");
 
       static final FieldName attributes = FieldName.forField("Attributes");
+
+      static final FieldName overlockCount = FieldName.forField("OverlockCount");
     }
   }
 }

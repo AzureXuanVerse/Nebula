@@ -259,6 +259,11 @@ public final class PlayerData {
     private final RepeatedMessage<AssistInfo> assists = RepeatedMessage.newEmptyInstance(AssistInfo.getFactory());
 
     /**
+     * <code>repeated .ActivityHonor ActivityHonors = 41;</code>
+     */
+    private final RepeatedMessage<Public.ActivityHonor> activityHonors = RepeatedMessage.newEmptyInstance(Public.ActivityHonor.getFactory());
+
+    /**
      * <code>repeated .HonorInfo Honors = 124;</code>
      */
     private final RepeatedMessage<Public.HonorInfo> honors = RepeatedMessage.newEmptyInstance(Public.HonorInfo.getFactory());
@@ -3030,11 +3035,79 @@ public final class PlayerData {
     }
 
     /**
+     * <code>repeated .ActivityHonor ActivityHonors = 41;</code>
+     * @return whether the activityHonors field is set
+     */
+    public boolean hasActivityHonors() {
+      return (bitField1_ & 0x00008000) != 0;
+    }
+
+    /**
+     * <code>repeated .ActivityHonor ActivityHonors = 41;</code>
+     * @return this
+     */
+    public PlayerInfo clearActivityHonors() {
+      bitField1_ &= ~0x00008000;
+      activityHonors.clear();
+      return this;
+    }
+
+    /**
+     * <code>repeated .ActivityHonor ActivityHonors = 41;</code>
+     *
+     * This method returns the internal storage object without modifying any has state.
+     * The returned object should not be modified and be treated as read-only.
+     *
+     * Use {@link #getMutableActivityHonors()} if you want to modify it.
+     *
+     * @return internal storage object for reading
+     */
+    public RepeatedMessage<Public.ActivityHonor> getActivityHonors() {
+      return activityHonors;
+    }
+
+    /**
+     * <code>repeated .ActivityHonor ActivityHonors = 41;</code>
+     *
+     * This method returns the internal storage object and sets the corresponding
+     * has state. The returned object will become part of this message and its
+     * contents may be modified as long as the has state is not cleared.
+     *
+     * @return internal storage object for modifications
+     */
+    public RepeatedMessage<Public.ActivityHonor> getMutableActivityHonors() {
+      bitField1_ |= 0x00008000;
+      return activityHonors;
+    }
+
+    /**
+     * <code>repeated .ActivityHonor ActivityHonors = 41;</code>
+     * @param value the activityHonors to add
+     * @return this
+     */
+    public PlayerInfo addActivityHonors(final Public.ActivityHonor value) {
+      bitField1_ |= 0x00008000;
+      activityHonors.add(value);
+      return this;
+    }
+
+    /**
+     * <code>repeated .ActivityHonor ActivityHonors = 41;</code>
+     * @param values the activityHonors to add
+     * @return this
+     */
+    public PlayerInfo addAllActivityHonors(final Public.ActivityHonor... values) {
+      bitField1_ |= 0x00008000;
+      activityHonors.addAll(values);
+      return this;
+    }
+
+    /**
      * <code>repeated .HonorInfo Honors = 124;</code>
      * @return whether the honors field is set
      */
     public boolean hasHonors() {
-      return (bitField1_ & 0x00008000) != 0;
+      return (bitField1_ & 0x00010000) != 0;
     }
 
     /**
@@ -3042,7 +3115,7 @@ public final class PlayerData {
      * @return this
      */
     public PlayerInfo clearHonors() {
-      bitField1_ &= ~0x00008000;
+      bitField1_ &= ~0x00010000;
       honors.clear();
       return this;
     }
@@ -3071,7 +3144,7 @@ public final class PlayerData {
      * @return internal storage object for modifications
      */
     public RepeatedMessage<Public.HonorInfo> getMutableHonors() {
-      bitField1_ |= 0x00008000;
+      bitField1_ |= 0x00010000;
       return honors;
     }
 
@@ -3081,7 +3154,7 @@ public final class PlayerData {
      * @return this
      */
     public PlayerInfo addHonors(final Public.HonorInfo value) {
-      bitField1_ |= 0x00008000;
+      bitField1_ |= 0x00010000;
       honors.add(value);
       return this;
     }
@@ -3092,7 +3165,7 @@ public final class PlayerData {
      * @return this
      */
     public PlayerInfo addAllHonors(final Public.HonorInfo... values) {
-      bitField1_ |= 0x00008000;
+      bitField1_ |= 0x00010000;
       honors.addAll(values);
       return this;
     }
@@ -3152,6 +3225,7 @@ public final class PlayerData {
         charGemInstances.copyFrom(other.charGemInstances);
         tutorialLevels.copyFrom(other.tutorialLevels);
         assists.copyFrom(other.assists);
+        activityHonors.copyFrom(other.activityHonors);
         honors.copyFrom(other.honors);
       }
       return this;
@@ -3304,6 +3378,9 @@ public final class PlayerData {
       if (other.hasAssists()) {
         getMutableAssists().addAll(other.assists);
       }
+      if (other.hasActivityHonors()) {
+        getMutableActivityHonors().addAll(other.activityHonors);
+      }
       if (other.hasHonors()) {
         getMutableHonors().addAll(other.honors);
       }
@@ -3365,6 +3442,7 @@ public final class PlayerData {
       charGemInstances.clear();
       tutorialLevels.clear();
       assists.clear();
+      activityHonors.clear();
       honors.clear();
       return this;
     }
@@ -3413,6 +3491,7 @@ public final class PlayerData {
       charGemInstances.clearQuick();
       tutorialLevels.clearQuick();
       assists.clearQuick();
+      activityHonors.clearQuick();
       honors.clearQuick();
       return this;
     }
@@ -3475,6 +3554,7 @@ public final class PlayerData {
         && (!hasCharGemInstances() || charGemInstances.equals(other.charGemInstances))
         && (!hasTutorialLevels() || tutorialLevels.equals(other.tutorialLevels))
         && (!hasAssists() || assists.equals(other.assists))
+        && (!hasActivityHonors() || activityHonors.equals(other.activityHonors))
         && (!hasHonors() || honors.equals(other.honors));
     }
 
@@ -3715,6 +3795,12 @@ public final class PlayerData {
         }
       }
       if ((bitField1_ & 0x00008000) != 0) {
+        for (int i = 0; i < activityHonors.length(); i++) {
+          output.writeRawLittleEndian16((short) 714);
+          output.writeMessageNoTag(activityHonors.get(i));
+        }
+      }
+      if ((bitField1_ & 0x00010000) != 0) {
         for (int i = 0; i < honors.length(); i++) {
           output.writeRawLittleEndian16((short) 2018);
           output.writeMessageNoTag(honors.get(i));
@@ -3867,6 +3953,9 @@ public final class PlayerData {
         size += (2 * assists.length()) + ProtoSink.computeRepeatedMessageSizeNoTag(assists);
       }
       if ((bitField1_ & 0x00008000) != 0) {
+        size += (2 * activityHonors.length()) + ProtoSink.computeRepeatedMessageSizeNoTag(activityHonors);
+      }
+      if ((bitField1_ & 0x00010000) != 0) {
         size += (2 * honors.length()) + ProtoSink.computeRepeatedMessageSizeNoTag(honors);
       }
       return size;
@@ -4281,6 +4370,14 @@ public final class PlayerData {
             // assists
             tag = input.readRepeatedMessage(assists, tag);
             bitField1_ |= 0x00004000;
+            if (tag != 330) {
+              break;
+            }
+          }
+          case 330: {
+            // activityHonors
+            tag = input.readRepeatedMessage(activityHonors, tag);
+            bitField1_ |= 0x00008000;
             if (tag != 994) {
               break;
             }
@@ -4288,7 +4385,7 @@ public final class PlayerData {
           case 994: {
             // honors
             tag = input.readRepeatedMessage(honors, tag);
-            bitField1_ |= 0x00008000;
+            bitField1_ |= 0x00010000;
             if (tag != 0) {
               break;
             }
@@ -4488,6 +4585,9 @@ public final class PlayerData {
         output.writeRepeatedMessage(FieldNames.assists, assists);
       }
       if ((bitField1_ & 0x00008000) != 0) {
+        output.writeRepeatedMessage(FieldNames.activityHonors, activityHonors);
+      }
+      if ((bitField1_ & 0x00010000) != 0) {
         output.writeRepeatedMessage(FieldNames.honors, honors);
       }
       output.endObject();
@@ -5017,11 +5117,22 @@ public final class PlayerData {
             }
             break;
           }
+          case 574276952: {
+            if (input.isAtField(FieldNames.activityHonors)) {
+              if (!input.trySkipNullValue()) {
+                input.readRepeatedMessage(activityHonors);
+                bitField1_ |= 0x00008000;
+              }
+            } else {
+              input.skipUnknownField();
+            }
+            break;
+          }
           case -2127770263: {
             if (input.isAtField(FieldNames.honors)) {
               if (!input.trySkipNullValue()) {
                 input.readRepeatedMessage(honors);
-                bitField1_ |= 0x00008000;
+                bitField1_ |= 0x00010000;
               }
             } else {
               input.skipUnknownField();
@@ -5173,6 +5284,8 @@ public final class PlayerData {
       static final FieldName tutorialLevels = FieldName.forField("TutorialLevels");
 
       static final FieldName assists = FieldName.forField("Assists");
+
+      static final FieldName activityHonors = FieldName.forField("ActivityHonors");
 
       static final FieldName honors = FieldName.forField("Honors");
     }

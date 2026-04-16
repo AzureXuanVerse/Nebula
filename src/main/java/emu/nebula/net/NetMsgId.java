@@ -3,6 +3,7 @@ package emu.nebula.net;
 public class NetMsgId {
     public static final int none = 0;
 
+    public static final int clear_all_activity_golden_spy_levels_notify = -10051;
     public static final int clear_all_activity_breakout_levels_notify = -10050;
     public static final int clear_story_set_notify = -10049;
     public static final int unlock_activity_story_notify = -10048;
@@ -188,6 +189,9 @@ public class NetMsgId {
     public static final int milkout_settle_req = 1401;
     public static final int milkout_settle_succeed_ack = 1402;
     public static final int milkout_settle_failed_ack = 1403;
+    public static final int activity_gds_settle_req = 1501;
+    public static final int activity_gds_settle_succeed_ack = 1502;
+    public static final int activity_gds_settle_failed_ack = 1503;
     public static final int player_formation_req = 2001;
     public static final int player_formation_succeed_ack = 2002;
     public static final int player_formation_failed_ack = 2003;
@@ -254,6 +258,15 @@ public class NetMsgId {
     public static final int char_gem_equip_gem_req = 2519;
     public static final int char_gem_equip_gem_succeed_ack = 2520;
     public static final int char_gem_equip_gem_failed_ack = 2521;
+    public static final int char_gem_overlock_revert_req = 2522;
+    public static final int char_gem_overlock_revert_succeed_ack = 2523;
+    public static final int char_gem_overlock_revert_failed_ack = 2524;
+    public static final int char_gem_overlock_req = 2525;
+    public static final int char_gem_overlock_succeed_ack = 2526;
+    public static final int char_gem_overlock_failed_ack = 2527;
+    public static final int char_favorite_set_req = 2601;
+    public static final int char_favorite_set_succeed_ack = 2602;
+    public static final int char_favorite_set_failed_ack = 2603;
     public static final int disc_strengthen_req = 3119;
     public static final int disc_strengthen_succeed_ack = 3120;
     public static final int disc_strengthen_failed_ack = 3121;
@@ -368,6 +381,24 @@ public class NetMsgId {
     public static final int star_tower_build_preference_set_req = 4719;
     public static final int star_tower_build_preference_set_succeed_ack = 4720;
     public static final int star_tower_build_preference_set_failed_ack = 4721;
+    public static final int potential_preselection_list_req = 4722;
+    public static final int potential_preselection_list_succeed_ack = 4723;
+    public static final int potential_preselection_list_failed_ack = 4724;
+    public static final int potential_preselection_import_req = 4725;
+    public static final int potential_preselection_import_succeed_ack = 4726;
+    public static final int potential_preselection_import_failed_ack = 4727;
+    public static final int potential_preselection_name_set_req = 4728;
+    public static final int potential_preselection_name_set_succeed_ack = 4729;
+    public static final int potential_preselection_name_set_failed_ack = 4730;
+    public static final int potential_preselection_preference_set_req = 4731;
+    public static final int potential_preselection_preference_set_succeed_ack = 4732;
+    public static final int potential_preselection_preference_set_failed_ack = 4733;
+    public static final int potential_preselection_update_req = 4734;
+    public static final int potential_preselection_update_succeed_ack = 4735;
+    public static final int potential_preselection_update_failed_ack = 4736;
+    public static final int potential_preselection_delete_req = 4737;
+    public static final int potential_preselection_delete_succeed_ack = 4738;
+    public static final int potential_preselection_delete_failed_ack = 4739;
     public static final int build_convert_detail_list_get_req = 4801;
     public static final int build_convert_detail_list_get_succeed_ack = 4802;
     public static final int build_convert_detail_list_get_failed_ack = 4803;

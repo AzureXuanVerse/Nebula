@@ -59,6 +59,7 @@ public class GameCharacter implements GameDatabaseObject {
     private int advance;
     private int level;
     private int exp;
+    private boolean favorite;
     private int affinityLevel;
     private int affinityExp;
     private int skin;
@@ -135,6 +136,10 @@ public class GameCharacter implements GameDatabaseObject {
     
     public void setAdvance(int advance) {
         this.advance = advance;
+    }
+    
+    public void setFavorite(boolean b) {
+        this.favorite = b;
     }
 
     public void setAffinityLevel(int level) {
@@ -821,6 +826,7 @@ public class GameCharacter implements GameDatabaseObject {
                 .setLevel(this.getLevel())
                 .setSkin(this.getSkin())
                 .setAdvance(this.getAdvance())
+                .setIsFavorite(this.isFavorite())
                 .setAffinityLevel(this.getAffinityLevel())
                 .setAffinityExp(this.getAffinityExp())
                 .setTalentNodes(this.getTalents().toByteArray())

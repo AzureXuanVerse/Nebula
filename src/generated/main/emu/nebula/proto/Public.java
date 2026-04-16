@@ -19854,6 +19854,11 @@ public final class Public {
     private static final long serialVersionUID = 0L;
 
     /**
+     * <code>optional int64 TravelerDuelIdleReward = 17;</code>
+     */
+    private long travelerDuelIdleReward;
+
+    /**
      * <code>optional uint32 InfinityTower = 2;</code>
      */
     private int infinityTower;
@@ -19914,11 +19919,6 @@ public final class Public {
     private final QuestState travelerDuelQuest = QuestState.newInstance();
 
     /**
-     * <code>optional .QuestState TravelerDuelChallengeQuest = 17;</code>
-     */
-    private final QuestState travelerDuelChallengeQuest = QuestState.newInstance();
-
-    /**
      * <code>optional .StarTowerState StarTower = 18;</code>
      */
     private final StarTowerState starTower = StarTowerState.newInstance();
@@ -19964,11 +19964,48 @@ public final class Public {
     }
 
     /**
+     * <code>optional int64 TravelerDuelIdleReward = 17;</code>
+     * @return whether the travelerDuelIdleReward field is set
+     */
+    public boolean hasTravelerDuelIdleReward() {
+      return (bitField0_ & 0x00000001) != 0;
+    }
+
+    /**
+     * <code>optional int64 TravelerDuelIdleReward = 17;</code>
+     * @return this
+     */
+    public StateInfo clearTravelerDuelIdleReward() {
+      bitField0_ &= ~0x00000001;
+      travelerDuelIdleReward = 0L;
+      return this;
+    }
+
+    /**
+     * <code>optional int64 TravelerDuelIdleReward = 17;</code>
+     * @return the travelerDuelIdleReward
+     */
+    public long getTravelerDuelIdleReward() {
+      return travelerDuelIdleReward;
+    }
+
+    /**
+     * <code>optional int64 TravelerDuelIdleReward = 17;</code>
+     * @param value the travelerDuelIdleReward to set
+     * @return this
+     */
+    public StateInfo setTravelerDuelIdleReward(final long value) {
+      bitField0_ |= 0x00000001;
+      travelerDuelIdleReward = value;
+      return this;
+    }
+
+    /**
      * <code>optional uint32 InfinityTower = 2;</code>
      * @return whether the infinityTower field is set
      */
     public boolean hasInfinityTower() {
-      return (bitField0_ & 0x00000001) != 0;
+      return (bitField0_ & 0x00000002) != 0;
     }
 
     /**
@@ -19976,7 +20013,7 @@ public final class Public {
      * @return this
      */
     public StateInfo clearInfinityTower() {
-      bitField0_ &= ~0x00000001;
+      bitField0_ &= ~0x00000002;
       infinityTower = 0;
       return this;
     }
@@ -19995,7 +20032,7 @@ public final class Public {
      * @return this
      */
     public StateInfo setInfinityTower(final int value) {
-      bitField0_ |= 0x00000001;
+      bitField0_ |= 0x00000002;
       infinityTower = value;
       return this;
     }
@@ -20005,7 +20042,7 @@ public final class Public {
      * @return whether the vampireSurvivorId field is set
      */
     public boolean hasVampireSurvivorId() {
-      return (bitField0_ & 0x00000002) != 0;
+      return (bitField0_ & 0x00000004) != 0;
     }
 
     /**
@@ -20013,7 +20050,7 @@ public final class Public {
      * @return this
      */
     public StateInfo clearVampireSurvivorId() {
-      bitField0_ &= ~0x00000002;
+      bitField0_ &= ~0x00000004;
       vampireSurvivorId = 0;
       return this;
     }
@@ -20032,7 +20069,7 @@ public final class Public {
      * @return this
      */
     public StateInfo setVampireSurvivorId(final int value) {
-      bitField0_ |= 0x00000002;
+      bitField0_ |= 0x00000004;
       vampireSurvivorId = value;
       return this;
     }
@@ -20042,7 +20079,7 @@ public final class Public {
      * @return whether the friend field is set
      */
     public boolean hasFriend() {
-      return (bitField0_ & 0x00000004) != 0;
+      return (bitField0_ & 0x00000008) != 0;
     }
 
     /**
@@ -20050,7 +20087,7 @@ public final class Public {
      * @return this
      */
     public StateInfo clearFriend() {
-      bitField0_ &= ~0x00000004;
+      bitField0_ &= ~0x00000008;
       friend = false;
       return this;
     }
@@ -20069,7 +20106,7 @@ public final class Public {
      * @return this
      */
     public StateInfo setFriend(final boolean value) {
-      bitField0_ |= 0x00000004;
+      bitField0_ |= 0x00000008;
       friend = value;
       return this;
     }
@@ -20079,7 +20116,7 @@ public final class Public {
      * @return whether the npcAffinityReward field is set
      */
     public boolean hasNpcAffinityReward() {
-      return (bitField0_ & 0x00000008) != 0;
+      return (bitField0_ & 0x00000010) != 0;
     }
 
     /**
@@ -20087,7 +20124,7 @@ public final class Public {
      * @return this
      */
     public StateInfo clearNpcAffinityReward() {
-      bitField0_ &= ~0x00000008;
+      bitField0_ &= ~0x00000010;
       npcAffinityReward = false;
       return this;
     }
@@ -20106,7 +20143,7 @@ public final class Public {
      * @return this
      */
     public StateInfo setNpcAffinityReward(final boolean value) {
-      bitField0_ |= 0x00000008;
+      bitField0_ |= 0x00000010;
       npcAffinityReward = value;
       return this;
     }
@@ -20116,7 +20153,7 @@ public final class Public {
      * @return whether the storySet field is set
      */
     public boolean hasStorySet() {
-      return (bitField0_ & 0x00000010) != 0;
+      return (bitField0_ & 0x00000020) != 0;
     }
 
     /**
@@ -20124,7 +20161,7 @@ public final class Public {
      * @return this
      */
     public StateInfo clearStorySet() {
-      bitField0_ &= ~0x00000010;
+      bitField0_ &= ~0x00000020;
       storySet = false;
       return this;
     }
@@ -20143,7 +20180,7 @@ public final class Public {
      * @return this
      */
     public StateInfo setStorySet(final boolean value) {
-      bitField0_ |= 0x00000010;
+      bitField0_ |= 0x00000020;
       storySet = value;
       return this;
     }
@@ -20153,7 +20190,7 @@ public final class Public {
      * @return whether the mail field is set
      */
     public boolean hasMail() {
-      return (bitField0_ & 0x00000020) != 0;
+      return (bitField0_ & 0x00000040) != 0;
     }
 
     /**
@@ -20161,7 +20198,7 @@ public final class Public {
      * @return this
      */
     public StateInfo clearMail() {
-      bitField0_ &= ~0x00000020;
+      bitField0_ &= ~0x00000040;
       mail.clear();
       return this;
     }
@@ -20190,7 +20227,7 @@ public final class Public {
      * @return internal storage object for modifications
      */
     public MailState getMutableMail() {
-      bitField0_ |= 0x00000020;
+      bitField0_ |= 0x00000040;
       return mail;
     }
 
@@ -20200,7 +20237,7 @@ public final class Public {
      * @return this
      */
     public StateInfo setMail(final MailState value) {
-      bitField0_ |= 0x00000020;
+      bitField0_ |= 0x00000040;
       mail.copyFrom(value);
       return this;
     }
@@ -20210,7 +20247,7 @@ public final class Public {
      * @return whether the battlePass field is set
      */
     public boolean hasBattlePass() {
-      return (bitField0_ & 0x00000040) != 0;
+      return (bitField0_ & 0x00000080) != 0;
     }
 
     /**
@@ -20218,7 +20255,7 @@ public final class Public {
      * @return this
      */
     public StateInfo clearBattlePass() {
-      bitField0_ &= ~0x00000040;
+      bitField0_ &= ~0x00000080;
       battlePass.clear();
       return this;
     }
@@ -20247,7 +20284,7 @@ public final class Public {
      * @return internal storage object for modifications
      */
     public BattlePassState getMutableBattlePass() {
-      bitField0_ |= 0x00000040;
+      bitField0_ |= 0x00000080;
       return battlePass;
     }
 
@@ -20257,7 +20294,7 @@ public final class Public {
      * @return this
      */
     public StateInfo setBattlePass(final BattlePassState value) {
-      bitField0_ |= 0x00000040;
+      bitField0_ |= 0x00000080;
       battlePass.copyFrom(value);
       return this;
     }
@@ -20267,7 +20304,7 @@ public final class Public {
      * @return whether the worldClassReward field is set
      */
     public boolean hasWorldClassReward() {
-      return (bitField0_ & 0x00000080) != 0;
+      return (bitField0_ & 0x00000100) != 0;
     }
 
     /**
@@ -20275,7 +20312,7 @@ public final class Public {
      * @return this
      */
     public StateInfo clearWorldClassReward() {
-      bitField0_ &= ~0x00000080;
+      bitField0_ &= ~0x00000100;
       worldClassReward.clear();
       return this;
     }
@@ -20304,7 +20341,7 @@ public final class Public {
      * @return internal storage object for modifications
      */
     public WorldClassRewardState getMutableWorldClassReward() {
-      bitField0_ |= 0x00000080;
+      bitField0_ |= 0x00000100;
       return worldClassReward;
     }
 
@@ -20314,7 +20351,7 @@ public final class Public {
      * @return this
      */
     public StateInfo setWorldClassReward(final WorldClassRewardState value) {
-      bitField0_ |= 0x00000080;
+      bitField0_ |= 0x00000100;
       worldClassReward.copyFrom(value);
       return this;
     }
@@ -20324,7 +20361,7 @@ public final class Public {
      * @return whether the friendEnergy field is set
      */
     public boolean hasFriendEnergy() {
-      return (bitField0_ & 0x00000100) != 0;
+      return (bitField0_ & 0x00000200) != 0;
     }
 
     /**
@@ -20332,7 +20369,7 @@ public final class Public {
      * @return this
      */
     public StateInfo clearFriendEnergy() {
-      bitField0_ &= ~0x00000100;
+      bitField0_ &= ~0x00000200;
       friendEnergy.clear();
       return this;
     }
@@ -20361,7 +20398,7 @@ public final class Public {
      * @return internal storage object for modifications
      */
     public FriendEnergyState getMutableFriendEnergy() {
-      bitField0_ |= 0x00000100;
+      bitField0_ |= 0x00000200;
       return friendEnergy;
     }
 
@@ -20371,7 +20408,7 @@ public final class Public {
      * @return this
      */
     public StateInfo setFriendEnergy(final FriendEnergyState value) {
-      bitField0_ |= 0x00000100;
+      bitField0_ |= 0x00000200;
       friendEnergy.copyFrom(value);
       return this;
     }
@@ -20381,7 +20418,7 @@ public final class Public {
      * @return whether the mallPackage field is set
      */
     public boolean hasMallPackage() {
-      return (bitField0_ & 0x00000200) != 0;
+      return (bitField0_ & 0x00000400) != 0;
     }
 
     /**
@@ -20389,7 +20426,7 @@ public final class Public {
      * @return this
      */
     public StateInfo clearMallPackage() {
-      bitField0_ &= ~0x00000200;
+      bitField0_ &= ~0x00000400;
       mallPackage.clear();
       return this;
     }
@@ -20418,7 +20455,7 @@ public final class Public {
      * @return internal storage object for modifications
      */
     public MallPackageState getMutableMallPackage() {
-      bitField0_ |= 0x00000200;
+      bitField0_ |= 0x00000400;
       return mallPackage;
     }
 
@@ -20428,7 +20465,7 @@ public final class Public {
      * @return this
      */
     public StateInfo setMallPackage(final MallPackageState value) {
-      bitField0_ |= 0x00000200;
+      bitField0_ |= 0x00000400;
       mallPackage.copyFrom(value);
       return this;
     }
@@ -20438,7 +20475,7 @@ public final class Public {
      * @return whether the achievement field is set
      */
     public boolean hasAchievement() {
-      return (bitField0_ & 0x00000400) != 0;
+      return (bitField0_ & 0x00000800) != 0;
     }
 
     /**
@@ -20446,7 +20483,7 @@ public final class Public {
      * @return this
      */
     public StateInfo clearAchievement() {
-      bitField0_ &= ~0x00000400;
+      bitField0_ &= ~0x00000800;
       achievement.clear();
       return this;
     }
@@ -20475,7 +20512,7 @@ public final class Public {
      * @return internal storage object for modifications
      */
     public AchievementState getMutableAchievement() {
-      bitField0_ |= 0x00000400;
+      bitField0_ |= 0x00000800;
       return achievement;
     }
 
@@ -20485,7 +20522,7 @@ public final class Public {
      * @return this
      */
     public StateInfo setAchievement(final AchievementState value) {
-      bitField0_ |= 0x00000400;
+      bitField0_ |= 0x00000800;
       achievement.copyFrom(value);
       return this;
     }
@@ -20495,7 +20532,7 @@ public final class Public {
      * @return whether the travelerDuelQuest field is set
      */
     public boolean hasTravelerDuelQuest() {
-      return (bitField0_ & 0x00000800) != 0;
+      return (bitField0_ & 0x00001000) != 0;
     }
 
     /**
@@ -20503,7 +20540,7 @@ public final class Public {
      * @return this
      */
     public StateInfo clearTravelerDuelQuest() {
-      bitField0_ &= ~0x00000800;
+      bitField0_ &= ~0x00001000;
       travelerDuelQuest.clear();
       return this;
     }
@@ -20532,7 +20569,7 @@ public final class Public {
      * @return internal storage object for modifications
      */
     public QuestState getMutableTravelerDuelQuest() {
-      bitField0_ |= 0x00000800;
+      bitField0_ |= 0x00001000;
       return travelerDuelQuest;
     }
 
@@ -20542,65 +20579,8 @@ public final class Public {
      * @return this
      */
     public StateInfo setTravelerDuelQuest(final QuestState value) {
-      bitField0_ |= 0x00000800;
+      bitField0_ |= 0x00001000;
       travelerDuelQuest.copyFrom(value);
-      return this;
-    }
-
-    /**
-     * <code>optional .QuestState TravelerDuelChallengeQuest = 17;</code>
-     * @return whether the travelerDuelChallengeQuest field is set
-     */
-    public boolean hasTravelerDuelChallengeQuest() {
-      return (bitField0_ & 0x00001000) != 0;
-    }
-
-    /**
-     * <code>optional .QuestState TravelerDuelChallengeQuest = 17;</code>
-     * @return this
-     */
-    public StateInfo clearTravelerDuelChallengeQuest() {
-      bitField0_ &= ~0x00001000;
-      travelerDuelChallengeQuest.clear();
-      return this;
-    }
-
-    /**
-     * <code>optional .QuestState TravelerDuelChallengeQuest = 17;</code>
-     *
-     * This method returns the internal storage object without modifying any has state.
-     * The returned object should not be modified and be treated as read-only.
-     *
-     * Use {@link #getMutableTravelerDuelChallengeQuest()} if you want to modify it.
-     *
-     * @return internal storage object for reading
-     */
-    public QuestState getTravelerDuelChallengeQuest() {
-      return travelerDuelChallengeQuest;
-    }
-
-    /**
-     * <code>optional .QuestState TravelerDuelChallengeQuest = 17;</code>
-     *
-     * This method returns the internal storage object and sets the corresponding
-     * has state. The returned object will become part of this message and its
-     * contents may be modified as long as the has state is not cleared.
-     *
-     * @return internal storage object for modifications
-     */
-    public QuestState getMutableTravelerDuelChallengeQuest() {
-      bitField0_ |= 0x00001000;
-      return travelerDuelChallengeQuest;
-    }
-
-    /**
-     * <code>optional .QuestState TravelerDuelChallengeQuest = 17;</code>
-     * @param value the travelerDuelChallengeQuest to set
-     * @return this
-     */
-    public StateInfo setTravelerDuelChallengeQuest(final QuestState value) {
-      bitField0_ |= 0x00001000;
-      travelerDuelChallengeQuest.copyFrom(value);
       return this;
     }
 
@@ -21063,6 +21043,7 @@ public final class Public {
       cachedSize = other.cachedSize;
       if ((bitField0_ | other.bitField0_) != 0) {
         bitField0_ = other.bitField0_;
+        travelerDuelIdleReward = other.travelerDuelIdleReward;
         infinityTower = other.infinityTower;
         vampireSurvivorId = other.vampireSurvivorId;
         friend = other.friend;
@@ -21075,7 +21056,6 @@ public final class Public {
         mallPackage.copyFrom(other.mallPackage);
         achievement.copyFrom(other.achievement);
         travelerDuelQuest.copyFrom(other.travelerDuelQuest);
-        travelerDuelChallengeQuest.copyFrom(other.travelerDuelChallengeQuest);
         starTower.copyFrom(other.starTower);
         starTowerBook.copyFrom(other.starTowerBook);
         scoreBoss.copyFrom(other.scoreBoss);
@@ -21093,6 +21073,9 @@ public final class Public {
         return this;
       }
       cachedSize = -1;
+      if (other.hasTravelerDuelIdleReward()) {
+        setTravelerDuelIdleReward(other.travelerDuelIdleReward);
+      }
       if (other.hasInfinityTower()) {
         setInfinityTower(other.infinityTower);
       }
@@ -21129,9 +21112,6 @@ public final class Public {
       if (other.hasTravelerDuelQuest()) {
         getMutableTravelerDuelQuest().mergeFrom(other.travelerDuelQuest);
       }
-      if (other.hasTravelerDuelChallengeQuest()) {
-        getMutableTravelerDuelChallengeQuest().mergeFrom(other.travelerDuelChallengeQuest);
-      }
       if (other.hasStarTower()) {
         getMutableStarTower().mergeFrom(other.starTower);
       }
@@ -21163,6 +21143,7 @@ public final class Public {
       }
       cachedSize = -1;
       bitField0_ = 0;
+      travelerDuelIdleReward = 0L;
       infinityTower = 0;
       vampireSurvivorId = 0;
       friend = false;
@@ -21175,7 +21156,6 @@ public final class Public {
       mallPackage.clear();
       achievement.clear();
       travelerDuelQuest.clear();
-      travelerDuelChallengeQuest.clear();
       starTower.clear();
       starTowerBook.clear();
       scoreBoss.clear();
@@ -21200,7 +21180,6 @@ public final class Public {
       mallPackage.clearQuick();
       achievement.clearQuick();
       travelerDuelQuest.clearQuick();
-      travelerDuelChallengeQuest.clearQuick();
       starTower.clearQuick();
       starTowerBook.clearQuick();
       scoreBoss.clearQuick();
@@ -21221,6 +21200,7 @@ public final class Public {
       }
       StateInfo other = (StateInfo) o;
       return bitField0_ == other.bitField0_
+        && (!hasTravelerDuelIdleReward() || travelerDuelIdleReward == other.travelerDuelIdleReward)
         && (!hasInfinityTower() || infinityTower == other.infinityTower)
         && (!hasVampireSurvivorId() || vampireSurvivorId == other.vampireSurvivorId)
         && (!hasFriend() || friend == other.friend)
@@ -21233,7 +21213,6 @@ public final class Public {
         && (!hasMallPackage() || mallPackage.equals(other.mallPackage))
         && (!hasAchievement() || achievement.equals(other.achievement))
         && (!hasTravelerDuelQuest() || travelerDuelQuest.equals(other.travelerDuelQuest))
-        && (!hasTravelerDuelChallengeQuest() || travelerDuelChallengeQuest.equals(other.travelerDuelChallengeQuest))
         && (!hasStarTower() || starTower.equals(other.starTower))
         && (!hasStarTowerBook() || starTowerBook.equals(other.starTowerBook))
         && (!hasScoreBoss() || scoreBoss.equals(other.scoreBoss))
@@ -21246,56 +21225,56 @@ public final class Public {
     @Override
     public void writeTo(final ProtoSink output) throws IOException {
       if ((bitField0_ & 0x00000001) != 0) {
+        output.writeRawLittleEndian16((short) 392);
+        output.writeInt64NoTag(travelerDuelIdleReward);
+      }
+      if ((bitField0_ & 0x00000002) != 0) {
         output.writeRawByte((byte) 16);
         output.writeUInt32NoTag(infinityTower);
       }
-      if ((bitField0_ & 0x00000002) != 0) {
+      if ((bitField0_ & 0x00000004) != 0) {
         output.writeRawByte((byte) 88);
         output.writeUInt32NoTag(vampireSurvivorId);
       }
-      if ((bitField0_ & 0x00000004) != 0) {
+      if ((bitField0_ & 0x00000008) != 0) {
         output.writeRawByte((byte) 24);
         output.writeBoolNoTag(friend);
       }
-      if ((bitField0_ & 0x00000008) != 0) {
+      if ((bitField0_ & 0x00000010) != 0) {
         output.writeRawByte((byte) 72);
         output.writeBoolNoTag(npcAffinityReward);
       }
-      if ((bitField0_ & 0x00000010) != 0) {
+      if ((bitField0_ & 0x00000020) != 0) {
         output.writeRawLittleEndian16((short) 432);
         output.writeBoolNoTag(storySet);
       }
-      if ((bitField0_ & 0x00000020) != 0) {
+      if ((bitField0_ & 0x00000040) != 0) {
         output.writeRawByte((byte) 10);
         output.writeMessageNoTag(mail);
       }
-      if ((bitField0_ & 0x00000040) != 0) {
+      if ((bitField0_ & 0x00000080) != 0) {
         output.writeRawByte((byte) 34);
         output.writeMessageNoTag(battlePass);
       }
-      if ((bitField0_ & 0x00000080) != 0) {
+      if ((bitField0_ & 0x00000100) != 0) {
         output.writeRawByte((byte) 42);
         output.writeMessageNoTag(worldClassReward);
       }
-      if ((bitField0_ & 0x00000100) != 0) {
+      if ((bitField0_ & 0x00000200) != 0) {
         output.writeRawByte((byte) 58);
         output.writeMessageNoTag(friendEnergy);
       }
-      if ((bitField0_ & 0x00000200) != 0) {
+      if ((bitField0_ & 0x00000400) != 0) {
         output.writeRawByte((byte) 82);
         output.writeMessageNoTag(mallPackage);
       }
-      if ((bitField0_ & 0x00000400) != 0) {
+      if ((bitField0_ & 0x00000800) != 0) {
         output.writeRawByte((byte) 122);
         output.writeMessageNoTag(achievement);
       }
-      if ((bitField0_ & 0x00000800) != 0) {
+      if ((bitField0_ & 0x00001000) != 0) {
         output.writeRawLittleEndian16((short) 386);
         output.writeMessageNoTag(travelerDuelQuest);
-      }
-      if ((bitField0_ & 0x00001000) != 0) {
-        output.writeRawLittleEndian16((short) 394);
-        output.writeMessageNoTag(travelerDuelChallengeQuest);
       }
       if ((bitField0_ & 0x00002000) != 0) {
         output.writeRawLittleEndian16((short) 402);
@@ -21337,43 +21316,43 @@ public final class Public {
     protected int computeSerializedSize() {
       int size = 0;
       if ((bitField0_ & 0x00000001) != 0) {
-        size += 1 + ProtoSink.computeUInt32SizeNoTag(infinityTower);
+        size += 2 + ProtoSink.computeInt64SizeNoTag(travelerDuelIdleReward);
       }
       if ((bitField0_ & 0x00000002) != 0) {
-        size += 1 + ProtoSink.computeUInt32SizeNoTag(vampireSurvivorId);
+        size += 1 + ProtoSink.computeUInt32SizeNoTag(infinityTower);
       }
       if ((bitField0_ & 0x00000004) != 0) {
-        size += 2;
+        size += 1 + ProtoSink.computeUInt32SizeNoTag(vampireSurvivorId);
       }
       if ((bitField0_ & 0x00000008) != 0) {
         size += 2;
       }
       if ((bitField0_ & 0x00000010) != 0) {
-        size += 3;
+        size += 2;
       }
       if ((bitField0_ & 0x00000020) != 0) {
-        size += 1 + ProtoSink.computeMessageSizeNoTag(mail);
+        size += 3;
       }
       if ((bitField0_ & 0x00000040) != 0) {
-        size += 1 + ProtoSink.computeMessageSizeNoTag(battlePass);
+        size += 1 + ProtoSink.computeMessageSizeNoTag(mail);
       }
       if ((bitField0_ & 0x00000080) != 0) {
-        size += 1 + ProtoSink.computeMessageSizeNoTag(worldClassReward);
+        size += 1 + ProtoSink.computeMessageSizeNoTag(battlePass);
       }
       if ((bitField0_ & 0x00000100) != 0) {
-        size += 1 + ProtoSink.computeMessageSizeNoTag(friendEnergy);
+        size += 1 + ProtoSink.computeMessageSizeNoTag(worldClassReward);
       }
       if ((bitField0_ & 0x00000200) != 0) {
-        size += 1 + ProtoSink.computeMessageSizeNoTag(mallPackage);
+        size += 1 + ProtoSink.computeMessageSizeNoTag(friendEnergy);
       }
       if ((bitField0_ & 0x00000400) != 0) {
-        size += 1 + ProtoSink.computeMessageSizeNoTag(achievement);
+        size += 1 + ProtoSink.computeMessageSizeNoTag(mallPackage);
       }
       if ((bitField0_ & 0x00000800) != 0) {
-        size += 2 + ProtoSink.computeMessageSizeNoTag(travelerDuelQuest);
+        size += 1 + ProtoSink.computeMessageSizeNoTag(achievement);
       }
       if ((bitField0_ & 0x00001000) != 0) {
-        size += 2 + ProtoSink.computeMessageSizeNoTag(travelerDuelChallengeQuest);
+        size += 2 + ProtoSink.computeMessageSizeNoTag(travelerDuelQuest);
       }
       if ((bitField0_ & 0x00002000) != 0) {
         size += 2 + ProtoSink.computeMessageSizeNoTag(starTower);
@@ -21406,10 +21385,19 @@ public final class Public {
       int tag = input.readTag();
       while (true) {
         switch (tag) {
+          case 136: {
+            // travelerDuelIdleReward
+            travelerDuelIdleReward = input.readInt64();
+            bitField0_ |= 0x00000001;
+            tag = input.readTag();
+            if (tag != 16) {
+              break;
+            }
+          }
           case 16: {
             // infinityTower
             infinityTower = input.readUInt32();
-            bitField0_ |= 0x00000001;
+            bitField0_ |= 0x00000002;
             tag = input.readTag();
             if (tag != 88) {
               break;
@@ -21418,7 +21406,7 @@ public final class Public {
           case 88: {
             // vampireSurvivorId
             vampireSurvivorId = input.readUInt32();
-            bitField0_ |= 0x00000002;
+            bitField0_ |= 0x00000004;
             tag = input.readTag();
             if (tag != 24) {
               break;
@@ -21427,7 +21415,7 @@ public final class Public {
           case 24: {
             // friend
             friend = input.readBool();
-            bitField0_ |= 0x00000004;
+            bitField0_ |= 0x00000008;
             tag = input.readTag();
             if (tag != 72) {
               break;
@@ -21436,7 +21424,7 @@ public final class Public {
           case 72: {
             // npcAffinityReward
             npcAffinityReward = input.readBool();
-            bitField0_ |= 0x00000008;
+            bitField0_ |= 0x00000010;
             tag = input.readTag();
             if (tag != 176) {
               break;
@@ -21445,7 +21433,7 @@ public final class Public {
           case 176: {
             // storySet
             storySet = input.readBool();
-            bitField0_ |= 0x00000010;
+            bitField0_ |= 0x00000020;
             tag = input.readTag();
             if (tag != 10) {
               break;
@@ -21454,7 +21442,7 @@ public final class Public {
           case 10: {
             // mail
             input.readMessage(mail);
-            bitField0_ |= 0x00000020;
+            bitField0_ |= 0x00000040;
             tag = input.readTag();
             if (tag != 34) {
               break;
@@ -21463,7 +21451,7 @@ public final class Public {
           case 34: {
             // battlePass
             input.readMessage(battlePass);
-            bitField0_ |= 0x00000040;
+            bitField0_ |= 0x00000080;
             tag = input.readTag();
             if (tag != 42) {
               break;
@@ -21472,7 +21460,7 @@ public final class Public {
           case 42: {
             // worldClassReward
             input.readMessage(worldClassReward);
-            bitField0_ |= 0x00000080;
+            bitField0_ |= 0x00000100;
             tag = input.readTag();
             if (tag != 58) {
               break;
@@ -21481,7 +21469,7 @@ public final class Public {
           case 58: {
             // friendEnergy
             input.readMessage(friendEnergy);
-            bitField0_ |= 0x00000100;
+            bitField0_ |= 0x00000200;
             tag = input.readTag();
             if (tag != 82) {
               break;
@@ -21490,7 +21478,7 @@ public final class Public {
           case 82: {
             // mallPackage
             input.readMessage(mallPackage);
-            bitField0_ |= 0x00000200;
+            bitField0_ |= 0x00000400;
             tag = input.readTag();
             if (tag != 122) {
               break;
@@ -21499,7 +21487,7 @@ public final class Public {
           case 122: {
             // achievement
             input.readMessage(achievement);
-            bitField0_ |= 0x00000400;
+            bitField0_ |= 0x00000800;
             tag = input.readTag();
             if (tag != 130) {
               break;
@@ -21508,15 +21496,6 @@ public final class Public {
           case 130: {
             // travelerDuelQuest
             input.readMessage(travelerDuelQuest);
-            bitField0_ |= 0x00000800;
-            tag = input.readTag();
-            if (tag != 138) {
-              break;
-            }
-          }
-          case 138: {
-            // travelerDuelChallengeQuest
-            input.readMessage(travelerDuelChallengeQuest);
             bitField0_ |= 0x00001000;
             tag = input.readTag();
             if (tag != 146) {
@@ -21601,43 +21580,43 @@ public final class Public {
     public void writeTo(final JsonSink output) throws IOException {
       output.beginObject();
       if ((bitField0_ & 0x00000001) != 0) {
-        output.writeUInt32(FieldNames.infinityTower, infinityTower);
+        output.writeInt64(FieldNames.travelerDuelIdleReward, travelerDuelIdleReward);
       }
       if ((bitField0_ & 0x00000002) != 0) {
-        output.writeUInt32(FieldNames.vampireSurvivorId, vampireSurvivorId);
+        output.writeUInt32(FieldNames.infinityTower, infinityTower);
       }
       if ((bitField0_ & 0x00000004) != 0) {
-        output.writeBool(FieldNames.friend, friend);
+        output.writeUInt32(FieldNames.vampireSurvivorId, vampireSurvivorId);
       }
       if ((bitField0_ & 0x00000008) != 0) {
-        output.writeBool(FieldNames.npcAffinityReward, npcAffinityReward);
+        output.writeBool(FieldNames.friend, friend);
       }
       if ((bitField0_ & 0x00000010) != 0) {
-        output.writeBool(FieldNames.storySet, storySet);
+        output.writeBool(FieldNames.npcAffinityReward, npcAffinityReward);
       }
       if ((bitField0_ & 0x00000020) != 0) {
-        output.writeMessage(FieldNames.mail, mail);
+        output.writeBool(FieldNames.storySet, storySet);
       }
       if ((bitField0_ & 0x00000040) != 0) {
-        output.writeMessage(FieldNames.battlePass, battlePass);
+        output.writeMessage(FieldNames.mail, mail);
       }
       if ((bitField0_ & 0x00000080) != 0) {
-        output.writeMessage(FieldNames.worldClassReward, worldClassReward);
+        output.writeMessage(FieldNames.battlePass, battlePass);
       }
       if ((bitField0_ & 0x00000100) != 0) {
-        output.writeMessage(FieldNames.friendEnergy, friendEnergy);
+        output.writeMessage(FieldNames.worldClassReward, worldClassReward);
       }
       if ((bitField0_ & 0x00000200) != 0) {
-        output.writeMessage(FieldNames.mallPackage, mallPackage);
+        output.writeMessage(FieldNames.friendEnergy, friendEnergy);
       }
       if ((bitField0_ & 0x00000400) != 0) {
-        output.writeMessage(FieldNames.achievement, achievement);
+        output.writeMessage(FieldNames.mallPackage, mallPackage);
       }
       if ((bitField0_ & 0x00000800) != 0) {
-        output.writeMessage(FieldNames.travelerDuelQuest, travelerDuelQuest);
+        output.writeMessage(FieldNames.achievement, achievement);
       }
       if ((bitField0_ & 0x00001000) != 0) {
-        output.writeMessage(FieldNames.travelerDuelChallengeQuest, travelerDuelChallengeQuest);
+        output.writeMessage(FieldNames.travelerDuelQuest, travelerDuelQuest);
       }
       if ((bitField0_ & 0x00002000) != 0) {
         output.writeMessage(FieldNames.starTower, starTower);
@@ -21670,11 +21649,22 @@ public final class Public {
       }
       while (!input.isAtEnd()) {
         switch (input.readFieldHash()) {
+          case -1712985982: {
+            if (input.isAtField(FieldNames.travelerDuelIdleReward)) {
+              if (!input.trySkipNullValue()) {
+                travelerDuelIdleReward = input.readInt64();
+                bitField0_ |= 0x00000001;
+              }
+            } else {
+              input.skipUnknownField();
+            }
+            break;
+          }
           case -212544095: {
             if (input.isAtField(FieldNames.infinityTower)) {
               if (!input.trySkipNullValue()) {
                 infinityTower = input.readUInt32();
-                bitField0_ |= 0x00000001;
+                bitField0_ |= 0x00000002;
               }
             } else {
               input.skipUnknownField();
@@ -21685,7 +21675,7 @@ public final class Public {
             if (input.isAtField(FieldNames.vampireSurvivorId)) {
               if (!input.trySkipNullValue()) {
                 vampireSurvivorId = input.readUInt32();
-                bitField0_ |= 0x00000002;
+                bitField0_ |= 0x00000004;
               }
             } else {
               input.skipUnknownField();
@@ -21696,7 +21686,7 @@ public final class Public {
             if (input.isAtField(FieldNames.friend)) {
               if (!input.trySkipNullValue()) {
                 friend = input.readBool();
-                bitField0_ |= 0x00000004;
+                bitField0_ |= 0x00000008;
               }
             } else {
               input.skipUnknownField();
@@ -21707,7 +21697,7 @@ public final class Public {
             if (input.isAtField(FieldNames.npcAffinityReward)) {
               if (!input.trySkipNullValue()) {
                 npcAffinityReward = input.readBool();
-                bitField0_ |= 0x00000008;
+                bitField0_ |= 0x00000010;
               }
             } else {
               input.skipUnknownField();
@@ -21718,7 +21708,7 @@ public final class Public {
             if (input.isAtField(FieldNames.storySet)) {
               if (!input.trySkipNullValue()) {
                 storySet = input.readBool();
-                bitField0_ |= 0x00000010;
+                bitField0_ |= 0x00000020;
               }
             } else {
               input.skipUnknownField();
@@ -21729,7 +21719,7 @@ public final class Public {
             if (input.isAtField(FieldNames.mail)) {
               if (!input.trySkipNullValue()) {
                 input.readMessage(mail);
-                bitField0_ |= 0x00000020;
+                bitField0_ |= 0x00000040;
               }
             } else {
               input.skipUnknownField();
@@ -21740,7 +21730,7 @@ public final class Public {
             if (input.isAtField(FieldNames.battlePass)) {
               if (!input.trySkipNullValue()) {
                 input.readMessage(battlePass);
-                bitField0_ |= 0x00000040;
+                bitField0_ |= 0x00000080;
               }
             } else {
               input.skipUnknownField();
@@ -21751,7 +21741,7 @@ public final class Public {
             if (input.isAtField(FieldNames.worldClassReward)) {
               if (!input.trySkipNullValue()) {
                 input.readMessage(worldClassReward);
-                bitField0_ |= 0x00000080;
+                bitField0_ |= 0x00000100;
               }
             } else {
               input.skipUnknownField();
@@ -21762,7 +21752,7 @@ public final class Public {
             if (input.isAtField(FieldNames.friendEnergy)) {
               if (!input.trySkipNullValue()) {
                 input.readMessage(friendEnergy);
-                bitField0_ |= 0x00000100;
+                bitField0_ |= 0x00000200;
               }
             } else {
               input.skipUnknownField();
@@ -21773,7 +21763,7 @@ public final class Public {
             if (input.isAtField(FieldNames.mallPackage)) {
               if (!input.trySkipNullValue()) {
                 input.readMessage(mallPackage);
-                bitField0_ |= 0x00000200;
+                bitField0_ |= 0x00000400;
               }
             } else {
               input.skipUnknownField();
@@ -21784,7 +21774,7 @@ public final class Public {
             if (input.isAtField(FieldNames.achievement)) {
               if (!input.trySkipNullValue()) {
                 input.readMessage(achievement);
-                bitField0_ |= 0x00000400;
+                bitField0_ |= 0x00000800;
               }
             } else {
               input.skipUnknownField();
@@ -21795,17 +21785,6 @@ public final class Public {
             if (input.isAtField(FieldNames.travelerDuelQuest)) {
               if (!input.trySkipNullValue()) {
                 input.readMessage(travelerDuelQuest);
-                bitField0_ |= 0x00000800;
-              }
-            } else {
-              input.skipUnknownField();
-            }
-            break;
-          }
-          case 1732134686: {
-            if (input.isAtField(FieldNames.travelerDuelChallengeQuest)) {
-              if (!input.trySkipNullValue()) {
-                input.readMessage(travelerDuelChallengeQuest);
                 bitField0_ |= 0x00001000;
               }
             } else {
@@ -21942,6 +21921,8 @@ public final class Public {
      * Contains name constants used for serializing JSON
      */
     static class FieldNames {
+      static final FieldName travelerDuelIdleReward = FieldName.forField("TravelerDuelIdleReward");
+
       static final FieldName infinityTower = FieldName.forField("InfinityTower");
 
       static final FieldName vampireSurvivorId = FieldName.forField("VampireSurvivorId");
@@ -21965,8 +21946,6 @@ public final class Public {
       static final FieldName achievement = FieldName.forField("Achievement");
 
       static final FieldName travelerDuelQuest = FieldName.forField("TravelerDuelQuest");
-
-      static final FieldName travelerDuelChallengeQuest = FieldName.forField("TravelerDuelChallengeQuest");
 
       static final FieldName starTower = FieldName.forField("StarTower");
 
@@ -24304,6 +24283,11 @@ public final class Public {
     private int talentBackground;
 
     /**
+     * <code>optional bool IsFavorite = 31;</code>
+     */
+    private boolean isFavorite;
+
+    /**
      * <code>optional .Quests AffinityQuests = 17;</code>
      */
     private final Quests affinityQuests = Quests.newInstance();
@@ -24707,11 +24691,48 @@ public final class Public {
     }
 
     /**
+     * <code>optional bool IsFavorite = 31;</code>
+     * @return whether the isFavorite field is set
+     */
+    public boolean hasIsFavorite() {
+      return (bitField0_ & 0x00000200) != 0;
+    }
+
+    /**
+     * <code>optional bool IsFavorite = 31;</code>
+     * @return this
+     */
+    public Char clearIsFavorite() {
+      bitField0_ &= ~0x00000200;
+      isFavorite = false;
+      return this;
+    }
+
+    /**
+     * <code>optional bool IsFavorite = 31;</code>
+     * @return the isFavorite
+     */
+    public boolean getIsFavorite() {
+      return isFavorite;
+    }
+
+    /**
+     * <code>optional bool IsFavorite = 31;</code>
+     * @param value the isFavorite to set
+     * @return this
+     */
+    public Char setIsFavorite(final boolean value) {
+      bitField0_ |= 0x00000200;
+      isFavorite = value;
+      return this;
+    }
+
+    /**
      * <code>optional .Quests AffinityQuests = 17;</code>
      * @return whether the affinityQuests field is set
      */
     public boolean hasAffinityQuests() {
-      return (bitField0_ & 0x00000200) != 0;
+      return (bitField0_ & 0x00000400) != 0;
     }
 
     /**
@@ -24719,7 +24740,7 @@ public final class Public {
      * @return this
      */
     public Char clearAffinityQuests() {
-      bitField0_ &= ~0x00000200;
+      bitField0_ &= ~0x00000400;
       affinityQuests.clear();
       return this;
     }
@@ -24748,7 +24769,7 @@ public final class Public {
      * @return internal storage object for modifications
      */
     public Quests getMutableAffinityQuests() {
-      bitField0_ |= 0x00000200;
+      bitField0_ |= 0x00000400;
       return affinityQuests;
     }
 
@@ -24758,7 +24779,7 @@ public final class Public {
      * @return this
      */
     public Char setAffinityQuests(final Quests value) {
-      bitField0_ |= 0x00000200;
+      bitField0_ |= 0x00000400;
       affinityQuests.copyFrom(value);
       return this;
     }
@@ -24768,7 +24789,7 @@ public final class Public {
      * @return whether the charGemPresets field is set
      */
     public boolean hasCharGemPresets() {
-      return (bitField0_ & 0x00000400) != 0;
+      return (bitField0_ & 0x00000800) != 0;
     }
 
     /**
@@ -24776,7 +24797,7 @@ public final class Public {
      * @return this
      */
     public Char clearCharGemPresets() {
-      bitField0_ &= ~0x00000400;
+      bitField0_ &= ~0x00000800;
       charGemPresets.clear();
       return this;
     }
@@ -24805,7 +24826,7 @@ public final class Public {
      * @return internal storage object for modifications
      */
     public CharGemPresets getMutableCharGemPresets() {
-      bitField0_ |= 0x00000400;
+      bitField0_ |= 0x00000800;
       return charGemPresets;
     }
 
@@ -24815,7 +24836,7 @@ public final class Public {
      * @return this
      */
     public Char setCharGemPresets(final CharGemPresets value) {
-      bitField0_ |= 0x00000400;
+      bitField0_ |= 0x00000800;
       charGemPresets.copyFrom(value);
       return this;
     }
@@ -24825,7 +24846,7 @@ public final class Public {
      * @return whether the talentNodes field is set
      */
     public boolean hasTalentNodes() {
-      return (bitField0_ & 0x00000800) != 0;
+      return (bitField0_ & 0x00001000) != 0;
     }
 
     /**
@@ -24833,7 +24854,7 @@ public final class Public {
      * @return this
      */
     public Char clearTalentNodes() {
-      bitField0_ &= ~0x00000800;
+      bitField0_ &= ~0x00001000;
       talentNodes.clear();
       return this;
     }
@@ -24862,7 +24883,7 @@ public final class Public {
      * @return internal storage object for modifications
      */
     public RepeatedByte getMutableTalentNodes() {
-      bitField0_ |= 0x00000800;
+      bitField0_ |= 0x00001000;
       return talentNodes;
     }
 
@@ -24872,7 +24893,7 @@ public final class Public {
      * @return this
      */
     public Char addTalentNodes(final byte value) {
-      bitField0_ |= 0x00000800;
+      bitField0_ |= 0x00001000;
       talentNodes.add(value);
       return this;
     }
@@ -24883,7 +24904,7 @@ public final class Public {
      * @return this
      */
     public Char addAllTalentNodes(final byte... values) {
-      bitField0_ |= 0x00000800;
+      bitField0_ |= 0x00001000;
       talentNodes.addAll(values);
       return this;
     }
@@ -24894,7 +24915,7 @@ public final class Public {
      * @return this
      */
     public Char setTalentNodes(final byte... values) {
-      bitField0_ |= 0x00000800;
+      bitField0_ |= 0x00001000;
       talentNodes.copyFrom(values);
       return this;
     }
@@ -24904,7 +24925,7 @@ public final class Public {
      * @return whether the nextPackage field is set
      */
     public boolean hasNextPackage() {
-      return (bitField0_ & 0x00001000) != 0;
+      return (bitField0_ & 0x00002000) != 0;
     }
 
     /**
@@ -24912,7 +24933,7 @@ public final class Public {
      * @return this
      */
     public Char clearNextPackage() {
-      bitField0_ &= ~0x00001000;
+      bitField0_ &= ~0x00002000;
       nextPackage.clear();
       return this;
     }
@@ -24941,7 +24962,7 @@ public final class Public {
      * @return internal storage object for modifications
      */
     public RepeatedByte getMutableNextPackage() {
-      bitField0_ |= 0x00001000;
+      bitField0_ |= 0x00002000;
       return nextPackage;
     }
 
@@ -24951,7 +24972,7 @@ public final class Public {
      * @return this
      */
     public Char addNextPackage(final byte value) {
-      bitField0_ |= 0x00001000;
+      bitField0_ |= 0x00002000;
       nextPackage.add(value);
       return this;
     }
@@ -24962,7 +24983,7 @@ public final class Public {
      * @return this
      */
     public Char addAllNextPackage(final byte... values) {
-      bitField0_ |= 0x00001000;
+      bitField0_ |= 0x00002000;
       nextPackage.addAll(values);
       return this;
     }
@@ -24973,7 +24994,7 @@ public final class Public {
      * @return this
      */
     public Char setNextPackage(final byte... values) {
-      bitField0_ |= 0x00001000;
+      bitField0_ |= 0x00002000;
       nextPackage.copyFrom(values);
       return this;
     }
@@ -24983,7 +25004,7 @@ public final class Public {
      * @return whether the equipmentIds field is set
      */
     public boolean hasEquipmentIds() {
-      return (bitField0_ & 0x00002000) != 0;
+      return (bitField0_ & 0x00004000) != 0;
     }
 
     /**
@@ -24991,7 +25012,7 @@ public final class Public {
      * @return this
      */
     public Char clearEquipmentIds() {
-      bitField0_ &= ~0x00002000;
+      bitField0_ &= ~0x00004000;
       equipmentIds.clear();
       return this;
     }
@@ -25020,7 +25041,7 @@ public final class Public {
      * @return internal storage object for modifications
      */
     public RepeatedLong getMutableEquipmentIds() {
-      bitField0_ |= 0x00002000;
+      bitField0_ |= 0x00004000;
       return equipmentIds;
     }
 
@@ -25030,7 +25051,7 @@ public final class Public {
      * @return this
      */
     public Char addEquipmentIds(final long value) {
-      bitField0_ |= 0x00002000;
+      bitField0_ |= 0x00004000;
       equipmentIds.add(value);
       return this;
     }
@@ -25041,7 +25062,7 @@ public final class Public {
      * @return this
      */
     public Char addAllEquipmentIds(final long... values) {
-      bitField0_ |= 0x00002000;
+      bitField0_ |= 0x00004000;
       equipmentIds.addAll(values);
       return this;
     }
@@ -25051,7 +25072,7 @@ public final class Public {
      * @return whether the datingLandmarkIds field is set
      */
     public boolean hasDatingLandmarkIds() {
-      return (bitField0_ & 0x00004000) != 0;
+      return (bitField0_ & 0x00008000) != 0;
     }
 
     /**
@@ -25059,7 +25080,7 @@ public final class Public {
      * @return this
      */
     public Char clearDatingLandmarkIds() {
-      bitField0_ &= ~0x00004000;
+      bitField0_ &= ~0x00008000;
       datingLandmarkIds.clear();
       return this;
     }
@@ -25088,7 +25109,7 @@ public final class Public {
      * @return internal storage object for modifications
      */
     public RepeatedInt getMutableDatingLandmarkIds() {
-      bitField0_ |= 0x00004000;
+      bitField0_ |= 0x00008000;
       return datingLandmarkIds;
     }
 
@@ -25098,7 +25119,7 @@ public final class Public {
      * @return this
      */
     public Char addDatingLandmarkIds(final int value) {
-      bitField0_ |= 0x00004000;
+      bitField0_ |= 0x00008000;
       datingLandmarkIds.add(value);
       return this;
     }
@@ -25109,7 +25130,7 @@ public final class Public {
      * @return this
      */
     public Char addAllDatingLandmarkIds(final int... values) {
-      bitField0_ |= 0x00004000;
+      bitField0_ |= 0x00008000;
       datingLandmarkIds.addAll(values);
       return this;
     }
@@ -25119,7 +25140,7 @@ public final class Public {
      * @return whether the datingEventIds field is set
      */
     public boolean hasDatingEventIds() {
-      return (bitField0_ & 0x00008000) != 0;
+      return (bitField0_ & 0x00010000) != 0;
     }
 
     /**
@@ -25127,7 +25148,7 @@ public final class Public {
      * @return this
      */
     public Char clearDatingEventIds() {
-      bitField0_ &= ~0x00008000;
+      bitField0_ &= ~0x00010000;
       datingEventIds.clear();
       return this;
     }
@@ -25156,7 +25177,7 @@ public final class Public {
      * @return internal storage object for modifications
      */
     public RepeatedInt getMutableDatingEventIds() {
-      bitField0_ |= 0x00008000;
+      bitField0_ |= 0x00010000;
       return datingEventIds;
     }
 
@@ -25166,7 +25187,7 @@ public final class Public {
      * @return this
      */
     public Char addDatingEventIds(final int value) {
-      bitField0_ |= 0x00008000;
+      bitField0_ |= 0x00010000;
       datingEventIds.add(value);
       return this;
     }
@@ -25177,7 +25198,7 @@ public final class Public {
      * @return this
      */
     public Char addAllDatingEventIds(final int... values) {
-      bitField0_ |= 0x00008000;
+      bitField0_ |= 0x00010000;
       datingEventIds.addAll(values);
       return this;
     }
@@ -25187,7 +25208,7 @@ public final class Public {
      * @return whether the datingEventRewardIds field is set
      */
     public boolean hasDatingEventRewardIds() {
-      return (bitField0_ & 0x00010000) != 0;
+      return (bitField0_ & 0x00020000) != 0;
     }
 
     /**
@@ -25195,7 +25216,7 @@ public final class Public {
      * @return this
      */
     public Char clearDatingEventRewardIds() {
-      bitField0_ &= ~0x00010000;
+      bitField0_ &= ~0x00020000;
       datingEventRewardIds.clear();
       return this;
     }
@@ -25224,7 +25245,7 @@ public final class Public {
      * @return internal storage object for modifications
      */
     public RepeatedInt getMutableDatingEventRewardIds() {
-      bitField0_ |= 0x00010000;
+      bitField0_ |= 0x00020000;
       return datingEventRewardIds;
     }
 
@@ -25234,7 +25255,7 @@ public final class Public {
      * @return this
      */
     public Char addDatingEventRewardIds(final int value) {
-      bitField0_ |= 0x00010000;
+      bitField0_ |= 0x00020000;
       datingEventRewardIds.add(value);
       return this;
     }
@@ -25245,7 +25266,7 @@ public final class Public {
      * @return this
      */
     public Char addAllDatingEventRewardIds(final int... values) {
-      bitField0_ |= 0x00010000;
+      bitField0_ |= 0x00020000;
       datingEventRewardIds.addAll(values);
       return this;
     }
@@ -25255,7 +25276,7 @@ public final class Public {
      * @return whether the skillLvs field is set
      */
     public boolean hasSkillLvs() {
-      return (bitField0_ & 0x00020000) != 0;
+      return (bitField0_ & 0x00040000) != 0;
     }
 
     /**
@@ -25263,7 +25284,7 @@ public final class Public {
      * @return this
      */
     public Char clearSkillLvs() {
-      bitField0_ &= ~0x00020000;
+      bitField0_ &= ~0x00040000;
       skillLvs.clear();
       return this;
     }
@@ -25292,7 +25313,7 @@ public final class Public {
      * @return internal storage object for modifications
      */
     public RepeatedInt getMutableSkillLvs() {
-      bitField0_ |= 0x00020000;
+      bitField0_ |= 0x00040000;
       return skillLvs;
     }
 
@@ -25302,7 +25323,7 @@ public final class Public {
      * @return this
      */
     public Char addSkillLvs(final int value) {
-      bitField0_ |= 0x00020000;
+      bitField0_ |= 0x00040000;
       skillLvs.add(value);
       return this;
     }
@@ -25313,7 +25334,7 @@ public final class Public {
      * @return this
      */
     public Char addAllSkillLvs(final int... values) {
-      bitField0_ |= 0x00020000;
+      bitField0_ |= 0x00040000;
       skillLvs.addAll(values);
       return this;
     }
@@ -25323,7 +25344,7 @@ public final class Public {
      * @return whether the plots field is set
      */
     public boolean hasPlots() {
-      return (bitField0_ & 0x00040000) != 0;
+      return (bitField0_ & 0x00080000) != 0;
     }
 
     /**
@@ -25331,7 +25352,7 @@ public final class Public {
      * @return this
      */
     public Char clearPlots() {
-      bitField0_ &= ~0x00040000;
+      bitField0_ &= ~0x00080000;
       plots.clear();
       return this;
     }
@@ -25360,7 +25381,7 @@ public final class Public {
      * @return internal storage object for modifications
      */
     public RepeatedInt getMutablePlots() {
-      bitField0_ |= 0x00040000;
+      bitField0_ |= 0x00080000;
       return plots;
     }
 
@@ -25370,7 +25391,7 @@ public final class Public {
      * @return this
      */
     public Char addPlots(final int value) {
-      bitField0_ |= 0x00040000;
+      bitField0_ |= 0x00080000;
       plots.add(value);
       return this;
     }
@@ -25381,7 +25402,7 @@ public final class Public {
      * @return this
      */
     public Char addAllPlots(final int... values) {
-      bitField0_ |= 0x00040000;
+      bitField0_ |= 0x00080000;
       plots.addAll(values);
       return this;
     }
@@ -25391,7 +25412,7 @@ public final class Public {
      * @return whether the archiveRewardIds field is set
      */
     public boolean hasArchiveRewardIds() {
-      return (bitField0_ & 0x00080000) != 0;
+      return (bitField0_ & 0x00100000) != 0;
     }
 
     /**
@@ -25399,7 +25420,7 @@ public final class Public {
      * @return this
      */
     public Char clearArchiveRewardIds() {
-      bitField0_ &= ~0x00080000;
+      bitField0_ &= ~0x00100000;
       archiveRewardIds.clear();
       return this;
     }
@@ -25428,7 +25449,7 @@ public final class Public {
      * @return internal storage object for modifications
      */
     public RepeatedInt getMutableArchiveRewardIds() {
-      bitField0_ |= 0x00080000;
+      bitField0_ |= 0x00100000;
       return archiveRewardIds;
     }
 
@@ -25438,7 +25459,7 @@ public final class Public {
      * @return this
      */
     public Char addArchiveRewardIds(final int value) {
-      bitField0_ |= 0x00080000;
+      bitField0_ |= 0x00100000;
       archiveRewardIds.add(value);
       return this;
     }
@@ -25449,7 +25470,7 @@ public final class Public {
      * @return this
      */
     public Char addAllArchiveRewardIds(final int... values) {
-      bitField0_ |= 0x00080000;
+      bitField0_ |= 0x00100000;
       archiveRewardIds.addAll(values);
       return this;
     }
@@ -25459,7 +25480,7 @@ public final class Public {
      * @return whether the charGemSlots field is set
      */
     public boolean hasCharGemSlots() {
-      return (bitField0_ & 0x00100000) != 0;
+      return (bitField0_ & 0x00200000) != 0;
     }
 
     /**
@@ -25467,7 +25488,7 @@ public final class Public {
      * @return this
      */
     public Char clearCharGemSlots() {
-      bitField0_ &= ~0x00100000;
+      bitField0_ &= ~0x00200000;
       charGemSlots.clear();
       return this;
     }
@@ -25496,7 +25517,7 @@ public final class Public {
      * @return internal storage object for modifications
      */
     public RepeatedMessage<CharGemSlot> getMutableCharGemSlots() {
-      bitField0_ |= 0x00100000;
+      bitField0_ |= 0x00200000;
       return charGemSlots;
     }
 
@@ -25506,7 +25527,7 @@ public final class Public {
      * @return this
      */
     public Char addCharGemSlots(final CharGemSlot value) {
-      bitField0_ |= 0x00100000;
+      bitField0_ |= 0x00200000;
       charGemSlots.add(value);
       return this;
     }
@@ -25517,7 +25538,7 @@ public final class Public {
      * @return this
      */
     public Char addAllCharGemSlots(final CharGemSlot... values) {
-      bitField0_ |= 0x00100000;
+      bitField0_ |= 0x00200000;
       charGemSlots.addAll(values);
       return this;
     }
@@ -25536,6 +25557,7 @@ public final class Public {
         affinityExp = other.affinityExp;
         advance = other.advance;
         talentBackground = other.talentBackground;
+        isFavorite = other.isFavorite;
         affinityQuests.copyFrom(other.affinityQuests);
         charGemPresets.copyFrom(other.charGemPresets);
         talentNodes.copyFrom(other.talentNodes);
@@ -25584,6 +25606,9 @@ public final class Public {
       }
       if (other.hasTalentBackground()) {
         setTalentBackground(other.talentBackground);
+      }
+      if (other.hasIsFavorite()) {
+        setIsFavorite(other.isFavorite);
       }
       if (other.hasAffinityQuests()) {
         getMutableAffinityQuests().mergeFrom(other.affinityQuests);
@@ -25640,6 +25665,7 @@ public final class Public {
       affinityExp = 0;
       advance = 0;
       talentBackground = 0;
+      isFavorite = false;
       affinityQuests.clear();
       charGemPresets.clear();
       talentNodes.clear();
@@ -25696,6 +25722,7 @@ public final class Public {
         && (!hasAffinityExp() || affinityExp == other.affinityExp)
         && (!hasAdvance() || advance == other.advance)
         && (!hasTalentBackground() || talentBackground == other.talentBackground)
+        && (!hasIsFavorite() || isFavorite == other.isFavorite)
         && (!hasAffinityQuests() || affinityQuests.equals(other.affinityQuests))
         && (!hasCharGemPresets() || charGemPresets.equals(other.charGemPresets))
         && (!hasTalentNodes() || talentNodes.equals(other.talentNodes))
@@ -25749,64 +25776,68 @@ public final class Public {
         output.writeUInt32NoTag(talentBackground);
       }
       if ((bitField0_ & 0x00000200) != 0) {
+        output.writeRawLittleEndian16((short) 504);
+        output.writeBoolNoTag(isFavorite);
+      }
+      if ((bitField0_ & 0x00000400) != 0) {
         output.writeRawLittleEndian16((short) 394);
         output.writeMessageNoTag(affinityQuests);
       }
-      if ((bitField0_ & 0x00000400) != 0) {
+      if ((bitField0_ & 0x00000800) != 0) {
         output.writeRawLittleEndian16((short) 442);
         output.writeMessageNoTag(charGemPresets);
       }
-      if ((bitField0_ & 0x00000800) != 0) {
+      if ((bitField0_ & 0x00001000) != 0) {
         output.writeRawLittleEndian16((short) 410);
         output.writeBytesNoTag(talentNodes);
       }
-      if ((bitField0_ & 0x00001000) != 0) {
+      if ((bitField0_ & 0x00002000) != 0) {
         output.writeRawLittleEndian16((short) 32762);
         output.writeBytesNoTag(nextPackage);
       }
-      if ((bitField0_ & 0x00002000) != 0) {
+      if ((bitField0_ & 0x00004000) != 0) {
         for (int i = 0; i < equipmentIds.length(); i++) {
           output.writeRawByte((byte) 48);
           output.writeUInt64NoTag(equipmentIds.array()[i]);
         }
       }
-      if ((bitField0_ & 0x00004000) != 0) {
+      if ((bitField0_ & 0x00008000) != 0) {
         for (int i = 0; i < datingLandmarkIds.length(); i++) {
           output.writeRawByte((byte) 24);
           output.writeUInt32NoTag(datingLandmarkIds.array()[i]);
         }
       }
-      if ((bitField0_ & 0x00008000) != 0) {
+      if ((bitField0_ & 0x00010000) != 0) {
         for (int i = 0; i < datingEventIds.length(); i++) {
           output.writeRawByte((byte) 32);
           output.writeUInt32NoTag(datingEventIds.array()[i]);
         }
       }
-      if ((bitField0_ & 0x00010000) != 0) {
+      if ((bitField0_ & 0x00020000) != 0) {
         for (int i = 0; i < datingEventRewardIds.length(); i++) {
           output.writeRawByte((byte) 40);
           output.writeUInt32NoTag(datingEventRewardIds.array()[i]);
         }
       }
-      if ((bitField0_ & 0x00020000) != 0) {
+      if ((bitField0_ & 0x00040000) != 0) {
         for (int i = 0; i < skillLvs.length(); i++) {
           output.writeRawByte((byte) 80);
           output.writeUInt32NoTag(skillLvs.array()[i]);
         }
       }
-      if ((bitField0_ & 0x00040000) != 0) {
+      if ((bitField0_ & 0x00080000) != 0) {
         for (int i = 0; i < plots.length(); i++) {
           output.writeRawLittleEndian16((short) 384);
           output.writeUInt32NoTag(plots.array()[i]);
         }
       }
-      if ((bitField0_ & 0x00080000) != 0) {
+      if ((bitField0_ & 0x00100000) != 0) {
         for (int i = 0; i < archiveRewardIds.length(); i++) {
           output.writeRawLittleEndian16((short) 416);
           output.writeUInt32NoTag(archiveRewardIds.array()[i]);
         }
       }
-      if ((bitField0_ & 0x00100000) != 0) {
+      if ((bitField0_ & 0x00200000) != 0) {
         for (int i = 0; i < charGemSlots.length(); i++) {
           output.writeRawLittleEndian16((short) 434);
           output.writeMessageNoTag(charGemSlots.get(i));
@@ -25845,39 +25876,42 @@ public final class Public {
         size += 2 + ProtoSink.computeUInt32SizeNoTag(talentBackground);
       }
       if ((bitField0_ & 0x00000200) != 0) {
-        size += 2 + ProtoSink.computeMessageSizeNoTag(affinityQuests);
+        size += 3;
       }
       if ((bitField0_ & 0x00000400) != 0) {
-        size += 2 + ProtoSink.computeMessageSizeNoTag(charGemPresets);
+        size += 2 + ProtoSink.computeMessageSizeNoTag(affinityQuests);
       }
       if ((bitField0_ & 0x00000800) != 0) {
-        size += 2 + ProtoSink.computeBytesSizeNoTag(talentNodes);
+        size += 2 + ProtoSink.computeMessageSizeNoTag(charGemPresets);
       }
       if ((bitField0_ & 0x00001000) != 0) {
-        size += 2 + ProtoSink.computeBytesSizeNoTag(nextPackage);
+        size += 2 + ProtoSink.computeBytesSizeNoTag(talentNodes);
       }
       if ((bitField0_ & 0x00002000) != 0) {
-        size += (1 * equipmentIds.length()) + ProtoSink.computeRepeatedUInt64SizeNoTag(equipmentIds);
+        size += 2 + ProtoSink.computeBytesSizeNoTag(nextPackage);
       }
       if ((bitField0_ & 0x00004000) != 0) {
-        size += (1 * datingLandmarkIds.length()) + ProtoSink.computeRepeatedUInt32SizeNoTag(datingLandmarkIds);
+        size += (1 * equipmentIds.length()) + ProtoSink.computeRepeatedUInt64SizeNoTag(equipmentIds);
       }
       if ((bitField0_ & 0x00008000) != 0) {
-        size += (1 * datingEventIds.length()) + ProtoSink.computeRepeatedUInt32SizeNoTag(datingEventIds);
+        size += (1 * datingLandmarkIds.length()) + ProtoSink.computeRepeatedUInt32SizeNoTag(datingLandmarkIds);
       }
       if ((bitField0_ & 0x00010000) != 0) {
-        size += (1 * datingEventRewardIds.length()) + ProtoSink.computeRepeatedUInt32SizeNoTag(datingEventRewardIds);
+        size += (1 * datingEventIds.length()) + ProtoSink.computeRepeatedUInt32SizeNoTag(datingEventIds);
       }
       if ((bitField0_ & 0x00020000) != 0) {
-        size += (1 * skillLvs.length()) + ProtoSink.computeRepeatedUInt32SizeNoTag(skillLvs);
+        size += (1 * datingEventRewardIds.length()) + ProtoSink.computeRepeatedUInt32SizeNoTag(datingEventRewardIds);
       }
       if ((bitField0_ & 0x00040000) != 0) {
-        size += (2 * plots.length()) + ProtoSink.computeRepeatedUInt32SizeNoTag(plots);
+        size += (1 * skillLvs.length()) + ProtoSink.computeRepeatedUInt32SizeNoTag(skillLvs);
       }
       if ((bitField0_ & 0x00080000) != 0) {
-        size += (2 * archiveRewardIds.length()) + ProtoSink.computeRepeatedUInt32SizeNoTag(archiveRewardIds);
+        size += (2 * plots.length()) + ProtoSink.computeRepeatedUInt32SizeNoTag(plots);
       }
       if ((bitField0_ & 0x00100000) != 0) {
+        size += (2 * archiveRewardIds.length()) + ProtoSink.computeRepeatedUInt32SizeNoTag(archiveRewardIds);
+      }
+      if ((bitField0_ & 0x00200000) != 0) {
         size += (2 * charGemSlots.length()) + ProtoSink.computeRepeatedMessageSizeNoTag(charGemSlots);
       }
       return size;
@@ -25967,6 +26001,15 @@ public final class Public {
             talentBackground = input.readUInt32();
             bitField0_ |= 0x00000100;
             tag = input.readTag();
+            if (tag != 248) {
+              break;
+            }
+          }
+          case 248: {
+            // isFavorite
+            isFavorite = input.readBool();
+            bitField0_ |= 0x00000200;
+            tag = input.readTag();
             if (tag != 138) {
               break;
             }
@@ -25974,7 +26017,7 @@ public final class Public {
           case 138: {
             // affinityQuests
             input.readMessage(affinityQuests);
-            bitField0_ |= 0x00000200;
+            bitField0_ |= 0x00000400;
             tag = input.readTag();
             if (tag != 186) {
               break;
@@ -25983,7 +26026,7 @@ public final class Public {
           case 186: {
             // charGemPresets
             input.readMessage(charGemPresets);
-            bitField0_ |= 0x00000400;
+            bitField0_ |= 0x00000800;
             tag = input.readTag();
             if (tag != 154) {
               break;
@@ -25992,7 +26035,7 @@ public final class Public {
           case 154: {
             // talentNodes
             input.readBytes(talentNodes);
-            bitField0_ |= 0x00000800;
+            bitField0_ |= 0x00001000;
             tag = input.readTag();
             if (tag != 16378) {
               break;
@@ -26001,7 +26044,7 @@ public final class Public {
           case 16378: {
             // nextPackage
             input.readBytes(nextPackage);
-            bitField0_ |= 0x00001000;
+            bitField0_ |= 0x00002000;
             tag = input.readTag();
             if (tag != 50) {
               break;
@@ -26010,7 +26053,7 @@ public final class Public {
           case 50: {
             // equipmentIds [packed=true]
             input.readPackedUInt64(equipmentIds, tag);
-            bitField0_ |= 0x00002000;
+            bitField0_ |= 0x00004000;
             tag = input.readTag();
             if (tag != 26) {
               break;
@@ -26019,7 +26062,7 @@ public final class Public {
           case 26: {
             // datingLandmarkIds [packed=true]
             input.readPackedUInt32(datingLandmarkIds, tag);
-            bitField0_ |= 0x00004000;
+            bitField0_ |= 0x00008000;
             tag = input.readTag();
             if (tag != 34) {
               break;
@@ -26028,7 +26071,7 @@ public final class Public {
           case 34: {
             // datingEventIds [packed=true]
             input.readPackedUInt32(datingEventIds, tag);
-            bitField0_ |= 0x00008000;
+            bitField0_ |= 0x00010000;
             tag = input.readTag();
             if (tag != 42) {
               break;
@@ -26037,7 +26080,7 @@ public final class Public {
           case 42: {
             // datingEventRewardIds [packed=true]
             input.readPackedUInt32(datingEventRewardIds, tag);
-            bitField0_ |= 0x00010000;
+            bitField0_ |= 0x00020000;
             tag = input.readTag();
             if (tag != 82) {
               break;
@@ -26046,7 +26089,7 @@ public final class Public {
           case 82: {
             // skillLvs [packed=true]
             input.readPackedUInt32(skillLvs, tag);
-            bitField0_ |= 0x00020000;
+            bitField0_ |= 0x00040000;
             tag = input.readTag();
             if (tag != 130) {
               break;
@@ -26055,7 +26098,7 @@ public final class Public {
           case 130: {
             // plots [packed=true]
             input.readPackedUInt32(plots, tag);
-            bitField0_ |= 0x00040000;
+            bitField0_ |= 0x00080000;
             tag = input.readTag();
             if (tag != 162) {
               break;
@@ -26064,7 +26107,7 @@ public final class Public {
           case 162: {
             // archiveRewardIds [packed=true]
             input.readPackedUInt32(archiveRewardIds, tag);
-            bitField0_ |= 0x00080000;
+            bitField0_ |= 0x00100000;
             tag = input.readTag();
             if (tag != 178) {
               break;
@@ -26073,7 +26116,7 @@ public final class Public {
           case 178: {
             // charGemSlots
             tag = input.readRepeatedMessage(charGemSlots, tag);
-            bitField0_ |= 0x00100000;
+            bitField0_ |= 0x00200000;
             if (tag != 0) {
               break;
             }
@@ -26091,43 +26134,43 @@ public final class Public {
           case 48: {
             // equipmentIds [packed=false]
             tag = input.readRepeatedUInt64(equipmentIds, tag);
-            bitField0_ |= 0x00002000;
+            bitField0_ |= 0x00004000;
             break;
           }
           case 24: {
             // datingLandmarkIds [packed=false]
             tag = input.readRepeatedUInt32(datingLandmarkIds, tag);
-            bitField0_ |= 0x00004000;
+            bitField0_ |= 0x00008000;
             break;
           }
           case 32: {
             // datingEventIds [packed=false]
             tag = input.readRepeatedUInt32(datingEventIds, tag);
-            bitField0_ |= 0x00008000;
+            bitField0_ |= 0x00010000;
             break;
           }
           case 40: {
             // datingEventRewardIds [packed=false]
             tag = input.readRepeatedUInt32(datingEventRewardIds, tag);
-            bitField0_ |= 0x00010000;
+            bitField0_ |= 0x00020000;
             break;
           }
           case 80: {
             // skillLvs [packed=false]
             tag = input.readRepeatedUInt32(skillLvs, tag);
-            bitField0_ |= 0x00020000;
+            bitField0_ |= 0x00040000;
             break;
           }
           case 128: {
             // plots [packed=false]
             tag = input.readRepeatedUInt32(plots, tag);
-            bitField0_ |= 0x00040000;
+            bitField0_ |= 0x00080000;
             break;
           }
           case 160: {
             // archiveRewardIds [packed=false]
             tag = input.readRepeatedUInt32(archiveRewardIds, tag);
-            bitField0_ |= 0x00080000;
+            bitField0_ |= 0x00100000;
             break;
           }
         }
@@ -26165,39 +26208,42 @@ public final class Public {
         output.writeUInt32(FieldNames.talentBackground, talentBackground);
       }
       if ((bitField0_ & 0x00000200) != 0) {
-        output.writeMessage(FieldNames.affinityQuests, affinityQuests);
+        output.writeBool(FieldNames.isFavorite, isFavorite);
       }
       if ((bitField0_ & 0x00000400) != 0) {
-        output.writeMessage(FieldNames.charGemPresets, charGemPresets);
+        output.writeMessage(FieldNames.affinityQuests, affinityQuests);
       }
       if ((bitField0_ & 0x00000800) != 0) {
-        output.writeBytes(FieldNames.talentNodes, talentNodes);
+        output.writeMessage(FieldNames.charGemPresets, charGemPresets);
       }
       if ((bitField0_ & 0x00001000) != 0) {
-        output.writeBytes(FieldNames.nextPackage, nextPackage);
+        output.writeBytes(FieldNames.talentNodes, talentNodes);
       }
       if ((bitField0_ & 0x00002000) != 0) {
-        output.writeRepeatedUInt64(FieldNames.equipmentIds, equipmentIds);
+        output.writeBytes(FieldNames.nextPackage, nextPackage);
       }
       if ((bitField0_ & 0x00004000) != 0) {
-        output.writeRepeatedUInt32(FieldNames.datingLandmarkIds, datingLandmarkIds);
+        output.writeRepeatedUInt64(FieldNames.equipmentIds, equipmentIds);
       }
       if ((bitField0_ & 0x00008000) != 0) {
-        output.writeRepeatedUInt32(FieldNames.datingEventIds, datingEventIds);
+        output.writeRepeatedUInt32(FieldNames.datingLandmarkIds, datingLandmarkIds);
       }
       if ((bitField0_ & 0x00010000) != 0) {
-        output.writeRepeatedUInt32(FieldNames.datingEventRewardIds, datingEventRewardIds);
+        output.writeRepeatedUInt32(FieldNames.datingEventIds, datingEventIds);
       }
       if ((bitField0_ & 0x00020000) != 0) {
-        output.writeRepeatedUInt32(FieldNames.skillLvs, skillLvs);
+        output.writeRepeatedUInt32(FieldNames.datingEventRewardIds, datingEventRewardIds);
       }
       if ((bitField0_ & 0x00040000) != 0) {
-        output.writeRepeatedUInt32(FieldNames.plots, plots);
+        output.writeRepeatedUInt32(FieldNames.skillLvs, skillLvs);
       }
       if ((bitField0_ & 0x00080000) != 0) {
-        output.writeRepeatedUInt32(FieldNames.archiveRewardIds, archiveRewardIds);
+        output.writeRepeatedUInt32(FieldNames.plots, plots);
       }
       if ((bitField0_ & 0x00100000) != 0) {
+        output.writeRepeatedUInt32(FieldNames.archiveRewardIds, archiveRewardIds);
+      }
+      if ((bitField0_ & 0x00200000) != 0) {
         output.writeRepeatedMessage(FieldNames.charGemSlots, charGemSlots);
       }
       output.endObject();
@@ -26309,11 +26355,22 @@ public final class Public {
             }
             break;
           }
+          case -2043982586: {
+            if (input.isAtField(FieldNames.isFavorite)) {
+              if (!input.trySkipNullValue()) {
+                isFavorite = input.readBool();
+                bitField0_ |= 0x00000200;
+              }
+            } else {
+              input.skipUnknownField();
+            }
+            break;
+          }
           case -278042823: {
             if (input.isAtField(FieldNames.affinityQuests)) {
               if (!input.trySkipNullValue()) {
                 input.readMessage(affinityQuests);
-                bitField0_ |= 0x00000200;
+                bitField0_ |= 0x00000400;
               }
             } else {
               input.skipUnknownField();
@@ -26324,7 +26381,7 @@ public final class Public {
             if (input.isAtField(FieldNames.charGemPresets)) {
               if (!input.trySkipNullValue()) {
                 input.readMessage(charGemPresets);
-                bitField0_ |= 0x00000400;
+                bitField0_ |= 0x00000800;
               }
             } else {
               input.skipUnknownField();
@@ -26335,7 +26392,7 @@ public final class Public {
             if (input.isAtField(FieldNames.talentNodes)) {
               if (!input.trySkipNullValue()) {
                 input.readBytes(talentNodes);
-                bitField0_ |= 0x00000800;
+                bitField0_ |= 0x00001000;
               }
             } else {
               input.skipUnknownField();
@@ -26346,7 +26403,7 @@ public final class Public {
             if (input.isAtField(FieldNames.nextPackage)) {
               if (!input.trySkipNullValue()) {
                 input.readBytes(nextPackage);
-                bitField0_ |= 0x00001000;
+                bitField0_ |= 0x00002000;
               }
             } else {
               input.skipUnknownField();
@@ -26357,7 +26414,7 @@ public final class Public {
             if (input.isAtField(FieldNames.equipmentIds)) {
               if (!input.trySkipNullValue()) {
                 input.readRepeatedUInt64(equipmentIds);
-                bitField0_ |= 0x00002000;
+                bitField0_ |= 0x00004000;
               }
             } else {
               input.skipUnknownField();
@@ -26368,7 +26425,7 @@ public final class Public {
             if (input.isAtField(FieldNames.datingLandmarkIds)) {
               if (!input.trySkipNullValue()) {
                 input.readRepeatedUInt32(datingLandmarkIds);
-                bitField0_ |= 0x00004000;
+                bitField0_ |= 0x00008000;
               }
             } else {
               input.skipUnknownField();
@@ -26379,7 +26436,7 @@ public final class Public {
             if (input.isAtField(FieldNames.datingEventIds)) {
               if (!input.trySkipNullValue()) {
                 input.readRepeatedUInt32(datingEventIds);
-                bitField0_ |= 0x00008000;
+                bitField0_ |= 0x00010000;
               }
             } else {
               input.skipUnknownField();
@@ -26390,7 +26447,7 @@ public final class Public {
             if (input.isAtField(FieldNames.datingEventRewardIds)) {
               if (!input.trySkipNullValue()) {
                 input.readRepeatedUInt32(datingEventRewardIds);
-                bitField0_ |= 0x00010000;
+                bitField0_ |= 0x00020000;
               }
             } else {
               input.skipUnknownField();
@@ -26401,7 +26458,7 @@ public final class Public {
             if (input.isAtField(FieldNames.skillLvs)) {
               if (!input.trySkipNullValue()) {
                 input.readRepeatedUInt32(skillLvs);
-                bitField0_ |= 0x00020000;
+                bitField0_ |= 0x00040000;
               }
             } else {
               input.skipUnknownField();
@@ -26412,7 +26469,7 @@ public final class Public {
             if (input.isAtField(FieldNames.plots)) {
               if (!input.trySkipNullValue()) {
                 input.readRepeatedUInt32(plots);
-                bitField0_ |= 0x00040000;
+                bitField0_ |= 0x00080000;
               }
             } else {
               input.skipUnknownField();
@@ -26423,7 +26480,7 @@ public final class Public {
             if (input.isAtField(FieldNames.archiveRewardIds)) {
               if (!input.trySkipNullValue()) {
                 input.readRepeatedUInt32(archiveRewardIds);
-                bitField0_ |= 0x00080000;
+                bitField0_ |= 0x00100000;
               }
             } else {
               input.skipUnknownField();
@@ -26434,7 +26491,7 @@ public final class Public {
             if (input.isAtField(FieldNames.charGemSlots)) {
               if (!input.trySkipNullValue()) {
                 input.readRepeatedMessage(charGemSlots);
-                bitField0_ |= 0x00100000;
+                bitField0_ |= 0x00200000;
               }
             } else {
               input.skipUnknownField();
@@ -26510,6 +26567,8 @@ public final class Public {
       static final FieldName advance = FieldName.forField("Advance");
 
       static final FieldName talentBackground = FieldName.forField("TalentBackground");
+
+      static final FieldName isFavorite = FieldName.forField("IsFavorite");
 
       static final FieldName affinityQuests = FieldName.forField("AffinityQuests");
 
@@ -30885,6 +30944,11 @@ public final class Public {
     private int newId;
 
     /**
+     * <code>optional uint32 Level = 2;</code>
+     */
+    private int level;
+
+    /**
      * <code>optional bytes NextPackage = 2047;</code>
      */
     private final RepeatedByte nextPackage = RepeatedByte.newEmptyInstance();
@@ -30937,11 +31001,48 @@ public final class Public {
     }
 
     /**
+     * <code>optional uint32 Level = 2;</code>
+     * @return whether the level field is set
+     */
+    public boolean hasLevel() {
+      return (bitField0_ & 0x00000002) != 0;
+    }
+
+    /**
+     * <code>optional uint32 Level = 2;</code>
+     * @return this
+     */
+    public Honor clearLevel() {
+      bitField0_ &= ~0x00000002;
+      level = 0;
+      return this;
+    }
+
+    /**
+     * <code>optional uint32 Level = 2;</code>
+     * @return the level
+     */
+    public int getLevel() {
+      return level;
+    }
+
+    /**
+     * <code>optional uint32 Level = 2;</code>
+     * @param value the level to set
+     * @return this
+     */
+    public Honor setLevel(final int value) {
+      bitField0_ |= 0x00000002;
+      level = value;
+      return this;
+    }
+
+    /**
      * <code>optional bytes NextPackage = 2047;</code>
      * @return whether the nextPackage field is set
      */
     public boolean hasNextPackage() {
-      return (bitField0_ & 0x00000002) != 0;
+      return (bitField0_ & 0x00000004) != 0;
     }
 
     /**
@@ -30949,7 +31050,7 @@ public final class Public {
      * @return this
      */
     public Honor clearNextPackage() {
-      bitField0_ &= ~0x00000002;
+      bitField0_ &= ~0x00000004;
       nextPackage.clear();
       return this;
     }
@@ -30978,7 +31079,7 @@ public final class Public {
      * @return internal storage object for modifications
      */
     public RepeatedByte getMutableNextPackage() {
-      bitField0_ |= 0x00000002;
+      bitField0_ |= 0x00000004;
       return nextPackage;
     }
 
@@ -30988,7 +31089,7 @@ public final class Public {
      * @return this
      */
     public Honor addNextPackage(final byte value) {
-      bitField0_ |= 0x00000002;
+      bitField0_ |= 0x00000004;
       nextPackage.add(value);
       return this;
     }
@@ -30999,7 +31100,7 @@ public final class Public {
      * @return this
      */
     public Honor addAllNextPackage(final byte... values) {
-      bitField0_ |= 0x00000002;
+      bitField0_ |= 0x00000004;
       nextPackage.addAll(values);
       return this;
     }
@@ -31010,7 +31111,7 @@ public final class Public {
      * @return this
      */
     public Honor setNextPackage(final byte... values) {
-      bitField0_ |= 0x00000002;
+      bitField0_ |= 0x00000004;
       nextPackage.copyFrom(values);
       return this;
     }
@@ -31021,6 +31122,7 @@ public final class Public {
       if ((bitField0_ | other.bitField0_) != 0) {
         bitField0_ = other.bitField0_;
         newId = other.newId;
+        level = other.level;
         nextPackage.copyFrom(other.nextPackage);
       }
       return this;
@@ -31034,6 +31136,9 @@ public final class Public {
       cachedSize = -1;
       if (other.hasNewId()) {
         setNewId(other.newId);
+      }
+      if (other.hasLevel()) {
+        setLevel(other.level);
       }
       if (other.hasNextPackage()) {
         getMutableNextPackage().copyFrom(other.nextPackage);
@@ -31049,6 +31154,7 @@ public final class Public {
       cachedSize = -1;
       bitField0_ = 0;
       newId = 0;
+      level = 0;
       nextPackage.clear();
       return this;
     }
@@ -31075,6 +31181,7 @@ public final class Public {
       Honor other = (Honor) o;
       return bitField0_ == other.bitField0_
         && (!hasNewId() || newId == other.newId)
+        && (!hasLevel() || level == other.level)
         && (!hasNextPackage() || nextPackage.equals(other.nextPackage));
     }
 
@@ -31085,6 +31192,10 @@ public final class Public {
         output.writeUInt32NoTag(newId);
       }
       if ((bitField0_ & 0x00000002) != 0) {
+        output.writeRawByte((byte) 16);
+        output.writeUInt32NoTag(level);
+      }
+      if ((bitField0_ & 0x00000004) != 0) {
         output.writeRawLittleEndian16((short) 32762);
         output.writeBytesNoTag(nextPackage);
       }
@@ -31097,6 +31208,9 @@ public final class Public {
         size += 1 + ProtoSink.computeUInt32SizeNoTag(newId);
       }
       if ((bitField0_ & 0x00000002) != 0) {
+        size += 1 + ProtoSink.computeUInt32SizeNoTag(level);
+      }
+      if ((bitField0_ & 0x00000004) != 0) {
         size += 2 + ProtoSink.computeBytesSizeNoTag(nextPackage);
       }
       return size;
@@ -31114,6 +31228,15 @@ public final class Public {
             newId = input.readUInt32();
             bitField0_ |= 0x00000001;
             tag = input.readTag();
+            if (tag != 16) {
+              break;
+            }
+          }
+          case 16: {
+            // level
+            level = input.readUInt32();
+            bitField0_ |= 0x00000002;
+            tag = input.readTag();
             if (tag != 16378) {
               break;
             }
@@ -31121,7 +31244,7 @@ public final class Public {
           case 16378: {
             // nextPackage
             input.readBytes(nextPackage);
-            bitField0_ |= 0x00000002;
+            bitField0_ |= 0x00000004;
             tag = input.readTag();
             if (tag != 0) {
               break;
@@ -31148,6 +31271,9 @@ public final class Public {
         output.writeUInt32(FieldNames.newId, newId);
       }
       if ((bitField0_ & 0x00000002) != 0) {
+        output.writeUInt32(FieldNames.level, level);
+      }
+      if ((bitField0_ & 0x00000004) != 0) {
         output.writeBytes(FieldNames.nextPackage, nextPackage);
       }
       output.endObject();
@@ -31171,11 +31297,22 @@ public final class Public {
             }
             break;
           }
+          case 73313124: {
+            if (input.isAtField(FieldNames.level)) {
+              if (!input.trySkipNullValue()) {
+                level = input.readUInt32();
+                bitField0_ |= 0x00000002;
+              }
+            } else {
+              input.skipUnknownField();
+            }
+            break;
+          }
           case -2082324045: {
             if (input.isAtField(FieldNames.nextPackage)) {
               if (!input.trySkipNullValue()) {
                 input.readBytes(nextPackage);
-                bitField0_ |= 0x00000002;
+                bitField0_ |= 0x00000004;
               }
             } else {
               input.skipUnknownField();
@@ -31235,6 +31372,8 @@ public final class Public {
      */
     static class FieldNames {
       static final FieldName newId = FieldName.forField("NewId");
+
+      static final FieldName level = FieldName.forField("Level");
 
       static final FieldName nextPackage = FieldName.forField("NextPackage");
     }
@@ -31647,6 +31786,11 @@ public final class Public {
     private static final long serialVersionUID = 0L;
 
     /**
+     * <code>optional uint64 PreselectionId = 4;</code>
+     */
+    private long preselectionId;
+
+    /**
      * <code>optional uint32 Number = 1;</code>
      */
     private int number;
@@ -31677,11 +31821,48 @@ public final class Public {
     }
 
     /**
+     * <code>optional uint64 PreselectionId = 4;</code>
+     * @return whether the preselectionId field is set
+     */
+    public boolean hasPreselectionId() {
+      return (bitField0_ & 0x00000001) != 0;
+    }
+
+    /**
+     * <code>optional uint64 PreselectionId = 4;</code>
+     * @return this
+     */
+    public FormationInfo clearPreselectionId() {
+      bitField0_ &= ~0x00000001;
+      preselectionId = 0L;
+      return this;
+    }
+
+    /**
+     * <code>optional uint64 PreselectionId = 4;</code>
+     * @return the preselectionId
+     */
+    public long getPreselectionId() {
+      return preselectionId;
+    }
+
+    /**
+     * <code>optional uint64 PreselectionId = 4;</code>
+     * @param value the preselectionId to set
+     * @return this
+     */
+    public FormationInfo setPreselectionId(final long value) {
+      bitField0_ |= 0x00000001;
+      preselectionId = value;
+      return this;
+    }
+
+    /**
      * <code>optional uint32 Number = 1;</code>
      * @return whether the number field is set
      */
     public boolean hasNumber() {
-      return (bitField0_ & 0x00000001) != 0;
+      return (bitField0_ & 0x00000002) != 0;
     }
 
     /**
@@ -31689,7 +31870,7 @@ public final class Public {
      * @return this
      */
     public FormationInfo clearNumber() {
-      bitField0_ &= ~0x00000001;
+      bitField0_ &= ~0x00000002;
       number = 0;
       return this;
     }
@@ -31708,7 +31889,7 @@ public final class Public {
      * @return this
      */
     public FormationInfo setNumber(final int value) {
-      bitField0_ |= 0x00000001;
+      bitField0_ |= 0x00000002;
       number = value;
       return this;
     }
@@ -31718,7 +31899,7 @@ public final class Public {
      * @return whether the nextPackage field is set
      */
     public boolean hasNextPackage() {
-      return (bitField0_ & 0x00000002) != 0;
+      return (bitField0_ & 0x00000004) != 0;
     }
 
     /**
@@ -31726,7 +31907,7 @@ public final class Public {
      * @return this
      */
     public FormationInfo clearNextPackage() {
-      bitField0_ &= ~0x00000002;
+      bitField0_ &= ~0x00000004;
       nextPackage.clear();
       return this;
     }
@@ -31755,7 +31936,7 @@ public final class Public {
      * @return internal storage object for modifications
      */
     public RepeatedByte getMutableNextPackage() {
-      bitField0_ |= 0x00000002;
+      bitField0_ |= 0x00000004;
       return nextPackage;
     }
 
@@ -31765,7 +31946,7 @@ public final class Public {
      * @return this
      */
     public FormationInfo addNextPackage(final byte value) {
-      bitField0_ |= 0x00000002;
+      bitField0_ |= 0x00000004;
       nextPackage.add(value);
       return this;
     }
@@ -31776,7 +31957,7 @@ public final class Public {
      * @return this
      */
     public FormationInfo addAllNextPackage(final byte... values) {
-      bitField0_ |= 0x00000002;
+      bitField0_ |= 0x00000004;
       nextPackage.addAll(values);
       return this;
     }
@@ -31787,7 +31968,7 @@ public final class Public {
      * @return this
      */
     public FormationInfo setNextPackage(final byte... values) {
-      bitField0_ |= 0x00000002;
+      bitField0_ |= 0x00000004;
       nextPackage.copyFrom(values);
       return this;
     }
@@ -31797,7 +31978,7 @@ public final class Public {
      * @return whether the charIds field is set
      */
     public boolean hasCharIds() {
-      return (bitField0_ & 0x00000004) != 0;
+      return (bitField0_ & 0x00000008) != 0;
     }
 
     /**
@@ -31805,7 +31986,7 @@ public final class Public {
      * @return this
      */
     public FormationInfo clearCharIds() {
-      bitField0_ &= ~0x00000004;
+      bitField0_ &= ~0x00000008;
       charIds.clear();
       return this;
     }
@@ -31834,7 +32015,7 @@ public final class Public {
      * @return internal storage object for modifications
      */
     public RepeatedInt getMutableCharIds() {
-      bitField0_ |= 0x00000004;
+      bitField0_ |= 0x00000008;
       return charIds;
     }
 
@@ -31844,7 +32025,7 @@ public final class Public {
      * @return this
      */
     public FormationInfo addCharIds(final int value) {
-      bitField0_ |= 0x00000004;
+      bitField0_ |= 0x00000008;
       charIds.add(value);
       return this;
     }
@@ -31855,7 +32036,7 @@ public final class Public {
      * @return this
      */
     public FormationInfo addAllCharIds(final int... values) {
-      bitField0_ |= 0x00000004;
+      bitField0_ |= 0x00000008;
       charIds.addAll(values);
       return this;
     }
@@ -31865,7 +32046,7 @@ public final class Public {
      * @return whether the discIds field is set
      */
     public boolean hasDiscIds() {
-      return (bitField0_ & 0x00000008) != 0;
+      return (bitField0_ & 0x00000010) != 0;
     }
 
     /**
@@ -31873,7 +32054,7 @@ public final class Public {
      * @return this
      */
     public FormationInfo clearDiscIds() {
-      bitField0_ &= ~0x00000008;
+      bitField0_ &= ~0x00000010;
       discIds.clear();
       return this;
     }
@@ -31902,7 +32083,7 @@ public final class Public {
      * @return internal storage object for modifications
      */
     public RepeatedInt getMutableDiscIds() {
-      bitField0_ |= 0x00000008;
+      bitField0_ |= 0x00000010;
       return discIds;
     }
 
@@ -31912,7 +32093,7 @@ public final class Public {
      * @return this
      */
     public FormationInfo addDiscIds(final int value) {
-      bitField0_ |= 0x00000008;
+      bitField0_ |= 0x00000010;
       discIds.add(value);
       return this;
     }
@@ -31923,7 +32104,7 @@ public final class Public {
      * @return this
      */
     public FormationInfo addAllDiscIds(final int... values) {
-      bitField0_ |= 0x00000008;
+      bitField0_ |= 0x00000010;
       discIds.addAll(values);
       return this;
     }
@@ -31933,6 +32114,7 @@ public final class Public {
       cachedSize = other.cachedSize;
       if ((bitField0_ | other.bitField0_) != 0) {
         bitField0_ = other.bitField0_;
+        preselectionId = other.preselectionId;
         number = other.number;
         nextPackage.copyFrom(other.nextPackage);
         charIds.copyFrom(other.charIds);
@@ -31947,6 +32129,9 @@ public final class Public {
         return this;
       }
       cachedSize = -1;
+      if (other.hasPreselectionId()) {
+        setPreselectionId(other.preselectionId);
+      }
       if (other.hasNumber()) {
         setNumber(other.number);
       }
@@ -31969,6 +32154,7 @@ public final class Public {
       }
       cachedSize = -1;
       bitField0_ = 0;
+      preselectionId = 0L;
       number = 0;
       nextPackage.clear();
       charIds.clear();
@@ -31999,6 +32185,7 @@ public final class Public {
       }
       FormationInfo other = (FormationInfo) o;
       return bitField0_ == other.bitField0_
+        && (!hasPreselectionId() || preselectionId == other.preselectionId)
         && (!hasNumber() || number == other.number)
         && (!hasNextPackage() || nextPackage.equals(other.nextPackage))
         && (!hasCharIds() || charIds.equals(other.charIds))
@@ -32008,20 +32195,24 @@ public final class Public {
     @Override
     public void writeTo(final ProtoSink output) throws IOException {
       if ((bitField0_ & 0x00000001) != 0) {
+        output.writeRawByte((byte) 32);
+        output.writeUInt64NoTag(preselectionId);
+      }
+      if ((bitField0_ & 0x00000002) != 0) {
         output.writeRawByte((byte) 8);
         output.writeUInt32NoTag(number);
       }
-      if ((bitField0_ & 0x00000002) != 0) {
+      if ((bitField0_ & 0x00000004) != 0) {
         output.writeRawLittleEndian16((short) 32762);
         output.writeBytesNoTag(nextPackage);
       }
-      if ((bitField0_ & 0x00000004) != 0) {
+      if ((bitField0_ & 0x00000008) != 0) {
         for (int i = 0; i < charIds.length(); i++) {
           output.writeRawByte((byte) 16);
           output.writeUInt32NoTag(charIds.array()[i]);
         }
       }
-      if ((bitField0_ & 0x00000008) != 0) {
+      if ((bitField0_ & 0x00000010) != 0) {
         for (int i = 0; i < discIds.length(); i++) {
           output.writeRawByte((byte) 24);
           output.writeUInt32NoTag(discIds.array()[i]);
@@ -32033,15 +32224,18 @@ public final class Public {
     protected int computeSerializedSize() {
       int size = 0;
       if ((bitField0_ & 0x00000001) != 0) {
-        size += 1 + ProtoSink.computeUInt32SizeNoTag(number);
+        size += 1 + ProtoSink.computeUInt64SizeNoTag(preselectionId);
       }
       if ((bitField0_ & 0x00000002) != 0) {
-        size += 2 + ProtoSink.computeBytesSizeNoTag(nextPackage);
+        size += 1 + ProtoSink.computeUInt32SizeNoTag(number);
       }
       if ((bitField0_ & 0x00000004) != 0) {
-        size += (1 * charIds.length()) + ProtoSink.computeRepeatedUInt32SizeNoTag(charIds);
+        size += 2 + ProtoSink.computeBytesSizeNoTag(nextPackage);
       }
       if ((bitField0_ & 0x00000008) != 0) {
+        size += (1 * charIds.length()) + ProtoSink.computeRepeatedUInt32SizeNoTag(charIds);
+      }
+      if ((bitField0_ & 0x00000010) != 0) {
         size += (1 * discIds.length()) + ProtoSink.computeRepeatedUInt32SizeNoTag(discIds);
       }
       return size;
@@ -32054,10 +32248,19 @@ public final class Public {
       int tag = input.readTag();
       while (true) {
         switch (tag) {
+          case 32: {
+            // preselectionId
+            preselectionId = input.readUInt64();
+            bitField0_ |= 0x00000001;
+            tag = input.readTag();
+            if (tag != 8) {
+              break;
+            }
+          }
           case 8: {
             // number
             number = input.readUInt32();
-            bitField0_ |= 0x00000001;
+            bitField0_ |= 0x00000002;
             tag = input.readTag();
             if (tag != 16378) {
               break;
@@ -32066,7 +32269,7 @@ public final class Public {
           case 16378: {
             // nextPackage
             input.readBytes(nextPackage);
-            bitField0_ |= 0x00000002;
+            bitField0_ |= 0x00000004;
             tag = input.readTag();
             if (tag != 18) {
               break;
@@ -32075,7 +32278,7 @@ public final class Public {
           case 18: {
             // charIds [packed=true]
             input.readPackedUInt32(charIds, tag);
-            bitField0_ |= 0x00000004;
+            bitField0_ |= 0x00000008;
             tag = input.readTag();
             if (tag != 26) {
               break;
@@ -32084,7 +32287,7 @@ public final class Public {
           case 26: {
             // discIds [packed=true]
             input.readPackedUInt32(discIds, tag);
-            bitField0_ |= 0x00000008;
+            bitField0_ |= 0x00000010;
             tag = input.readTag();
             if (tag != 0) {
               break;
@@ -32103,13 +32306,13 @@ public final class Public {
           case 16: {
             // charIds [packed=false]
             tag = input.readRepeatedUInt32(charIds, tag);
-            bitField0_ |= 0x00000004;
+            bitField0_ |= 0x00000008;
             break;
           }
           case 24: {
             // discIds [packed=false]
             tag = input.readRepeatedUInt32(discIds, tag);
-            bitField0_ |= 0x00000008;
+            bitField0_ |= 0x00000010;
             break;
           }
         }
@@ -32120,15 +32323,18 @@ public final class Public {
     public void writeTo(final JsonSink output) throws IOException {
       output.beginObject();
       if ((bitField0_ & 0x00000001) != 0) {
-        output.writeUInt32(FieldNames.number, number);
+        output.writeUInt64(FieldNames.preselectionId, preselectionId);
       }
       if ((bitField0_ & 0x00000002) != 0) {
-        output.writeBytes(FieldNames.nextPackage, nextPackage);
+        output.writeUInt32(FieldNames.number, number);
       }
       if ((bitField0_ & 0x00000004) != 0) {
-        output.writeRepeatedUInt32(FieldNames.charIds, charIds);
+        output.writeBytes(FieldNames.nextPackage, nextPackage);
       }
       if ((bitField0_ & 0x00000008) != 0) {
+        output.writeRepeatedUInt32(FieldNames.charIds, charIds);
+      }
+      if ((bitField0_ & 0x00000010) != 0) {
         output.writeRepeatedUInt32(FieldNames.discIds, discIds);
       }
       output.endObject();
@@ -32141,11 +32347,22 @@ public final class Public {
       }
       while (!input.isAtEnd()) {
         switch (input.readFieldHash()) {
+          case -501191324: {
+            if (input.isAtField(FieldNames.preselectionId)) {
+              if (!input.trySkipNullValue()) {
+                preselectionId = input.readUInt64();
+                bitField0_ |= 0x00000001;
+              }
+            } else {
+              input.skipUnknownField();
+            }
+            break;
+          }
           case -1950496919: {
             if (input.isAtField(FieldNames.number)) {
               if (!input.trySkipNullValue()) {
                 number = input.readUInt32();
-                bitField0_ |= 0x00000001;
+                bitField0_ |= 0x00000002;
               }
             } else {
               input.skipUnknownField();
@@ -32156,7 +32373,7 @@ public final class Public {
             if (input.isAtField(FieldNames.nextPackage)) {
               if (!input.trySkipNullValue()) {
                 input.readBytes(nextPackage);
-                bitField0_ |= 0x00000002;
+                bitField0_ |= 0x00000004;
               }
             } else {
               input.skipUnknownField();
@@ -32167,7 +32384,7 @@ public final class Public {
             if (input.isAtField(FieldNames.charIds)) {
               if (!input.trySkipNullValue()) {
                 input.readRepeatedUInt32(charIds);
-                bitField0_ |= 0x00000004;
+                bitField0_ |= 0x00000008;
               }
             } else {
               input.skipUnknownField();
@@ -32178,7 +32395,7 @@ public final class Public {
             if (input.isAtField(FieldNames.discIds)) {
               if (!input.trySkipNullValue()) {
                 input.readRepeatedUInt32(discIds);
-                bitField0_ |= 0x00000008;
+                bitField0_ |= 0x00000010;
               }
             } else {
               input.skipUnknownField();
@@ -32237,6 +32454,8 @@ public final class Public {
      * Contains name constants used for serializing JSON
      */
     static class FieldNames {
+      static final FieldName preselectionId = FieldName.forField("PreselectionId");
+
       static final FieldName number = FieldName.forField("Number");
 
       static final FieldName nextPackage = FieldName.forField("NextPackage");
@@ -69590,6 +69809,16 @@ public final class Public {
      */
     private final RepeatedInt alterAttributes = RepeatedInt.newEmptyInstance();
 
+    /**
+     * <code>repeated uint32 OverlockCount = 4;</code>
+     */
+    private final RepeatedInt overlockCount = RepeatedInt.newEmptyInstance();
+
+    /**
+     * <code>repeated uint32 AlterOverlockCount = 5;</code>
+     */
+    private final RepeatedInt alterOverlockCount = RepeatedInt.newEmptyInstance();
+
     private CharGem() {
     }
 
@@ -69852,6 +70081,142 @@ public final class Public {
       return this;
     }
 
+    /**
+     * <code>repeated uint32 OverlockCount = 4;</code>
+     * @return whether the overlockCount field is set
+     */
+    public boolean hasOverlockCount() {
+      return (bitField0_ & 0x00000010) != 0;
+    }
+
+    /**
+     * <code>repeated uint32 OverlockCount = 4;</code>
+     * @return this
+     */
+    public CharGem clearOverlockCount() {
+      bitField0_ &= ~0x00000010;
+      overlockCount.clear();
+      return this;
+    }
+
+    /**
+     * <code>repeated uint32 OverlockCount = 4;</code>
+     *
+     * This method returns the internal storage object without modifying any has state.
+     * The returned object should not be modified and be treated as read-only.
+     *
+     * Use {@link #getMutableOverlockCount()} if you want to modify it.
+     *
+     * @return internal storage object for reading
+     */
+    public RepeatedInt getOverlockCount() {
+      return overlockCount;
+    }
+
+    /**
+     * <code>repeated uint32 OverlockCount = 4;</code>
+     *
+     * This method returns the internal storage object and sets the corresponding
+     * has state. The returned object will become part of this message and its
+     * contents may be modified as long as the has state is not cleared.
+     *
+     * @return internal storage object for modifications
+     */
+    public RepeatedInt getMutableOverlockCount() {
+      bitField0_ |= 0x00000010;
+      return overlockCount;
+    }
+
+    /**
+     * <code>repeated uint32 OverlockCount = 4;</code>
+     * @param value the overlockCount to add
+     * @return this
+     */
+    public CharGem addOverlockCount(final int value) {
+      bitField0_ |= 0x00000010;
+      overlockCount.add(value);
+      return this;
+    }
+
+    /**
+     * <code>repeated uint32 OverlockCount = 4;</code>
+     * @param values the overlockCount to add
+     * @return this
+     */
+    public CharGem addAllOverlockCount(final int... values) {
+      bitField0_ |= 0x00000010;
+      overlockCount.addAll(values);
+      return this;
+    }
+
+    /**
+     * <code>repeated uint32 AlterOverlockCount = 5;</code>
+     * @return whether the alterOverlockCount field is set
+     */
+    public boolean hasAlterOverlockCount() {
+      return (bitField0_ & 0x00000020) != 0;
+    }
+
+    /**
+     * <code>repeated uint32 AlterOverlockCount = 5;</code>
+     * @return this
+     */
+    public CharGem clearAlterOverlockCount() {
+      bitField0_ &= ~0x00000020;
+      alterOverlockCount.clear();
+      return this;
+    }
+
+    /**
+     * <code>repeated uint32 AlterOverlockCount = 5;</code>
+     *
+     * This method returns the internal storage object without modifying any has state.
+     * The returned object should not be modified and be treated as read-only.
+     *
+     * Use {@link #getMutableAlterOverlockCount()} if you want to modify it.
+     *
+     * @return internal storage object for reading
+     */
+    public RepeatedInt getAlterOverlockCount() {
+      return alterOverlockCount;
+    }
+
+    /**
+     * <code>repeated uint32 AlterOverlockCount = 5;</code>
+     *
+     * This method returns the internal storage object and sets the corresponding
+     * has state. The returned object will become part of this message and its
+     * contents may be modified as long as the has state is not cleared.
+     *
+     * @return internal storage object for modifications
+     */
+    public RepeatedInt getMutableAlterOverlockCount() {
+      bitField0_ |= 0x00000020;
+      return alterOverlockCount;
+    }
+
+    /**
+     * <code>repeated uint32 AlterOverlockCount = 5;</code>
+     * @param value the alterOverlockCount to add
+     * @return this
+     */
+    public CharGem addAlterOverlockCount(final int value) {
+      bitField0_ |= 0x00000020;
+      alterOverlockCount.add(value);
+      return this;
+    }
+
+    /**
+     * <code>repeated uint32 AlterOverlockCount = 5;</code>
+     * @param values the alterOverlockCount to add
+     * @return this
+     */
+    public CharGem addAllAlterOverlockCount(final int... values) {
+      bitField0_ |= 0x00000020;
+      alterOverlockCount.addAll(values);
+      return this;
+    }
+
     @Override
     public CharGem copyFrom(final CharGem other) {
       cachedSize = other.cachedSize;
@@ -69861,6 +70226,8 @@ public final class Public {
         nextPackage.copyFrom(other.nextPackage);
         attributes.copyFrom(other.attributes);
         alterAttributes.copyFrom(other.alterAttributes);
+        overlockCount.copyFrom(other.overlockCount);
+        alterOverlockCount.copyFrom(other.alterOverlockCount);
       }
       return this;
     }
@@ -69883,6 +70250,12 @@ public final class Public {
       if (other.hasAlterAttributes()) {
         getMutableAlterAttributes().addAll(other.alterAttributes);
       }
+      if (other.hasOverlockCount()) {
+        getMutableOverlockCount().addAll(other.overlockCount);
+      }
+      if (other.hasAlterOverlockCount()) {
+        getMutableAlterOverlockCount().addAll(other.alterOverlockCount);
+      }
       return this;
     }
 
@@ -69897,6 +70270,8 @@ public final class Public {
       nextPackage.clear();
       attributes.clear();
       alterAttributes.clear();
+      overlockCount.clear();
+      alterOverlockCount.clear();
       return this;
     }
 
@@ -69910,6 +70285,8 @@ public final class Public {
       nextPackage.clear();
       attributes.clear();
       alterAttributes.clear();
+      overlockCount.clear();
+      alterOverlockCount.clear();
       return this;
     }
 
@@ -69926,7 +70303,9 @@ public final class Public {
         && (!hasLock() || lock == other.lock)
         && (!hasNextPackage() || nextPackage.equals(other.nextPackage))
         && (!hasAttributes() || attributes.equals(other.attributes))
-        && (!hasAlterAttributes() || alterAttributes.equals(other.alterAttributes));
+        && (!hasAlterAttributes() || alterAttributes.equals(other.alterAttributes))
+        && (!hasOverlockCount() || overlockCount.equals(other.overlockCount))
+        && (!hasAlterOverlockCount() || alterOverlockCount.equals(other.alterOverlockCount));
     }
 
     @Override
@@ -69951,6 +70330,18 @@ public final class Public {
           output.writeUInt32NoTag(alterAttributes.array()[i]);
         }
       }
+      if ((bitField0_ & 0x00000010) != 0) {
+        for (int i = 0; i < overlockCount.length(); i++) {
+          output.writeRawByte((byte) 32);
+          output.writeUInt32NoTag(overlockCount.array()[i]);
+        }
+      }
+      if ((bitField0_ & 0x00000020) != 0) {
+        for (int i = 0; i < alterOverlockCount.length(); i++) {
+          output.writeRawByte((byte) 40);
+          output.writeUInt32NoTag(alterOverlockCount.array()[i]);
+        }
+      }
     }
 
     @Override
@@ -69967,6 +70358,12 @@ public final class Public {
       }
       if ((bitField0_ & 0x00000008) != 0) {
         size += (1 * alterAttributes.length()) + ProtoSink.computeRepeatedUInt32SizeNoTag(alterAttributes);
+      }
+      if ((bitField0_ & 0x00000010) != 0) {
+        size += (1 * overlockCount.length()) + ProtoSink.computeRepeatedUInt32SizeNoTag(overlockCount);
+      }
+      if ((bitField0_ & 0x00000020) != 0) {
+        size += (1 * alterOverlockCount.length()) + ProtoSink.computeRepeatedUInt32SizeNoTag(alterOverlockCount);
       }
       return size;
     }
@@ -70010,6 +70407,24 @@ public final class Public {
             input.readPackedUInt32(alterAttributes, tag);
             bitField0_ |= 0x00000008;
             tag = input.readTag();
+            if (tag != 34) {
+              break;
+            }
+          }
+          case 34: {
+            // overlockCount [packed=true]
+            input.readPackedUInt32(overlockCount, tag);
+            bitField0_ |= 0x00000010;
+            tag = input.readTag();
+            if (tag != 42) {
+              break;
+            }
+          }
+          case 42: {
+            // alterOverlockCount [packed=true]
+            input.readPackedUInt32(alterOverlockCount, tag);
+            bitField0_ |= 0x00000020;
+            tag = input.readTag();
             if (tag != 0) {
               break;
             }
@@ -70036,6 +70451,18 @@ public final class Public {
             bitField0_ |= 0x00000008;
             break;
           }
+          case 32: {
+            // overlockCount [packed=false]
+            tag = input.readRepeatedUInt32(overlockCount, tag);
+            bitField0_ |= 0x00000010;
+            break;
+          }
+          case 40: {
+            // alterOverlockCount [packed=false]
+            tag = input.readRepeatedUInt32(alterOverlockCount, tag);
+            bitField0_ |= 0x00000020;
+            break;
+          }
         }
       }
     }
@@ -70054,6 +70481,12 @@ public final class Public {
       }
       if ((bitField0_ & 0x00000008) != 0) {
         output.writeRepeatedUInt32(FieldNames.alterAttributes, alterAttributes);
+      }
+      if ((bitField0_ & 0x00000010) != 0) {
+        output.writeRepeatedUInt32(FieldNames.overlockCount, overlockCount);
+      }
+      if ((bitField0_ & 0x00000020) != 0) {
+        output.writeRepeatedUInt32(FieldNames.alterOverlockCount, alterOverlockCount);
       }
       output.endObject();
     }
@@ -70103,6 +70536,28 @@ public final class Public {
               if (!input.trySkipNullValue()) {
                 input.readRepeatedUInt32(alterAttributes);
                 bitField0_ |= 0x00000008;
+              }
+            } else {
+              input.skipUnknownField();
+            }
+            break;
+          }
+          case 1950695472: {
+            if (input.isAtField(FieldNames.overlockCount)) {
+              if (!input.trySkipNullValue()) {
+                input.readRepeatedUInt32(overlockCount);
+                bitField0_ |= 0x00000010;
+              }
+            } else {
+              input.skipUnknownField();
+            }
+            break;
+          }
+          case -1553559558: {
+            if (input.isAtField(FieldNames.alterOverlockCount)) {
+              if (!input.trySkipNullValue()) {
+                input.readRepeatedUInt32(alterOverlockCount);
+                bitField0_ |= 0x00000020;
               }
             } else {
               input.skipUnknownField();
@@ -70168,6 +70623,10 @@ public final class Public {
       static final FieldName attributes = FieldName.forField("Attributes");
 
       static final FieldName alterAttributes = FieldName.forField("AlterAttributes");
+
+      static final FieldName overlockCount = FieldName.forField("OverlockCount");
+
+      static final FieldName alterOverlockCount = FieldName.forField("AlterOverlockCount");
     }
   }
 
@@ -74790,19 +75249,19 @@ public final class Public {
     private long idleTime;
 
     /**
+     * <code>optional uint64 SelfHotValue = 4;</code>
+     */
+    private long selfHotValue;
+
+    /**
+     * <code>optional uint64 RivalHotValue = 5;</code>
+     */
+    private long rivalHotValue;
+
+    /**
      * <code>optional uint32 Difficult = 1;</code>
      */
     private int difficult;
-
-    /**
-     * <code>optional uint32 SelfHotValue = 4;</code>
-     */
-    private int selfHotValue;
-
-    /**
-     * <code>optional uint32 RivalHotValue = 5;</code>
-     */
-    private int rivalHotValue;
 
     /**
      * <code>optional bytes NextPackage = 2047;</code>
@@ -74862,11 +75321,85 @@ public final class Public {
     }
 
     /**
+     * <code>optional uint64 SelfHotValue = 4;</code>
+     * @return whether the selfHotValue field is set
+     */
+    public boolean hasSelfHotValue() {
+      return (bitField0_ & 0x00000002) != 0;
+    }
+
+    /**
+     * <code>optional uint64 SelfHotValue = 4;</code>
+     * @return this
+     */
+    public TrekkerVersusShow clearSelfHotValue() {
+      bitField0_ &= ~0x00000002;
+      selfHotValue = 0L;
+      return this;
+    }
+
+    /**
+     * <code>optional uint64 SelfHotValue = 4;</code>
+     * @return the selfHotValue
+     */
+    public long getSelfHotValue() {
+      return selfHotValue;
+    }
+
+    /**
+     * <code>optional uint64 SelfHotValue = 4;</code>
+     * @param value the selfHotValue to set
+     * @return this
+     */
+    public TrekkerVersusShow setSelfHotValue(final long value) {
+      bitField0_ |= 0x00000002;
+      selfHotValue = value;
+      return this;
+    }
+
+    /**
+     * <code>optional uint64 RivalHotValue = 5;</code>
+     * @return whether the rivalHotValue field is set
+     */
+    public boolean hasRivalHotValue() {
+      return (bitField0_ & 0x00000004) != 0;
+    }
+
+    /**
+     * <code>optional uint64 RivalHotValue = 5;</code>
+     * @return this
+     */
+    public TrekkerVersusShow clearRivalHotValue() {
+      bitField0_ &= ~0x00000004;
+      rivalHotValue = 0L;
+      return this;
+    }
+
+    /**
+     * <code>optional uint64 RivalHotValue = 5;</code>
+     * @return the rivalHotValue
+     */
+    public long getRivalHotValue() {
+      return rivalHotValue;
+    }
+
+    /**
+     * <code>optional uint64 RivalHotValue = 5;</code>
+     * @param value the rivalHotValue to set
+     * @return this
+     */
+    public TrekkerVersusShow setRivalHotValue(final long value) {
+      bitField0_ |= 0x00000004;
+      rivalHotValue = value;
+      return this;
+    }
+
+    /**
      * <code>optional uint32 Difficult = 1;</code>
      * @return whether the difficult field is set
      */
     public boolean hasDifficult() {
-      return (bitField0_ & 0x00000002) != 0;
+      return (bitField0_ & 0x00000008) != 0;
     }
 
     /**
@@ -74874,7 +75407,7 @@ public final class Public {
      * @return this
      */
     public TrekkerVersusShow clearDifficult() {
-      bitField0_ &= ~0x00000002;
+      bitField0_ &= ~0x00000008;
       difficult = 0;
       return this;
     }
@@ -74893,82 +75426,8 @@ public final class Public {
      * @return this
      */
     public TrekkerVersusShow setDifficult(final int value) {
-      bitField0_ |= 0x00000002;
-      difficult = value;
-      return this;
-    }
-
-    /**
-     * <code>optional uint32 SelfHotValue = 4;</code>
-     * @return whether the selfHotValue field is set
-     */
-    public boolean hasSelfHotValue() {
-      return (bitField0_ & 0x00000004) != 0;
-    }
-
-    /**
-     * <code>optional uint32 SelfHotValue = 4;</code>
-     * @return this
-     */
-    public TrekkerVersusShow clearSelfHotValue() {
-      bitField0_ &= ~0x00000004;
-      selfHotValue = 0;
-      return this;
-    }
-
-    /**
-     * <code>optional uint32 SelfHotValue = 4;</code>
-     * @return the selfHotValue
-     */
-    public int getSelfHotValue() {
-      return selfHotValue;
-    }
-
-    /**
-     * <code>optional uint32 SelfHotValue = 4;</code>
-     * @param value the selfHotValue to set
-     * @return this
-     */
-    public TrekkerVersusShow setSelfHotValue(final int value) {
-      bitField0_ |= 0x00000004;
-      selfHotValue = value;
-      return this;
-    }
-
-    /**
-     * <code>optional uint32 RivalHotValue = 5;</code>
-     * @return whether the rivalHotValue field is set
-     */
-    public boolean hasRivalHotValue() {
-      return (bitField0_ & 0x00000008) != 0;
-    }
-
-    /**
-     * <code>optional uint32 RivalHotValue = 5;</code>
-     * @return this
-     */
-    public TrekkerVersusShow clearRivalHotValue() {
-      bitField0_ &= ~0x00000008;
-      rivalHotValue = 0;
-      return this;
-    }
-
-    /**
-     * <code>optional uint32 RivalHotValue = 5;</code>
-     * @return the rivalHotValue
-     */
-    public int getRivalHotValue() {
-      return rivalHotValue;
-    }
-
-    /**
-     * <code>optional uint32 RivalHotValue = 5;</code>
-     * @param value the rivalHotValue to set
-     * @return this
-     */
-    public TrekkerVersusShow setRivalHotValue(final int value) {
       bitField0_ |= 0x00000008;
-      rivalHotValue = value;
+      difficult = value;
       return this;
     }
 
@@ -75125,9 +75584,9 @@ public final class Public {
       if ((bitField0_ | other.bitField0_) != 0) {
         bitField0_ = other.bitField0_;
         idleTime = other.idleTime;
-        difficult = other.difficult;
         selfHotValue = other.selfHotValue;
         rivalHotValue = other.rivalHotValue;
+        difficult = other.difficult;
         nextPackage.copyFrom(other.nextPackage);
         idleValues.copyFrom(other.idleValues);
       }
@@ -75143,14 +75602,14 @@ public final class Public {
       if (other.hasIdleTime()) {
         setIdleTime(other.idleTime);
       }
-      if (other.hasDifficult()) {
-        setDifficult(other.difficult);
-      }
       if (other.hasSelfHotValue()) {
         setSelfHotValue(other.selfHotValue);
       }
       if (other.hasRivalHotValue()) {
         setRivalHotValue(other.rivalHotValue);
+      }
+      if (other.hasDifficult()) {
+        setDifficult(other.difficult);
       }
       if (other.hasNextPackage()) {
         getMutableNextPackage().copyFrom(other.nextPackage);
@@ -75169,9 +75628,9 @@ public final class Public {
       cachedSize = -1;
       bitField0_ = 0;
       idleTime = 0L;
+      selfHotValue = 0L;
+      rivalHotValue = 0L;
       difficult = 0;
-      selfHotValue = 0;
-      rivalHotValue = 0;
       nextPackage.clear();
       idleValues.clear();
       return this;
@@ -75200,9 +75659,9 @@ public final class Public {
       TrekkerVersusShow other = (TrekkerVersusShow) o;
       return bitField0_ == other.bitField0_
         && (!hasIdleTime() || idleTime == other.idleTime)
-        && (!hasDifficult() || difficult == other.difficult)
         && (!hasSelfHotValue() || selfHotValue == other.selfHotValue)
         && (!hasRivalHotValue() || rivalHotValue == other.rivalHotValue)
+        && (!hasDifficult() || difficult == other.difficult)
         && (!hasNextPackage() || nextPackage.equals(other.nextPackage))
         && (!hasIdleValues() || idleValues.equals(other.idleValues));
     }
@@ -75214,16 +75673,16 @@ public final class Public {
         output.writeInt64NoTag(idleTime);
       }
       if ((bitField0_ & 0x00000002) != 0) {
-        output.writeRawByte((byte) 8);
-        output.writeUInt32NoTag(difficult);
+        output.writeRawByte((byte) 32);
+        output.writeUInt64NoTag(selfHotValue);
       }
       if ((bitField0_ & 0x00000004) != 0) {
-        output.writeRawByte((byte) 32);
-        output.writeUInt32NoTag(selfHotValue);
+        output.writeRawByte((byte) 40);
+        output.writeUInt64NoTag(rivalHotValue);
       }
       if ((bitField0_ & 0x00000008) != 0) {
-        output.writeRawByte((byte) 40);
-        output.writeUInt32NoTag(rivalHotValue);
+        output.writeRawByte((byte) 8);
+        output.writeUInt32NoTag(difficult);
       }
       if ((bitField0_ & 0x00000010) != 0) {
         output.writeRawLittleEndian16((short) 32762);
@@ -75244,13 +75703,13 @@ public final class Public {
         size += 1 + ProtoSink.computeInt64SizeNoTag(idleTime);
       }
       if ((bitField0_ & 0x00000002) != 0) {
-        size += 1 + ProtoSink.computeUInt32SizeNoTag(difficult);
+        size += 1 + ProtoSink.computeUInt64SizeNoTag(selfHotValue);
       }
       if ((bitField0_ & 0x00000004) != 0) {
-        size += 1 + ProtoSink.computeUInt32SizeNoTag(selfHotValue);
+        size += 1 + ProtoSink.computeUInt64SizeNoTag(rivalHotValue);
       }
       if ((bitField0_ & 0x00000008) != 0) {
-        size += 1 + ProtoSink.computeUInt32SizeNoTag(rivalHotValue);
+        size += 1 + ProtoSink.computeUInt32SizeNoTag(difficult);
       }
       if ((bitField0_ & 0x00000010) != 0) {
         size += 2 + ProtoSink.computeBytesSizeNoTag(nextPackage);
@@ -75273,23 +75732,14 @@ public final class Public {
             idleTime = input.readInt64();
             bitField0_ |= 0x00000001;
             tag = input.readTag();
-            if (tag != 8) {
-              break;
-            }
-          }
-          case 8: {
-            // difficult
-            difficult = input.readUInt32();
-            bitField0_ |= 0x00000002;
-            tag = input.readTag();
             if (tag != 32) {
               break;
             }
           }
           case 32: {
             // selfHotValue
-            selfHotValue = input.readUInt32();
-            bitField0_ |= 0x00000004;
+            selfHotValue = input.readUInt64();
+            bitField0_ |= 0x00000002;
             tag = input.readTag();
             if (tag != 40) {
               break;
@@ -75297,7 +75747,16 @@ public final class Public {
           }
           case 40: {
             // rivalHotValue
-            rivalHotValue = input.readUInt32();
+            rivalHotValue = input.readUInt64();
+            bitField0_ |= 0x00000004;
+            tag = input.readTag();
+            if (tag != 8) {
+              break;
+            }
+          }
+          case 8: {
+            // difficult
+            difficult = input.readUInt32();
             bitField0_ |= 0x00000008;
             tag = input.readTag();
             if (tag != 16378) {
@@ -75342,13 +75801,13 @@ public final class Public {
         output.writeInt64(FieldNames.idleTime, idleTime);
       }
       if ((bitField0_ & 0x00000002) != 0) {
-        output.writeUInt32(FieldNames.difficult, difficult);
+        output.writeUInt64(FieldNames.selfHotValue, selfHotValue);
       }
       if ((bitField0_ & 0x00000004) != 0) {
-        output.writeUInt32(FieldNames.selfHotValue, selfHotValue);
+        output.writeUInt64(FieldNames.rivalHotValue, rivalHotValue);
       }
       if ((bitField0_ & 0x00000008) != 0) {
-        output.writeUInt32(FieldNames.rivalHotValue, rivalHotValue);
+        output.writeUInt32(FieldNames.difficult, difficult);
       }
       if ((bitField0_ & 0x00000010) != 0) {
         output.writeBytes(FieldNames.nextPackage, nextPackage);
@@ -75377,22 +75836,11 @@ public final class Public {
             }
             break;
           }
-          case -985057186: {
-            if (input.isAtField(FieldNames.difficult)) {
-              if (!input.trySkipNullValue()) {
-                difficult = input.readUInt32();
-                bitField0_ |= 0x00000002;
-              }
-            } else {
-              input.skipUnknownField();
-            }
-            break;
-          }
           case 1360474288: {
             if (input.isAtField(FieldNames.selfHotValue)) {
               if (!input.trySkipNullValue()) {
-                selfHotValue = input.readUInt32();
-                bitField0_ |= 0x00000004;
+                selfHotValue = input.readUInt64();
+                bitField0_ |= 0x00000002;
               }
             } else {
               input.skipUnknownField();
@@ -75402,7 +75850,18 @@ public final class Public {
           case 1039538350: {
             if (input.isAtField(FieldNames.rivalHotValue)) {
               if (!input.trySkipNullValue()) {
-                rivalHotValue = input.readUInt32();
+                rivalHotValue = input.readUInt64();
+                bitField0_ |= 0x00000004;
+              }
+            } else {
+              input.skipUnknownField();
+            }
+            break;
+          }
+          case -985057186: {
+            if (input.isAtField(FieldNames.difficult)) {
+              if (!input.trySkipNullValue()) {
+                difficult = input.readUInt32();
                 bitField0_ |= 0x00000008;
               }
             } else {
@@ -75811,11 +76270,11 @@ public final class Public {
     static class FieldNames {
       static final FieldName idleTime = FieldName.forField("IdleTime");
 
-      static final FieldName difficult = FieldName.forField("Difficult");
-
       static final FieldName selfHotValue = FieldName.forField("SelfHotValue");
 
       static final FieldName rivalHotValue = FieldName.forField("RivalHotValue");
+
+      static final FieldName difficult = FieldName.forField("Difficult");
 
       static final FieldName nextPackage = FieldName.forField("NextPackage");
 
@@ -76970,14 +77429,19 @@ public final class Public {
       private static final long serialVersionUID = 0L;
 
       /**
-       * <code>optional uint32 SelfHotValue = 1;</code>
+       * <code>optional uint64 SelfHotValue = 1;</code>
        */
-      private int selfHotValue;
+      private long selfHotValue;
 
       /**
-       * <code>optional uint32 RivalHotValue = 2;</code>
+       * <code>optional uint64 RivalHotValue = 2;</code>
        */
-      private int rivalHotValue;
+      private long rivalHotValue;
+
+      /**
+       * <code>optional uint32 TargetId = 3;</code>
+       */
+      private int targetId;
 
       private HistoryResult() {
       }
@@ -76990,7 +77454,7 @@ public final class Public {
       }
 
       /**
-       * <code>optional uint32 SelfHotValue = 1;</code>
+       * <code>optional uint64 SelfHotValue = 1;</code>
        * @return whether the selfHotValue field is set
        */
       public boolean hasSelfHotValue() {
@@ -76998,36 +77462,36 @@ public final class Public {
       }
 
       /**
-       * <code>optional uint32 SelfHotValue = 1;</code>
+       * <code>optional uint64 SelfHotValue = 1;</code>
        * @return this
        */
       public HistoryResult clearSelfHotValue() {
         bitField0_ &= ~0x00000001;
-        selfHotValue = 0;
+        selfHotValue = 0L;
         return this;
       }
 
       /**
-       * <code>optional uint32 SelfHotValue = 1;</code>
+       * <code>optional uint64 SelfHotValue = 1;</code>
        * @return the selfHotValue
        */
-      public int getSelfHotValue() {
+      public long getSelfHotValue() {
         return selfHotValue;
       }
 
       /**
-       * <code>optional uint32 SelfHotValue = 1;</code>
+       * <code>optional uint64 SelfHotValue = 1;</code>
        * @param value the selfHotValue to set
        * @return this
        */
-      public HistoryResult setSelfHotValue(final int value) {
+      public HistoryResult setSelfHotValue(final long value) {
         bitField0_ |= 0x00000001;
         selfHotValue = value;
         return this;
       }
 
       /**
-       * <code>optional uint32 RivalHotValue = 2;</code>
+       * <code>optional uint64 RivalHotValue = 2;</code>
        * @return whether the rivalHotValue field is set
        */
       public boolean hasRivalHotValue() {
@@ -77035,31 +77499,68 @@ public final class Public {
       }
 
       /**
-       * <code>optional uint32 RivalHotValue = 2;</code>
+       * <code>optional uint64 RivalHotValue = 2;</code>
        * @return this
        */
       public HistoryResult clearRivalHotValue() {
         bitField0_ &= ~0x00000002;
-        rivalHotValue = 0;
+        rivalHotValue = 0L;
         return this;
       }
 
       /**
-       * <code>optional uint32 RivalHotValue = 2;</code>
+       * <code>optional uint64 RivalHotValue = 2;</code>
        * @return the rivalHotValue
        */
-      public int getRivalHotValue() {
+      public long getRivalHotValue() {
         return rivalHotValue;
       }
 
       /**
-       * <code>optional uint32 RivalHotValue = 2;</code>
+       * <code>optional uint64 RivalHotValue = 2;</code>
        * @param value the rivalHotValue to set
        * @return this
        */
-      public HistoryResult setRivalHotValue(final int value) {
+      public HistoryResult setRivalHotValue(final long value) {
         bitField0_ |= 0x00000002;
         rivalHotValue = value;
+        return this;
+      }
+
+      /**
+       * <code>optional uint32 TargetId = 3;</code>
+       * @return whether the targetId field is set
+       */
+      public boolean hasTargetId() {
+        return (bitField0_ & 0x00000004) != 0;
+      }
+
+      /**
+       * <code>optional uint32 TargetId = 3;</code>
+       * @return this
+       */
+      public HistoryResult clearTargetId() {
+        bitField0_ &= ~0x00000004;
+        targetId = 0;
+        return this;
+      }
+
+      /**
+       * <code>optional uint32 TargetId = 3;</code>
+       * @return the targetId
+       */
+      public int getTargetId() {
+        return targetId;
+      }
+
+      /**
+       * <code>optional uint32 TargetId = 3;</code>
+       * @param value the targetId to set
+       * @return this
+       */
+      public HistoryResult setTargetId(final int value) {
+        bitField0_ |= 0x00000004;
+        targetId = value;
         return this;
       }
 
@@ -77070,6 +77571,7 @@ public final class Public {
           bitField0_ = other.bitField0_;
           selfHotValue = other.selfHotValue;
           rivalHotValue = other.rivalHotValue;
+          targetId = other.targetId;
         }
         return this;
       }
@@ -77086,6 +77588,9 @@ public final class Public {
         if (other.hasRivalHotValue()) {
           setRivalHotValue(other.rivalHotValue);
         }
+        if (other.hasTargetId()) {
+          setTargetId(other.targetId);
+        }
         return this;
       }
 
@@ -77096,8 +77601,9 @@ public final class Public {
         }
         cachedSize = -1;
         bitField0_ = 0;
-        selfHotValue = 0;
-        rivalHotValue = 0;
+        selfHotValue = 0L;
+        rivalHotValue = 0L;
+        targetId = 0;
         return this;
       }
 
@@ -77122,18 +77628,23 @@ public final class Public {
         HistoryResult other = (HistoryResult) o;
         return bitField0_ == other.bitField0_
           && (!hasSelfHotValue() || selfHotValue == other.selfHotValue)
-          && (!hasRivalHotValue() || rivalHotValue == other.rivalHotValue);
+          && (!hasRivalHotValue() || rivalHotValue == other.rivalHotValue)
+          && (!hasTargetId() || targetId == other.targetId);
       }
 
       @Override
       public void writeTo(final ProtoSink output) throws IOException {
         if ((bitField0_ & 0x00000001) != 0) {
           output.writeRawByte((byte) 8);
-          output.writeUInt32NoTag(selfHotValue);
+          output.writeUInt64NoTag(selfHotValue);
         }
         if ((bitField0_ & 0x00000002) != 0) {
           output.writeRawByte((byte) 16);
-          output.writeUInt32NoTag(rivalHotValue);
+          output.writeUInt64NoTag(rivalHotValue);
+        }
+        if ((bitField0_ & 0x00000004) != 0) {
+          output.writeRawByte((byte) 24);
+          output.writeUInt32NoTag(targetId);
         }
       }
 
@@ -77141,10 +77652,13 @@ public final class Public {
       protected int computeSerializedSize() {
         int size = 0;
         if ((bitField0_ & 0x00000001) != 0) {
-          size += 1 + ProtoSink.computeUInt32SizeNoTag(selfHotValue);
+          size += 1 + ProtoSink.computeUInt64SizeNoTag(selfHotValue);
         }
         if ((bitField0_ & 0x00000002) != 0) {
-          size += 1 + ProtoSink.computeUInt32SizeNoTag(rivalHotValue);
+          size += 1 + ProtoSink.computeUInt64SizeNoTag(rivalHotValue);
+        }
+        if ((bitField0_ & 0x00000004) != 0) {
+          size += 1 + ProtoSink.computeUInt32SizeNoTag(targetId);
         }
         return size;
       }
@@ -77158,7 +77672,7 @@ public final class Public {
           switch (tag) {
             case 8: {
               // selfHotValue
-              selfHotValue = input.readUInt32();
+              selfHotValue = input.readUInt64();
               bitField0_ |= 0x00000001;
               tag = input.readTag();
               if (tag != 16) {
@@ -77167,8 +77681,17 @@ public final class Public {
             }
             case 16: {
               // rivalHotValue
-              rivalHotValue = input.readUInt32();
+              rivalHotValue = input.readUInt64();
               bitField0_ |= 0x00000002;
+              tag = input.readTag();
+              if (tag != 24) {
+                break;
+              }
+            }
+            case 24: {
+              // targetId
+              targetId = input.readUInt32();
+              bitField0_ |= 0x00000004;
               tag = input.readTag();
               if (tag != 0) {
                 break;
@@ -77192,10 +77715,13 @@ public final class Public {
       public void writeTo(final JsonSink output) throws IOException {
         output.beginObject();
         if ((bitField0_ & 0x00000001) != 0) {
-          output.writeUInt32(FieldNames.selfHotValue, selfHotValue);
+          output.writeUInt64(FieldNames.selfHotValue, selfHotValue);
         }
         if ((bitField0_ & 0x00000002) != 0) {
-          output.writeUInt32(FieldNames.rivalHotValue, rivalHotValue);
+          output.writeUInt64(FieldNames.rivalHotValue, rivalHotValue);
+        }
+        if ((bitField0_ & 0x00000004) != 0) {
+          output.writeUInt32(FieldNames.targetId, targetId);
         }
         output.endObject();
       }
@@ -77210,7 +77736,7 @@ public final class Public {
             case 1360474288: {
               if (input.isAtField(FieldNames.selfHotValue)) {
                 if (!input.trySkipNullValue()) {
-                  selfHotValue = input.readUInt32();
+                  selfHotValue = input.readUInt64();
                   bitField0_ |= 0x00000001;
                 }
               } else {
@@ -77221,8 +77747,19 @@ public final class Public {
             case 1039538350: {
               if (input.isAtField(FieldNames.rivalHotValue)) {
                 if (!input.trySkipNullValue()) {
-                  rivalHotValue = input.readUInt32();
+                  rivalHotValue = input.readUInt64();
                   bitField0_ |= 0x00000002;
+                }
+              } else {
+                input.skipUnknownField();
+              }
+              break;
+            }
+            case -377307476: {
+              if (input.isAtField(FieldNames.targetId)) {
+                if (!input.trySkipNullValue()) {
+                  targetId = input.readUInt32();
+                  bitField0_ |= 0x00000004;
                 }
               } else {
                 input.skipUnknownField();
@@ -77285,6 +77822,8 @@ public final class Public {
         static final FieldName selfHotValue = FieldName.forField("SelfHotValue");
 
         static final FieldName rivalHotValue = FieldName.forField("RivalHotValue");
+
+        static final FieldName targetId = FieldName.forField("TargetId");
       }
     }
 
@@ -82385,6 +82924,1381 @@ public final class Public {
       static final FieldName levels = FieldName.forField("Levels");
 
       static final FieldName items = FieldName.forField("Items");
+    }
+  }
+
+  /**
+   * Protobuf type {@code ActivityGDSLevel}
+   */
+  public static final class ActivityGDSLevel extends ProtoMessage<ActivityGDSLevel> implements Cloneable {
+    private static final long serialVersionUID = 0L;
+
+    /**
+     * <code>optional uint32 LevelId = 1;</code>
+     */
+    private int levelId;
+
+    /**
+     * <code>optional uint32 MaxScore = 2;</code>
+     */
+    private int maxScore;
+
+    /**
+     * <code>optional bool FirstComplete = 3;</code>
+     */
+    private boolean firstComplete;
+
+    /**
+     * <code>optional bytes NextPackage = 2047;</code>
+     */
+    private final RepeatedByte nextPackage = RepeatedByte.newEmptyInstance();
+
+    private ActivityGDSLevel() {
+    }
+
+    /**
+     * @return a new empty instance of {@code ActivityGDSLevel}
+     */
+    public static ActivityGDSLevel newInstance() {
+      return new ActivityGDSLevel();
+    }
+
+    /**
+     * <code>optional uint32 LevelId = 1;</code>
+     * @return whether the levelId field is set
+     */
+    public boolean hasLevelId() {
+      return (bitField0_ & 0x00000001) != 0;
+    }
+
+    /**
+     * <code>optional uint32 LevelId = 1;</code>
+     * @return this
+     */
+    public ActivityGDSLevel clearLevelId() {
+      bitField0_ &= ~0x00000001;
+      levelId = 0;
+      return this;
+    }
+
+    /**
+     * <code>optional uint32 LevelId = 1;</code>
+     * @return the levelId
+     */
+    public int getLevelId() {
+      return levelId;
+    }
+
+    /**
+     * <code>optional uint32 LevelId = 1;</code>
+     * @param value the levelId to set
+     * @return this
+     */
+    public ActivityGDSLevel setLevelId(final int value) {
+      bitField0_ |= 0x00000001;
+      levelId = value;
+      return this;
+    }
+
+    /**
+     * <code>optional uint32 MaxScore = 2;</code>
+     * @return whether the maxScore field is set
+     */
+    public boolean hasMaxScore() {
+      return (bitField0_ & 0x00000002) != 0;
+    }
+
+    /**
+     * <code>optional uint32 MaxScore = 2;</code>
+     * @return this
+     */
+    public ActivityGDSLevel clearMaxScore() {
+      bitField0_ &= ~0x00000002;
+      maxScore = 0;
+      return this;
+    }
+
+    /**
+     * <code>optional uint32 MaxScore = 2;</code>
+     * @return the maxScore
+     */
+    public int getMaxScore() {
+      return maxScore;
+    }
+
+    /**
+     * <code>optional uint32 MaxScore = 2;</code>
+     * @param value the maxScore to set
+     * @return this
+     */
+    public ActivityGDSLevel setMaxScore(final int value) {
+      bitField0_ |= 0x00000002;
+      maxScore = value;
+      return this;
+    }
+
+    /**
+     * <code>optional bool FirstComplete = 3;</code>
+     * @return whether the firstComplete field is set
+     */
+    public boolean hasFirstComplete() {
+      return (bitField0_ & 0x00000004) != 0;
+    }
+
+    /**
+     * <code>optional bool FirstComplete = 3;</code>
+     * @return this
+     */
+    public ActivityGDSLevel clearFirstComplete() {
+      bitField0_ &= ~0x00000004;
+      firstComplete = false;
+      return this;
+    }
+
+    /**
+     * <code>optional bool FirstComplete = 3;</code>
+     * @return the firstComplete
+     */
+    public boolean getFirstComplete() {
+      return firstComplete;
+    }
+
+    /**
+     * <code>optional bool FirstComplete = 3;</code>
+     * @param value the firstComplete to set
+     * @return this
+     */
+    public ActivityGDSLevel setFirstComplete(final boolean value) {
+      bitField0_ |= 0x00000004;
+      firstComplete = value;
+      return this;
+    }
+
+    /**
+     * <code>optional bytes NextPackage = 2047;</code>
+     * @return whether the nextPackage field is set
+     */
+    public boolean hasNextPackage() {
+      return (bitField0_ & 0x00000008) != 0;
+    }
+
+    /**
+     * <code>optional bytes NextPackage = 2047;</code>
+     * @return this
+     */
+    public ActivityGDSLevel clearNextPackage() {
+      bitField0_ &= ~0x00000008;
+      nextPackage.clear();
+      return this;
+    }
+
+    /**
+     * <code>optional bytes NextPackage = 2047;</code>
+     *
+     * This method returns the internal storage object without modifying any has state.
+     * The returned object should not be modified and be treated as read-only.
+     *
+     * Use {@link #getMutableNextPackage()} if you want to modify it.
+     *
+     * @return internal storage object for reading
+     */
+    public RepeatedByte getNextPackage() {
+      return nextPackage;
+    }
+
+    /**
+     * <code>optional bytes NextPackage = 2047;</code>
+     *
+     * This method returns the internal storage object and sets the corresponding
+     * has state. The returned object will become part of this message and its
+     * contents may be modified as long as the has state is not cleared.
+     *
+     * @return internal storage object for modifications
+     */
+    public RepeatedByte getMutableNextPackage() {
+      bitField0_ |= 0x00000008;
+      return nextPackage;
+    }
+
+    /**
+     * <code>optional bytes NextPackage = 2047;</code>
+     * @param value the nextPackage to add
+     * @return this
+     */
+    public ActivityGDSLevel addNextPackage(final byte value) {
+      bitField0_ |= 0x00000008;
+      nextPackage.add(value);
+      return this;
+    }
+
+    /**
+     * <code>optional bytes NextPackage = 2047;</code>
+     * @param values the nextPackage to add
+     * @return this
+     */
+    public ActivityGDSLevel addAllNextPackage(final byte... values) {
+      bitField0_ |= 0x00000008;
+      nextPackage.addAll(values);
+      return this;
+    }
+
+    /**
+     * <code>optional bytes NextPackage = 2047;</code>
+     * @param values the nextPackage to set
+     * @return this
+     */
+    public ActivityGDSLevel setNextPackage(final byte... values) {
+      bitField0_ |= 0x00000008;
+      nextPackage.copyFrom(values);
+      return this;
+    }
+
+    @Override
+    public ActivityGDSLevel copyFrom(final ActivityGDSLevel other) {
+      cachedSize = other.cachedSize;
+      if ((bitField0_ | other.bitField0_) != 0) {
+        bitField0_ = other.bitField0_;
+        levelId = other.levelId;
+        maxScore = other.maxScore;
+        firstComplete = other.firstComplete;
+        nextPackage.copyFrom(other.nextPackage);
+      }
+      return this;
+    }
+
+    @Override
+    public ActivityGDSLevel mergeFrom(final ActivityGDSLevel other) {
+      if (other.isEmpty()) {
+        return this;
+      }
+      cachedSize = -1;
+      if (other.hasLevelId()) {
+        setLevelId(other.levelId);
+      }
+      if (other.hasMaxScore()) {
+        setMaxScore(other.maxScore);
+      }
+      if (other.hasFirstComplete()) {
+        setFirstComplete(other.firstComplete);
+      }
+      if (other.hasNextPackage()) {
+        getMutableNextPackage().copyFrom(other.nextPackage);
+      }
+      return this;
+    }
+
+    @Override
+    public ActivityGDSLevel clear() {
+      if (isEmpty()) {
+        return this;
+      }
+      cachedSize = -1;
+      bitField0_ = 0;
+      levelId = 0;
+      maxScore = 0;
+      firstComplete = false;
+      nextPackage.clear();
+      return this;
+    }
+
+    @Override
+    public ActivityGDSLevel clearQuick() {
+      if (isEmpty()) {
+        return this;
+      }
+      cachedSize = -1;
+      bitField0_ = 0;
+      nextPackage.clear();
+      return this;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+      if (o == this) {
+        return true;
+      }
+      if (!(o instanceof ActivityGDSLevel)) {
+        return false;
+      }
+      ActivityGDSLevel other = (ActivityGDSLevel) o;
+      return bitField0_ == other.bitField0_
+        && (!hasLevelId() || levelId == other.levelId)
+        && (!hasMaxScore() || maxScore == other.maxScore)
+        && (!hasFirstComplete() || firstComplete == other.firstComplete)
+        && (!hasNextPackage() || nextPackage.equals(other.nextPackage));
+    }
+
+    @Override
+    public void writeTo(final ProtoSink output) throws IOException {
+      if ((bitField0_ & 0x00000001) != 0) {
+        output.writeRawByte((byte) 8);
+        output.writeUInt32NoTag(levelId);
+      }
+      if ((bitField0_ & 0x00000002) != 0) {
+        output.writeRawByte((byte) 16);
+        output.writeUInt32NoTag(maxScore);
+      }
+      if ((bitField0_ & 0x00000004) != 0) {
+        output.writeRawByte((byte) 24);
+        output.writeBoolNoTag(firstComplete);
+      }
+      if ((bitField0_ & 0x00000008) != 0) {
+        output.writeRawLittleEndian16((short) 32762);
+        output.writeBytesNoTag(nextPackage);
+      }
+    }
+
+    @Override
+    protected int computeSerializedSize() {
+      int size = 0;
+      if ((bitField0_ & 0x00000001) != 0) {
+        size += 1 + ProtoSink.computeUInt32SizeNoTag(levelId);
+      }
+      if ((bitField0_ & 0x00000002) != 0) {
+        size += 1 + ProtoSink.computeUInt32SizeNoTag(maxScore);
+      }
+      if ((bitField0_ & 0x00000004) != 0) {
+        size += 2;
+      }
+      if ((bitField0_ & 0x00000008) != 0) {
+        size += 2 + ProtoSink.computeBytesSizeNoTag(nextPackage);
+      }
+      return size;
+    }
+
+    @Override
+    @SuppressWarnings("fallthrough")
+    public ActivityGDSLevel mergeFrom(final ProtoSource input) throws IOException {
+      // Enabled Fall-Through Optimization (QuickBuffers)
+      int tag = input.readTag();
+      while (true) {
+        switch (tag) {
+          case 8: {
+            // levelId
+            levelId = input.readUInt32();
+            bitField0_ |= 0x00000001;
+            tag = input.readTag();
+            if (tag != 16) {
+              break;
+            }
+          }
+          case 16: {
+            // maxScore
+            maxScore = input.readUInt32();
+            bitField0_ |= 0x00000002;
+            tag = input.readTag();
+            if (tag != 24) {
+              break;
+            }
+          }
+          case 24: {
+            // firstComplete
+            firstComplete = input.readBool();
+            bitField0_ |= 0x00000004;
+            tag = input.readTag();
+            if (tag != 16378) {
+              break;
+            }
+          }
+          case 16378: {
+            // nextPackage
+            input.readBytes(nextPackage);
+            bitField0_ |= 0x00000008;
+            tag = input.readTag();
+            if (tag != 0) {
+              break;
+            }
+          }
+          case 0: {
+            return this;
+          }
+          default: {
+            if (!input.skipField(tag)) {
+              return this;
+            }
+            tag = input.readTag();
+            break;
+          }
+        }
+      }
+    }
+
+    @Override
+    public void writeTo(final JsonSink output) throws IOException {
+      output.beginObject();
+      if ((bitField0_ & 0x00000001) != 0) {
+        output.writeUInt32(FieldNames.levelId, levelId);
+      }
+      if ((bitField0_ & 0x00000002) != 0) {
+        output.writeUInt32(FieldNames.maxScore, maxScore);
+      }
+      if ((bitField0_ & 0x00000004) != 0) {
+        output.writeBool(FieldNames.firstComplete, firstComplete);
+      }
+      if ((bitField0_ & 0x00000008) != 0) {
+        output.writeBytes(FieldNames.nextPackage, nextPackage);
+      }
+      output.endObject();
+    }
+
+    @Override
+    public ActivityGDSLevel mergeFrom(final JsonSource input) throws IOException {
+      if (!input.beginObject()) {
+        return this;
+      }
+      while (!input.isAtEnd()) {
+        switch (input.readFieldHash()) {
+          case 1734437791: {
+            if (input.isAtField(FieldNames.levelId)) {
+              if (!input.trySkipNullValue()) {
+                levelId = input.readUInt32();
+                bitField0_ |= 0x00000001;
+              }
+            } else {
+              input.skipUnknownField();
+            }
+            break;
+          }
+          case 461163438: {
+            if (input.isAtField(FieldNames.maxScore)) {
+              if (!input.trySkipNullValue()) {
+                maxScore = input.readUInt32();
+                bitField0_ |= 0x00000002;
+              }
+            } else {
+              input.skipUnknownField();
+            }
+            break;
+          }
+          case 2041047017: {
+            if (input.isAtField(FieldNames.firstComplete)) {
+              if (!input.trySkipNullValue()) {
+                firstComplete = input.readBool();
+                bitField0_ |= 0x00000004;
+              }
+            } else {
+              input.skipUnknownField();
+            }
+            break;
+          }
+          case -2082324045: {
+            if (input.isAtField(FieldNames.nextPackage)) {
+              if (!input.trySkipNullValue()) {
+                input.readBytes(nextPackage);
+                bitField0_ |= 0x00000008;
+              }
+            } else {
+              input.skipUnknownField();
+            }
+            break;
+          }
+          default: {
+            input.skipUnknownField();
+            break;
+          }
+        }
+      }
+      input.endObject();
+      return this;
+    }
+
+    @Override
+    public ActivityGDSLevel clone() {
+      return new ActivityGDSLevel().copyFrom(this);
+    }
+
+    @Override
+    public boolean isEmpty() {
+      return ((bitField0_) == 0);
+    }
+
+    public static ActivityGDSLevel parseFrom(final byte[] data) throws
+        InvalidProtocolBufferException {
+      return ProtoMessage.mergeFrom(new ActivityGDSLevel(), data).checkInitialized();
+    }
+
+    public static ActivityGDSLevel parseFrom(final ProtoSource input) throws IOException {
+      return ProtoMessage.mergeFrom(new ActivityGDSLevel(), input).checkInitialized();
+    }
+
+    public static ActivityGDSLevel parseFrom(final JsonSource input) throws IOException {
+      return ProtoMessage.mergeFrom(new ActivityGDSLevel(), input).checkInitialized();
+    }
+
+    /**
+     * @return factory for creating ActivityGDSLevel messages
+     */
+    public static MessageFactory<ActivityGDSLevel> getFactory() {
+      return ActivityGDSLevelFactory.INSTANCE;
+    }
+
+    private enum ActivityGDSLevelFactory implements MessageFactory<ActivityGDSLevel> {
+      INSTANCE;
+
+      @Override
+      public ActivityGDSLevel create() {
+        return ActivityGDSLevel.newInstance();
+      }
+    }
+
+    /**
+     * Contains name constants used for serializing JSON
+     */
+    static class FieldNames {
+      static final FieldName levelId = FieldName.forField("LevelId");
+
+      static final FieldName maxScore = FieldName.forField("MaxScore");
+
+      static final FieldName firstComplete = FieldName.forField("FirstComplete");
+
+      static final FieldName nextPackage = FieldName.forField("NextPackage");
+    }
+  }
+
+  /**
+   * Protobuf type {@code ActivityGDS}
+   */
+  public static final class ActivityGDS extends ProtoMessage<ActivityGDS> implements Cloneable {
+    private static final long serialVersionUID = 0L;
+
+    /**
+     * <code>optional bytes NextPackage = 2047;</code>
+     */
+    private final RepeatedByte nextPackage = RepeatedByte.newEmptyInstance();
+
+    /**
+     * <code>repeated .ActivityGDSLevel Levels = 1;</code>
+     */
+    private final RepeatedMessage<ActivityGDSLevel> levels = RepeatedMessage.newEmptyInstance(ActivityGDSLevel.getFactory());
+
+    private ActivityGDS() {
+    }
+
+    /**
+     * @return a new empty instance of {@code ActivityGDS}
+     */
+    public static ActivityGDS newInstance() {
+      return new ActivityGDS();
+    }
+
+    /**
+     * <code>optional bytes NextPackage = 2047;</code>
+     * @return whether the nextPackage field is set
+     */
+    public boolean hasNextPackage() {
+      return (bitField0_ & 0x00000001) != 0;
+    }
+
+    /**
+     * <code>optional bytes NextPackage = 2047;</code>
+     * @return this
+     */
+    public ActivityGDS clearNextPackage() {
+      bitField0_ &= ~0x00000001;
+      nextPackage.clear();
+      return this;
+    }
+
+    /**
+     * <code>optional bytes NextPackage = 2047;</code>
+     *
+     * This method returns the internal storage object without modifying any has state.
+     * The returned object should not be modified and be treated as read-only.
+     *
+     * Use {@link #getMutableNextPackage()} if you want to modify it.
+     *
+     * @return internal storage object for reading
+     */
+    public RepeatedByte getNextPackage() {
+      return nextPackage;
+    }
+
+    /**
+     * <code>optional bytes NextPackage = 2047;</code>
+     *
+     * This method returns the internal storage object and sets the corresponding
+     * has state. The returned object will become part of this message and its
+     * contents may be modified as long as the has state is not cleared.
+     *
+     * @return internal storage object for modifications
+     */
+    public RepeatedByte getMutableNextPackage() {
+      bitField0_ |= 0x00000001;
+      return nextPackage;
+    }
+
+    /**
+     * <code>optional bytes NextPackage = 2047;</code>
+     * @param value the nextPackage to add
+     * @return this
+     */
+    public ActivityGDS addNextPackage(final byte value) {
+      bitField0_ |= 0x00000001;
+      nextPackage.add(value);
+      return this;
+    }
+
+    /**
+     * <code>optional bytes NextPackage = 2047;</code>
+     * @param values the nextPackage to add
+     * @return this
+     */
+    public ActivityGDS addAllNextPackage(final byte... values) {
+      bitField0_ |= 0x00000001;
+      nextPackage.addAll(values);
+      return this;
+    }
+
+    /**
+     * <code>optional bytes NextPackage = 2047;</code>
+     * @param values the nextPackage to set
+     * @return this
+     */
+    public ActivityGDS setNextPackage(final byte... values) {
+      bitField0_ |= 0x00000001;
+      nextPackage.copyFrom(values);
+      return this;
+    }
+
+    /**
+     * <code>repeated .ActivityGDSLevel Levels = 1;</code>
+     * @return whether the levels field is set
+     */
+    public boolean hasLevels() {
+      return (bitField0_ & 0x00000002) != 0;
+    }
+
+    /**
+     * <code>repeated .ActivityGDSLevel Levels = 1;</code>
+     * @return this
+     */
+    public ActivityGDS clearLevels() {
+      bitField0_ &= ~0x00000002;
+      levels.clear();
+      return this;
+    }
+
+    /**
+     * <code>repeated .ActivityGDSLevel Levels = 1;</code>
+     *
+     * This method returns the internal storage object without modifying any has state.
+     * The returned object should not be modified and be treated as read-only.
+     *
+     * Use {@link #getMutableLevels()} if you want to modify it.
+     *
+     * @return internal storage object for reading
+     */
+    public RepeatedMessage<ActivityGDSLevel> getLevels() {
+      return levels;
+    }
+
+    /**
+     * <code>repeated .ActivityGDSLevel Levels = 1;</code>
+     *
+     * This method returns the internal storage object and sets the corresponding
+     * has state. The returned object will become part of this message and its
+     * contents may be modified as long as the has state is not cleared.
+     *
+     * @return internal storage object for modifications
+     */
+    public RepeatedMessage<ActivityGDSLevel> getMutableLevels() {
+      bitField0_ |= 0x00000002;
+      return levels;
+    }
+
+    /**
+     * <code>repeated .ActivityGDSLevel Levels = 1;</code>
+     * @param value the levels to add
+     * @return this
+     */
+    public ActivityGDS addLevels(final ActivityGDSLevel value) {
+      bitField0_ |= 0x00000002;
+      levels.add(value);
+      return this;
+    }
+
+    /**
+     * <code>repeated .ActivityGDSLevel Levels = 1;</code>
+     * @param values the levels to add
+     * @return this
+     */
+    public ActivityGDS addAllLevels(final ActivityGDSLevel... values) {
+      bitField0_ |= 0x00000002;
+      levels.addAll(values);
+      return this;
+    }
+
+    @Override
+    public ActivityGDS copyFrom(final ActivityGDS other) {
+      cachedSize = other.cachedSize;
+      if ((bitField0_ | other.bitField0_) != 0) {
+        bitField0_ = other.bitField0_;
+        nextPackage.copyFrom(other.nextPackage);
+        levels.copyFrom(other.levels);
+      }
+      return this;
+    }
+
+    @Override
+    public ActivityGDS mergeFrom(final ActivityGDS other) {
+      if (other.isEmpty()) {
+        return this;
+      }
+      cachedSize = -1;
+      if (other.hasNextPackage()) {
+        getMutableNextPackage().copyFrom(other.nextPackage);
+      }
+      if (other.hasLevels()) {
+        getMutableLevels().addAll(other.levels);
+      }
+      return this;
+    }
+
+    @Override
+    public ActivityGDS clear() {
+      if (isEmpty()) {
+        return this;
+      }
+      cachedSize = -1;
+      bitField0_ = 0;
+      nextPackage.clear();
+      levels.clear();
+      return this;
+    }
+
+    @Override
+    public ActivityGDS clearQuick() {
+      if (isEmpty()) {
+        return this;
+      }
+      cachedSize = -1;
+      bitField0_ = 0;
+      nextPackage.clear();
+      levels.clearQuick();
+      return this;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+      if (o == this) {
+        return true;
+      }
+      if (!(o instanceof ActivityGDS)) {
+        return false;
+      }
+      ActivityGDS other = (ActivityGDS) o;
+      return bitField0_ == other.bitField0_
+        && (!hasNextPackage() || nextPackage.equals(other.nextPackage))
+        && (!hasLevels() || levels.equals(other.levels));
+    }
+
+    @Override
+    public void writeTo(final ProtoSink output) throws IOException {
+      if ((bitField0_ & 0x00000001) != 0) {
+        output.writeRawLittleEndian16((short) 32762);
+        output.writeBytesNoTag(nextPackage);
+      }
+      if ((bitField0_ & 0x00000002) != 0) {
+        for (int i = 0; i < levels.length(); i++) {
+          output.writeRawByte((byte) 10);
+          output.writeMessageNoTag(levels.get(i));
+        }
+      }
+    }
+
+    @Override
+    protected int computeSerializedSize() {
+      int size = 0;
+      if ((bitField0_ & 0x00000001) != 0) {
+        size += 2 + ProtoSink.computeBytesSizeNoTag(nextPackage);
+      }
+      if ((bitField0_ & 0x00000002) != 0) {
+        size += (1 * levels.length()) + ProtoSink.computeRepeatedMessageSizeNoTag(levels);
+      }
+      return size;
+    }
+
+    @Override
+    @SuppressWarnings("fallthrough")
+    public ActivityGDS mergeFrom(final ProtoSource input) throws IOException {
+      // Enabled Fall-Through Optimization (QuickBuffers)
+      int tag = input.readTag();
+      while (true) {
+        switch (tag) {
+          case 16378: {
+            // nextPackage
+            input.readBytes(nextPackage);
+            bitField0_ |= 0x00000001;
+            tag = input.readTag();
+            if (tag != 10) {
+              break;
+            }
+          }
+          case 10: {
+            // levels
+            tag = input.readRepeatedMessage(levels, tag);
+            bitField0_ |= 0x00000002;
+            if (tag != 0) {
+              break;
+            }
+          }
+          case 0: {
+            return this;
+          }
+          default: {
+            if (!input.skipField(tag)) {
+              return this;
+            }
+            tag = input.readTag();
+            break;
+          }
+        }
+      }
+    }
+
+    @Override
+    public void writeTo(final JsonSink output) throws IOException {
+      output.beginObject();
+      if ((bitField0_ & 0x00000001) != 0) {
+        output.writeBytes(FieldNames.nextPackage, nextPackage);
+      }
+      if ((bitField0_ & 0x00000002) != 0) {
+        output.writeRepeatedMessage(FieldNames.levels, levels);
+      }
+      output.endObject();
+    }
+
+    @Override
+    public ActivityGDS mergeFrom(final JsonSource input) throws IOException {
+      if (!input.beginObject()) {
+        return this;
+      }
+      while (!input.isAtEnd()) {
+        switch (input.readFieldHash()) {
+          case -2082324045: {
+            if (input.isAtField(FieldNames.nextPackage)) {
+              if (!input.trySkipNullValue()) {
+                input.readBytes(nextPackage);
+                bitField0_ |= 0x00000001;
+              }
+            } else {
+              input.skipUnknownField();
+            }
+            break;
+          }
+          case -2022260337: {
+            if (input.isAtField(FieldNames.levels)) {
+              if (!input.trySkipNullValue()) {
+                input.readRepeatedMessage(levels);
+                bitField0_ |= 0x00000002;
+              }
+            } else {
+              input.skipUnknownField();
+            }
+            break;
+          }
+          default: {
+            input.skipUnknownField();
+            break;
+          }
+        }
+      }
+      input.endObject();
+      return this;
+    }
+
+    @Override
+    public ActivityGDS clone() {
+      return new ActivityGDS().copyFrom(this);
+    }
+
+    @Override
+    public boolean isEmpty() {
+      return ((bitField0_) == 0);
+    }
+
+    public static ActivityGDS parseFrom(final byte[] data) throws InvalidProtocolBufferException {
+      return ProtoMessage.mergeFrom(new ActivityGDS(), data).checkInitialized();
+    }
+
+    public static ActivityGDS parseFrom(final ProtoSource input) throws IOException {
+      return ProtoMessage.mergeFrom(new ActivityGDS(), input).checkInitialized();
+    }
+
+    public static ActivityGDS parseFrom(final JsonSource input) throws IOException {
+      return ProtoMessage.mergeFrom(new ActivityGDS(), input).checkInitialized();
+    }
+
+    /**
+     * @return factory for creating ActivityGDS messages
+     */
+    public static MessageFactory<ActivityGDS> getFactory() {
+      return ActivityGDSFactory.INSTANCE;
+    }
+
+    private enum ActivityGDSFactory implements MessageFactory<ActivityGDS> {
+      INSTANCE;
+
+      @Override
+      public ActivityGDS create() {
+        return ActivityGDS.newInstance();
+      }
+    }
+
+    /**
+     * Contains name constants used for serializing JSON
+     */
+    static class FieldNames {
+      static final FieldName nextPackage = FieldName.forField("NextPackage");
+
+      static final FieldName levels = FieldName.forField("Levels");
+    }
+  }
+
+  /**
+   * Protobuf type {@code ActivityHonor}
+   */
+  public static final class ActivityHonor extends ProtoMessage<ActivityHonor> implements Cloneable {
+    private static final long serialVersionUID = 0L;
+
+    /**
+     * <code>optional uint32 Id = 1;</code>
+     */
+    private int id;
+
+    /**
+     * <code>optional uint32 Lv = 2;</code>
+     */
+    private int lv;
+
+    /**
+     * <code>optional bytes NextPackage = 2047;</code>
+     */
+    private final RepeatedByte nextPackage = RepeatedByte.newEmptyInstance();
+
+    private ActivityHonor() {
+    }
+
+    /**
+     * @return a new empty instance of {@code ActivityHonor}
+     */
+    public static ActivityHonor newInstance() {
+      return new ActivityHonor();
+    }
+
+    /**
+     * <code>optional uint32 Id = 1;</code>
+     * @return whether the id field is set
+     */
+    public boolean hasId() {
+      return (bitField0_ & 0x00000001) != 0;
+    }
+
+    /**
+     * <code>optional uint32 Id = 1;</code>
+     * @return this
+     */
+    public ActivityHonor clearId() {
+      bitField0_ &= ~0x00000001;
+      id = 0;
+      return this;
+    }
+
+    /**
+     * <code>optional uint32 Id = 1;</code>
+     * @return the id
+     */
+    public int getId() {
+      return id;
+    }
+
+    /**
+     * <code>optional uint32 Id = 1;</code>
+     * @param value the id to set
+     * @return this
+     */
+    public ActivityHonor setId(final int value) {
+      bitField0_ |= 0x00000001;
+      id = value;
+      return this;
+    }
+
+    /**
+     * <code>optional uint32 Lv = 2;</code>
+     * @return whether the lv field is set
+     */
+    public boolean hasLv() {
+      return (bitField0_ & 0x00000002) != 0;
+    }
+
+    /**
+     * <code>optional uint32 Lv = 2;</code>
+     * @return this
+     */
+    public ActivityHonor clearLv() {
+      bitField0_ &= ~0x00000002;
+      lv = 0;
+      return this;
+    }
+
+    /**
+     * <code>optional uint32 Lv = 2;</code>
+     * @return the lv
+     */
+    public int getLv() {
+      return lv;
+    }
+
+    /**
+     * <code>optional uint32 Lv = 2;</code>
+     * @param value the lv to set
+     * @return this
+     */
+    public ActivityHonor setLv(final int value) {
+      bitField0_ |= 0x00000002;
+      lv = value;
+      return this;
+    }
+
+    /**
+     * <code>optional bytes NextPackage = 2047;</code>
+     * @return whether the nextPackage field is set
+     */
+    public boolean hasNextPackage() {
+      return (bitField0_ & 0x00000004) != 0;
+    }
+
+    /**
+     * <code>optional bytes NextPackage = 2047;</code>
+     * @return this
+     */
+    public ActivityHonor clearNextPackage() {
+      bitField0_ &= ~0x00000004;
+      nextPackage.clear();
+      return this;
+    }
+
+    /**
+     * <code>optional bytes NextPackage = 2047;</code>
+     *
+     * This method returns the internal storage object without modifying any has state.
+     * The returned object should not be modified and be treated as read-only.
+     *
+     * Use {@link #getMutableNextPackage()} if you want to modify it.
+     *
+     * @return internal storage object for reading
+     */
+    public RepeatedByte getNextPackage() {
+      return nextPackage;
+    }
+
+    /**
+     * <code>optional bytes NextPackage = 2047;</code>
+     *
+     * This method returns the internal storage object and sets the corresponding
+     * has state. The returned object will become part of this message and its
+     * contents may be modified as long as the has state is not cleared.
+     *
+     * @return internal storage object for modifications
+     */
+    public RepeatedByte getMutableNextPackage() {
+      bitField0_ |= 0x00000004;
+      return nextPackage;
+    }
+
+    /**
+     * <code>optional bytes NextPackage = 2047;</code>
+     * @param value the nextPackage to add
+     * @return this
+     */
+    public ActivityHonor addNextPackage(final byte value) {
+      bitField0_ |= 0x00000004;
+      nextPackage.add(value);
+      return this;
+    }
+
+    /**
+     * <code>optional bytes NextPackage = 2047;</code>
+     * @param values the nextPackage to add
+     * @return this
+     */
+    public ActivityHonor addAllNextPackage(final byte... values) {
+      bitField0_ |= 0x00000004;
+      nextPackage.addAll(values);
+      return this;
+    }
+
+    /**
+     * <code>optional bytes NextPackage = 2047;</code>
+     * @param values the nextPackage to set
+     * @return this
+     */
+    public ActivityHonor setNextPackage(final byte... values) {
+      bitField0_ |= 0x00000004;
+      nextPackage.copyFrom(values);
+      return this;
+    }
+
+    @Override
+    public ActivityHonor copyFrom(final ActivityHonor other) {
+      cachedSize = other.cachedSize;
+      if ((bitField0_ | other.bitField0_) != 0) {
+        bitField0_ = other.bitField0_;
+        id = other.id;
+        lv = other.lv;
+        nextPackage.copyFrom(other.nextPackage);
+      }
+      return this;
+    }
+
+    @Override
+    public ActivityHonor mergeFrom(final ActivityHonor other) {
+      if (other.isEmpty()) {
+        return this;
+      }
+      cachedSize = -1;
+      if (other.hasId()) {
+        setId(other.id);
+      }
+      if (other.hasLv()) {
+        setLv(other.lv);
+      }
+      if (other.hasNextPackage()) {
+        getMutableNextPackage().copyFrom(other.nextPackage);
+      }
+      return this;
+    }
+
+    @Override
+    public ActivityHonor clear() {
+      if (isEmpty()) {
+        return this;
+      }
+      cachedSize = -1;
+      bitField0_ = 0;
+      id = 0;
+      lv = 0;
+      nextPackage.clear();
+      return this;
+    }
+
+    @Override
+    public ActivityHonor clearQuick() {
+      if (isEmpty()) {
+        return this;
+      }
+      cachedSize = -1;
+      bitField0_ = 0;
+      nextPackage.clear();
+      return this;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+      if (o == this) {
+        return true;
+      }
+      if (!(o instanceof ActivityHonor)) {
+        return false;
+      }
+      ActivityHonor other = (ActivityHonor) o;
+      return bitField0_ == other.bitField0_
+        && (!hasId() || id == other.id)
+        && (!hasLv() || lv == other.lv)
+        && (!hasNextPackage() || nextPackage.equals(other.nextPackage));
+    }
+
+    @Override
+    public void writeTo(final ProtoSink output) throws IOException {
+      if ((bitField0_ & 0x00000001) != 0) {
+        output.writeRawByte((byte) 8);
+        output.writeUInt32NoTag(id);
+      }
+      if ((bitField0_ & 0x00000002) != 0) {
+        output.writeRawByte((byte) 16);
+        output.writeUInt32NoTag(lv);
+      }
+      if ((bitField0_ & 0x00000004) != 0) {
+        output.writeRawLittleEndian16((short) 32762);
+        output.writeBytesNoTag(nextPackage);
+      }
+    }
+
+    @Override
+    protected int computeSerializedSize() {
+      int size = 0;
+      if ((bitField0_ & 0x00000001) != 0) {
+        size += 1 + ProtoSink.computeUInt32SizeNoTag(id);
+      }
+      if ((bitField0_ & 0x00000002) != 0) {
+        size += 1 + ProtoSink.computeUInt32SizeNoTag(lv);
+      }
+      if ((bitField0_ & 0x00000004) != 0) {
+        size += 2 + ProtoSink.computeBytesSizeNoTag(nextPackage);
+      }
+      return size;
+    }
+
+    @Override
+    @SuppressWarnings("fallthrough")
+    public ActivityHonor mergeFrom(final ProtoSource input) throws IOException {
+      // Enabled Fall-Through Optimization (QuickBuffers)
+      int tag = input.readTag();
+      while (true) {
+        switch (tag) {
+          case 8: {
+            // id
+            id = input.readUInt32();
+            bitField0_ |= 0x00000001;
+            tag = input.readTag();
+            if (tag != 16) {
+              break;
+            }
+          }
+          case 16: {
+            // lv
+            lv = input.readUInt32();
+            bitField0_ |= 0x00000002;
+            tag = input.readTag();
+            if (tag != 16378) {
+              break;
+            }
+          }
+          case 16378: {
+            // nextPackage
+            input.readBytes(nextPackage);
+            bitField0_ |= 0x00000004;
+            tag = input.readTag();
+            if (tag != 0) {
+              break;
+            }
+          }
+          case 0: {
+            return this;
+          }
+          default: {
+            if (!input.skipField(tag)) {
+              return this;
+            }
+            tag = input.readTag();
+            break;
+          }
+        }
+      }
+    }
+
+    @Override
+    public void writeTo(final JsonSink output) throws IOException {
+      output.beginObject();
+      if ((bitField0_ & 0x00000001) != 0) {
+        output.writeUInt32(FieldNames.id, id);
+      }
+      if ((bitField0_ & 0x00000002) != 0) {
+        output.writeUInt32(FieldNames.lv, lv);
+      }
+      if ((bitField0_ & 0x00000004) != 0) {
+        output.writeBytes(FieldNames.nextPackage, nextPackage);
+      }
+      output.endObject();
+    }
+
+    @Override
+    public ActivityHonor mergeFrom(final JsonSource input) throws IOException {
+      if (!input.beginObject()) {
+        return this;
+      }
+      while (!input.isAtEnd()) {
+        switch (input.readFieldHash()) {
+          case 2363: {
+            if (input.isAtField(FieldNames.id)) {
+              if (!input.trySkipNullValue()) {
+                id = input.readUInt32();
+                bitField0_ |= 0x00000001;
+              }
+            } else {
+              input.skipUnknownField();
+            }
+            break;
+          }
+          case 2474: {
+            if (input.isAtField(FieldNames.lv)) {
+              if (!input.trySkipNullValue()) {
+                lv = input.readUInt32();
+                bitField0_ |= 0x00000002;
+              }
+            } else {
+              input.skipUnknownField();
+            }
+            break;
+          }
+          case -2082324045: {
+            if (input.isAtField(FieldNames.nextPackage)) {
+              if (!input.trySkipNullValue()) {
+                input.readBytes(nextPackage);
+                bitField0_ |= 0x00000004;
+              }
+            } else {
+              input.skipUnknownField();
+            }
+            break;
+          }
+          default: {
+            input.skipUnknownField();
+            break;
+          }
+        }
+      }
+      input.endObject();
+      return this;
+    }
+
+    @Override
+    public ActivityHonor clone() {
+      return new ActivityHonor().copyFrom(this);
+    }
+
+    @Override
+    public boolean isEmpty() {
+      return ((bitField0_) == 0);
+    }
+
+    public static ActivityHonor parseFrom(final byte[] data) throws InvalidProtocolBufferException {
+      return ProtoMessage.mergeFrom(new ActivityHonor(), data).checkInitialized();
+    }
+
+    public static ActivityHonor parseFrom(final ProtoSource input) throws IOException {
+      return ProtoMessage.mergeFrom(new ActivityHonor(), input).checkInitialized();
+    }
+
+    public static ActivityHonor parseFrom(final JsonSource input) throws IOException {
+      return ProtoMessage.mergeFrom(new ActivityHonor(), input).checkInitialized();
+    }
+
+    /**
+     * @return factory for creating ActivityHonor messages
+     */
+    public static MessageFactory<ActivityHonor> getFactory() {
+      return ActivityHonorFactory.INSTANCE;
+    }
+
+    private enum ActivityHonorFactory implements MessageFactory<ActivityHonor> {
+      INSTANCE;
+
+      @Override
+      public ActivityHonor create() {
+        return ActivityHonor.newInstance();
+      }
+    }
+
+    /**
+     * Contains name constants used for serializing JSON
+     */
+    static class FieldNames {
+      static final FieldName id = FieldName.forField("Id");
+
+      static final FieldName lv = FieldName.forField("Lv");
+
+      static final FieldName nextPackage = FieldName.forField("NextPackage");
     }
   }
 }

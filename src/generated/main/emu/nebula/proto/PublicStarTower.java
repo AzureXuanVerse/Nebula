@@ -3980,6 +3980,11 @@ public final class PublicStarTower {
      */
     private final RepeatedInt attributes = RepeatedInt.newEmptyInstance();
 
+    /**
+     * <code>repeated uint32 OverlockCount = 3;</code>
+     */
+    private final RepeatedInt overlockCount = RepeatedInt.newEmptyInstance();
+
     private StarTowerCharGem() {
     }
 
@@ -4174,6 +4179,74 @@ public final class PublicStarTower {
       return this;
     }
 
+    /**
+     * <code>repeated uint32 OverlockCount = 3;</code>
+     * @return whether the overlockCount field is set
+     */
+    public boolean hasOverlockCount() {
+      return (bitField0_ & 0x00000008) != 0;
+    }
+
+    /**
+     * <code>repeated uint32 OverlockCount = 3;</code>
+     * @return this
+     */
+    public StarTowerCharGem clearOverlockCount() {
+      bitField0_ &= ~0x00000008;
+      overlockCount.clear();
+      return this;
+    }
+
+    /**
+     * <code>repeated uint32 OverlockCount = 3;</code>
+     *
+     * This method returns the internal storage object without modifying any has state.
+     * The returned object should not be modified and be treated as read-only.
+     *
+     * Use {@link #getMutableOverlockCount()} if you want to modify it.
+     *
+     * @return internal storage object for reading
+     */
+    public RepeatedInt getOverlockCount() {
+      return overlockCount;
+    }
+
+    /**
+     * <code>repeated uint32 OverlockCount = 3;</code>
+     *
+     * This method returns the internal storage object and sets the corresponding
+     * has state. The returned object will become part of this message and its
+     * contents may be modified as long as the has state is not cleared.
+     *
+     * @return internal storage object for modifications
+     */
+    public RepeatedInt getMutableOverlockCount() {
+      bitField0_ |= 0x00000008;
+      return overlockCount;
+    }
+
+    /**
+     * <code>repeated uint32 OverlockCount = 3;</code>
+     * @param value the overlockCount to add
+     * @return this
+     */
+    public StarTowerCharGem addOverlockCount(final int value) {
+      bitField0_ |= 0x00000008;
+      overlockCount.add(value);
+      return this;
+    }
+
+    /**
+     * <code>repeated uint32 OverlockCount = 3;</code>
+     * @param values the overlockCount to add
+     * @return this
+     */
+    public StarTowerCharGem addAllOverlockCount(final int... values) {
+      bitField0_ |= 0x00000008;
+      overlockCount.addAll(values);
+      return this;
+    }
+
     @Override
     public StarTowerCharGem copyFrom(final StarTowerCharGem other) {
       cachedSize = other.cachedSize;
@@ -4182,6 +4255,7 @@ public final class PublicStarTower {
         slotId = other.slotId;
         nextPackage.copyFrom(other.nextPackage);
         attributes.copyFrom(other.attributes);
+        overlockCount.copyFrom(other.overlockCount);
       }
       return this;
     }
@@ -4201,6 +4275,9 @@ public final class PublicStarTower {
       if (other.hasAttributes()) {
         getMutableAttributes().addAll(other.attributes);
       }
+      if (other.hasOverlockCount()) {
+        getMutableOverlockCount().addAll(other.overlockCount);
+      }
       return this;
     }
 
@@ -4214,6 +4291,7 @@ public final class PublicStarTower {
       slotId = 0;
       nextPackage.clear();
       attributes.clear();
+      overlockCount.clear();
       return this;
     }
 
@@ -4226,6 +4304,7 @@ public final class PublicStarTower {
       bitField0_ = 0;
       nextPackage.clear();
       attributes.clear();
+      overlockCount.clear();
       return this;
     }
 
@@ -4241,7 +4320,8 @@ public final class PublicStarTower {
       return bitField0_ == other.bitField0_
         && (!hasSlotId() || slotId == other.slotId)
         && (!hasNextPackage() || nextPackage.equals(other.nextPackage))
-        && (!hasAttributes() || attributes.equals(other.attributes));
+        && (!hasAttributes() || attributes.equals(other.attributes))
+        && (!hasOverlockCount() || overlockCount.equals(other.overlockCount));
     }
 
     @Override
@@ -4260,6 +4340,12 @@ public final class PublicStarTower {
           output.writeUInt32NoTag(attributes.array()[i]);
         }
       }
+      if ((bitField0_ & 0x00000008) != 0) {
+        for (int i = 0; i < overlockCount.length(); i++) {
+          output.writeRawByte((byte) 24);
+          output.writeUInt32NoTag(overlockCount.array()[i]);
+        }
+      }
     }
 
     @Override
@@ -4273,6 +4359,9 @@ public final class PublicStarTower {
       }
       if ((bitField0_ & 0x00000004) != 0) {
         size += (1 * attributes.length()) + ProtoSink.computeRepeatedUInt32SizeNoTag(attributes);
+      }
+      if ((bitField0_ & 0x00000008) != 0) {
+        size += (1 * overlockCount.length()) + ProtoSink.computeRepeatedUInt32SizeNoTag(overlockCount);
       }
       return size;
     }
@@ -4307,6 +4396,15 @@ public final class PublicStarTower {
             input.readPackedUInt32(attributes, tag);
             bitField0_ |= 0x00000004;
             tag = input.readTag();
+            if (tag != 26) {
+              break;
+            }
+          }
+          case 26: {
+            // overlockCount [packed=true]
+            input.readPackedUInt32(overlockCount, tag);
+            bitField0_ |= 0x00000008;
+            tag = input.readTag();
             if (tag != 0) {
               break;
             }
@@ -4327,6 +4425,12 @@ public final class PublicStarTower {
             bitField0_ |= 0x00000004;
             break;
           }
+          case 24: {
+            // overlockCount [packed=false]
+            tag = input.readRepeatedUInt32(overlockCount, tag);
+            bitField0_ |= 0x00000008;
+            break;
+          }
         }
       }
     }
@@ -4342,6 +4446,9 @@ public final class PublicStarTower {
       }
       if ((bitField0_ & 0x00000004) != 0) {
         output.writeRepeatedUInt32(FieldNames.attributes, attributes);
+      }
+      if ((bitField0_ & 0x00000008) != 0) {
+        output.writeRepeatedUInt32(FieldNames.overlockCount, overlockCount);
       }
       output.endObject();
     }
@@ -4380,6 +4487,17 @@ public final class PublicStarTower {
               if (!input.trySkipNullValue()) {
                 input.readRepeatedUInt32(attributes);
                 bitField0_ |= 0x00000004;
+              }
+            } else {
+              input.skipUnknownField();
+            }
+            break;
+          }
+          case 1950695472: {
+            if (input.isAtField(FieldNames.overlockCount)) {
+              if (!input.trySkipNullValue()) {
+                input.readRepeatedUInt32(overlockCount);
+                bitField0_ |= 0x00000008;
               }
             } else {
               input.skipUnknownField();
@@ -4444,6 +4562,8 @@ public final class PublicStarTower {
       static final FieldName nextPackage = FieldName.forField("NextPackage");
 
       static final FieldName attributes = FieldName.forField("Attributes");
+
+      static final FieldName overlockCount = FieldName.forField("OverlockCount");
     }
   }
 
@@ -34130,6 +34250,756 @@ public final class PublicStarTower {
       static final FieldName nextPackage = FieldName.forField("NextPackage");
 
       static final FieldName items = FieldName.forField("Items");
+    }
+  }
+
+  /**
+   * Protobuf type {@code PotentialPreselection}
+   */
+  public static final class PotentialPreselection extends ProtoMessage<PotentialPreselection> implements Cloneable {
+    private static final long serialVersionUID = 0L;
+
+    /**
+     * <code>optional uint64 Id = 1;</code>
+     */
+    private long id;
+
+    /**
+     * <code>optional uint64 Timestamp = 5;</code>
+     */
+    private long timestamp;
+
+    /**
+     * <code>optional bool Preference = 3;</code>
+     */
+    private boolean preference;
+
+    /**
+     * <code>optional bytes NextPackage = 2047;</code>
+     */
+    private final RepeatedByte nextPackage = RepeatedByte.newEmptyInstance();
+
+    /**
+     * <code>optional string Name = 2;</code>
+     */
+    private final Utf8String name = Utf8String.newEmptyInstance();
+
+    /**
+     * <code>repeated .StarTowerBookCharPotential CharPotentials = 4;</code>
+     */
+    private final RepeatedMessage<StarTowerBookCharPotential> charPotentials = RepeatedMessage.newEmptyInstance(StarTowerBookCharPotential.getFactory());
+
+    private PotentialPreselection() {
+    }
+
+    /**
+     * @return a new empty instance of {@code PotentialPreselection}
+     */
+    public static PotentialPreselection newInstance() {
+      return new PotentialPreselection();
+    }
+
+    /**
+     * <code>optional uint64 Id = 1;</code>
+     * @return whether the id field is set
+     */
+    public boolean hasId() {
+      return (bitField0_ & 0x00000001) != 0;
+    }
+
+    /**
+     * <code>optional uint64 Id = 1;</code>
+     * @return this
+     */
+    public PotentialPreselection clearId() {
+      bitField0_ &= ~0x00000001;
+      id = 0L;
+      return this;
+    }
+
+    /**
+     * <code>optional uint64 Id = 1;</code>
+     * @return the id
+     */
+    public long getId() {
+      return id;
+    }
+
+    /**
+     * <code>optional uint64 Id = 1;</code>
+     * @param value the id to set
+     * @return this
+     */
+    public PotentialPreselection setId(final long value) {
+      bitField0_ |= 0x00000001;
+      id = value;
+      return this;
+    }
+
+    /**
+     * <code>optional uint64 Timestamp = 5;</code>
+     * @return whether the timestamp field is set
+     */
+    public boolean hasTimestamp() {
+      return (bitField0_ & 0x00000002) != 0;
+    }
+
+    /**
+     * <code>optional uint64 Timestamp = 5;</code>
+     * @return this
+     */
+    public PotentialPreselection clearTimestamp() {
+      bitField0_ &= ~0x00000002;
+      timestamp = 0L;
+      return this;
+    }
+
+    /**
+     * <code>optional uint64 Timestamp = 5;</code>
+     * @return the timestamp
+     */
+    public long getTimestamp() {
+      return timestamp;
+    }
+
+    /**
+     * <code>optional uint64 Timestamp = 5;</code>
+     * @param value the timestamp to set
+     * @return this
+     */
+    public PotentialPreselection setTimestamp(final long value) {
+      bitField0_ |= 0x00000002;
+      timestamp = value;
+      return this;
+    }
+
+    /**
+     * <code>optional bool Preference = 3;</code>
+     * @return whether the preference field is set
+     */
+    public boolean hasPreference() {
+      return (bitField0_ & 0x00000004) != 0;
+    }
+
+    /**
+     * <code>optional bool Preference = 3;</code>
+     * @return this
+     */
+    public PotentialPreselection clearPreference() {
+      bitField0_ &= ~0x00000004;
+      preference = false;
+      return this;
+    }
+
+    /**
+     * <code>optional bool Preference = 3;</code>
+     * @return the preference
+     */
+    public boolean getPreference() {
+      return preference;
+    }
+
+    /**
+     * <code>optional bool Preference = 3;</code>
+     * @param value the preference to set
+     * @return this
+     */
+    public PotentialPreselection setPreference(final boolean value) {
+      bitField0_ |= 0x00000004;
+      preference = value;
+      return this;
+    }
+
+    /**
+     * <code>optional bytes NextPackage = 2047;</code>
+     * @return whether the nextPackage field is set
+     */
+    public boolean hasNextPackage() {
+      return (bitField0_ & 0x00000008) != 0;
+    }
+
+    /**
+     * <code>optional bytes NextPackage = 2047;</code>
+     * @return this
+     */
+    public PotentialPreselection clearNextPackage() {
+      bitField0_ &= ~0x00000008;
+      nextPackage.clear();
+      return this;
+    }
+
+    /**
+     * <code>optional bytes NextPackage = 2047;</code>
+     *
+     * This method returns the internal storage object without modifying any has state.
+     * The returned object should not be modified and be treated as read-only.
+     *
+     * Use {@link #getMutableNextPackage()} if you want to modify it.
+     *
+     * @return internal storage object for reading
+     */
+    public RepeatedByte getNextPackage() {
+      return nextPackage;
+    }
+
+    /**
+     * <code>optional bytes NextPackage = 2047;</code>
+     *
+     * This method returns the internal storage object and sets the corresponding
+     * has state. The returned object will become part of this message and its
+     * contents may be modified as long as the has state is not cleared.
+     *
+     * @return internal storage object for modifications
+     */
+    public RepeatedByte getMutableNextPackage() {
+      bitField0_ |= 0x00000008;
+      return nextPackage;
+    }
+
+    /**
+     * <code>optional bytes NextPackage = 2047;</code>
+     * @param value the nextPackage to add
+     * @return this
+     */
+    public PotentialPreselection addNextPackage(final byte value) {
+      bitField0_ |= 0x00000008;
+      nextPackage.add(value);
+      return this;
+    }
+
+    /**
+     * <code>optional bytes NextPackage = 2047;</code>
+     * @param values the nextPackage to add
+     * @return this
+     */
+    public PotentialPreselection addAllNextPackage(final byte... values) {
+      bitField0_ |= 0x00000008;
+      nextPackage.addAll(values);
+      return this;
+    }
+
+    /**
+     * <code>optional bytes NextPackage = 2047;</code>
+     * @param values the nextPackage to set
+     * @return this
+     */
+    public PotentialPreselection setNextPackage(final byte... values) {
+      bitField0_ |= 0x00000008;
+      nextPackage.copyFrom(values);
+      return this;
+    }
+
+    /**
+     * <code>optional string Name = 2;</code>
+     * @return whether the name field is set
+     */
+    public boolean hasName() {
+      return (bitField0_ & 0x00000010) != 0;
+    }
+
+    /**
+     * <code>optional string Name = 2;</code>
+     * @return this
+     */
+    public PotentialPreselection clearName() {
+      bitField0_ &= ~0x00000010;
+      name.clear();
+      return this;
+    }
+
+    /**
+     * <code>optional string Name = 2;</code>
+     * @return the name
+     */
+    public String getName() {
+      return name.getString();
+    }
+
+    /**
+     * <code>optional string Name = 2;</code>
+     * @return internal {@code Utf8String} representation of name for reading
+     */
+    public Utf8String getNameBytes() {
+      return this.name;
+    }
+
+    /**
+     * <code>optional string Name = 2;</code>
+     * @return internal {@code Utf8String} representation of name for modifications
+     */
+    public Utf8String getMutableNameBytes() {
+      bitField0_ |= 0x00000010;
+      return this.name;
+    }
+
+    /**
+     * <code>optional string Name = 2;</code>
+     * @param value the name to set
+     * @return this
+     */
+    public PotentialPreselection setName(final CharSequence value) {
+      bitField0_ |= 0x00000010;
+      name.copyFrom(value);
+      return this;
+    }
+
+    /**
+     * <code>optional string Name = 2;</code>
+     * @param value the name to set
+     * @return this
+     */
+    public PotentialPreselection setName(final Utf8String value) {
+      bitField0_ |= 0x00000010;
+      name.copyFrom(value);
+      return this;
+    }
+
+    /**
+     * <code>repeated .StarTowerBookCharPotential CharPotentials = 4;</code>
+     * @return whether the charPotentials field is set
+     */
+    public boolean hasCharPotentials() {
+      return (bitField0_ & 0x00000020) != 0;
+    }
+
+    /**
+     * <code>repeated .StarTowerBookCharPotential CharPotentials = 4;</code>
+     * @return this
+     */
+    public PotentialPreselection clearCharPotentials() {
+      bitField0_ &= ~0x00000020;
+      charPotentials.clear();
+      return this;
+    }
+
+    /**
+     * <code>repeated .StarTowerBookCharPotential CharPotentials = 4;</code>
+     *
+     * This method returns the internal storage object without modifying any has state.
+     * The returned object should not be modified and be treated as read-only.
+     *
+     * Use {@link #getMutableCharPotentials()} if you want to modify it.
+     *
+     * @return internal storage object for reading
+     */
+    public RepeatedMessage<StarTowerBookCharPotential> getCharPotentials() {
+      return charPotentials;
+    }
+
+    /**
+     * <code>repeated .StarTowerBookCharPotential CharPotentials = 4;</code>
+     *
+     * This method returns the internal storage object and sets the corresponding
+     * has state. The returned object will become part of this message and its
+     * contents may be modified as long as the has state is not cleared.
+     *
+     * @return internal storage object for modifications
+     */
+    public RepeatedMessage<StarTowerBookCharPotential> getMutableCharPotentials() {
+      bitField0_ |= 0x00000020;
+      return charPotentials;
+    }
+
+    /**
+     * <code>repeated .StarTowerBookCharPotential CharPotentials = 4;</code>
+     * @param value the charPotentials to add
+     * @return this
+     */
+    public PotentialPreselection addCharPotentials(final StarTowerBookCharPotential value) {
+      bitField0_ |= 0x00000020;
+      charPotentials.add(value);
+      return this;
+    }
+
+    /**
+     * <code>repeated .StarTowerBookCharPotential CharPotentials = 4;</code>
+     * @param values the charPotentials to add
+     * @return this
+     */
+    public PotentialPreselection addAllCharPotentials(final StarTowerBookCharPotential... values) {
+      bitField0_ |= 0x00000020;
+      charPotentials.addAll(values);
+      return this;
+    }
+
+    @Override
+    public PotentialPreselection copyFrom(final PotentialPreselection other) {
+      cachedSize = other.cachedSize;
+      if ((bitField0_ | other.bitField0_) != 0) {
+        bitField0_ = other.bitField0_;
+        id = other.id;
+        timestamp = other.timestamp;
+        preference = other.preference;
+        nextPackage.copyFrom(other.nextPackage);
+        name.copyFrom(other.name);
+        charPotentials.copyFrom(other.charPotentials);
+      }
+      return this;
+    }
+
+    @Override
+    public PotentialPreselection mergeFrom(final PotentialPreselection other) {
+      if (other.isEmpty()) {
+        return this;
+      }
+      cachedSize = -1;
+      if (other.hasId()) {
+        setId(other.id);
+      }
+      if (other.hasTimestamp()) {
+        setTimestamp(other.timestamp);
+      }
+      if (other.hasPreference()) {
+        setPreference(other.preference);
+      }
+      if (other.hasNextPackage()) {
+        getMutableNextPackage().copyFrom(other.nextPackage);
+      }
+      if (other.hasName()) {
+        getMutableNameBytes().copyFrom(other.name);
+      }
+      if (other.hasCharPotentials()) {
+        getMutableCharPotentials().addAll(other.charPotentials);
+      }
+      return this;
+    }
+
+    @Override
+    public PotentialPreselection clear() {
+      if (isEmpty()) {
+        return this;
+      }
+      cachedSize = -1;
+      bitField0_ = 0;
+      id = 0L;
+      timestamp = 0L;
+      preference = false;
+      nextPackage.clear();
+      name.clear();
+      charPotentials.clear();
+      return this;
+    }
+
+    @Override
+    public PotentialPreselection clearQuick() {
+      if (isEmpty()) {
+        return this;
+      }
+      cachedSize = -1;
+      bitField0_ = 0;
+      nextPackage.clear();
+      name.clear();
+      charPotentials.clearQuick();
+      return this;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+      if (o == this) {
+        return true;
+      }
+      if (!(o instanceof PotentialPreselection)) {
+        return false;
+      }
+      PotentialPreselection other = (PotentialPreselection) o;
+      return bitField0_ == other.bitField0_
+        && (!hasId() || id == other.id)
+        && (!hasTimestamp() || timestamp == other.timestamp)
+        && (!hasPreference() || preference == other.preference)
+        && (!hasNextPackage() || nextPackage.equals(other.nextPackage))
+        && (!hasName() || name.equals(other.name))
+        && (!hasCharPotentials() || charPotentials.equals(other.charPotentials));
+    }
+
+    @Override
+    public void writeTo(final ProtoSink output) throws IOException {
+      if ((bitField0_ & 0x00000001) != 0) {
+        output.writeRawByte((byte) 8);
+        output.writeUInt64NoTag(id);
+      }
+      if ((bitField0_ & 0x00000002) != 0) {
+        output.writeRawByte((byte) 40);
+        output.writeUInt64NoTag(timestamp);
+      }
+      if ((bitField0_ & 0x00000004) != 0) {
+        output.writeRawByte((byte) 24);
+        output.writeBoolNoTag(preference);
+      }
+      if ((bitField0_ & 0x00000008) != 0) {
+        output.writeRawLittleEndian16((short) 32762);
+        output.writeBytesNoTag(nextPackage);
+      }
+      if ((bitField0_ & 0x00000010) != 0) {
+        output.writeRawByte((byte) 18);
+        output.writeStringNoTag(name);
+      }
+      if ((bitField0_ & 0x00000020) != 0) {
+        for (int i = 0; i < charPotentials.length(); i++) {
+          output.writeRawByte((byte) 34);
+          output.writeMessageNoTag(charPotentials.get(i));
+        }
+      }
+    }
+
+    @Override
+    protected int computeSerializedSize() {
+      int size = 0;
+      if ((bitField0_ & 0x00000001) != 0) {
+        size += 1 + ProtoSink.computeUInt64SizeNoTag(id);
+      }
+      if ((bitField0_ & 0x00000002) != 0) {
+        size += 1 + ProtoSink.computeUInt64SizeNoTag(timestamp);
+      }
+      if ((bitField0_ & 0x00000004) != 0) {
+        size += 2;
+      }
+      if ((bitField0_ & 0x00000008) != 0) {
+        size += 2 + ProtoSink.computeBytesSizeNoTag(nextPackage);
+      }
+      if ((bitField0_ & 0x00000010) != 0) {
+        size += 1 + ProtoSink.computeStringSizeNoTag(name);
+      }
+      if ((bitField0_ & 0x00000020) != 0) {
+        size += (1 * charPotentials.length()) + ProtoSink.computeRepeatedMessageSizeNoTag(charPotentials);
+      }
+      return size;
+    }
+
+    @Override
+    @SuppressWarnings("fallthrough")
+    public PotentialPreselection mergeFrom(final ProtoSource input) throws IOException {
+      // Enabled Fall-Through Optimization (QuickBuffers)
+      int tag = input.readTag();
+      while (true) {
+        switch (tag) {
+          case 8: {
+            // id
+            id = input.readUInt64();
+            bitField0_ |= 0x00000001;
+            tag = input.readTag();
+            if (tag != 40) {
+              break;
+            }
+          }
+          case 40: {
+            // timestamp
+            timestamp = input.readUInt64();
+            bitField0_ |= 0x00000002;
+            tag = input.readTag();
+            if (tag != 24) {
+              break;
+            }
+          }
+          case 24: {
+            // preference
+            preference = input.readBool();
+            bitField0_ |= 0x00000004;
+            tag = input.readTag();
+            if (tag != 16378) {
+              break;
+            }
+          }
+          case 16378: {
+            // nextPackage
+            input.readBytes(nextPackage);
+            bitField0_ |= 0x00000008;
+            tag = input.readTag();
+            if (tag != 18) {
+              break;
+            }
+          }
+          case 18: {
+            // name
+            input.readString(name);
+            bitField0_ |= 0x00000010;
+            tag = input.readTag();
+            if (tag != 34) {
+              break;
+            }
+          }
+          case 34: {
+            // charPotentials
+            tag = input.readRepeatedMessage(charPotentials, tag);
+            bitField0_ |= 0x00000020;
+            if (tag != 0) {
+              break;
+            }
+          }
+          case 0: {
+            return this;
+          }
+          default: {
+            if (!input.skipField(tag)) {
+              return this;
+            }
+            tag = input.readTag();
+            break;
+          }
+        }
+      }
+    }
+
+    @Override
+    public void writeTo(final JsonSink output) throws IOException {
+      output.beginObject();
+      if ((bitField0_ & 0x00000001) != 0) {
+        output.writeUInt64(FieldNames.id, id);
+      }
+      if ((bitField0_ & 0x00000002) != 0) {
+        output.writeUInt64(FieldNames.timestamp, timestamp);
+      }
+      if ((bitField0_ & 0x00000004) != 0) {
+        output.writeBool(FieldNames.preference, preference);
+      }
+      if ((bitField0_ & 0x00000008) != 0) {
+        output.writeBytes(FieldNames.nextPackage, nextPackage);
+      }
+      if ((bitField0_ & 0x00000010) != 0) {
+        output.writeString(FieldNames.name, name);
+      }
+      if ((bitField0_ & 0x00000020) != 0) {
+        output.writeRepeatedMessage(FieldNames.charPotentials, charPotentials);
+      }
+      output.endObject();
+    }
+
+    @Override
+    public PotentialPreselection mergeFrom(final JsonSource input) throws IOException {
+      if (!input.beginObject()) {
+        return this;
+      }
+      while (!input.isAtEnd()) {
+        switch (input.readFieldHash()) {
+          case 2363: {
+            if (input.isAtField(FieldNames.id)) {
+              if (!input.trySkipNullValue()) {
+                id = input.readUInt64();
+                bitField0_ |= 0x00000001;
+              }
+            } else {
+              input.skipUnknownField();
+            }
+            break;
+          }
+          case 2059094262: {
+            if (input.isAtField(FieldNames.timestamp)) {
+              if (!input.trySkipNullValue()) {
+                timestamp = input.readUInt64();
+                bitField0_ |= 0x00000002;
+              }
+            } else {
+              input.skipUnknownField();
+            }
+            break;
+          }
+          case 533633275: {
+            if (input.isAtField(FieldNames.preference)) {
+              if (!input.trySkipNullValue()) {
+                preference = input.readBool();
+                bitField0_ |= 0x00000004;
+              }
+            } else {
+              input.skipUnknownField();
+            }
+            break;
+          }
+          case -2082324045: {
+            if (input.isAtField(FieldNames.nextPackage)) {
+              if (!input.trySkipNullValue()) {
+                input.readBytes(nextPackage);
+                bitField0_ |= 0x00000008;
+              }
+            } else {
+              input.skipUnknownField();
+            }
+            break;
+          }
+          case 2420395: {
+            if (input.isAtField(FieldNames.name)) {
+              if (!input.trySkipNullValue()) {
+                input.readString(name);
+                bitField0_ |= 0x00000010;
+              }
+            } else {
+              input.skipUnknownField();
+            }
+            break;
+          }
+          case -1909208021: {
+            if (input.isAtField(FieldNames.charPotentials)) {
+              if (!input.trySkipNullValue()) {
+                input.readRepeatedMessage(charPotentials);
+                bitField0_ |= 0x00000020;
+              }
+            } else {
+              input.skipUnknownField();
+            }
+            break;
+          }
+          default: {
+            input.skipUnknownField();
+            break;
+          }
+        }
+      }
+      input.endObject();
+      return this;
+    }
+
+    @Override
+    public PotentialPreselection clone() {
+      return new PotentialPreselection().copyFrom(this);
+    }
+
+    @Override
+    public boolean isEmpty() {
+      return ((bitField0_) == 0);
+    }
+
+    public static PotentialPreselection parseFrom(final byte[] data) throws
+        InvalidProtocolBufferException {
+      return ProtoMessage.mergeFrom(new PotentialPreselection(), data).checkInitialized();
+    }
+
+    public static PotentialPreselection parseFrom(final ProtoSource input) throws IOException {
+      return ProtoMessage.mergeFrom(new PotentialPreselection(), input).checkInitialized();
+    }
+
+    public static PotentialPreselection parseFrom(final JsonSource input) throws IOException {
+      return ProtoMessage.mergeFrom(new PotentialPreselection(), input).checkInitialized();
+    }
+
+    /**
+     * @return factory for creating PotentialPreselection messages
+     */
+    public static MessageFactory<PotentialPreselection> getFactory() {
+      return PotentialPreselectionFactory.INSTANCE;
+    }
+
+    private enum PotentialPreselectionFactory implements MessageFactory<PotentialPreselection> {
+      INSTANCE;
+
+      @Override
+      public PotentialPreselection create() {
+        return PotentialPreselection.newInstance();
+      }
+    }
+
+    /**
+     * Contains name constants used for serializing JSON
+     */
+    static class FieldNames {
+      static final FieldName id = FieldName.forField("Id");
+
+      static final FieldName timestamp = FieldName.forField("Timestamp");
+
+      static final FieldName preference = FieldName.forField("Preference");
+
+      static final FieldName nextPackage = FieldName.forField("NextPackage");
+
+      static final FieldName name = FieldName.forField("Name");
+
+      static final FieldName charPotentials = FieldName.forField("CharPotentials");
     }
   }
 }

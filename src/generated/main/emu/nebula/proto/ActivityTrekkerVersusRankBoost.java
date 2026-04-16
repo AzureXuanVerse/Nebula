@@ -506,6 +506,16 @@ public final class ActivityTrekkerVersusRankBoost {
     private static final long serialVersionUID = 0L;
 
     /**
+     * <code>optional uint64 SelfHotValue = 3;</code>
+     */
+    private long selfHotValue;
+
+    /**
+     * <code>optional uint64 RivalHotValue = 4;</code>
+     */
+    private long rivalHotValue;
+
+    /**
      * <code>optional uint32 Level = 1;</code>
      */
     private int level;
@@ -514,16 +524,6 @@ public final class ActivityTrekkerVersusRankBoost {
      * <code>optional uint32 Exp = 2;</code>
      */
     private int exp;
-
-    /**
-     * <code>optional uint32 SelfHotValue = 3;</code>
-     */
-    private int selfHotValue;
-
-    /**
-     * <code>optional uint32 RivalHotValue = 4;</code>
-     */
-    private int rivalHotValue;
 
     /**
      * <code>optional .ChangeInfo Change = 5;</code>
@@ -551,11 +551,85 @@ public final class ActivityTrekkerVersusRankBoost {
     }
 
     /**
+     * <code>optional uint64 SelfHotValue = 3;</code>
+     * @return whether the selfHotValue field is set
+     */
+    public boolean hasSelfHotValue() {
+      return (bitField0_ & 0x00000001) != 0;
+    }
+
+    /**
+     * <code>optional uint64 SelfHotValue = 3;</code>
+     * @return this
+     */
+    public ActivityTrekkerVersusRankBoostResp clearSelfHotValue() {
+      bitField0_ &= ~0x00000001;
+      selfHotValue = 0L;
+      return this;
+    }
+
+    /**
+     * <code>optional uint64 SelfHotValue = 3;</code>
+     * @return the selfHotValue
+     */
+    public long getSelfHotValue() {
+      return selfHotValue;
+    }
+
+    /**
+     * <code>optional uint64 SelfHotValue = 3;</code>
+     * @param value the selfHotValue to set
+     * @return this
+     */
+    public ActivityTrekkerVersusRankBoostResp setSelfHotValue(final long value) {
+      bitField0_ |= 0x00000001;
+      selfHotValue = value;
+      return this;
+    }
+
+    /**
+     * <code>optional uint64 RivalHotValue = 4;</code>
+     * @return whether the rivalHotValue field is set
+     */
+    public boolean hasRivalHotValue() {
+      return (bitField0_ & 0x00000002) != 0;
+    }
+
+    /**
+     * <code>optional uint64 RivalHotValue = 4;</code>
+     * @return this
+     */
+    public ActivityTrekkerVersusRankBoostResp clearRivalHotValue() {
+      bitField0_ &= ~0x00000002;
+      rivalHotValue = 0L;
+      return this;
+    }
+
+    /**
+     * <code>optional uint64 RivalHotValue = 4;</code>
+     * @return the rivalHotValue
+     */
+    public long getRivalHotValue() {
+      return rivalHotValue;
+    }
+
+    /**
+     * <code>optional uint64 RivalHotValue = 4;</code>
+     * @param value the rivalHotValue to set
+     * @return this
+     */
+    public ActivityTrekkerVersusRankBoostResp setRivalHotValue(final long value) {
+      bitField0_ |= 0x00000002;
+      rivalHotValue = value;
+      return this;
+    }
+
+    /**
      * <code>optional uint32 Level = 1;</code>
      * @return whether the level field is set
      */
     public boolean hasLevel() {
-      return (bitField0_ & 0x00000001) != 0;
+      return (bitField0_ & 0x00000004) != 0;
     }
 
     /**
@@ -563,7 +637,7 @@ public final class ActivityTrekkerVersusRankBoost {
      * @return this
      */
     public ActivityTrekkerVersusRankBoostResp clearLevel() {
-      bitField0_ &= ~0x00000001;
+      bitField0_ &= ~0x00000004;
       level = 0;
       return this;
     }
@@ -582,7 +656,7 @@ public final class ActivityTrekkerVersusRankBoost {
      * @return this
      */
     public ActivityTrekkerVersusRankBoostResp setLevel(final int value) {
-      bitField0_ |= 0x00000001;
+      bitField0_ |= 0x00000004;
       level = value;
       return this;
     }
@@ -592,7 +666,7 @@ public final class ActivityTrekkerVersusRankBoost {
      * @return whether the exp field is set
      */
     public boolean hasExp() {
-      return (bitField0_ & 0x00000002) != 0;
+      return (bitField0_ & 0x00000008) != 0;
     }
 
     /**
@@ -600,7 +674,7 @@ public final class ActivityTrekkerVersusRankBoost {
      * @return this
      */
     public ActivityTrekkerVersusRankBoostResp clearExp() {
-      bitField0_ &= ~0x00000002;
+      bitField0_ &= ~0x00000008;
       exp = 0;
       return this;
     }
@@ -619,82 +693,8 @@ public final class ActivityTrekkerVersusRankBoost {
      * @return this
      */
     public ActivityTrekkerVersusRankBoostResp setExp(final int value) {
-      bitField0_ |= 0x00000002;
-      exp = value;
-      return this;
-    }
-
-    /**
-     * <code>optional uint32 SelfHotValue = 3;</code>
-     * @return whether the selfHotValue field is set
-     */
-    public boolean hasSelfHotValue() {
-      return (bitField0_ & 0x00000004) != 0;
-    }
-
-    /**
-     * <code>optional uint32 SelfHotValue = 3;</code>
-     * @return this
-     */
-    public ActivityTrekkerVersusRankBoostResp clearSelfHotValue() {
-      bitField0_ &= ~0x00000004;
-      selfHotValue = 0;
-      return this;
-    }
-
-    /**
-     * <code>optional uint32 SelfHotValue = 3;</code>
-     * @return the selfHotValue
-     */
-    public int getSelfHotValue() {
-      return selfHotValue;
-    }
-
-    /**
-     * <code>optional uint32 SelfHotValue = 3;</code>
-     * @param value the selfHotValue to set
-     * @return this
-     */
-    public ActivityTrekkerVersusRankBoostResp setSelfHotValue(final int value) {
-      bitField0_ |= 0x00000004;
-      selfHotValue = value;
-      return this;
-    }
-
-    /**
-     * <code>optional uint32 RivalHotValue = 4;</code>
-     * @return whether the rivalHotValue field is set
-     */
-    public boolean hasRivalHotValue() {
-      return (bitField0_ & 0x00000008) != 0;
-    }
-
-    /**
-     * <code>optional uint32 RivalHotValue = 4;</code>
-     * @return this
-     */
-    public ActivityTrekkerVersusRankBoostResp clearRivalHotValue() {
-      bitField0_ &= ~0x00000008;
-      rivalHotValue = 0;
-      return this;
-    }
-
-    /**
-     * <code>optional uint32 RivalHotValue = 4;</code>
-     * @return the rivalHotValue
-     */
-    public int getRivalHotValue() {
-      return rivalHotValue;
-    }
-
-    /**
-     * <code>optional uint32 RivalHotValue = 4;</code>
-     * @param value the rivalHotValue to set
-     * @return this
-     */
-    public ActivityTrekkerVersusRankBoostResp setRivalHotValue(final int value) {
       bitField0_ |= 0x00000008;
-      rivalHotValue = value;
+      exp = value;
       return this;
     }
 
@@ -908,10 +908,10 @@ public final class ActivityTrekkerVersusRankBoost {
       cachedSize = other.cachedSize;
       if ((bitField0_ | other.bitField0_) != 0) {
         bitField0_ = other.bitField0_;
-        level = other.level;
-        exp = other.exp;
         selfHotValue = other.selfHotValue;
         rivalHotValue = other.rivalHotValue;
+        level = other.level;
+        exp = other.exp;
         change.copyFrom(other.change);
         nextPackage.copyFrom(other.nextPackage);
         awardItems.copyFrom(other.awardItems);
@@ -926,17 +926,17 @@ public final class ActivityTrekkerVersusRankBoost {
         return this;
       }
       cachedSize = -1;
-      if (other.hasLevel()) {
-        setLevel(other.level);
-      }
-      if (other.hasExp()) {
-        setExp(other.exp);
-      }
       if (other.hasSelfHotValue()) {
         setSelfHotValue(other.selfHotValue);
       }
       if (other.hasRivalHotValue()) {
         setRivalHotValue(other.rivalHotValue);
+      }
+      if (other.hasLevel()) {
+        setLevel(other.level);
+      }
+      if (other.hasExp()) {
+        setExp(other.exp);
       }
       if (other.hasChange()) {
         getMutableChange().mergeFrom(other.change);
@@ -957,10 +957,10 @@ public final class ActivityTrekkerVersusRankBoost {
       }
       cachedSize = -1;
       bitField0_ = 0;
+      selfHotValue = 0L;
+      rivalHotValue = 0L;
       level = 0;
       exp = 0;
-      selfHotValue = 0;
-      rivalHotValue = 0;
       change.clear();
       nextPackage.clear();
       awardItems.clear();
@@ -990,10 +990,10 @@ public final class ActivityTrekkerVersusRankBoost {
       }
       ActivityTrekkerVersusRankBoostResp other = (ActivityTrekkerVersusRankBoostResp) o;
       return bitField0_ == other.bitField0_
-        && (!hasLevel() || level == other.level)
-        && (!hasExp() || exp == other.exp)
         && (!hasSelfHotValue() || selfHotValue == other.selfHotValue)
         && (!hasRivalHotValue() || rivalHotValue == other.rivalHotValue)
+        && (!hasLevel() || level == other.level)
+        && (!hasExp() || exp == other.exp)
         && (!hasChange() || change.equals(other.change))
         && (!hasNextPackage() || nextPackage.equals(other.nextPackage))
         && (!hasAwardItems() || awardItems.equals(other.awardItems));
@@ -1002,20 +1002,20 @@ public final class ActivityTrekkerVersusRankBoost {
     @Override
     public void writeTo(final ProtoSink output) throws IOException {
       if ((bitField0_ & 0x00000001) != 0) {
+        output.writeRawByte((byte) 24);
+        output.writeUInt64NoTag(selfHotValue);
+      }
+      if ((bitField0_ & 0x00000002) != 0) {
+        output.writeRawByte((byte) 32);
+        output.writeUInt64NoTag(rivalHotValue);
+      }
+      if ((bitField0_ & 0x00000004) != 0) {
         output.writeRawByte((byte) 8);
         output.writeUInt32NoTag(level);
       }
-      if ((bitField0_ & 0x00000002) != 0) {
+      if ((bitField0_ & 0x00000008) != 0) {
         output.writeRawByte((byte) 16);
         output.writeUInt32NoTag(exp);
-      }
-      if ((bitField0_ & 0x00000004) != 0) {
-        output.writeRawByte((byte) 24);
-        output.writeUInt32NoTag(selfHotValue);
-      }
-      if ((bitField0_ & 0x00000008) != 0) {
-        output.writeRawByte((byte) 32);
-        output.writeUInt32NoTag(rivalHotValue);
       }
       if ((bitField0_ & 0x00000010) != 0) {
         output.writeRawByte((byte) 42);
@@ -1037,16 +1037,16 @@ public final class ActivityTrekkerVersusRankBoost {
     protected int computeSerializedSize() {
       int size = 0;
       if ((bitField0_ & 0x00000001) != 0) {
-        size += 1 + ProtoSink.computeUInt32SizeNoTag(level);
+        size += 1 + ProtoSink.computeUInt64SizeNoTag(selfHotValue);
       }
       if ((bitField0_ & 0x00000002) != 0) {
-        size += 1 + ProtoSink.computeUInt32SizeNoTag(exp);
+        size += 1 + ProtoSink.computeUInt64SizeNoTag(rivalHotValue);
       }
       if ((bitField0_ & 0x00000004) != 0) {
-        size += 1 + ProtoSink.computeUInt32SizeNoTag(selfHotValue);
+        size += 1 + ProtoSink.computeUInt32SizeNoTag(level);
       }
       if ((bitField0_ & 0x00000008) != 0) {
-        size += 1 + ProtoSink.computeUInt32SizeNoTag(rivalHotValue);
+        size += 1 + ProtoSink.computeUInt32SizeNoTag(exp);
       }
       if ((bitField0_ & 0x00000010) != 0) {
         size += 1 + ProtoSink.computeMessageSizeNoTag(change);
@@ -1068,10 +1068,28 @@ public final class ActivityTrekkerVersusRankBoost {
       int tag = input.readTag();
       while (true) {
         switch (tag) {
+          case 24: {
+            // selfHotValue
+            selfHotValue = input.readUInt64();
+            bitField0_ |= 0x00000001;
+            tag = input.readTag();
+            if (tag != 32) {
+              break;
+            }
+          }
+          case 32: {
+            // rivalHotValue
+            rivalHotValue = input.readUInt64();
+            bitField0_ |= 0x00000002;
+            tag = input.readTag();
+            if (tag != 8) {
+              break;
+            }
+          }
           case 8: {
             // level
             level = input.readUInt32();
-            bitField0_ |= 0x00000001;
+            bitField0_ |= 0x00000004;
             tag = input.readTag();
             if (tag != 16) {
               break;
@@ -1080,24 +1098,6 @@ public final class ActivityTrekkerVersusRankBoost {
           case 16: {
             // exp
             exp = input.readUInt32();
-            bitField0_ |= 0x00000002;
-            tag = input.readTag();
-            if (tag != 24) {
-              break;
-            }
-          }
-          case 24: {
-            // selfHotValue
-            selfHotValue = input.readUInt32();
-            bitField0_ |= 0x00000004;
-            tag = input.readTag();
-            if (tag != 32) {
-              break;
-            }
-          }
-          case 32: {
-            // rivalHotValue
-            rivalHotValue = input.readUInt32();
             bitField0_ |= 0x00000008;
             tag = input.readTag();
             if (tag != 42) {
@@ -1148,16 +1148,16 @@ public final class ActivityTrekkerVersusRankBoost {
     public void writeTo(final JsonSink output) throws IOException {
       output.beginObject();
       if ((bitField0_ & 0x00000001) != 0) {
-        output.writeUInt32(FieldNames.level, level);
+        output.writeUInt64(FieldNames.selfHotValue, selfHotValue);
       }
       if ((bitField0_ & 0x00000002) != 0) {
-        output.writeUInt32(FieldNames.exp, exp);
+        output.writeUInt64(FieldNames.rivalHotValue, rivalHotValue);
       }
       if ((bitField0_ & 0x00000004) != 0) {
-        output.writeUInt32(FieldNames.selfHotValue, selfHotValue);
+        output.writeUInt32(FieldNames.level, level);
       }
       if ((bitField0_ & 0x00000008) != 0) {
-        output.writeUInt32(FieldNames.rivalHotValue, rivalHotValue);
+        output.writeUInt32(FieldNames.exp, exp);
       }
       if ((bitField0_ & 0x00000010) != 0) {
         output.writeMessage(FieldNames.change, change);
@@ -1178,11 +1178,33 @@ public final class ActivityTrekkerVersusRankBoost {
       }
       while (!input.isAtEnd()) {
         switch (input.readFieldHash()) {
+          case 1360474288: {
+            if (input.isAtField(FieldNames.selfHotValue)) {
+              if (!input.trySkipNullValue()) {
+                selfHotValue = input.readUInt64();
+                bitField0_ |= 0x00000001;
+              }
+            } else {
+              input.skipUnknownField();
+            }
+            break;
+          }
+          case 1039538350: {
+            if (input.isAtField(FieldNames.rivalHotValue)) {
+              if (!input.trySkipNullValue()) {
+                rivalHotValue = input.readUInt64();
+                bitField0_ |= 0x00000002;
+              }
+            } else {
+              input.skipUnknownField();
+            }
+            break;
+          }
           case 73313124: {
             if (input.isAtField(FieldNames.level)) {
               if (!input.trySkipNullValue()) {
                 level = input.readUInt32();
-                bitField0_ |= 0x00000001;
+                bitField0_ |= 0x00000004;
               }
             } else {
               input.skipUnknownField();
@@ -1193,28 +1215,6 @@ public final class ActivityTrekkerVersusRankBoost {
             if (input.isAtField(FieldNames.exp)) {
               if (!input.trySkipNullValue()) {
                 exp = input.readUInt32();
-                bitField0_ |= 0x00000002;
-              }
-            } else {
-              input.skipUnknownField();
-            }
-            break;
-          }
-          case 1360474288: {
-            if (input.isAtField(FieldNames.selfHotValue)) {
-              if (!input.trySkipNullValue()) {
-                selfHotValue = input.readUInt32();
-                bitField0_ |= 0x00000004;
-              }
-            } else {
-              input.skipUnknownField();
-            }
-            break;
-          }
-          case 1039538350: {
-            if (input.isAtField(FieldNames.rivalHotValue)) {
-              if (!input.trySkipNullValue()) {
-                rivalHotValue = input.readUInt32();
                 bitField0_ |= 0x00000008;
               }
             } else {
@@ -1310,13 +1310,13 @@ public final class ActivityTrekkerVersusRankBoost {
      * Contains name constants used for serializing JSON
      */
     static class FieldNames {
-      static final FieldName level = FieldName.forField("Level");
-
-      static final FieldName exp = FieldName.forField("Exp");
-
       static final FieldName selfHotValue = FieldName.forField("SelfHotValue");
 
       static final FieldName rivalHotValue = FieldName.forField("RivalHotValue");
+
+      static final FieldName level = FieldName.forField("Level");
+
+      static final FieldName exp = FieldName.forField("Exp");
 
       static final FieldName change = FieldName.forField("Change");
 

@@ -116,6 +116,11 @@ public final class ActivityDetail {
     private final Public.ActivityThrowGift throwGift = Public.ActivityThrowGift.newInstance();
 
     /**
+     * <code>optional .ActivityGDS GDS = 20;</code>
+     */
+    private final Public.ActivityGDS gDS = Public.ActivityGDS.newInstance();
+
+    /**
      * <code>optional bytes NextPackage = 2047;</code>
      */
     private final RepeatedByte nextPackage = RepeatedByte.newEmptyInstance();
@@ -1194,11 +1199,68 @@ public final class ActivityDetail {
     }
 
     /**
+     * <code>optional .ActivityGDS GDS = 20;</code>
+     * @return whether the gDS field is set
+     */
+    public boolean hasGDS() {
+      return (bitField0_ & 0x00080000) != 0;
+    }
+
+    /**
+     * <code>optional .ActivityGDS GDS = 20;</code>
+     * @return this
+     */
+    public ActivityMsg clearGDS() {
+      bitField0_ &= ~0x00080000;
+      gDS.clear();
+      return this;
+    }
+
+    /**
+     * <code>optional .ActivityGDS GDS = 20;</code>
+     *
+     * This method returns the internal storage object without modifying any has state.
+     * The returned object should not be modified and be treated as read-only.
+     *
+     * Use {@link #getMutableGDS()} if you want to modify it.
+     *
+     * @return internal storage object for reading
+     */
+    public Public.ActivityGDS getGDS() {
+      return gDS;
+    }
+
+    /**
+     * <code>optional .ActivityGDS GDS = 20;</code>
+     *
+     * This method returns the internal storage object and sets the corresponding
+     * has state. The returned object will become part of this message and its
+     * contents may be modified as long as the has state is not cleared.
+     *
+     * @return internal storage object for modifications
+     */
+    public Public.ActivityGDS getMutableGDS() {
+      bitField0_ |= 0x00080000;
+      return gDS;
+    }
+
+    /**
+     * <code>optional .ActivityGDS GDS = 20;</code>
+     * @param value the gDS to set
+     * @return this
+     */
+    public ActivityMsg setGDS(final Public.ActivityGDS value) {
+      bitField0_ |= 0x00080000;
+      gDS.copyFrom(value);
+      return this;
+    }
+
+    /**
      * <code>optional bytes NextPackage = 2047;</code>
      * @return whether the nextPackage field is set
      */
     public boolean hasNextPackage() {
-      return (bitField0_ & 0x00080000) != 0;
+      return (bitField0_ & 0x00100000) != 0;
     }
 
     /**
@@ -1206,7 +1268,7 @@ public final class ActivityDetail {
      * @return this
      */
     public ActivityMsg clearNextPackage() {
-      bitField0_ &= ~0x00080000;
+      bitField0_ &= ~0x00100000;
       nextPackage.clear();
       return this;
     }
@@ -1235,7 +1297,7 @@ public final class ActivityDetail {
      * @return internal storage object for modifications
      */
     public RepeatedByte getMutableNextPackage() {
-      bitField0_ |= 0x00080000;
+      bitField0_ |= 0x00100000;
       return nextPackage;
     }
 
@@ -1245,7 +1307,7 @@ public final class ActivityDetail {
      * @return this
      */
     public ActivityMsg addNextPackage(final byte value) {
-      bitField0_ |= 0x00080000;
+      bitField0_ |= 0x00100000;
       nextPackage.add(value);
       return this;
     }
@@ -1256,7 +1318,7 @@ public final class ActivityDetail {
      * @return this
      */
     public ActivityMsg addAllNextPackage(final byte... values) {
-      bitField0_ |= 0x00080000;
+      bitField0_ |= 0x00100000;
       nextPackage.addAll(values);
       return this;
     }
@@ -1267,7 +1329,7 @@ public final class ActivityDetail {
      * @return this
      */
     public ActivityMsg setNextPackage(final byte... values) {
-      bitField0_ |= 0x00080000;
+      bitField0_ |= 0x00100000;
       nextPackage.copyFrom(values);
       return this;
     }
@@ -1296,6 +1358,7 @@ public final class ActivityDetail {
         milkout.copyFrom(other.milkout);
         penguinCard.copyFrom(other.penguinCard);
         throwGift.copyFrom(other.throwGift);
+        gDS.copyFrom(other.gDS);
         nextPackage.copyFrom(other.nextPackage);
       }
       return this;
@@ -1364,6 +1427,9 @@ public final class ActivityDetail {
       if (other.hasThrowGift()) {
         getMutableThrowGift().mergeFrom(other.throwGift);
       }
+      if (other.hasGDS()) {
+        getMutableGDS().mergeFrom(other.gDS);
+      }
       if (other.hasNextPackage()) {
         getMutableNextPackage().copyFrom(other.nextPackage);
       }
@@ -1396,6 +1462,7 @@ public final class ActivityDetail {
       milkout.clear();
       penguinCard.clear();
       throwGift.clear();
+      gDS.clear();
       nextPackage.clear();
       return this;
     }
@@ -1425,6 +1492,7 @@ public final class ActivityDetail {
       milkout.clearQuick();
       penguinCard.clearQuick();
       throwGift.clearQuick();
+      gDS.clearQuick();
       nextPackage.clear();
       return this;
     }
@@ -1458,6 +1526,7 @@ public final class ActivityDetail {
         && (!hasMilkout() || milkout.equals(other.milkout))
         && (!hasPenguinCard() || penguinCard.equals(other.penguinCard))
         && (!hasThrowGift() || throwGift.equals(other.throwGift))
+        && (!hasGDS() || gDS.equals(other.gDS))
         && (!hasNextPackage() || nextPackage.equals(other.nextPackage));
     }
 
@@ -1540,6 +1609,10 @@ public final class ActivityDetail {
         output.writeMessageNoTag(throwGift);
       }
       if ((bitField0_ & 0x00080000) != 0) {
+        output.writeRawLittleEndian16((short) 418);
+        output.writeMessageNoTag(gDS);
+      }
+      if ((bitField0_ & 0x00100000) != 0) {
         output.writeRawLittleEndian16((short) 32762);
         output.writeBytesNoTag(nextPackage);
       }
@@ -1606,6 +1679,9 @@ public final class ActivityDetail {
         size += 2 + ProtoSink.computeMessageSizeNoTag(throwGift);
       }
       if ((bitField0_ & 0x00080000) != 0) {
+        size += 2 + ProtoSink.computeMessageSizeNoTag(gDS);
+      }
+      if ((bitField0_ & 0x00100000) != 0) {
         size += 2 + ProtoSink.computeBytesSizeNoTag(nextPackage);
       }
       return size;
@@ -1785,6 +1861,15 @@ public final class ActivityDetail {
             input.readMessage(throwGift);
             bitField0_ |= 0x00040000;
             tag = input.readTag();
+            if (tag != 162) {
+              break;
+            }
+          }
+          case 162: {
+            // gDS
+            input.readMessage(gDS);
+            bitField0_ |= 0x00080000;
+            tag = input.readTag();
             if (tag != 16378) {
               break;
             }
@@ -1792,7 +1877,7 @@ public final class ActivityDetail {
           case 16378: {
             // nextPackage
             input.readBytes(nextPackage);
-            bitField0_ |= 0x00080000;
+            bitField0_ |= 0x00100000;
             tag = input.readTag();
             if (tag != 0) {
               break;
@@ -1873,6 +1958,9 @@ public final class ActivityDetail {
         output.writeMessage(FieldNames.throwGift, throwGift);
       }
       if ((bitField0_ & 0x00080000) != 0) {
+        output.writeMessage(FieldNames.gDS, gDS);
+      }
+      if ((bitField0_ & 0x00100000) != 0) {
         output.writeBytes(FieldNames.nextPackage, nextPackage);
       }
       output.endObject();
@@ -2094,11 +2182,22 @@ public final class ActivityDetail {
             }
             break;
           }
+          case 70422: {
+            if (input.isAtField(FieldNames.gDS)) {
+              if (!input.trySkipNullValue()) {
+                input.readMessage(gDS);
+                bitField0_ |= 0x00080000;
+              }
+            } else {
+              input.skipUnknownField();
+            }
+            break;
+          }
           case -2082324045: {
             if (input.isAtField(FieldNames.nextPackage)) {
               if (!input.trySkipNullValue()) {
                 input.readBytes(nextPackage);
-                bitField0_ |= 0x00080000;
+                bitField0_ |= 0x00100000;
               }
             } else {
               input.skipUnknownField();
@@ -2194,6 +2293,8 @@ public final class ActivityDetail {
       static final FieldName penguinCard = FieldName.forField("PenguinCard");
 
       static final FieldName throwGift = FieldName.forField("ThrowGift");
+
+      static final FieldName gDS = FieldName.forField("GDS");
 
       static final FieldName nextPackage = FieldName.forField("NextPackage");
     }

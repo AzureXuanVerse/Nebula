@@ -64,7 +64,9 @@ public class CharacterGem {
         var proto = CharGem.newInstance()
             .setLock(this.isLocked())
             .addAllAttributes(this.getAttributes())
-            .addAllAlterAttributes(this.getAlterAttributes());
+            .addAllAlterAttributes(this.getAlterAttributes())
+            .addAllOverlockCount(new int[this.getAttributes().length])
+            .addAllAlterOverlockCount(new int[this.getAlterAttributes().length]);
         
         return proto;
     }

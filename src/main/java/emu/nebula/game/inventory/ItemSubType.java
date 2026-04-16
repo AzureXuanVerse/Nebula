@@ -15,6 +15,7 @@ public enum ItemSubType {
     TalentStrengthen    (9),
     DiscStrengthen      (12),
     DiscPromote         (13),
+    LevelHonor          (15),
     TreasureBox         (17),
     GearTreasureBox     (18),
     SubNoteSkill        (19),

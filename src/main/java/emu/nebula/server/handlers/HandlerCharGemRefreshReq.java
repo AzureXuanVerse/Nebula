@@ -39,7 +39,8 @@ public class HandlerCharGemRefreshReq extends NetHandler {
         // Build response
         var rsp = CharGemRefreshResp.newInstance()
                 .setChangeInfo(change.toProto())
-                .addAllAttributes(gem.getAlterAttributes());
+                .addAllAttributes(gem.getAlterAttributes())
+                .addAllOverlockCount(gem.getAlterOverlock());
         
         // Encode and send
         return session.encodeMsg(NetMsgId.char_gem_refresh_succeed_ack, rsp);

@@ -769,10 +769,10 @@ public class GameCharacter implements GameDatabaseObject {
         
         // Create base list of attributes
         var list = new CustomIntArray();
+        var locked = new IntOpenHashSet();
         
         // Add locked attributes to list
         if (lockedAttributes.length() != 0) {
-            var locked = new IntOpenHashSet();
             lockedAttributes.forEach(locked::add);
             
             for (int i = 0; i < gem.getAttributes().length; i++) {
@@ -786,7 +786,7 @@ public class GameCharacter implements GameDatabaseObject {
         
         // Generate attributes and create gem
         var attributes = gemControl.generateAttributes(this, list);
-        gem.setNewAttributes(attributes);
+        gem.setNewAttributes(attributes, locked);
         
         // Save to database
         this.save();
@@ -816,6 +816,92 @@ public class GameCharacter implements GameDatabaseObject {
         
         // Success
         return success;
+    }
+    
+    public PlayerChangeInfo overlockGem(int slotId, int gemIndex, int attrIndex) {
+        // Get gem from slot
+        var gem = this.getGemFromSlot(slotId, gemIndex);
+        if (gem == null) return null;
+        
+        // Sanity check attr index
+        if (attrIndex < 0 || attrIndex >= gem.getAttributes().length) {
+            return null;
+        }
+        
+        // Get total overlock count
+        int count = gem.getOverlockCount();
+        
+        if (count >= GameConstants.CHARACTER_MAX_OVERLOCK_COUNT) {
+            return null;
+        }
+        
+        // Get gem data
+        var gemData = this.getData().getCharGemData(slotId);
+        var gemControl = GameData.getCharGemSlotControlDataTable().get(slotId);
+        
+        if (gemControl == null) {
+            return null;
+        }
+        
+        // Calculate the materials we need
+        var materials = new ItemParamMap();
+        materials.add(gemData.getOverlockCostTid(), gemControl.getOverlockCostQty());
+        materials.add(GameConstants.GOLD_ITEM_ID, gemControl.getOverlockDoraCostQty());
+        
+        // Make sure the player has the materials to craft the emblem
+        if (!getPlayer().getInventory().hasItems(materials)) {
+            return null;
+        }
+        
+        // Get attribute
+        int attrId = gem.getAttributes()[attrIndex];
+        var attr = GameData.getCharGemAttrValueDataTable().get(attrId);
+        
+        if (attr == null) {
+            return null;
+        }
+        
+        // Check if we can upgrade
+        if (gem.getOverlock()[attrIndex] >= attr.getOverlockCount()) {
+            return null;
+        }
+        
+        // Upgrade overlock
+        gem.getOverlock()[attrIndex]++;
+        
+        // Consume materials
+        var change = getPlayer().getInventory().removeItems(materials);
+        
+        // Save
+        this.save();
+        
+        // Success
+        return change;
+    }
+    
+    public PlayerChangeInfo revertOverlockGem(int slotId, int gemIndex, int attrIndex) {
+        // Get gem from slot
+        var gem = this.getGemFromSlot(slotId, gemIndex);
+        if (gem == null) return null;
+        
+        // Sanity check attr index
+        if (attrIndex < 0 || attrIndex >= gem.getAttributes().length) {
+            return null;
+        }
+        
+        // Check if we can revert
+        if (gem.getOverlock()[attrIndex] <= 0) {
+            return null;
+        }
+        
+        // Revert overlock
+        gem.getOverlock()[attrIndex]--;
+        
+        // Save
+        this.save();
+        
+        // Success
+        return new PlayerChangeInfo();
     }
     
     // Proto
@@ -892,7 +978,7 @@ public class GameCharacter implements GameDatabaseObject {
             
             if (gem != null) {
                 info.addAllAttributes(gem.getAttributes());
-                info.addAllOverlockCount(new int[gem.getAttributes().length]);
+                info.addAllOverlockCount(gem.getOverlock());
             } else {
                 info.addAllAttributes(new int[4]);
                 info.addAllOverlockCount(new int[4]);

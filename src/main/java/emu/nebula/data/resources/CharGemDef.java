@@ -10,6 +10,7 @@ public class CharGemDef extends BaseDef {
     private int Id;
     private int GenerateCostTid;
     private int RefreshCostTid;
+    private int OverlockCostTid;
     private int Type;
     
     @Override

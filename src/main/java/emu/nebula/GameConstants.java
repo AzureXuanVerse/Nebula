@@ -31,6 +31,7 @@ public class GameConstants {
     public static final int CHARACTER_MAX_GEMS_PER_SLOT = 4;
     public static final int CHARACTER_MAX_GEM_PRESETS = 3;
     public static final int CHARACTER_MAX_GEM_SLOTS = 3;
+    public static final int CHARACTER_MAX_OVERLOCK_COUNT = 2;
     
     public static final int CHARACTER_TAG_VANGUARD = 101;
     public static final int CHARACTER_TAG_VERSATILE = 102;

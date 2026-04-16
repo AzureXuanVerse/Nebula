@@ -21,6 +21,8 @@ public class CharGemSlotControlDef extends BaseDef {
     
     private int GeneratenCostQty;
     private int RefreshCostQty;
+    private int OverlockCostQty;
+    private int OverlockDoraCostQty;
     
     private int LockableNum;
     private int LockItemTid;

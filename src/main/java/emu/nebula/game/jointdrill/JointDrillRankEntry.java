@@ -10,10 +10,13 @@ import emu.nebula.database.GameDatabaseObject;
 import emu.nebula.game.player.Player;
 import emu.nebula.game.tower.StarTowerBuild;
 import emu.nebula.game.character.GameCharacter;
+import emu.nebula.game.inventory.ItemParamMap;
 import emu.nebula.proto.JointDrillRank.JointDrillRankChar;
 import emu.nebula.proto.JointDrillRank.JointDrillRankData;
 import emu.nebula.proto.JointDrillRank.JointDrillRankTeam;
 import emu.nebula.proto.Public.HonorInfo;
+import emu.nebula.proto.Public.ItemTpl;
+import emu.nebula.proto.PublicStarTower.BuildPotential;
 import it.unimi.dsi.fastutil.ints.IntOpenHashSet;
 import it.unimi.dsi.fastutil.ints.IntSet;
 import lombok.Getter;
@@ -153,6 +156,10 @@ public class JointDrillRankEntry implements GameDatabaseObject {
         private int damage;
         private int time;
         private List<JointDrillCharEntry> characters;
+        private int[] discs;
+        private ItemParamMap potentials; 
+        private ItemParamMap notes;
+        private int[] secondaryIds;
         
         @Deprecated // Morphia only
         public JointDrillTeamEntry() {
@@ -164,6 +171,10 @@ public class JointDrillRankEntry implements GameDatabaseObject {
             this.buildScore = build.getScore();
             this.time = time;
             this.damage = damage;
+            this.discs = build.getDiscIds();
+            this.potentials = build.getPotentials().clone();
+            this.notes = build.getSubNoteSkills().clone();
+            this.secondaryIds = build.getSecondarySkills().toIntArray();
             this.characters = new ArrayList<>();
             
             for (var charId : build.getCharIds()) {
@@ -182,6 +193,30 @@ public class JointDrillRankEntry implements GameDatabaseObject {
             
             for (var c : this.getCharacters()) {
                 proto.addChars(c.toProto());
+            }
+            
+            // Lazy way to add extra info.
+            // Discs, secondary ids, potentials, and notes were all added in the same update, 
+            // so we don't need to null check each one individually.
+            if (this.getDiscs() != null) {
+                proto.addAllDiscs(this.getDiscs());
+                proto.addAllActiveSecondaryIds(this.getSecondaryIds());
+                
+                for (var pot : this.getPotentials()) {
+                    var info = BuildPotential.newInstance()
+                            .setPotentialId(pot.getIntKey())
+                            .setLevel(pot.getIntValue());
+                    
+                    proto.addPotentials(info);
+                }
+                
+                for (var note : this.getNotes()) {
+                    var info = ItemTpl.newInstance()
+                            .setTid(note.getIntKey())
+                            .setQty(note.getIntValue());
+                    
+                    proto.addNotes(info);
+                }
             }
             
             return proto;

@@ -67,6 +67,17 @@ public class ItemParamMap extends Int2IntLinkedOpenHashMap implements ObjectBidi
         return params;
     }
     
+    @Override
+    public ItemParamMap clone() {
+        var map = new ItemParamMap();
+        
+        for (var entry : this) {
+            map.put(entry.getIntKey(), entry.getIntValue());
+        }
+        
+        return map;
+    }
+    
     // Iterable
 
     @Override
@@ -145,7 +156,7 @@ public class ItemParamMap extends Int2IntLinkedOpenHashMap implements ObjectBidi
         return map;
     }
     
-    //
+    // Static helpers
     
     public static ItemParamMap of(int... entries) {
         // Create

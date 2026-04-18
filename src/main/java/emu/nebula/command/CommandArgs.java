@@ -285,7 +285,7 @@ public class CommandArgs {
                 int[] commonPotentialIds = potentials.getCommonPotentialIds();
                 
                 // Check if main trekker or not
-                if (i == 1) {
+                if (i == 0) {
                     specificPotentialIds = potentials.getMasterSpecificPotentialIds();
                     normalPotentialIds = potentials.getMasterNormalPotentialIds();
                 } else {

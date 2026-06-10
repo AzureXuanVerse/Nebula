@@ -55,9 +55,14 @@ public class ActivityModule extends GameContextModule {
         //this.activities.add(2010204);
         
         // Framing the Feelings Unseen
-        this.activities.add(1010701);
-        this.activities.add(1010703);
-        this.activities.add(1010704);
+        //this.activities.add(1010701);
+        //this.activities.add(1010703);
+        //this.activities.add(1010704);
+        
+        // Heartbeat! Neo-Inspired Rhapsody
+        this.activities.add(1010801);
+        this.activities.add(1010803);
+        this.activities.add(1010804);
         
         // ===== Joint Drills (Finale Echoing) =====
         //this.activities.add(510003); // Causes soft lock in event screen
